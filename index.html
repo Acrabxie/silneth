@@ -1,0 +1,5166 @@
+<meta charset="utf-8">
+<title>Sìlneth 翻译器</title>
+<style>
+  :root {
+    --ink0: #101318;
+    --ink1: #161a21;
+    --ink2: #1d232c;
+    --ink3: #242b35;
+    --line: #2a313c;
+    --text: #c3ccd6;
+    --bright: #edf2f7;
+    --ash: #7f8894;
+    --faded: #545d69;
+    --val: #a3c9de;
+    --ember: #d99a60;
+    --bad: #c97b6a;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Songti SC', 'Source Han Serif SC', 'Noto Serif CJK SC', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+  html { background: var(--ink0); }
+  body {
+    font-family: var(--serif);
+    color: var(--text);
+    background:
+      radial-gradient(1000px 380px at 50% -80px, #1a2029 0%, transparent 70%),
+      var(--ink0);
+    line-height: 1.8;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  a { color: var(--val); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  .glyph-svg { display: block; }
+  .glyph-svg path {
+    fill: none; stroke: currentColor; stroke-width: 8;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  header { text-align: center; padding: 52px 0 8px; }
+  .h-script { display: flex; justify-content: center; gap: 2px; color: var(--bright); margin-bottom: 10px; }
+  .h-script svg { width: 34px; height: 34px; }
+  h1 { font-size: 34px; font-weight: 500; color: var(--bright); margin: 0 0 2px; letter-spacing: 0.02em; }
+  .h-sub { font-family: var(--sans); font-size: 13.5px; color: var(--ash); }
+  .h-sub a { color: var(--ash); border-bottom: 1px solid var(--line); }
+  .h-sub a:hover { color: var(--val); text-decoration: none; }
+
+  /* tabs */
+  .tabs {
+    display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;
+    margin: 30px 0 26px;
+  }
+  .tabs button {
+    font-family: var(--sans); font-size: 13.5px;
+    background: transparent; color: var(--ash);
+    border: 1px solid var(--line); border-radius: 2px;
+    padding: 9px 20px; cursor: pointer;
+    transition: color .15s, border-color .15s, background .15s;
+  }
+  .tabs button:hover { color: var(--bright); border-color: var(--ash); }
+  .tabs button[aria-selected="true"] {
+    color: var(--ink0); background: var(--val); border-color: var(--val); font-weight: 600;
+  }
+  .tabs button:focus-visible { outline: 2px solid var(--val); outline-offset: 2px; }
+
+  .panel { display: none; padding-bottom: 40px; }
+  .panel.active { display: block; }
+
+  .field-label {
+    display: block; font-family: var(--sans); font-size: 12px;
+    letter-spacing: 0.12em; color: var(--ash); margin: 0 0 6px;
+  }
+  textarea, input[type="text"], select {
+    width: 100%; box-sizing: border-box;
+    background: var(--ink1); color: var(--bright);
+    border: 1px solid var(--line); border-radius: 2px;
+    font-family: var(--serif); font-size: 17px;
+    padding: 12px 14px; outline: none;
+    transition: border-color .15s;
+  }
+  textarea:focus, input[type="text"]:focus, select:focus { border-color: var(--val); }
+  textarea { resize: vertical; min-height: 84px; line-height: 1.7; }
+  select { font-family: var(--sans); font-size: 14px; color: var(--text); }
+
+  .btn {
+    font-family: var(--sans); font-size: 14px; font-weight: 600;
+    background: var(--val); color: var(--ink0);
+    border: 1px solid var(--val); border-radius: 2px;
+    padding: 11px 28px; cursor: pointer;
+    transition: filter .15s;
+  }
+  .btn:hover { filter: brightness(1.1); }
+  .btn:focus-visible { outline: 2px solid var(--bright); outline-offset: 2px; }
+  .btn.ghost { background: transparent; color: var(--ash); border-color: var(--line); font-weight: 400; }
+  .btn.ghost:hover { color: var(--bright); border-color: var(--ash); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+  .chip {
+    font-family: var(--sans); font-size: 12.5px;
+    background: var(--ink1); color: var(--ash);
+    border: 1px solid var(--line); border-radius: 2px;
+    padding: 5px 12px; cursor: pointer;
+    transition: color .15s, border-color .15s;
+  }
+  .chip:hover { color: var(--val); border-color: var(--ash); }
+
+  .row { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; margin-top: 14px; }
+  .row > .grow { flex: 1 1 200px; }
+
+  /* segmented control */
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+  .seg button {
+    font-family: var(--sans); font-size: 12.5px;
+    background: var(--ink1); color: var(--ash);
+    border: none; border-right: 1px solid var(--line);
+    padding: 8px 14px; cursor: pointer;
+  }
+  .seg button:last-child { border-right: none; }
+  .seg button[aria-pressed="true"] { background: var(--ink3); color: var(--bright); font-weight: 600; }
+  .seg button:focus-visible { outline: 2px solid var(--val); outline-offset: -2px; }
+
+  .toggles { display: flex; flex-wrap: wrap; gap: 14px; font-family: var(--sans); font-size: 13px; color: var(--text); }
+  .toggles label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+  .toggles input { accent-color: #a3c9de; }
+
+  /* result card */
+  .result {
+    background: var(--ink1); border: 1px solid var(--line); border-radius: 3px;
+    padding: 26px 26px 20px; margin-top: 22px;
+  }
+  .result.err { border-color: #5a4038; }
+  .r-glyphs {
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: 2px; row-gap: 10px; color: var(--bright); margin-bottom: 14px;
+  }
+  .r-glyphs .wordbox { display: flex; gap: 0; }
+  .r-glyphs svg { width: 40px; height: 40px; }
+  .r-glyphs .wsp { width: 16px; }
+  .r-roman { font-size: 25px; font-style: italic; color: var(--bright); line-height: 1.5; }
+  .r-ipa { font-family: var(--mono); font-size: 13px; color: var(--faded); margin-top: 2px; }
+  .r-gloss { font-family: var(--mono); font-size: 12.5px; color: var(--ash); margin-top: 10px; line-height: 1.8; }
+  .r-trans { font-size: 16px; color: var(--text); margin-top: 10px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .badge {
+    font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.06em;
+    border: 1px solid var(--line); border-radius: 2px;
+    padding: 3px 10px; color: var(--ash);
+  }
+  .badge.b0 { color: var(--val); border-color: #3a5563; }
+  .badge.b1 { color: #9aa5b1; border-color: #3a4250; }
+  .badge.b2 { color: var(--ember); border-color: #5a4732; }
+  .warn {
+    font-family: var(--sans); font-size: 13px; color: var(--bad);
+    margin-top: 14px; line-height: 1.7;
+  }
+  details.trace { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 12px; }
+  details.trace summary {
+    font-family: var(--sans); font-size: 12.5px; color: var(--ash);
+    cursor: pointer; letter-spacing: 0.08em;
+  }
+  details.trace summary:hover { color: var(--val); }
+  .trace-steps { margin: 12px 0 0; padding: 0; list-style: none; }
+  .trace-steps li {
+    display: grid; grid-template-columns: 22px 1fr; gap: 10px;
+    font-family: var(--sans); font-size: 13px; color: var(--text);
+    padding: 6px 0; border-bottom: 1px dashed #222932;
+  }
+  .trace-steps li:last-child { border-bottom: none; }
+  .trace-steps .tn { color: var(--faded); font-variant-numeric: tabular-nums; text-align: right; }
+  .trace-steps b { color: var(--bright); font-weight: 600; }
+
+  .hint { font-family: var(--sans); font-size: 13px; color: var(--ash); margin-top: 14px; line-height: 1.8; }
+  details.support { margin-top: 18px; }
+  details.support summary { font-family: var(--sans); font-size: 12.5px; color: var(--ash); cursor: pointer; }
+  details.support summary:hover { color: var(--val); }
+  details.support ul { font-family: var(--sans); font-size: 13px; color: var(--ash); line-height: 2; margin: 8px 0 0; padding-left: 18px; }
+
+  /* dictionary */
+  .dict-list { margin-top: 18px; display: grid; gap: 8px; }
+  .dict-item {
+    display: grid; grid-template-columns: 150px 1fr auto; gap: 14px; align-items: baseline;
+    background: var(--ink1); border: 1px solid var(--line); border-radius: 2px;
+    padding: 12px 16px;
+  }
+  .dict-item .dr { font-size: 18px; font-style: italic; color: var(--bright); }
+  .dict-item .dr small { font-family: var(--mono); font-style: normal; font-size: 11px; color: var(--faded); display: block; }
+  .dict-item .dz { font-size: 14.5px; color: var(--text); }
+  .dict-item .dz small { color: var(--faded); font-family: var(--sans); font-size: 11.5px; }
+  .dict-item .dc { font-family: var(--sans); font-size: 11px; color: var(--ash); white-space: nowrap; }
+  .dict-item .dc.strong { color: var(--ember); }
+
+  /* phrasebook */
+  .phrase-list { margin-top: 20px; display: grid; gap: 10px; }
+  .phrase {
+    background: var(--ink1); border: 1px solid var(--line); border-radius: 2px;
+    padding: 14px 18px; cursor: pointer;
+    transition: border-color .15s;
+  }
+  .phrase:hover { border-color: var(--ash); }
+  .phrase .pr { font-size: 17px; font-style: italic; color: var(--bright); }
+  .phrase .pz { font-family: var(--sans); font-size: 13px; color: var(--ash); margin-top: 2px; }
+
+  footer { text-align: center; padding: 30px 0 50px; font-family: var(--sans); font-size: 12px; color: var(--faded); }
+
+  @media (max-width: 560px) {
+    .dict-item { grid-template-columns: 1fr; gap: 4px; }
+    h1 { font-size: 28px; }
+  }
+</style>
+
+<header class="wrap">
+  <div class="h-script" id="hScript" aria-hidden="true"></div>
+  <h1>Sìlneth 翻译器</h1>
+  <div class="h-sub">把主流语言折算进一门会被时间磨蚀的语言 · <a href="./language.html">语言介绍页 →</a></div>
+</header>
+
+<div class="wrap">
+  <div class="tabs" role="tablist" id="tabs">
+    <button role="tab" aria-selected="true" data-panel="p-zh">中文直译</button>
+    <button role="tab" aria-selected="false" data-panel="p-compose">构句器</button>
+    <button role="tab" aria-selected="false" data-panel="p-name">名字音译</button>
+    <button role="tab" aria-selected="false" data-panel="p-dict">词典</button>
+    <button role="tab" aria-selected="false" data-panel="p-phrase">常用语</button>
+  </div>
+
+  <!-- 中文直译 -->
+  <div class="panel active" id="p-zh" role="tabpanel">
+    <label class="field-label" for="zhInput">中文原文</label>
+    <textarea id="zhInput" placeholder="例：父亲以前在这里唱过歌"></textarea>
+    <div class="row">
+      <button class="btn" id="zhGo">翻译 → Sìlneth</button>
+      <span class="hint" style="margin:0">时距级与示证会按十步管线自动判定，过程可展开查看。</span>
+    </div>
+    <div class="chips" id="zhChips"></div>
+    <div id="zhOut"></div>
+    <details class="support">
+      <summary>当前支持的句型（规则直译是诚实的：不支持的会明说）</summary>
+      <ul>
+        <li>主谓（宾）句，含时间词定级：现在/昨天/以前/远古/明天…</li>
+        <li>示证词：亲眼/据说/相传/看来…（级1、级2 陈述句会自动补示证）</li>
+        <li>系词句「X是Y」· 处所句「X在Y」· 领有句「X有Y」</li>
+        <li>疑问：什么/谁/哪里/何时/几 + 是非问 · 否定「不/没/别」</li>
+        <li>祈使与意愿「…吧」 · 比较「X比Y…」 · 属格「X的Y」 · 复数/全称量化</li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- 构句器 -->
+  <div class="panel" id="p-compose" role="tabpanel">
+    <div class="row">
+      <div class="grow">
+        <label class="field-label" for="cSubj">主语（中文或罗马字，可空）</label>
+        <input type="text" id="cSubj" list="nounList" placeholder="我 / 父亲 / 群山…">
+      </div>
+      <div class="grow">
+        <label class="field-label" for="cVerb">动词（必填）</label>
+        <input type="text" id="cVerb" list="verbList" placeholder="唱 / 走 / 屹立…">
+      </div>
+      <div class="grow">
+        <label class="field-label" for="cObj">宾语（可空）</label>
+        <input type="text" id="cObj" list="nounList" placeholder="歌 / 水…">
+      </div>
+    </div>
+    <datalist id="nounList"></datalist>
+    <datalist id="verbList"></datalist>
+    <div class="row">
+      <div>
+        <label class="field-label">时距级</label>
+        <div class="seg" id="cLevel">
+          <button aria-pressed="true" data-v="0">级0 近时</button>
+          <button aria-pressed="false" data-v="1">级1 远时</button>
+          <button aria-pressed="false" data-v="2">级2 祖时</button>
+        </div>
+      </div>
+      <div>
+        <label class="field-label">示证</label>
+        <div class="seg" id="cEvid">
+          <button aria-pressed="true" data-v="auto">自动</button>
+          <button aria-pressed="false" data-v="va">=va 亲历</button>
+          <button aria-pressed="false" data-v="dhi">=dhi 推断</button>
+          <button aria-pressed="false" data-v="re">=re 传闻</button>
+        </div>
+      </div>
+      <div>
+        <label class="field-label">语气</label>
+        <div class="seg" id="cMood">
+          <button aria-pressed="true" data-v="real">断言 .</button>
+          <button aria-pressed="false" data-v="irr">非现实 ~</button>
+          <button aria-pressed="false" data-v="q">疑问 ?</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="toggles">
+        <label><input type="checkbox" id="cNeg"> 否定 ul</label>
+        <label><input type="checkbox" id="cPfv"> 完整体 -s-</label>
+        <label><input type="checkbox" id="cSPl"> 主语复数</label>
+        <label><input type="checkbox" id="cOPl"> 宾语复数</label>
+      </div>
+    </div>
+    <div class="row"><button class="btn" id="cGo">生成句子</button></div>
+    <div id="cOut"></div>
+  </div>
+
+  <!-- 名字音译 -->
+  <div class="panel" id="p-name" role="tabpanel">
+    <label class="field-label" for="nameInput">名字（拉丁字母或汉语拼音）</label>
+    <input type="text" id="nameInput" placeholder="例：Acrab / Beijing / Claude">
+    <div class="row">
+      <button class="btn" id="nameGo">音译 → Sìlneth</button>
+      <span class="hint" style="margin:0">外来之名以满元音收录——新来的词，尚未被时间磨蚀。</span>
+    </div>
+    <div class="chips" id="nameChips"></div>
+    <div id="nameOut"></div>
+  </div>
+
+  <!-- 词典 -->
+  <div class="panel" id="p-dict" role="tabpanel">
+    <label class="field-label" for="dictInput">检索 303 词根（中文或罗马字）</label>
+    <input type="text" id="dictInput" placeholder="例：山 / 唱 / lír / 火…">
+    <div class="dict-list" id="dictOut"></div>
+  </div>
+
+  <!-- 常用语 -->
+  <div class="panel" id="p-phrase" role="tabpanel">
+    <p class="hint" style="margin-top:0">出自例文集的现成句子。点一条可看字形与说明。</p>
+    <div class="phrase-list" id="phraseOut"></div>
+    <div id="phraseDetail"></div>
+  </div>
+</div>
+
+<footer>Sìlneth · Mírneth 字形按参考书第三章 SVG 规格原样渲染 · 引擎经 node 测试全绿后封装</footer>
+
+
+<script>
+window.SILNETH_LEXICON = [
+ {
+  "roman": "dhan",
+  "ipa": "ðan",
+  "pos": "n",
+  "zh": [
+   "人",
+   "有生者"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "jor",
+  "ipa": "jor",
+  "pos": "n",
+  "zh": [
+   "男人",
+   "成年男子",
+   "男子"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "mena",
+  "ipa": "ˈme.na",
+  "pos": "n",
+  "zh": [
+   "女人",
+   "女子"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "vem",
+  "ipa": "vem",
+  "pos": "n",
+  "zh": [
+   "配偶",
+   "伴侣"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "pai",
+  "ipa": "pai̯",
+  "pos": "n",
+  "zh": [
+   "父亲",
+   "爸爸",
+   "父"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "mau",
+  "ipa": "mau̯",
+  "pos": "n",
+  "zh": [
+   "母亲",
+   "妈妈",
+   "母"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "dhal",
+  "ipa": "ðal",
+  "pos": "n",
+  "zh": [
+   "祖先",
+   "先人",
+   "先祖"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "ñin",
+  "ipa": "ɲin",
+  "pos": "n",
+  "zh": [
+   "孩子",
+   "幼儿",
+   "小孩"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "ñal",
+  "ipa": "ɲal",
+  "pos": "n",
+  "zh": [
+   "少年",
+   "雏儿"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "ñol",
+  "ipa": "ɲol",
+  "pos": "n",
+  "zh": [
+   "孤儿"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "bral",
+  "ipa": "bral",
+  "pos": "n",
+  "zh": [
+   "兄弟"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "sena",
+  "ipa": "ˈse.na",
+  "pos": "n",
+  "zh": [
+   "姐妹"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "hem",
+  "ipa": "xem",
+  "pos": "n",
+  "zh": [
+   "家",
+   "家族",
+   "家园"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "dhem",
+  "ipa": "ðem",
+  "pos": "n",
+  "zh": [
+   "部族",
+   "人民",
+   "族人"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "rýn",
+  "ipa": "ryːn",
+  "pos": "n",
+  "zh": [
+   "首领",
+   "王",
+   "君王"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "fel",
+  "ipa": "fel",
+  "pos": "n",
+  "zh": [
+   "朋友",
+   "伙伴",
+   "友"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "gath",
+  "ipa": "gaθ",
+  "pos": "n",
+  "zh": [
+   "客人",
+   "行旅者",
+   "旅人",
+   "旅客"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "kal",
+  "ipa": "kal",
+  "pos": "n",
+  "zh": [
+   "头",
+   "头颅"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "vil",
+  "ipa": "vil",
+  "pos": "n",
+  "zh": [
+   "眼睛",
+   "眼",
+   "目"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "hul",
+  "ipa": "xul",
+  "pos": "n",
+  "zh": [
+   "耳",
+   "耳朵"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "nus",
+  "ipa": "nus",
+  "pos": "n",
+  "zh": [
+   "鼻",
+   "鼻子"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "mun",
+  "ipa": "mun",
+  "pos": "n",
+  "zh": [
+   "嘴",
+   "口",
+   "开口"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "lam",
+  "ipa": "lam",
+  "pos": "n",
+  "zh": [
+   "舌",
+   "舌头"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "tir",
+  "ipa": "tir",
+  "pos": "n",
+  "zh": [
+   "牙",
+   "牙齿"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "fas",
+  "ipa": "fas",
+  "pos": "n",
+  "zh": [
+   "头发",
+   "毛",
+   "毛发"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "den",
+  "ipa": "den",
+  "pos": "n",
+  "zh": [
+   "手"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "barm",
+  "ipa": "barm",
+  "pos": "n",
+  "zh": [
+   "臂",
+   "手臂"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "pon",
+  "ipa": "pon",
+  "pos": "n",
+  "zh": [
+   "足",
+   "脚"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "skel",
+  "ipa": "skel",
+  "pos": "n",
+  "zh": [
+   "腿"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "rul",
+  "ipa": "rul",
+  "pos": "n",
+  "zh": [
+   "背",
+   "后背"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "gom",
+  "ipa": "gom",
+  "pos": "n",
+  "zh": [
+   "腹",
+   "肚子",
+   "肚"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "kern",
+  "ipa": "kern",
+  "pos": "n",
+  "zh": [
+   "心脏",
+   "核心",
+   "心"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "ruth",
+  "ipa": "ruθ",
+  "pos": "n",
+  "zh": [
+   "血",
+   "血液"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "ors",
+  "ipa": "ors",
+  "pos": "n",
+  "zh": [
+   "骨",
+   "骨头"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "peln",
+  "ipa": "peln",
+  "pos": "n",
+  "zh": [
+   "皮肤",
+   "皮"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "hes",
+  "ipa": "xes",
+  "pos": "n",
+  "zh": [
+   "气息",
+   "呼吸"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "nir",
+  "ipa": "nir",
+  "pos": "n",
+  "zh": [
+   "泪水",
+   "眼泪",
+   "泪"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "kel",
+  "ipa": "kel",
+  "pos": "n",
+  "zh": [
+   "天空",
+   "天"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "saul",
+  "ipa": "sau̯l",
+  "pos": "n",
+  "zh": [
+   "太阳",
+   "日"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "ýl",
+  "ipa": "yːl",
+  "pos": "n",
+  "zh": [
+   "月亮",
+   "月份",
+   "月"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "nai",
+  "ipa": "nai̯",
+  "pos": "n",
+  "zh": [
+   "星",
+   "星星",
+   "星辰"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "vér",
+  "ipa": "veːr",
+  "pos": "n",
+  "zh": [
+   "银辉",
+   "银白之光",
+   "银光"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "lúm",
+  "ipa": "luːm",
+  "pos": "n",
+  "zh": [
+   "光",
+   "光亮",
+   "光明"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "ath",
+  "ipa": "aθ",
+  "pos": "n",
+  "zh": [
+   "热",
+   "热量"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "fai",
+  "ipa": "fai̯",
+  "pos": "n",
+  "zh": [
+   "火",
+   "火焰"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "íth",
+  "ipa": "iːθ",
+  "pos": "n",
+  "zh": [
+   "冰"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "fen",
+  "ipa": "fen",
+  "pos": "n",
+  "zh": [
+   "雪"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "nem",
+  "ipa": "nem",
+  "pos": "n",
+  "zh": [
+   "雨"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "hyl",
+  "ipa": "xyl",
+  "pos": "n",
+  "zh": [
+   "云",
+   "雾霭",
+   "雾"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "wein",
+  "ipa": "wei̯n",
+  "pos": "n",
+  "zh": [
+   "风"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "thrau",
+  "ipa": "θrau̯",
+  "pos": "n",
+  "zh": [
+   "风暴",
+   "暴风"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "koil",
+  "ipa": "koi̯l",
+  "pos": "n",
+  "zh": [
+   "漩涡",
+   "涡流",
+   "旋涡"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "thum",
+  "ipa": "θum",
+  "pos": "n",
+  "zh": [
+   "烟"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "ther",
+  "ipa": "θer",
+  "pos": "n",
+  "zh": [
+   "灰烬",
+   "灰"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "thos",
+  "ipa": "θos",
+  "pos": "n",
+  "zh": [
+   "尘",
+   "尘土",
+   "灰尘"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "zar",
+  "ipa": "zar",
+  "pos": "n",
+  "zh": [
+   "沙",
+   "沙子"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "nor",
+  "ipa": "nor",
+  "pos": "n",
+  "zh": [
+   "大地",
+   "土地",
+   "地"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "grán",
+  "ipa": "graːn",
+  "pos": "n",
+  "zh": [
+   "石",
+   "石头",
+   "岩石"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "arn",
+  "ipa": "arn",
+  "pos": "n",
+  "zh": [
+   "山"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "doln",
+  "ipa": "doln",
+  "pos": "n",
+  "zh": [
+   "山谷",
+   "谷"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "hurn",
+  "ipa": "xurn",
+  "pos": "n",
+  "zh": [
+   "洞穴",
+   "洞"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "firn",
+  "ipa": "firn",
+  "pos": "n",
+  "zh": [
+   "森林",
+   "树林",
+   "林"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "lath",
+  "ipa": "laθ",
+  "pos": "n",
+  "zh": [
+   "平野",
+   "草原",
+   "原野"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "ran",
+  "ipa": "ran",
+  "pos": "n",
+  "zh": [
+   "路",
+   "旅程",
+   "道路"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "lír",
+  "ipa": "liːr",
+  "pos": "n",
+  "zh": [
+   "河",
+   "河流"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "nelu",
+  "ipa": "ˈne.lu",
+  "pos": "n",
+  "zh": [
+   "水"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "len",
+  "ipa": "len",
+  "pos": "n",
+  "zh": [
+   "湖",
+   "湖泊"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "maur",
+  "ipa": "mau̯r",
+  "pos": "n",
+  "zh": [
+   "海",
+   "海洋"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "noth",
+  "ipa": "noθ",
+  "pos": "n",
+  "zh": [
+   "夜",
+   "夜晚"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "del",
+  "ipa": "del",
+  "pos": "n",
+  "zh": [
+   "白日",
+   "白昼",
+   "白天"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "skon",
+  "ipa": "skon",
+  "pos": "n",
+  "zh": [
+   "影",
+   "阴影",
+   "影子"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "murn",
+  "ipa": "murn",
+  "pos": "n",
+  "zh": [
+   "黑暗",
+   "幽冥",
+   "暗"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "hwan",
+  "ipa": "xwan",
+  "pos": "n",
+  "zh": [
+   "兽",
+   "动物"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "vorn",
+  "ipa": "vorn",
+  "pos": "n",
+  "zh": [
+   "狼"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "bern",
+  "ipa": "bern",
+  "pos": "n",
+  "zh": [
+   "熊"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "velm",
+  "ipa": "velm",
+  "pos": "n",
+  "zh": [
+   "鹿"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "ros",
+  "ipa": "ros",
+  "pos": "n",
+  "zh": [
+   "马"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "bur",
+  "ipa": "bur",
+  "pos": "n",
+  "zh": [
+   "牛"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "meñ",
+  "ipa": "meɲ",
+  "pos": "n",
+  "zh": [
+   "羊"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "hun",
+  "ipa": "xun",
+  "pos": "n",
+  "zh": [
+   "狗",
+   "犬"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "swil",
+  "ipa": "swil",
+  "pos": "n",
+  "zh": [
+   "鸟"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "karn",
+  "ipa": "karn",
+  "pos": "n",
+  "zh": [
+   "鹰",
+   "猛禽"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "glis",
+  "ipa": "glis",
+  "pos": "n",
+  "zh": [
+   "鱼"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "zir",
+  "ipa": "zir",
+  "pos": "n",
+  "zh": [
+   "蛇"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "ñis",
+  "ipa": "ɲis",
+  "pos": "n",
+  "zh": [
+   "虫",
+   "虫子",
+   "昆虫"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "ñum",
+  "ipa": "ɲum",
+  "pos": "n",
+  "zh": [
+   "蜂",
+   "蜜蜂"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "filn",
+  "ipa": "filn",
+  "pos": "n",
+  "zh": [
+   "翼",
+   "翅膀"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "korn",
+  "ipa": "korn",
+  "pos": "n",
+  "zh": [
+   "角"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "gwe",
+  "ipa": "gwe",
+  "pos": "n",
+  "zh": [
+   "蛋"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "áln",
+  "ipa": "aːln",
+  "pos": "n",
+  "zh": [
+   "树",
+   "树木"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "wurn",
+  "ipa": "wurn",
+  "pos": "n",
+  "zh": [
+   "根",
+   "词根"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "lil",
+  "ipa": "lil",
+  "pos": "n",
+  "zh": [
+   "叶",
+   "叶子",
+   "树叶"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "fjal",
+  "ipa": "fjal",
+  "pos": "n",
+  "zh": [
+   "花"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "selm",
+  "ipa": "selm",
+  "pos": "n",
+  "zh": [
+   "草"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "sem",
+  "ipa": "sem",
+  "pos": "n",
+  "zh": [
+   "种子",
+   "籽"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "bau",
+  "ipa": "bau̯",
+  "pos": "n",
+  "zh": [
+   "果实",
+   "果子",
+   "水果"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "mos",
+  "ipa": "mos",
+  "pos": "n",
+  "zh": [
+   "肉",
+   "肉食"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "brom",
+  "ipa": "brom",
+  "pos": "n",
+  "zh": [
+   "面饼",
+   "面食",
+   "饼"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "gorn",
+  "ipa": "gorn",
+  "pos": "n",
+  "zh": [
+   "谷物",
+   "粮食",
+   "谷"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "mim",
+  "ipa": "mim",
+  "pos": "n",
+  "zh": [
+   "乳",
+   "奶",
+   "牛奶"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "melu",
+  "ipa": "ˈme.lu",
+  "pos": "n",
+  "zh": [
+   "蜜",
+   "蜂蜜"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "selu",
+  "ipa": "ˈse.lu",
+  "pos": "n",
+  "zh": [
+   "油",
+   "膏"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "velu",
+  "ipa": "ˈve.lu",
+  "pos": "n",
+  "zh": [
+   "酒"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "sarn",
+  "ipa": "sarn",
+  "pos": "n",
+  "zh": [
+   "盐"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "surm",
+  "ipa": "surm",
+  "pos": "n",
+  "zh": [
+   "汤",
+   "羹"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "kurn",
+  "ipa": "kurn",
+  "pos": "n",
+  "zh": [
+   "一餐",
+   "饭食",
+   "饭"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "pesha",
+  "ipa": "ˈpe.ʃa",
+  "pos": "n",
+  "zh": [
+   "香料",
+   "香草"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "teln",
+  "ipa": "teln",
+  "pos": "n",
+  "zh": [
+   "屋",
+   "宅",
+   "房屋",
+   "房子"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "tal",
+  "ipa": "tal",
+  "pos": "n",
+  "zh": [
+   "厅",
+   "大厅"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "tolm",
+  "ipa": "tolm",
+  "pos": "n",
+  "zh": [
+   "塔",
+   "高台"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "dorn",
+  "ipa": "dorn",
+  "pos": "n",
+  "zh": [
+   "门"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "belm",
+  "ipa": "belm",
+  "pos": "n",
+  "zh": [
+   "墙",
+   "墙壁"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "kelm",
+  "ipa": "kelm",
+  "pos": "n",
+  "zh": [
+   "屋顶",
+   "房顶"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "fairn",
+  "ipa": "fai̯rn",
+  "pos": "n",
+  "zh": [
+   "炉灶",
+   "火塘",
+   "炉火",
+   "炉"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "lein",
+  "ipa": "lei̯n",
+  "pos": "n",
+  "zh": [
+   "床",
+   "卧榻"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "welm",
+  "ipa": "welm",
+  "pos": "n",
+  "zh": [
+   "布",
+   "衣",
+   "衣服"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "krum",
+  "ipa": "krum",
+  "pos": "n",
+  "zh": [
+   "罐",
+   "壶"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "nath",
+  "ipa": "naθ",
+  "pos": "n",
+  "zh": [
+   "网"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "thren",
+  "ipa": "θren",
+  "pos": "n",
+  "zh": [
+   "绳",
+   "索",
+   "绳索",
+   "绳子"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "skar",
+  "ipa": "skar",
+  "pos": "n",
+  "zh": [
+   "刀",
+   "刃",
+   "刀刃"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "gar",
+  "ipa": "gar",
+  "pos": "n",
+  "zh": [
+   "矛",
+   "长矛"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "byn",
+  "ipa": "byn",
+  "pos": "n",
+  "zh": [
+   "弓"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "flin",
+  "ipa": "flin",
+  "pos": "n",
+  "zh": [
+   "箭"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "skau",
+  "ipa": "skau̯",
+  "pos": "n",
+  "zh": [
+   "舟",
+   "船"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "bryn",
+  "ipa": "bryn",
+  "pos": "n",
+  "zh": [
+   "桥"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "wen",
+  "ipa": "wen",
+  "pos": "v",
+  "zh": [
+   "走",
+   "去"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "gwen",
+  "ipa": "gwen",
+  "pos": "v",
+  "zh": [
+   "来"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "rin",
+  "ipa": "rin",
+  "pos": "v",
+  "zh": [
+   "跑",
+   "奔跑"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lun",
+  "ipa": "lun",
+  "pos": "v",
+  "zh": [
+   "流",
+   "淌",
+   "流淌"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "dol",
+  "ipa": "dol",
+  "pos": "v",
+  "zh": [
+   "落",
+   "坠",
+   "坠落",
+   "掉落"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "rai",
+  "ipa": "rai̯",
+  "pos": "v",
+  "zh": [
+   "升",
+   "起",
+   "升起"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "swai",
+  "ipa": "swai̯",
+  "pos": "v",
+  "zh": [
+   "飞",
+   "飞翔"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "glun",
+  "ipa": "glun",
+  "pos": "v",
+  "zh": [
+   "游泳",
+   "游"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "wor",
+  "ipa": "wor",
+  "pos": "v",
+  "zh": [
+   "转",
+   "回转",
+   "旋转"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "oran",
+  "ipa": "ˈo.ran",
+  "pos": "v",
+  "zh": [
+   "流浪",
+   "漫游",
+   "游荡"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "som",
+  "ipa": "som",
+  "pos": "v",
+  "zh": [
+   "坐"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lei",
+  "ipa": "lei̯",
+  "pos": "v",
+  "zh": [
+   "躺",
+   "卧"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "swon",
+  "ipa": "swon",
+  "pos": "v",
+  "zh": [
+   "睡",
+   "睡觉"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lán",
+  "ipa": "laːn",
+  "pos": "v",
+  "zh": [
+   "屹立",
+   "长存",
+   "矗立"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "thau",
+  "ipa": "θau̯",
+  "pos": "v",
+  "zh": [
+   "死",
+   "逝去",
+   "死亡"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "dhes",
+  "ipa": "ðes",
+  "pos": "v",
+  "zh": [
+   "活",
+   "生存",
+   "活着"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "ñar",
+  "ipa": "ɲar",
+  "pos": "v",
+  "zh": [
+   "出生",
+   "诞生"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "al",
+  "ipa": "al",
+  "pos": "v",
+  "zh": [
+   "生长",
+   "长"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "dar",
+  "ipa": "dar",
+  "pos": "v",
+  "zh": [
+   "给",
+   "给予"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "kam",
+  "ipa": "kam",
+  "pos": "v",
+  "zh": [
+   "取",
+   "拿",
+   "拿取"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "grem",
+  "ipa": "grem",
+  "pos": "v",
+  "zh": [
+   "握",
+   "持",
+   "握住"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "bor",
+  "ipa": "bor",
+  "pos": "v",
+  "zh": [
+   "背负",
+   "携带",
+   "背",
+   "带"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "shan",
+  "ipa": "ʃan",
+  "pos": "v",
+  "zh": [
+   "掷",
+   "抛",
+   "扔"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "ren",
+  "ipa": "ren",
+  "pos": "v",
+  "zh": [
+   "递",
+   "传",
+   "传递"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "tan",
+  "ipa": "tan",
+  "pos": "v",
+  "zh": [
+   "做",
+   "制作"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "dem",
+  "ipa": "dem",
+  "pos": "v",
+  "zh": [
+   "建造",
+   "建",
+   "盖"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "tarn",
+  "ipa": "tarn",
+  "pos": "v",
+  "zh": [
+   "劈",
+   "砍",
+   "断",
+   "砍断"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "bres",
+  "ipa": "bres",
+  "pos": "v",
+  "zh": [
+   "折断",
+   "碎",
+   "破碎"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "skir",
+  "ipa": "skir",
+  "pos": "v",
+  "zh": [
+   "刻",
+   "凿",
+   "雕刻"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "wel",
+  "ipa": "wel",
+  "pos": "v",
+  "zh": [
+   "编织",
+   "织"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "ser",
+  "ipa": "ser",
+  "pos": "v",
+  "zh": [
+   "播种",
+   "种"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lym",
+  "ipa": "lym",
+  "pos": "v",
+  "zh": [
+   "洗",
+   "清洗"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "kur",
+  "ipa": "kur",
+  "pos": "v",
+  "zh": [
+   "煮",
+   "烹",
+   "烹煮"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "jem",
+  "ipa": "jem",
+  "pos": "v",
+  "zh": [
+   "吃",
+   "进食"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "sul",
+  "ipa": "sul",
+  "pos": "v",
+  "zh": [
+   "喝",
+   "饮"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "gwar",
+  "ipa": "gwar",
+  "pos": "v",
+  "zh": [
+   "战斗",
+   "打仗",
+   "打斗"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "skath",
+  "ipa": "skaθ",
+  "pos": "v",
+  "zh": [
+   "狩猎",
+   "打猎",
+   "猎"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lys",
+  "ipa": "lys",
+  "pos": "v",
+  "zh": [
+   "打开",
+   "开"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "klus",
+  "ipa": "klus",
+  "pos": "v",
+  "zh": [
+   "关闭",
+   "关"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "brin",
+  "ipa": "brin",
+  "pos": "v",
+  "zh": [
+   "燃烧",
+   "烧"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "thrin",
+  "ipa": "θrin",
+  "pos": "v",
+  "zh": [
+   "绑",
+   "系",
+   "捆绑"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "dhil",
+  "ipa": "ðil",
+  "pos": "v",
+  "zh": [
+   "寻得",
+   "发现",
+   "找到"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "thol",
+  "ipa": "θol",
+  "pos": "v",
+  "zh": [
+   "失去",
+   "丢失"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "jes",
+  "ipa": "jes",
+  "pos": "v",
+  "zh": [
+   "开始"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "sath",
+  "ipa": "saθ",
+  "pos": "v",
+  "zh": [
+   "完结",
+   "耗尽",
+   "结束",
+   "完成"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "rim",
+  "ipa": "rim",
+  "pos": "v",
+  "zh": [
+   "数",
+   "计数",
+   "点数"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "fus",
+  "ipa": "fus",
+  "pos": "v",
+  "zh": [
+   "吹",
+   "鼓风"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "vár",
+  "ipa": "vaːr",
+  "pos": "v",
+  "zh": [
+   "看见",
+   "看",
+   "见"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "hyr",
+  "ipa": "xyr",
+  "pos": "v",
+  "zh": [
+   "听见",
+   "听"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "fes",
+  "ipa": "fes",
+  "pos": "v",
+  "zh": [
+   "嗅",
+   "闻"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "vys",
+  "ipa": "vys",
+  "pos": "v",
+  "zh": [
+   "知道",
+   "晓得"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "kyn",
+  "ipa": "kyn",
+  "pos": "v",
+  "zh": [
+   "学习",
+   "学"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "møn",
+  "ipa": "møn",
+  "pos": "v",
+  "zh": [
+   "思考",
+   "想",
+   "思索"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "mír",
+  "ipa": "miːr",
+  "pos": "v",
+  "zh": [
+   "铭记",
+   "记得",
+   "记住"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "thel",
+  "ipa": "θel",
+  "pos": "v",
+  "zh": [
+   "忘记",
+   "忘",
+   "遗忘"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "dhir",
+  "ipa": "ðir",
+  "pos": "v",
+  "zh": [
+   "循迹",
+   "追索",
+   "追踪"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "søl",
+  "ipa": "søl",
+  "pos": "v",
+  "zh": [
+   "爱",
+   "珍视",
+   "爱惜"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "jur",
+  "ipa": "jur",
+  "pos": "v",
+  "zh": [
+   "想要",
+   "愿",
+   "要",
+   "希望"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "throm",
+  "ipa": "θrom",
+  "pos": "v",
+  "zh": [
+   "恐惧",
+   "害怕",
+   "惧怕"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "nur",
+  "ipa": "nur",
+  "pos": "v",
+  "zh": [
+   "哭泣",
+   "哭"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "hlas",
+  "ipa": "xlas",
+  "pos": "v",
+  "zh": [
+   "笑",
+   "大笑"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "søn",
+  "ipa": "søn",
+  "pos": "n",
+  "zh": [
+   "梦",
+   "梦境"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "syn",
+  "ipa": "syn",
+  "pos": "n",
+  "zh": [
+   "魂",
+   "心灵",
+   "内质",
+   "灵魂"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "jal",
+  "ipa": "jal",
+  "pos": "n",
+  "zh": [
+   "喜悦",
+   "欢喜",
+   "快乐"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "garm",
+  "ipa": "garm",
+  "pos": "n",
+  "zh": [
+   "怒",
+   "愤怒",
+   "怒气"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "nurn",
+  "ipa": "nurn",
+  "pos": "n",
+  "zh": [
+   "悲伤",
+   "哀伤",
+   "悲痛"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "thyr",
+  "ipa": "θyr",
+  "pos": "n",
+  "zh": [
+   "痛",
+   "疼痛"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "gor",
+  "ipa": "gor",
+  "pos": "adj",
+  "zh": [
+   "大的",
+   "大"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "ñil",
+  "ipa": "ɲil",
+  "pos": "adj",
+  "zh": [
+   "小的",
+   "小"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "lyn",
+  "ipa": "lyn",
+  "pos": "adj",
+  "zh": [
+   "长的",
+   "长"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "stum",
+  "ipa": "stum",
+  "pos": "adj",
+  "zh": [
+   "短的",
+   "短"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "hau",
+  "ipa": "xau̯",
+  "pos": "adj",
+  "zh": [
+   "高的",
+   "高"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "dyn",
+  "ipa": "dyn",
+  "pos": "adj",
+  "zh": [
+   "深的",
+   "深"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "brath",
+  "ipa": "braθ",
+  "pos": "adj",
+  "zh": [
+   "宽的",
+   "宽",
+   "宽阔的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "ñem",
+  "ipa": "ɲem",
+  "pos": "adj",
+  "zh": [
+   "窄的",
+   "窄",
+   "狭窄的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "gwom",
+  "ipa": "gwom",
+  "pos": "adj",
+  "zh": [
+   "重的",
+   "重"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "fim",
+  "ipa": "fim",
+  "pos": "adj",
+  "zh": [
+   "轻的",
+   "轻"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "swin",
+  "ipa": "swin",
+  "pos": "adj",
+  "zh": [
+   "快的",
+   "快",
+   "迅速的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "lom",
+  "ipa": "lom",
+  "pos": "adj",
+  "zh": [
+   "慢的",
+   "缓的",
+   "慢"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "dren",
+  "ipa": "dren",
+  "pos": "adj",
+  "zh": [
+   "强的",
+   "强壮的",
+   "强"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "thin",
+  "ipa": "θin",
+  "pos": "adj",
+  "zh": [
+   "弱的",
+   "弱"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "hom",
+  "ipa": "xom",
+  "pos": "adj",
+  "zh": [
+   "满的",
+   "满"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "thøs",
+  "ipa": "θøs",
+  "pos": "adj",
+  "zh": [
+   "空的",
+   "空"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "nár",
+  "ipa": "naːr",
+  "pos": "adj",
+  "zh": [
+   "新的",
+   "新绿的",
+   "新"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "ñes",
+  "ipa": "ɲes",
+  "pos": "adj",
+  "zh": [
+   "年幼的",
+   "新嫩的",
+   "幼小的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "tór",
+  "ipa": "toːr",
+  "pos": "adj",
+  "zh": [
+   "古老的",
+   "古老",
+   "古"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "jen",
+  "ipa": "jen",
+  "pos": "adj",
+  "zh": [
+   "好的",
+   "善的",
+   "好",
+   "善良的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "ulm",
+  "ipa": "ulm",
+  "pos": "adj",
+  "zh": [
+   "坏的",
+   "恶的",
+   "坏",
+   "邪恶的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "vai",
+  "ipa": "vai̯",
+  "pos": "adj",
+  "zh": [
+   "真的",
+   "真",
+   "是",
+   "诚然"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "shal",
+  "ipa": "ʃal",
+  "pos": "adj",
+  "zh": [
+   "假的",
+   "伪的",
+   "假",
+   "虚假的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "skil",
+  "ipa": "skil",
+  "pos": "adj",
+  "zh": [
+   "锋利的",
+   "锋利",
+   "锐利的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "sor",
+  "ipa": "sor",
+  "pos": "adj",
+  "zh": [
+   "干的",
+   "干燥的",
+   "干"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "kryl",
+  "ipa": "kryl",
+  "pos": "adj",
+  "zh": [
+   "冷的",
+   "寒冷的",
+   "冷"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "ñela",
+  "ipa": "ˈɲe.la",
+  "pos": "adj",
+  "zh": [
+   "柔软的",
+   "柔软",
+   "软"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "thys",
+  "ipa": "θys",
+  "pos": "adj",
+  "zh": [
+   "寂静的",
+   "无声的",
+   "寂静",
+   "安静的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "hál",
+  "ipa": "xaːl",
+  "pos": "adj",
+  "zh": [
+   "神圣的",
+   "神圣"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "val",
+  "ipa": "val",
+  "pos": "adj",
+  "zh": [
+   "银的",
+   "银白的",
+   "银白"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "los",
+  "ipa": "los",
+  "pos": "n",
+  "zh": [
+   "地方",
+   "场所",
+   "处所"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "vetha",
+  "ipa": "ˈve.θa",
+  "pos": "n",
+  "zh": [
+   "时间",
+   "时距"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "jern",
+  "ipa": "jern",
+  "pos": "n",
+  "zh": [
+   "年",
+   "年份"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "eln",
+  "ipa": "eln",
+  "pos": "n",
+  "zh": [
+   "清晨",
+   "早晨",
+   "晨"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "surn",
+  "ipa": "surn",
+  "pos": "n",
+  "zh": [
+   "黄昏",
+   "傍晚"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "nu",
+  "ipa": "nu",
+  "pos": "adv",
+  "zh": [
+   "现在",
+   "如今",
+   "当下"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "vèr",
+  "ipa": "vɛr",
+  "pos": "n",
+  "zh": [
+   "往昔",
+   "远时",
+   "昔日"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "nes",
+  "ipa": "nes",
+  "pos": "adj",
+  "zh": [
+   "近的",
+   "近"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "tau",
+  "ipa": "tau̯",
+  "pos": "adj",
+  "zh": [
+   "远的",
+   "远"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "medhan",
+  "ipa": "ˈme.ðan",
+  "pos": "n",
+  "zh": [
+   "中间",
+   "当中",
+   "中央"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "skarn",
+  "ipa": "skarn",
+  "pos": "n",
+  "zh": [
+   "边缘",
+   "崖缘",
+   "边"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "ilm",
+  "ipa": "ilm",
+  "pos": "func",
+  "zh": [
+   "之内",
+   "里面",
+   "内"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "es",
+  "ipa": "es",
+  "pos": "func",
+  "zh": [
+   "之外",
+   "外面",
+   "外"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "hen",
+  "ipa": "xen",
+  "pos": "func",
+  "zh": [
+   "之前",
+   "前"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "dur",
+  "ipa": "dur",
+  "pos": "func",
+  "zh": [
+   "之后",
+   "后"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "thes",
+  "ipa": "θes",
+  "pos": "func",
+  "zh": [
+   "之上",
+   "上面",
+   "上"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "nol",
+  "ipa": "nol",
+  "pos": "func",
+  "zh": [
+   "之下",
+   "下面",
+   "下"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "hwel",
+  "ipa": "xwel",
+  "pos": "n",
+  "zh": [
+   "左",
+   "左边"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "drel",
+  "ipa": "drel",
+  "pos": "n",
+  "zh": [
+   "右",
+   "右边"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "sil",
+  "ipa": "sil",
+  "pos": "v",
+  "zh": [
+   "言说",
+   "吟诵",
+   "唱",
+   "说",
+   "歌唱"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "kai",
+  "ipa": "kai̯",
+  "pos": "v",
+  "zh": [
+   "呼唤",
+   "召唤",
+   "命名",
+   "呼喊"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "kes",
+  "ipa": "kes",
+  "pos": "v",
+  "zh": [
+   "问",
+   "询问",
+   "提问"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "res",
+  "ipa": "res",
+  "pos": "v",
+  "zh": [
+   "回答",
+   "答"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "shel",
+  "ipa": "ʃel",
+  "pos": "v",
+  "zh": [
+   "欺骗",
+   "骗"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "mang",
+  "ipa": "maŋ",
+  "pos": "v",
+  "zh": [
+   "交易",
+   "买卖"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "seth",
+  "ipa": "seθ",
+  "pos": "n",
+  "zh": [
+   "词",
+   "话语",
+   "言辞"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "neth",
+  "ipa": "neθ",
+  "pos": "n",
+  "zh": [
+   "事",
+   "事物",
+   "事迹",
+   "事情"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "nym",
+  "ipa": "nym",
+  "pos": "n",
+  "zh": [
+   "名字",
+   "名"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "mirn",
+  "ipa": "mirn",
+  "pos": "n",
+  "zh": [
+   "记号",
+   "铭痕",
+   "标记"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "thang",
+  "ipa": "θaŋ",
+  "pos": "n",
+  "zh": [
+   "法",
+   "规约",
+   "法度",
+   "规则"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "grath",
+  "ipa": "graθ",
+  "pos": "n",
+  "zh": [
+   "誓言",
+   "誓约",
+   "誓"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "dhaul",
+  "ipa": "ðau̯l",
+  "pos": "n",
+  "zh": [
+   "神",
+   "神灵"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "holn",
+  "ipa": "xoln",
+  "pos": "n",
+  "zh": [
+   "和平",
+   "安宁",
+   "平安"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "golm",
+  "ipa": "golm",
+  "pos": "n",
+  "zh": [
+   "财货",
+   "财物",
+   "财富"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "el",
+  "ipa": "el",
+  "pos": "v",
+  "zh": [
+   "在",
+   "是",
+   "存在"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "ul",
+  "ipa": "ul",
+  "pos": "adv",
+  "zh": [
+   "不",
+   "否",
+   "非"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "vath",
+  "ipa": "vaθ",
+  "pos": "adv",
+  "zh": [
+   "于远古",
+   "磨尽",
+   "太古"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "hol",
+  "ipa": "xol",
+  "pos": "func",
+  "zh": [
+   "所有",
+   "全部",
+   "一切"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "mai",
+  "ipa": "mai̯",
+  "pos": "func",
+  "zh": [
+   "许多",
+   "很多",
+   "多"
+  ],
+  "cls": "strong",
+  "field": "功能词"
+ },
+ {
+  "roman": "lith",
+  "ipa": "liθ",
+  "pos": "func",
+  "zh": [
+   "少许",
+   "少量",
+   "一点"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "ves",
+  "ipa": "ves",
+  "pos": "func",
+  "zh": [
+   "一些",
+   "些许"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "em",
+  "ipa": "em",
+  "pos": "adv",
+  "zh": [
+   "也",
+   "亦"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "nil",
+  "ipa": "nil",
+  "pos": "adv",
+  "zh": [
+   "只",
+   "仅",
+   "仅仅"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "jo",
+  "ipa": "jo",
+  "pos": "func",
+  "zh": [
+   "而",
+   "然后",
+   "接着"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "nas",
+  "ipa": "nas",
+  "pos": "func",
+  "zh": [
+   "但是",
+   "然而",
+   "可是"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "ai",
+  "ipa": "ai̯",
+  "pos": "func",
+  "zh": [
+   "啊",
+   "哦"
+  ],
+  "cls": "strong",
+  "field": "功能词"
+ },
+ {
+  "roman": "=ve",
+  "ipa": "ve",
+  "pos": "func",
+  "zh": [
+   "与",
+   "和"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "=va",
+  "ipa": "va",
+  "pos": "func",
+  "zh": [
+   "亲历示证"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "=dhi",
+  "ipa": "ði",
+  "pos": "func",
+  "zh": [
+   "推断示证"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "=re",
+  "ipa": "re",
+  "pos": "func",
+  "zh": [
+   "传闻示证"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "thøn",
+  "ipa": "θøn",
+  "pos": "num",
+  "zh": [
+   "零",
+   "无"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "en",
+  "ipa": "en",
+  "pos": "num",
+  "zh": [
+   "一"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "dy",
+  "ipa": "dy",
+  "pos": "num",
+  "zh": [
+   "二"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "thil",
+  "ipa": "θil",
+  "pos": "num",
+  "zh": [
+   "三"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "vor",
+  "ipa": "vor",
+  "pos": "num",
+  "zh": [
+   "四"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "lim",
+  "ipa": "lim",
+  "pos": "num",
+  "zh": [
+   "五"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "zol",
+  "ipa": "zol",
+  "pos": "num",
+  "zh": [
+   "六"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "nau",
+  "ipa": "nau̯",
+  "pos": "num",
+  "zh": [
+   "七"
+  ],
+  "cls": "strong",
+  "field": "数词"
+ },
+ {
+  "roman": "oth",
+  "ipa": "oθ",
+  "pos": "num",
+  "zh": [
+   "八"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "gen",
+  "ipa": "gen",
+  "pos": "num",
+  "zh": [
+   "九"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "dhul",
+  "ipa": "ðul",
+  "pos": "num",
+  "zh": [
+   "十"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "mel",
+  "ipa": "mel",
+  "pos": "num",
+  "zh": [
+   "十一"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "lár",
+  "ipa": "laːr",
+  "pos": "num",
+  "zh": [
+   "十二",
+   "满数"
+  ],
+  "cls": "strong",
+  "field": "数词"
+ },
+ {
+  "roman": "ýlan",
+  "ipa": "ˈyː.lan",
+  "pos": "num",
+  "zh": [
+   "一百四十四"
+  ],
+  "cls": "strong",
+  "field": "数词"
+ },
+ {
+  "roman": "órvan",
+  "ipa": "ˈoːr.van",
+  "pos": "num",
+  "zh": [
+   "一千七百二十八"
+  ],
+  "cls": "strong",
+  "field": "数词"
+ },
+ {
+  "roman": "ni",
+  "ipa": "ni",
+  "pos": "pron",
+  "zh": [
+   "我"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "vy",
+  "ipa": "vy",
+  "pos": "pron",
+  "zh": [
+   "你"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "dhe",
+  "ipa": "ðe",
+  "pos": "pron",
+  "zh": [
+   "他",
+   "她"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "tha",
+  "ipa": "θa",
+  "pos": "pron",
+  "zh": [
+   "它"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "øs",
+  "ipa": "øs",
+  "pos": "pron",
+  "zh": [
+   "自身",
+   "自己"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "sa",
+  "ipa": "sa",
+  "pos": "pron",
+  "zh": [
+   "这"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "tor",
+  "ipa": "tor",
+  "pos": "pron",
+  "zh": [
+   "那"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "tër",
+  "ipa": "tər",
+  "pos": "pron",
+  "zh": [
+   "那",
+   "远古之那"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "ken",
+  "ipa": "ken",
+  "pos": "pron",
+  "zh": [
+   "谁"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kath",
+  "ipa": "kaθ",
+  "pos": "pron",
+  "zh": [
+   "什么"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kor",
+  "ipa": "kor",
+  "pos": "pron",
+  "zh": [
+   "哪个",
+   "或"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kis",
+  "ipa": "kis",
+  "pos": "pron",
+  "zh": [
+   "何处",
+   "哪里"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kol",
+  "ipa": "kol",
+  "pos": "pron",
+  "zh": [
+   "由何",
+   "为何",
+   "为什么"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kum",
+  "ipa": "kum",
+  "pos": "pron",
+  "zh": [
+   "如何",
+   "怎么"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kir",
+  "ipa": "kir",
+  "pos": "pron",
+  "zh": [
+   "何时",
+   "什么时候"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kem",
+  "ipa": "kem",
+  "pos": "pron",
+  "zh": [
+   "几",
+   "多少"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "-neth",
+  "ipa": "neθ",
+  "pos": "suffix",
+  "zh": [
+   "动作/结果名词化"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-we",
+  "ipa": "we",
+  "pos": "suffix",
+  "zh": [
+   "施事名词化",
+   "…者"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-os",
+  "ipa": "os",
+  "pos": "suffix",
+  "zh": [
+   "处所名词化",
+   "器物名词化"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-il",
+  "ipa": "il",
+  "pos": "suffix",
+  "zh": [
+   "指小",
+   "小称"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-ur",
+  "ipa": "ur",
+  "pos": "suffix",
+  "zh": [
+   "增大",
+   "大称"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-a",
+  "ipa": "a",
+  "pos": "suffix",
+  "zh": [
+   "属性形容词化",
+   "有X的",
+   "如X的"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-yn",
+  "ipa": "yn",
+  "pos": "suffix",
+  "zh": [
+   "抽象性质名词化"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-ta-",
+  "ipa": "ta",
+  "pos": "suffix",
+  "zh": [
+   "动词化",
+   "使动"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-im",
+  "ipa": "im",
+  "pos": "suffix",
+  "zh": [
+   "序数"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-um",
+  "ipa": "um",
+  "pos": "suffix",
+  "zh": [
+   "次数副词化",
+   "方式副词化"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-ir",
+  "ipa": "ir",
+  "pos": "suffix",
+  "zh": [
+   "正向程度副词化",
+   "变得更X"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-ol",
+  "ipa": "ol",
+  "pos": "suffix",
+  "zh": [
+   "反向程度副词化",
+   "变得离X"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ }
+];
+</script>
+
+<script>
+/* ============================================================
+ * Sìlneth 翻译引擎  (silneth-engine.js)
+ * 依据 silneth-morphology.md（86 测试向量）与 silneth-loanwords.md。
+ * 纯浏览器/Node 双兼容：浏览器读 window.SILNETH_LEXICON，Node 读同目录 JSON。
+ * ============================================================ */
+(function (root) {
+  'use strict';
+
+  var LEX = (typeof window !== 'undefined' && window.SILNETH_LEXICON) ||
+    (function () {
+      try { return require('./silneth-lexicon.json'); } catch (e) { return []; }
+    })();
+
+  /* ---------- 元音系统（§1.2） ----------
+   * V[level0token] = [级0, 级1, 级2]
+   * œ̀ = U+0153 U+0300 ; ǿ = U+01FF ; ỳ = U+1EF3 ; 其余重音符为预组合。 */
+  var OE_GRAVE = 'œ̀';   // œ̀
+  var Y_GRAVE = 'ỳ';         // ỳ
+  var OE_ACUTE = 'ǿ';         // ǿ
+
+  var V = {
+    // 短元音：满 → 松 → schwa
+    'i': ['i', 'ì', 'ë'], 'y': ['y', Y_GRAVE, 'ë'], 'e': ['e', 'è', 'ë'],
+    'ø': ['ø', OE_GRAVE, 'ë'], 'a': ['a', 'à', 'ë'], 'o': ['o', 'ò', 'ë'], 'u': ['u', 'ù', 'ë'],
+    // 长元音：满 → 去长松化 → 停级1（永不 ë）
+    'í': ['í', 'ì', 'ì'], 'ý': ['ý', Y_GRAVE, Y_GRAVE], 'é': ['é', 'è', 'è'],
+    'ǿ': [OE_ACUTE, OE_GRAVE, OE_GRAVE], 'á': ['á', 'à', 'à'], 'ó': ['ó', 'ò', 'ò'], 'ú': ['ú', 'ù', 'ù'],
+    // 双元音：首成分松化，永不坍缩
+    'ai': ['ai', 'ài', 'ài'], 'au': ['au', 'àu', 'àu'], 'ei': ['ei', 'èi', 'èi'], 'oi': ['oi', 'òi', 'òi']
+  };
+  // 级0 元音（用于 erode 扫描；长优先于短、双优先于单已由长度保证）
+  var LEVEL0_VOWELS = ['ai', 'au', 'ei', 'oi', 'í', 'ý', 'é', OE_ACUTE, 'á', 'ó', 'ú', 'i', 'y', 'e', 'ø', 'a', 'o', 'u'];
+
+  // 全部元音形（含磨蚀形），供 lastVowel / 字形切分 使用（长度降序）
+  var ALL_VOWELS = ['ài', 'àu', 'èi', 'òi', 'ai', 'au', 'ei', 'oi', OE_GRAVE, OE_ACUTE,
+    'í', 'ý', 'é', 'á', 'ó', 'ú', 'ì', Y_GRAVE, 'è', 'à', 'ò', 'ù', 'ë', 'i', 'y', 'e', 'ø', 'a', 'o', 'u'];
+
+  // 松化形 → 满级短元音基（供 glide 判定）
+  var DEERODE = {};
+  DEERODE['ì'] = 'i'; DEERODE[Y_GRAVE] = 'y'; DEERODE['è'] = 'e'; DEERODE[OE_GRAVE] = 'ø';
+  DEERODE['à'] = 'a'; DEERODE['ò'] = 'o'; DEERODE['ù'] = 'u';
+  var LONG2SHORT = { 'í': 'i', 'ý': 'y', 'é': 'e' }; LONG2SHORT[OE_ACUTE] = 'ø'; LONG2SHORT['á'] = 'a'; LONG2SHORT['ó'] = 'o'; LONG2SHORT['ú'] = 'u';
+
+  // 辅音音素（含二合），供 coda 计数与字形切分
+  var CONS_DIGRAPH = ['th', 'sh', 'dh', 'ng', 'll'];
+  var CONS_SINGLE = ['m', 'n', 'ñ', 'p', 't', 'k', 'b', 'd', 'g', 'f', 's', 'h', 'v', 'z', 'l', 'r', 'w', 'j'];
+
+  function isVowelStr(ch) {
+    return ALL_VOWELS.indexOf(ch) !== -1 || 'iyeøaou'.indexOf(ch) !== -1;
+  }
+
+  /* ---------- 词根元音磨蚀（erode，§1，V1–V12） ---------- */
+  function isStrong(root) {
+    var i = 0, s = root;
+    while (i < s.length) {
+      var m = matchFrom(s, i, LEVEL0_VOWELS);
+      if (m) {
+        // 强类＝含长元音或双元音
+        if (['ai', 'au', 'ei', 'oi', 'í', 'ý', 'é', OE_ACUTE, 'á', 'ó', 'ú'].indexOf(m) !== -1) return true;
+        i += m.length;
+      } else { i += 1; }
+    }
+    return false;
+  }
+
+  function matchFrom(s, i, list) {
+    for (var k = 0; k < list.length; k++) {
+      if (s.substr(i, list[k].length) === list[k]) return list[k];
+    }
+    return null;
+  }
+
+  function erode(root, level) {
+    if (typeof root !== 'string') return root;
+    if (!level) return root;
+    var strong = isStrong(root);
+    var out = '', i = 0;
+    while (i < root.length) {
+      var v = matchFrom(root, i, LEVEL0_VOWELS);
+      if (v) {
+        var forms = V[v];
+        var lvl = level;
+        // 强类词根级2 停级1（永不 ë）——对全根有效（模糊处 A1 取「全根停级1」）
+        if (strong && level === 2) lvl = 1;
+        out += forms ? forms[lvl] : v;
+        i += v.length;
+      } else {
+        out += root[i]; i += 1;
+      }
+    }
+    return out;
+  }
+
+  /* ---------- 词尾分析：coda / lastVowel ---------- */
+  function lastVowelToken(stem) {
+    var last = null, i = 0;
+    while (i < stem.length) {
+      var v = matchFrom(stem, i, ALL_VOWELS);
+      if (v) { last = v; i += v.length; } else { i += 1; }
+    }
+    return last;
+  }
+  function endsInVowel(stem) {
+    // 词尾无辅音音素即为元音收尾
+    return trailingConsonants(stem) === '';
+  }
+  function trailingConsonants(stem) {
+    // 返回最后一个元音之后的辅音串
+    var i = 0, lastVEnd = 0;
+    while (i < stem.length) {
+      var v = matchFrom(stem, i, ALL_VOWELS);
+      if (v) { i += v.length; lastVEnd = i; }
+      else { i += 1; }
+    }
+    return stem.slice(lastVEnd);
+  }
+  function consPhonemeCount(cluster) {
+    var i = 0, n = 0;
+    while (i < cluster.length) {
+      var c = matchFrom(cluster, i, CONS_DIGRAPH) || matchFrom(cluster, i, CONS_SINGLE);
+      if (c) { n += 1; i += c.length; } else { i += 1; }
+    }
+    return n;
+  }
+
+  /* ---------- 滑音选择（R1，§1.5，V13–V26） ---------- */
+  function glide(finalTok) {
+    if (finalTok === 'ë') return 'j';
+    if (['ai', 'ei', 'oi', 'ài', 'èi', 'òi'].indexOf(finalTok) !== -1) return 'j';
+    if (['au', 'àu'].indexOf(finalTok) !== -1) return 'w';
+    var base = DEERODE[finalTok] || LONG2SHORT[finalTok] || finalTok;
+    return (base === 'o' || base === 'u') ? 'w' : 'j';
+  }
+
+  /* ---------- 语素缀接：R1 滑音 / R2 插 e（V27–V31） ---------- */
+  function joinMorph(stem, suf) {
+    if (!suf) return stem;
+    var first = suf.charAt(0);
+    if (isVowelStr(first)) {
+      // 元音起首：若词干元音收尾则插滑音
+      if (endsInVowel(stem)) {
+        var fv = lastVowelToken(stem);
+        return stem + glide(fv) + suf;
+      }
+      return stem + suf;
+    }
+    // 辅音起首：词内非法簇（coda ≥2 音素）则插 e
+    var coda = trailingConsonants(stem);
+    if (consPhonemeCount(coda) >= 2) return stem + 'e' + suf;
+    return stem + suf;
+  }
+
+  /* ---------- 名词变格（§2.2，V32–V39） ---------- */
+  var CASE_SUFFIX = { NOM: '', ACC: 'on', GEN: 'e', DAT: 'ir', LOC: 'is', ABL: 'ol', INS: 'um' };
+  function decline(nounRoman, opts) {
+    opts = opts || {};
+    if (typeof nounRoman !== 'string' || !nounRoman) return { ok: false, error: '空词根' };
+    var stem = nounRoman;
+    if (opts.plural) stem = endsInVowel(stem) ? stem + 'n' : stem + 'in';
+    var suf = CASE_SUFFIX[(opts['case'] || 'NOM')];
+    if (suf == null) return { ok: false, error: '未知格：' + opts['case'] };
+    return joinMorph(stem, suf);
+  }
+
+  /* ---------- 动词定式（§2.4，V40–V52） ---------- */
+  var PERSON = { 1: { sg: 'e', pl: 'er' }, 2: { sg: 'o', pl: 'or' }, 3: { sg: 'a', pl: 'ar' } };
+  function conjugate(rootRoman, opts) {
+    opts = opts || {};
+    if (typeof rootRoman !== 'string' || !rootRoman) return { ok: false, error: '空词根' };
+    var level = opts.level || 0;
+    var person = opts.person || 3;
+    var stem = erode(rootRoman, level);           // ① 磨蚀级词根
+    if (opts.caus) stem = joinMorph(stem, 'ta');   // -ta-（不磨）
+    if (opts.mid) stem = joinMorph(stem, 'u');    // -u-（中受动）
+    if (opts.pfv) stem = joinMorph(stem, 's');    // -s-（完整体）
+    var pTable = PERSON[person];
+    if (!pTable) return { ok: false, error: '未知人称：' + person };
+    var psuf = pTable[opts.plural ? 'pl' : 'sg'];
+    return joinMorph(stem, psuf);
+  }
+  // 非限定形（分词/副动词，供例文与关系化）
+  function nonfinite(rootRoman, kind, level) {
+    var stem = erode(rootRoman, level || 0);
+    var suf = { ptcp: 'an', midptcp: 'un', cvb: 'um', cvbpfv: 'sum' }[kind] || 'an';
+    return joinMorph(stem, suf);
+  }
+
+  /* ---------- 示证附着词（§2.4.4，V53–V58） ---------- */
+  function evidential(kind, t, i) {
+    var base = { va: 'va', dhi: 'dhi', re: 're' }[kind];
+    if (!base) return '';
+    t = t || 0; i = i || 0;
+    var lvl = (kind === 're') ? Math.min(t + i, 2) : Math.min(t, 2);
+    return '=' + erode(base, lvl);
+  }
+
+  /* ---------- 罗马字 → Mírneth 字形序列（第三章，V77–V85） ---------- */
+  var CONS_GLYPH = {
+    p: 'pe', b: 'be', m: 'me', f: 'fe', v: 've', t: 'te', d: 'de', n: 'ne',
+    s: 'se', z: 'ze', th: 'the', dh: 'dhe', sh: 'she', 'ñ': 'nye', k: 'ke',
+    g: 'ge', ng: 'nge', h: 'he', r: 're', l: 'le', ll: 'lle', w: 'we', j: 'je'
+  };
+  var VOWEL_GLYPH = {
+    'i': { key: 'i' }, 'y': { key: 'y' }, 'e': { key: 'e' }, 'ø': { key: 'oe' },
+    'a': { key: 'a' }, 'o': { key: 'o' }, 'u': { key: 'u' }, 'ë': { key: 'schwa' },
+    'í': { key: 'i', mods: ['sky'] }, 'ý': { key: 'y', mods: ['sky'] }, 'é': { key: 'e', mods: ['sky'] },
+    'ì': { key: 'i', mods: ['crack'] }, 'è': { key: 'e', mods: ['crack'] },
+    'à': { key: 'a', mods: ['crack'] }, 'ò': { key: 'o', mods: ['crack'] }, 'ù': { key: 'u', mods: ['crack'] }
+  };
+  VOWEL_GLYPH[OE_ACUTE] = { key: 'oe', mods: ['sky'] };
+  VOWEL_GLYPH['á'] = { key: 'a', mods: ['sky'] }; VOWEL_GLYPH['ó'] = { key: 'o', mods: ['sky'] }; VOWEL_GLYPH['ú'] = { key: 'u', mods: ['sky'] };
+  VOWEL_GLYPH[Y_GRAVE] = { key: 'y', mods: ['crack'] };
+  VOWEL_GLYPH[OE_GRAVE] = { key: 'oe', mods: ['crack'] };
+  var PUNCT_GLYPH = { '.': 'fall', '~': 'hang', '?': 'rise', '!': 'voc', '—': 'pause', '=': 'clitic', '«': 'pause', '»': 'pause', ':': 'fall' };
+  var DIGRAPH_GLYPH = ['th', 'dh', 'sh', 'ng', 'll'];
+
+  function toGlyphs(roman) {
+    var out = [];
+    if (typeof roman !== 'string') return out;
+    var i = 0;
+    while (i < roman.length) {
+      var ch = roman.charAt(i);
+      if (ch === ' ') { i += 1; continue; }
+      if (PUNCT_GLYPH[ch]) { out.push({ key: PUNCT_GLYPH[ch], mods: [] }); i += 1; continue; }
+      // œ̀ (2 cp)
+      if (roman.substr(i, 2) === OE_GRAVE) { out.push({ key: 'oe', mods: ['crack'] }); i += 2; continue; }
+      // 二合辅音（大小写不敏感）
+      var two = roman.substr(i, 2).toLowerCase();
+      if (DIGRAPH_GLYPH.indexOf(two) !== -1) { out.push({ key: CONS_GLYPH[two], mods: [] }); i += 2; continue; }
+      // 元音（含带符）
+      if (VOWEL_GLYPH[ch]) { var g = VOWEL_GLYPH[ch]; out.push({ key: g.key, mods: (g.mods || []).slice() }); i += 1; continue; }
+      // 单辅音
+      var lc = ch.toLowerCase();
+      if (CONS_GLYPH[lc]) { out.push({ key: CONS_GLYPH[lc], mods: [] }); i += 1; continue; }
+      if (ch === 'ñ') { out.push({ key: 'nye', mods: [] }); i += 1; continue; }
+      i += 1; // 跳过未知字符（如中点 ·）
+    }
+    return out;
+  }
+
+  /* ---------- 词库检索 ---------- */
+  function normalize(x) { return (x == null ? '' : String(x)).trim().toLowerCase(); }
+  function searchLexicon(query) {
+    var q = normalize(query);
+    if (!q) return [];
+    var hits = [];
+    for (var i = 0; i < LEX.length; i++) {
+      var e = LEX[i];
+      var rm = normalize(e.roman);
+      var zhArr = e.zh || [];
+      var zhJoin = zhArr.join(' ');
+      var score = -1;
+      if (rm === q) score = 100;
+      else if (zhArr.indexOf(query) !== -1 || zhArr.indexOf(q) !== -1) score = 90;
+      else if (rm.indexOf(q) === 0) score = 70;
+      else if (rm.indexOf(q) !== -1) score = 50;
+      else if (zhJoin.indexOf(q) !== -1) score = 40;
+      if (score >= 0) hits.push({ e: e, s: score });
+    }
+    hits.sort(function (a, b) { return b.s - a.s; });
+    return hits.map(function (h) {
+      return { roman: h.e.roman, ipa: h.e.ipa, pos: h.e.pos, zh: h.e.zh, cls: h.e.cls, field: h.e.field };
+    });
+  }
+  // 派生词补充表（303 词根不直接收录的常用派生/复合，供直译分词）
+  var SUPPLEMENT = {
+    '歌': { roman: 'silneth', pos: 'n', zh: ['歌'] },
+    '歌曲': { roman: 'silneth', pos: 'n', zh: ['歌'] },
+    '讲述': { roman: 'silneth', pos: 'n', zh: ['讲述'] },
+    '歌者': { roman: 'silwe', pos: 'n', zh: ['歌者'] },
+    '言说者': { roman: 'silwe', pos: 'n', zh: ['歌者'] },
+    '诵厅': { roman: 'silos', pos: 'n', zh: ['诵厅'] },
+    '这里': { roman: 'sa', pos: 'pron', zh: ['这里'] },
+    '那里': { roman: 'tor', pos: 'pron', zh: ['那里'] },
+    '此处': { roman: 'sa', pos: 'pron', zh: ['这里'] }
+  };
+  // 内部：按精确中文词或罗马字取单个词条
+  var ZH_INDEX = null;
+  function buildZhIndex() {
+    if (ZH_INDEX) return ZH_INDEX;
+    ZH_INDEX = {};
+    for (var i = 0; i < LEX.length; i++) {
+      var e = LEX[i];
+      (e.zh || []).forEach(function (z) {
+        if (z && !ZH_INDEX[z]) ZH_INDEX[z] = e;
+      });
+    }
+    Object.keys(SUPPLEMENT).forEach(function (z) { if (!ZH_INDEX[z]) ZH_INDEX[z] = SUPPLEMENT[z]; });
+    return ZH_INDEX;
+  }
+  function entryByRoman(rm) {
+    rm = normalize(rm);
+    for (var i = 0; i < LEX.length; i++) if (normalize(LEX[i].roman) === rm) return LEX[i];
+    return null;
+  }
+
+  /* ============================================================
+   * 外来专名音译（silneth-loanwords.md）
+   * 规则引擎 + 规范工作示例的权威定形表
+   * ============================================================ */
+  // 规范第四节 15 例的权威定形（含 §3 美化）
+  var LOAN_CANON = {
+    'acrab': ['Akrabe', 'ˈa.kra.be', ['a→a, k→k, r→r, a→a, b→b（词末浊塞音非法）', 'L4(iii) 词末补 -e → Akrabe']],
+    'claude': ['Klóde', 'ˈkloː.de', ['kl 合法声母簇', 'au→ó（库外双元音取首长元音，入不褪层）', '词末 d 非法 → 补 -e', '含长元音：磨蚀止步级1，永不归 ë']],
+    'anthropic': ['Anthropike', 'ˈan.θro.pi.ke', ['th=θ 原生音位', 'thr 合法簇', '词末 k 非法 → 补 -e', 'θ 是「灰烬之音」，名中带 th 自有苍古之感']],
+    'beijing': ['Beidjing', 'ˈbei̯.djiŋ', ['b→b, ei→ei', 'j(拼音)→dj', 'ng→ŋ 尾位合法']],
+    'shanghai': ['Shanghai', 'ˈʃaŋ.xai̯', ['sh→ʃ, ang→aŋ', 'h→x, ai→ai', 'ŋ 后接 h 非 n+g 串，无需 n·g']],
+    'tokyo': ['Tókjó', 'ˈtoː.kjoː', ['长音 ō→ó（两处）', 'kj 拗音＝阻音+滑音合法簇', '双长元音：整名落入不褪层，「东京不磨」']],
+    'paris': ['Pari', 'ˈpa.ri', ['原语优先（法 /paʁi/）', 'ʁ→r，词末静音 s 不入折算']],
+    'london': ['Landen', 'ˈlan.den', ['ʌ→a, ə→e（借词升格，ə 取 e）', '全短元音弱形，将来可磨作 Lànden→Lënden']],
+    'maria': ['Marija', 'ˈma.ri.ja', ['m a r i a 直映', 'i.a 元音相接 → R1 插 j']],
+    'maría': ['Marija', 'ˈma.ri.ja', ['同 Maria']],
+    'vladimir': ['Vladjimir', 'ˈvla.dji.mir', ['vl 合法簇', 'dʲ 颚化 → dj', '词末 r 合法']],
+    'muhammad': ['Muhamade', 'ˈmu.xa.ma.de', ['ħ→h(/x/)', '双写 mm 退单', '词末 d 非法 → 补 -e']],
+    'kim': ['Kimil', 'ˈki.mil', ['k i m 直映', '§3.1 单音节人名补 -il（爱称/入籍形），呼语用光杆 Ai, Kim!']],
+    'nguyen': ['Newín', 'ˈne.wiːn', ['ŋw→nw 词首（L3d ŋ→n）→ new-（插 e）', 'iə→í（库外双元音取首长元音）', '长 í 送此姓入不褪层']],
+    'nguyễn': ['Newín', 'ˈne.wiːn', ['同 Nguyen']],
+    'einstein': ['Ainstain', 'ˈai̯n.stai̯n', ['aɪ→ai（两处）', 'nʃt：n 归前尾，ʃt→st 一步简化', '双双元音全落不褪层，「为时空立法者，其名不磨」']]
+  };
+
+  // 拼音声母/韵母（简化，用于识别中文拼音输入）
+  var PINYIN_INITIAL = { zh: 'dj', ch: 'tj', sh: 'sh', j: 'dj', q: 'tj', x: 'sh', c: 's', z: 'z', r: 'r', b: 'b', p: 'p', m: 'm', f: 'f', d: 'd', t: 't', n: 'n', l: 'l', g: 'g', k: 'k', h: 'h', s: 's' };
+
+  // 通用（英/拉丁）字素折算——粗规则，保证产出合法词形
+  function ruleTransliterate(input) {
+    var steps = [];
+    var s = input.toLowerCase().replace(/[^a-zà-ÿ]/g, '');
+    if (!s) return { ok: false, error: '无可识别的拉丁字母', roman: '', ipa: '', steps: [] };
+    steps.push({ step: 'L0 预处理', detail: '清理为字母串：' + s });
+
+    // 常见二合/静音（英语向）
+    var rules = [
+      [/ph/g, 'f'], [/sh/g, 'ş'], [/ch/g, 'ç'], [/tch/g, 'ç'], [/th/g, 'þ'],
+      [/qu/g, 'kw'], [/ck/g, 'k'], [/wh/g, 'w'], [/^kn/g, 'n'], [/^wr/g, 'r'], [/^gn/g, 'n'],
+      [/ oo/g, 'ú'], [/oo/g, 'ú'], [/ee/g, 'í'], [/ea/g, 'í'],
+      [/[^aeiou]?tion/g, 'şen']
+    ];
+    rules.forEach(function (r) { s = s.replace(r[0], r[1]); });
+    // 塞擦音占位符 → 声母折算
+    s = s.replace(/ç/g, 'tj').replace(/ş/g, 'sh').replace(/þ/g, 'th');
+    // j → dj（拼音/英语通吃：英语 j=dʒ→dj）
+    s = s.replace(/j(?![aeiou]?$)/g, 'dj').replace(/j/g, 'dj');
+    // x → ks
+    s = s.replace(/x/g, 'ks');
+    // c 依后元音
+    s = s.replace(/c(?=[ei])/g, 's').replace(/c/g, 'k');
+    // 游离 q（无 u 相随）→ k；Sìlneth 无 /q/
+    s = s.replace(/q/g, 'k');
+    // y 作辅音（词首/元音前）→ j，其余作元音 → i
+    s = s.replace(/^y(?=[aeiou])/g, 'j').replace(/y/g, 'i');
+    steps.push({ step: 'L1 音位折算', detail: '折算辅音丛/塞擦音后：' + s });
+
+    // ll → l（0.3 禁 ll 字位）
+    s = s.replace(/ll/g, 'l');
+    // 词首 ng → n
+    s = s.replace(/^ng/g, 'n');
+
+    // 音节修复：逐字符扫描，拆非法辅音簇（>1 非法），补插 e
+    s = repairClusters(s, steps);
+
+    // 词末非法辅音修复
+    s = repairFinal(s, steps);
+
+    // 相邻元音插滑音（R1）
+    s = insertGlides(s);
+
+    steps.push({ step: 'L8 重音', detail: '主重音自动落首音节，不标写' });
+    // 首字母大写
+    var out = s.charAt(0).toUpperCase() + s.slice(1);
+    return { ok: true, roman: out, ipa: pseudoIpa(out), steps: steps };
+  }
+
+  var LEGAL_ONSET_CLUSTERS = ['pr', 'pl', 'tr', 'kr', 'kl', 'kw', 'br', 'bl', 'dr', 'gr', 'gl', 'fr', 'fl', 'fj', 'sp', 'st', 'sk', 'thr', 'sw', 'vl', 'kj', 'tj', 'dj', 'sh', 'th', 'dh'];
+  var LEGAL_CODA = ['m', 'n', 'ñ', 'ng', 'l', 'r', 's', 'th'];
+  function isVowelC(c) { return 'aeiouyøàèìòùáéíóúýǿ'.indexOf(c) !== -1 || c === OE_GRAVE || c === OE_ACUTE || c === Y_GRAVE; }
+
+  function repairClusters(s, steps) {
+    // 在元音之间的辅音串若长度>2，或双簇非法，则插 e 拆分
+    var res = '', i = 0, changed = false;
+    while (i < s.length) {
+      if (isVowelC(s.charAt(i))) { res += s.charAt(i); i++; continue; }
+      // 收集辅音串
+      var run = '';
+      while (i < s.length && !isVowelC(s.charAt(i))) { run += s.charAt(i); i++; }
+      var atEnd = (i >= s.length);
+      if (atEnd) { res += run; break; }   // 词末辅音由 repairFinal 处理
+      // 词内辅音串 run，后接元音：留最多「1 合法尾 + 合法声母簇」
+      run = normalizeDigraphsForRepair(run);
+      if (run.replace(/[TDSNL]/g, 'x').length <= 1) { res += denormDigraphs(run); continue; }
+      // 尝试：末尾双簇作声母
+      var lastTwo = run.slice(-2);
+      if (LEGAL_ONSET_CLUSTERS.indexOf(denormDigraphs(lastTwo)) !== -1 && run.length >= 2) {
+        var head = run.slice(0, -2), onset = run.slice(-2);
+        res += spread(head) + denormDigraphs(onset);
+        if (head) changed = true;
+        continue;
+      }
+      // 末单辅音作声母，其余各自成音节（插 e）
+      var head2 = run.slice(0, -1), onset2 = run.slice(-1);
+      res += spread(head2) + denormDigraphs(onset2);
+      if (head2) changed = true;
+    }
+    if (changed && steps) steps.push({ step: 'L3 声母簇修复', detail: '拆非法辅音簇、插连接元音 e：' + res });
+    return res;
+  }
+  // 把二合辅音临时记为单符，避免 coda 计数误判
+  function normalizeDigraphsForRepair(run) {
+    return run.replace(/th/g, 'T').replace(/dh/g, 'D').replace(/sh/g, 'S').replace(/ng/g, 'N');
+  }
+  function denormDigraphs(run) {
+    return run.replace(/T/g, 'th').replace(/D/g, 'dh').replace(/S/g, 'sh').replace(/N/g, 'ng');
+  }
+  function spread(consRun) {
+    // 把辅音串每个音素后补 e（末尾除外由调用处接声母）
+    var d = denormDigraphs(consRun);
+    // 逐音素插 e
+    var out = '', i = 0;
+    while (i < consRun.length) {
+      var two = consRun.substr(i, 2);
+      var one = consRun.charAt(i);
+      if (['th', 'dh', 'sh', 'ng'].indexOf(denormDigraphs(two)) !== -1 && /[TDSN]/.test(one) === false && two.length === 2 && /[a-z]{2}/.test(two)) {
+        out += denormDigraphs(two) + 'e'; i += 2;
+      } else if (/[TDSN]/.test(one)) {
+        out += denormDigraphs(one) + 'e'; i += 1;
+      } else {
+        out += one + 'e'; i += 1;
+      }
+    }
+    return out;
+  }
+  function repairFinal(s, steps) {
+    // 词末辅音串
+    var m = s.match(/([^aeiouyøàèìòùáéíóúýǿ' + OE_GRAVE + OE_ACUTE + Y_GRAVE + ']+)$/);
+    var i = s.length; var run = '';
+    while (i > 0 && !isVowelC(s.charAt(i - 1))) { run = s.charAt(i - 1) + run; i--; }
+    if (!run) return s;
+    var head = s.slice(0, i);
+    var norm = normalizeDigraphsForRepair(run);
+    // 单合法尾
+    if (norm.length === 1) {
+      var single = denormDigraphs(norm);
+      if (LEGAL_CODA.indexOf(single) !== -1) return s;                 // 合法尾照录
+      if (steps) steps.push({ step: 'L4 词末修复', detail: '词末非法辅音 ' + single + ' → 补尾元音 e' });
+      return s + 'e';
+    }
+    // 词末特许簇：流音 + {鼻音,s,th}
+    var dn = denormDigraphs(norm);
+    if (/^[rl](m|n|ng|ñ|s|th)$/.test(dn)) return s;                    // -rn -ln -rs -lth…
+    // 响音 + {t,d} → 删 t/d
+    if (/^(m|n|ng|ñ|l|r|s)[td]$/.test(dn)) {
+      if (steps) steps.push({ step: 'L4 词末修复', detail: '响音+塞音词末簇 ' + dn + ' → 删末塞音' });
+      return head + dn.slice(0, -1);
+    }
+    // 其余：补尾元音 e
+    if (steps) steps.push({ step: 'L4 词末修复', detail: '词末非法簇 ' + dn + ' → 补 e' });
+    return s + 'e';
+  }
+  function insertGlides(s) {
+    var out = '', i = 0, prevV = null;
+    while (i < s.length) {
+      var v = matchFrom(s, i, ALL_VOWELS);
+      if (v) {
+        if (prevV) { out += glide(prevV); }
+        out += v; prevV = v; i += v.length;
+      } else { out += s.charAt(i); prevV = null; i += 1; }
+    }
+    return out;
+  }
+  function pseudoIpa(roman) {
+    // 粗略 IPA：仅供展示
+    var map = { 'th': 'θ', 'dh': 'ð', 'sh': 'ʃ', 'ng': 'ŋ', 'ñ': 'ɲ', 'h': 'x', 'r': 'ɾ', 'j': 'j', 'í': 'iː', 'á': 'aː', 'ó': 'oː', 'ú': 'uː', 'é': 'eː', 'ý': 'yː' };
+    var s = roman.toLowerCase(), out = '', i = 0;
+    while (i < s.length) {
+      var two = s.substr(i, 2);
+      if (map[two]) { out += map[two]; i += 2; continue; }
+      var one = s.charAt(i);
+      out += map[one] || one; i += 1;
+    }
+    return 'ˈ' + out;
+  }
+
+  function isPinyinLike(s) {
+    // 全小写字母、含拼音典型串
+    if (!/^[a-z]+$/.test(s)) return false;
+    return /(zh|ch|sh|ng|ao|ou|ui|iu|ian|uan|ei|ai)/.test(s) || /^(bei|shang|nan|dong|xi|guang|cheng|jing)/.test(s);
+  }
+
+  function transliterateName(input) {
+    if (typeof input !== 'string' || !input.trim()) {
+      return { ok: false, error: '请输入拉丁字母或汉语拼音的名字', roman: '', ipa: '', steps: [] };
+    }
+    var raw = input.trim();
+    var key = raw.toLowerCase();
+    if (LOAN_CANON[key]) {
+      var c = LOAN_CANON[key];
+      return { ok: true, roman: c[0], ipa: c[1], steps: c[2].map(function (d, i) { return { step: '规范定形', detail: d }; }) };
+    }
+    if (!/[a-zà-ÿ]/i.test(raw)) {
+      return { ok: false, error: '无法从汉字/非拉丁字符音译——请提供拼音或拉丁拼写（如「鑫」→「Xin」）', roman: '', ipa: '', steps: [] };
+    }
+    var res = ruleTransliterate(raw);
+    if (res.ok) {
+      // 单音节人名补 -il（§3.1）
+      var vowelCount = (res.roman.match(/[aeiouyøàèìòùáéíóúýǿ]/gi) || []).length;
+      if (vowelCount <= 1 && !endsInVowel(res.roman.toLowerCase())) {
+        var withIl = joinMorph(res.roman, 'il');
+        res.steps.push({ step: '§3.1 美化', detail: '单音节人名补 -il（爱称/入籍形）：' + res.roman + ' → ' + withIl + '（呼语用光杆 Ai, ' + res.roman + '!）' });
+        res.roman = withIl.charAt(0).toUpperCase() + withIl.slice(1);
+        res.ipa = pseudoIpa(res.roman);
+      }
+    }
+    return res;
+  }
+
+  /* ============================================================
+   * 中文直译（translateZh）与构句器（composeSentence）
+   * ============================================================ */
+  // 时距词 → 级别（F = 未来 = 级0 + 悬停调）
+  var TIME_WORDS = {
+    '现在': 0, '此刻': 0, '今天': 0, '如今': 0, '目前': 0, '当下': 0, '正在': 0, '眼下': 0,
+    '昨天': 1, '以前': 1, '从前': 1, '过去': 1, '往昔': 1, '当年': 1, '曾经': 1, '以往': 1, '那时': 1, '昔日': 1, '早先': 1,
+    '远古': 2, '太初': 2, '上古': 2, '古时': 2, '洪荒': 2, '远古时代': 2, '神话时代': 2, '亘古': 2,
+    '明天': 'F', '将来': 'F', '以后': 'F', '将要': 'F', '快要': 'F', '明日': 'F', '不久': 'F', '日后': 'F'
+  };
+  var EVID_WORDS = {
+    '亲眼': 'va', '亲见': 'va', '亲耳': 'va', '亲历': 'va', '亲眼看见': 'va',
+    '据说': 're', '听说': 're', '相传': 're', '传说': 're', '据传': 're', '相传道': 're',
+    '看来': 'dhi', '大概': 'dhi', '想必': 'dhi', '应该': 'dhi', '多半': 'dhi', '估计': 'dhi', '恐怕': 'dhi', '想来': 'dhi'
+  };
+  var EVID_LEVEL2_BIAS = { '相传': 1, '传说': 1, '据传': 1 };
+  var NUM_ZH = { '零': 'thøn', '一': 'en', '二': 'dy', '两': 'dy', '三': 'thil', '四': 'vor', '五': 'lim', '六': 'zol', '七': 'nau', '八': 'oth', '九': 'gen', '十': 'dhul', '十一': 'mel', '十二': 'lár' };
+  var MEASURE = ['把', '个', '条', '只', '碗', '杯', '张', '本', '匹', '头', '座', '支', '根', '片', '块', '位', '名', '棵', '朵', '道'];
+  var PLURAL_MARK = ['们', '群', '众', '诸'];
+  // 特殊功能字
+  var STRUCT = { COP: ['是'], EXIST: ['在'], HAVE: ['有'], CMP: ['比'], GEN: ['的'], NEG: ['不', '没', '没有', '未', '别', '勿', '莫'], PROHIBIT: ['别', '勿', '莫', '不要'], IRR: ['吧', '愿', '请', '让'], Q: ['吗', '呢', '么'] };
+  var DROP = ['了', '着', '过', '地', '得', '把', '被', '就', '都', '也', '还', '一', '所', '之', '给', '将', '会', '要', '能', '可以', '很', '太', '更', '最', '叫', '叫做', '名为'];
+  // 疑问词中文 → Sìlneth k- 词（§2.5.4）
+  var QWORD = { '什么': 'kath', '谁': 'ken', '哪里': 'kis', '哪儿': 'kis', '何处': 'kis', '何时': 'kir', '什么时候': 'kir', '几': 'kem', '多少': 'kem', '哪个': 'kor', '为什么': 'kol', '怎么': 'kum', '如何': 'kum' };
+
+  // 最长匹配分词
+  function segmentZh(text) {
+    var keys = [];
+    // 收集所有可识别 surface：时距、示证、数、结构、词库中文、量词、复数、drop
+    var pool = {};
+    function add(k) { if (k && k.length) pool[k] = true; }
+    Object.keys(TIME_WORDS).forEach(add);
+    Object.keys(EVID_WORDS).forEach(add);
+    Object.keys(NUM_ZH).forEach(add);
+    MEASURE.forEach(add); PLURAL_MARK.forEach(add); DROP.forEach(add);
+    Object.keys(STRUCT).forEach(function (k) { STRUCT[k].forEach(add); });
+    Object.keys(QWORD).forEach(add);
+    var zhIdx = buildZhIndex();
+    Object.keys(zhIdx).forEach(add);
+    keys = Object.keys(pool).sort(function (a, b) { return b.length - a.length; });
+
+    var toks = [], i = 0, buf = '';
+    var clean = text.replace(/[，。！？、；：\s]/g, function (m) { return ' ' + m + ' '; });
+    // 处理标点作为分隔
+    var chars = text.replace(/[，,。.！!？?、；;：:]/g, ' ').trim();
+    i = 0;
+    while (i < chars.length) {
+      if (chars.charAt(i) === ' ') { flush(); i++; continue; }
+      var matched = null;
+      for (var k = 0; k < keys.length; k++) {
+        if (chars.substr(i, keys[k].length) === keys[k]) { matched = keys[k]; break; }
+      }
+      if (matched) {
+        flush();
+        toks.push(matched);
+        i += matched.length;
+      } else {
+        buf += chars.charAt(i); i++;
+      }
+    }
+    flush();
+    function flush() { if (buf) { toks.push({ unknown: buf }); buf = ''; } }
+    return toks;
+  }
+
+  function tag(word) {
+    if (typeof word === 'object' && word.unknown) return { t: 'unknown', s: word.unknown };
+    if (TIME_WORDS[word] !== undefined) return { t: 'time', s: word, v: TIME_WORDS[word] };
+    if (EVID_WORDS[word]) return { t: 'evid', s: word, v: EVID_WORDS[word] };
+    if (NUM_ZH[word]) return { t: 'num', s: word, roman: NUM_ZH[word] };
+    if (MEASURE.indexOf(word) !== -1) return { t: 'measure', s: word };
+    if (PLURAL_MARK.indexOf(word) !== -1) return { t: 'plural', s: word };
+    if (STRUCT.COP.indexOf(word) !== -1) return { t: 'cop', s: word };
+    if (STRUCT.EXIST.indexOf(word) !== -1) return { t: 'exist', s: word };
+    if (STRUCT.HAVE.indexOf(word) !== -1) return { t: 'have', s: word };
+    if (STRUCT.CMP.indexOf(word) !== -1) return { t: 'cmp', s: word };
+    if (STRUCT.GEN.indexOf(word) !== -1) return { t: 'gen', s: word };
+    if (STRUCT.PROHIBIT.indexOf(word) !== -1) return { t: 'prohibit', s: word };
+    if (STRUCT.NEG.indexOf(word) !== -1) return { t: 'neg', s: word };
+    if (STRUCT.IRR.indexOf(word) !== -1) return { t: 'irr', s: word };
+    if (STRUCT.Q.indexOf(word) !== -1) return { t: 'q', s: word };
+    if (QWORD[word]) return { t: 'qword', s: word, roman: QWORD[word] };
+    if (DROP.indexOf(word) !== -1) return { t: 'drop', s: word };
+    var e = buildZhIndex()[word];
+    if (e) return { t: e.pos, s: word, entry: e };
+    return { t: 'unknown', s: word };
+  }
+
+  function gloss(parts) { return parts.join(' '); }
+
+  function translateZh(text) {
+    var trace = [], unmatched = [];
+    if (typeof text !== 'string' || !text.trim()) {
+      return { ok: false, roman: '', gloss: '', trans: '', level: 0, evid: 'none', mood: 'real', trace: [], unmatched: [], error: '请输入中文' };
+    }
+    var toks = segmentZh(text).map(tag);
+    trace.push({ step: '① 语义分解', detail: '分词：' + toks.map(function (t) { return t.s || (t.unknown) || ''; }).filter(Boolean).join(' / ') });
+
+    // 收集特征（逐 token，含「在」定位窥视）
+    var level = 0, level2FromTime = false, future = false, evid = null, neg = false, prohibit = false, irr = false, q = false;
+    var plural = false, cop = false, have = false, cmp = false;
+    var nominals = [], verb = null, adj = null, loc = null, qwordRoman = null;
+    var expectLoc = false;
+
+    for (var idx = 0; idx < toks.length; idx++) {
+      var tk = toks[idx];
+      // 「在」窥视：仅当其后紧跟名词/代词/这里 才作处所；否则（如「在远古」）忽略
+      if (expectLoc) {
+        expectLoc = false;
+        if (tk.t === 'n' || tk.t === 'pron') { loc = tk.entry; continue; }
+        // 否则落到下面正常处理该 token
+      }
+      switch (tk.t) {
+        case 'time':
+          if (tk.v === 'F') { future = true; } else { level = Math.max(level, tk.v); if (tk.v === 2) level2FromTime = true; }
+          break;
+        case 'evid': evid = tk.v; if (EVID_LEVEL2_BIAS[tk.s]) { level = Math.max(level, 2); } break;
+        case 'neg': neg = true; break;
+        case 'prohibit': prohibit = true; neg = true; irr = true; break;
+        case 'irr': irr = true; break;
+        case 'q': q = true; break;
+        case 'plural': plural = true; break;
+        case 'cop': cop = true; break;
+        case 'exist': expectLoc = true; break;
+        case 'have': have = true; break;
+        case 'cmp': cmp = true; break;
+        case 'v': if (!verb) verb = tk.entry; else nominals.push(tk.entry); break;
+        case 'adj': adj = tk.entry; break;
+        case 'n': case 'pron': nominals.push(tk.entry); break;
+        case 'qword': qwordRoman = tk.roman; q = true; break;
+        case 'unknown': unmatched.push(tk.s); break;
+        default: break; // drop/measure/gen/num
+      }
+    }
+
+    // ② 时距定级
+    if (future) { level = 0; irr = true; }
+    trace.push({ step: '② 时距定级', detail: '级' + level + (future ? '（未来＝级0＋悬停调，未来无痕可磨）' : '') + '，依时间词/语篇判定' });
+
+    // ③ 示证定值
+    if (irr || future) { evid = null; trace.push({ step: '③ 示证定值', detail: '非现实句不带示证——未然之事无证据' }); }
+    else if (q) { evid = null; trace.push({ step: '③ 示证定值', detail: '疑问句示证可省' }); }
+    else {
+      if (!evid && level >= 1) { evid = (level >= 2) ? 're' : 'va'; trace.push({ step: '③ 示证定值', detail: '级' + level + '陈述句必带示证，默认补 =' + evid + '（元音随时态同步磨蚀）' }); }
+      else if (evid) { trace.push({ step: '③ 示证定值', detail: '=' + evid + '（元音随时态级同步磨蚀）' }); }
+      else trace.push({ step: '③ 示证定值', detail: '级0 默认亲历，可省' });
+    }
+
+    // ④ 语气
+    var mood = q ? 'q' : (irr ? 'irr' : 'real');
+    trace.push({ step: '④ 语气/边界调', detail: mood === 'q' ? '疑问：上挑调 ?' : mood === 'irr' ? '非现实：悬停调 ~' : '断言：下跌调 .' });
+
+    // 主语判定
+    var subjEntry = nominals.length ? nominals[0] : null;
+    var subjPerson = 3, subjPlural = plural;
+    if (subjEntry) { var pr = detectPerson(subjEntry.roman); if (pr) { subjPerson = pr.person; subjPlural = subjPlural || pr.plural; } }
+    function subjRoman(e, pl) { return decline(e.roman, { plural: !!pl, 'case': 'NOM' }); }
+
+    // 疑问：X的Y (是) 什么 / 谁…（无动词、无领有）
+    if (q && qwordRoman && !verb && !have && !cmp) {
+      var np = nominals.map(function (e, k) { return (k < nominals.length - 1) ? decline(e.roman, { 'case': 'GEN' }) : e.roman; });
+      var gq = nominals.map(function (e, k) { return zhOf(e) + (k < nominals.length - 1 ? '-GEN' : '[NOM]'); });
+      var outq = np.concat([qwordRoman]).join(' ') + '?';
+      trace.push({ step: '⑥–⑧ 名词性疑问', detail: '属格链 + 疑问词 ' + qwordRoman + ' 落动前焦点位 + 上挑调' });
+      return pack(outq, gq.concat([qwordRoman, 'Q']).join(' '), level, 'none', 'q', trace, unmatched, text);
+    }
+
+    // 领有：X有Y → X-DAT Y el
+    if (have && nominals.length >= 2) {
+      var holder = nominals[0], held = nominals[1];
+      var elH = conjugate('el', { level: level, person: 3 });
+      var outh = [decline(holder.roman, { 'case': 'DAT' }), held.roman, elH].join(' ');
+      var glh = [zhOf(holder) + '-DAT', zhOf(held) + '[NOM]', 'be\\L' + level + '-3SG'];
+      trace.push({ step: '⑥–⑧ 领有构式', detail: '无「有」动词：领有者-DAT + el（§3.5，「刀于我而在」）' });
+      return finishPunct(outh, glh, level, mood, trace, unmatched, text, (mood === 'real' ? evid : null));
+    }
+
+    // 比较：X比Y Adj → X Y-ABL Adj
+    if (cmp && adj && nominals.length >= 2) {
+      var xEnt = nominals[0], yEnt = nominals[1];
+      var outc = [xEnt.roman, decline(yEnt.roman, { 'case': 'ABL' }), adj.roman].join(' ');
+      var glc = [zhOf(xEnt) + '[NOM]', zhOf(yEnt) + '-ABL', zhOf(adj)];
+      trace.push({ step: '⑥–⑧ 比较构式', detail: '基准-ABL + 形容词（§2.3，「比山更…」）' });
+      return finishPunct(outc, glc, level, 'real', trace, unmatched, text, null);
+    }
+
+    // 系词/性质谓语：X(不)是Y / X Adj（无动词）
+    if ((cop || adj) && !verb && subjEntry) {
+      var predEnt = cop ? (nominals[1] || null) : null;
+      var predRoman = predEnt ? predEnt.roman : (adj ? adj.roman : null);
+      if (predRoman) {
+        var needEl = !(level === 0 && mood === 'real');
+        var seq2 = [subjRoman(subjEntry, subjPlural)];
+        if (neg) seq2.push('ul');
+        seq2.push(predRoman);
+        if (needEl) seq2.push(conjugate('el', { level: level, person: subjPerson, plural: subjPlural }));
+        var gl2 = [zhOf(subjEntry) + (subjPlural ? '-PL' : '') + '[NOM]'].concat(neg ? ['NEG'] : []).concat([zhOf(predEnt || adj)]).concat(needEl ? ['be\\L' + level] : []);
+        trace.push({ step: '⑥–⑧ 系词句', detail: needEl ? '非级0/非现实：插 el 承载磨蚀与边界调（§2.4.6）' : '级0 现实：零系词（Dhe silwe.）' });
+        return finishPunct(seq2.join(' '), gl2, level, mood, trace, unmatched, text, needEl && mood === 'real' ? evid : null);
+      }
+    }
+
+    // 处所句：X在Y（无动词） → X Y-LOC (el)
+    if (loc && !verb && subjEntry) {
+      var needEl2 = !(level === 0 && mood === 'real');
+      var seq3 = [subjRoman(subjEntry, subjPlural), decline(loc.roman, { 'case': 'LOC' })];
+      if (needEl2) seq3.push(conjugate('el', { level: level, person: subjPerson, plural: subjPlural }));
+      var gl3 = [zhOf(subjEntry) + '[NOM]', zhOf(loc) + '-LOC'].concat(needEl2 ? ['be\\L' + level] : []);
+      trace.push({ step: '⑥–⑧ 处所句', detail: 'Y-LOC' + (needEl2 ? ' + el' : '（级0 零系词）') });
+      return finishPunct(seq3.join(' '), gl3, level, mood, trace, unmatched, text, needEl2 && mood === 'real' ? evid : null);
+    }
+
+    // 一般 SVO / SV / 祈使
+    if (verb) {
+      var imperative = irr && (prohibit || nominals.length === 0 || (subjEntry && detectPerson(subjEntry.roman) && detectPerson(subjEntry.roman).person === 2));
+      var subj1 = imperative ? null : subjEntry;
+      var objE = null;
+      if (imperative) { objE = nominals[0] || null; }
+      else if (nominals.length >= 2) { objE = nominals[nominals.length - 1]; }
+
+      var vperson, vplural;
+      if (imperative) { vperson = 2; vplural = plural; }
+      else if (subj1) { var pi = detectPerson(subj1.roman); vperson = pi ? pi.person : 3; vplural = pi ? (pi.plural || subjPlural) : subjPlural; }
+      else { vperson = 1; vplural = false; } // 省略主语默认 1SG
+
+      var vform = conjugate(verb.roman, { level: level, person: vperson, plural: vplural });
+
+      var seqV = [], gl = [];
+      if (subj1) { seqV.push(subjRoman(subj1, vplural)); gl.push(zhOf(subj1) + (vplural ? '-PL' : '') + '[NOM]'); }
+      if (level2FromTime && !loc) { seqV.push('vath'); gl.push('于远古'); }  // 化石副词消歧（§2.4.4 修补法a）
+      if (loc) { seqV.push(decline(loc.roman, { 'case': 'LOC' })); gl.push(zhOf(loc) + '-LOC'); }
+      if (level2FromTime && loc) { seqV.splice(seqV.length - 1, 0, 'vath'); gl.splice(gl.length - 1, 0, '于远古'); }
+      if (objE) { seqV.push(decline(objE.roman, { 'case': 'ACC' })); gl.push(zhOf(objE) + '-ACC'); }
+      if (neg) { seqV.push('ul'); gl.push('NEG'); }
+      seqV.push(vform);
+      gl.push(verbGloss(verb, level, vperson, vplural));
+
+      trace.push({ step: '⑥ 词汇映射', detail: '动词 √' + verb.roman.toUpperCase() + '「' + zhOf(verb) + '」' + (objE ? '，宾语「' + zhOf(objE) + '」' : '') });
+      trace.push({ step: '⑦ 形态生成', detail: '磨蚀级' + level + ' 词根 → ' + vform + '（一致 ' + vperson + (vplural ? 'PL' : 'SG') + '，后缀不磨）' });
+      trace.push({ step: '⑧ 语序编排', detail: imperative ? 'SOV 祈使：第二人称形 + 悬停调' : 'SOV：' + (subj1 ? '主-' : '') + (objE ? '宾-' : '') + '动' });
+      return finishPunct(seqV.join(' '), gl, level, mood, trace, unmatched, text, (mood === 'real' ? evid : null));
+    }
+
+    // 无动词无结构
+    if (nominals.length) {
+      return { ok: false, roman: nominals.map(function (e) { return e.roman; }).join(' '), gloss: nominals.map(zhOf).join(' '), trans: text, level: level, evid: 'none', mood: mood, trace: trace, unmatched: unmatched, error: '未找到动词或可识别句型——试试「构句器」逐件拼装。' };
+    }
+    return { ok: false, roman: '', gloss: '', trans: text, level: level, evid: 'none', mood: mood, trace: trace, unmatched: unmatched, error: '这句超出当前规则直译的句型范围。' };
+
+    // ---- 收尾 ----
+    function pack(o, g, lv, ev, md, tr, um, txt) {
+      return { ok: um.length === 0, roman: cap(o), gloss: g, trans: txt, level: lv, evid: ev, mood: md, trace: tr, unmatched: um, ipa: '' };
+    }
+    function finishPunct(o, g, lv, md, tr, um, txt, evKind) {
+      var seq = o;
+      if (evKind && md === 'real') seq += ' ' + evidential(evKind, lv, 0);
+      seq += (md === 'q') ? '?' : (md === 'irr') ? '~' : '.';
+      var glStr = g.join(' ') + (evKind && md === 'real' ? ' =' + evKind.toUpperCase() : '') + ' ' + (md === 'q' ? 'Q' : md === 'irr' ? 'IRR' : 'REAL');
+      return { ok: um.length === 0, roman: cap(seq), gloss: glStr, trans: txt, level: lv, evid: (evKind || 'none'), mood: md, trace: tr, unmatched: um, ipa: '' };
+    }
+  }
+  function cap(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+  function detectPerson(roman) {
+    var map = { ni: { person: 1, plural: false }, nin: { person: 1, plural: true }, vy: { person: 2, plural: false }, vyn: { person: 2, plural: true }, dhe: { person: 3, plural: false }, dhen: { person: 3, plural: true }, tha: { person: 3, plural: false }, than: { person: 3, plural: true } };
+    return map[roman] || null;
+  }
+  function zhOf(e) { return (e && e.zh && e.zh[0]) || (e && e.roman) || '?'; }
+  function verbGloss(v, level, person, plural) {
+    var lvlTag = level === 0 ? 'NEAR' : level === 1 ? 'FAR' : 'ANC';
+    return zhOf(v) + '\\' + lvlTag + '-' + person + (plural ? 'PL' : 'SG');
+  }
+
+  /* ---------- 构句器（composeSentence） ---------- */
+  function composeSentence(opts) {
+    opts = opts || {};
+    var trace = [];
+    if (!opts.verb || !opts.verb.roman) {
+      return { ok: false, roman: '', gloss: '', trans: '', level: opts.level || 0, evid: 'none', mood: opts.mood || 'real', trace: [], unmatched: [], error: '缺少动词' };
+    }
+    var level = (opts.level != null) ? opts.level : 0;
+    if (level < 0 || level > 2) return { ok: false, error: '磨蚀级只能是 0/1/2', roman: '', gloss: '', trans: '', level: 0, evid: 'none', mood: 'real', trace: [], unmatched: [] };
+    var mood = opts.mood || 'real';
+    var person = opts.person || (opts.subj ? 3 : 1);
+    var pr = opts.subj ? detectPerson(opts.subj.roman) : null;
+    if (pr) { person = pr.person; }
+    var plural = !!opts.subjPlural || (pr && pr.plural);
+
+    // 示证：irr 强制无；real 且级≥1 强制补
+    var evid = opts.evid;
+    if (mood === 'irr') {
+      if (evid && evid !== 'none') trace.push({ step: '示证守恒', detail: '非现实句不带示证（§2.4.4-2），已移除 =' + evid });
+      evid = 'none';
+    } else if (mood === 'real') {
+      if ((!evid || evid === 'none' || evid === undefined) && level >= 1) {
+        evid = (level >= 2) ? 're' : 'va';
+        trace.push({ step: '示证补全', detail: '级' + level + '现实句必带示证，自动补 =' + evid });
+      }
+    } else if (mood === 'q') {
+      if (evid === undefined) evid = 'none';
+    }
+    if (evid === undefined) evid = 'none';
+
+    var seq = [], gl = [];
+    if (opts.subj) {
+      if (plural && !(pr)) { seq.push(decline(opts.subj.roman, { plural: true, 'case': 'NOM' })); gl.push(subjZh(opts.subj) + '-PL[NOM]'); }
+      else { seq.push(opts.subj.roman); gl.push(subjZh(opts.subj) + '[NOM]'); }
+    }
+    if (opts.obj) {
+      seq.push(decline(opts.obj.roman, { 'case': 'ACC', plural: !!opts.objPlural }));
+      gl.push(subjZh(opts.obj) + (opts.objPlural ? '-PL' : '') + '-ACC');
+    }
+    if (opts.neg) { seq.push('ul'); gl.push('NEG'); }
+    var vform = conjugate(opts.verb.roman, { level: level, person: person, plural: plural, pfv: !!opts.pfv, mid: !!opts.mid });
+    seq.push(vform);
+    var lvlTag = level === 0 ? 'NEAR' : level === 1 ? 'FAR' : 'ANC';
+    gl.push(verbRootZh(opts.verb) + '\\' + lvlTag + (opts.mid ? '-MID' : '') + (opts.pfv ? '-PFV' : '') + '-' + person + (plural ? 'PL' : 'SG'));
+
+    var roman = seq.join(' ');
+    var evStr = '';
+    if (evid && evid !== 'none' && mood === 'real') { evStr = ' ' + evidential(evid, level, 0); roman += evStr; gl.push('=' + evid.toUpperCase()); }
+    roman += (mood === 'q') ? '?' : (mood === 'irr') ? '~' : '.';
+    gl.push(mood === 'q' ? 'Q' : mood === 'irr' ? 'IRR' : 'REAL');
+    trace.push({ step: 'SOV 编排', detail: (opts.subj ? '主-' : '') + (opts.obj ? '宾-' : '') + '动' + (evid !== 'none' ? ' + 示证' : '') + ' + 边界调' });
+
+    return { ok: true, roman: cap(roman), gloss: gl.join(' '), trans: '', level: level, evid: evid, mood: mood, trace: trace, unmatched: [], ipa: '' };
+  }
+  function subjZh(o) { if (o.zh) return o.zh; var e = entryByRoman(o.roman); return e ? zhOf(e) : o.roman; }
+  function verbRootZh(o) { var e = entryByRoman(o.roman); return e ? zhOf(e) : o.roman; }
+
+  /* ---------- 常用语（参考书例文集） ---------- */
+  var PHRASEBOOK = [
+    { zh: '炉火满吗？', roman: 'Fairn hom?', gloss: '炉火[NOM] 满的 Q', note: '客至门礼。答：Hom. Gweno~「满的，进来吧」' },
+    { zh: '你活着（安好）？', roman: 'Vy dheso?', gloss: '你[NOM] 活\\NEAR-2SG Q', note: '雪谷冬日问候。答：Dhese.「我活着」' },
+    { zh: '愿你屹立。', roman: 'Láno~', gloss: '屹立\\NEAR-2SG IRR', note: '送别祝词，用不褪的 √LÁN' },
+    { zh: '愿你如山。', roman: 'Vy arna elo~', gloss: '你[NOM] 山-ADJZ 在\\NEAR-2SG IRR', note: '送别，愿你长立不磨' },
+    { zh: '好好走吧。', roman: 'Jenum weno~', gloss: '好-ADV 走\\NEAR-2SG IRR', note: '道别语' },
+    { zh: '我叫米尔维。', roman: 'Ni Mírwe.', gloss: '我[NOM] 铭记者[NOM] REAL', note: '自我介绍，级0 零系词名词句' },
+    { zh: '你叫什么名字？', roman: 'Vyje nym kath?', gloss: '你-GEN 名[NOM] 什么 Q', note: '问名' },
+    { zh: '你的家在哪里？', roman: 'Vyje hem kis?', gloss: '你-GEN 家[NOM] 何处 Q', note: '问居所' },
+    { zh: '我不知道。', roman: 'Ni ul vyse.', gloss: '我[NOM] NEG 知\\NEAR-1SG REAL', note: '谨慎的标准答话（示证诚实律）' },
+    { zh: '我把话刻在石上。', roman: 'Ni sethon gránis skire.', gloss: '我[NOM] 词-ACC 石-LOC 刻\\NEAR-1SG REAL', note: '许诺套语：一言既出' },
+    { zh: '慢工出细活。', roman: 'Lomum gránon tarna.', gloss: '慢-ADV 石-ACC 劈\\NEAR-3SG REAL', note: '谚语「以缓劈石」' },
+    { zh: '话语是烟，铭痕是石。', roman: 'Seth thum, nas mirn grán.', gloss: '词[NOM] 烟[NOM] 但 铭痕[NOM] 石[NOM] REAL', note: '谚语：说出的会散，刻下的长存' },
+    { zh: '此一讲述已尽。', roman: 'Silneth sathsa.', gloss: '讲述[NOM] 完结\\NEAR-PFV-3SG REAL', note: '讲史收束语（完整体 -s-）' }
+  ];
+
+  /* ---------- 导出 ---------- */
+  var SilnethEngine = {
+    searchLexicon: searchLexicon,
+    erode: erode,
+    isStrong: isStrong,
+    conjugate: conjugate,
+    nonfinite: nonfinite,
+    decline: decline,
+    evidential: evidential,
+    translateZh: translateZh,
+    composeSentence: composeSentence,
+    transliterateName: transliterateName,
+    toGlyphs: toGlyphs,
+    PHRASEBOOK: PHRASEBOOK,
+    LEXICON: LEX
+  };
+
+  if (typeof module !== 'undefined' && module.exports) module.exports = SilnethEngine;
+  if (typeof window !== 'undefined') window.SilnethEngine = SilnethEngine;
+  return SilnethEngine;
+})(typeof window !== 'undefined' ? window : this);
+
+</script>
+
+<script>
+(function () {
+  'use strict';
+  var E = window.SilnethEngine;
+  var LEX = window.SILNETH_LEXICON || [];
+
+  /* ---------- Mírneth 字形 ---------- */
+  var P = {
+    pe: 'M 35 20 L 35 80 M 35 26 Q 68 26 68 41 Q 68 56 35 56',
+    be: 'M 35 20 L 35 80 M 35 26 Q 68 26 68 41 Q 68 56 35 56 M 24 68 L 52 68',
+    me: 'M 35 20 L 35 80 M 35 26 Q 68 26 68 41 Q 68 56 35 56 M 50 39 L 50 43',
+    fe: 'M 35 20 L 35 80 M 35 26 Q 68 30 62 52',
+    ve: 'M 35 20 L 35 80 M 35 26 Q 68 30 62 52 M 24 68 L 52 68',
+    te: 'M 35 20 L 35 80 M 35 44 Q 68 44 68 59 Q 68 74 35 74',
+    de: 'M 35 20 L 35 80 M 35 44 Q 68 44 68 59 Q 68 74 35 74 M 24 32 L 52 32',
+    ne: 'M 35 20 L 35 80 M 35 44 Q 68 44 68 59 Q 68 74 35 74 M 50 57 L 50 61',
+    se: 'M 35 20 L 35 80 M 35 48 Q 68 52 62 74',
+    ze: 'M 35 20 L 35 80 M 35 48 Q 68 52 62 74 M 24 32 L 52 32',
+    the: 'M 35 20 L 35 80 M 35 48 L 66 54 L 58 76',
+    dhe: 'M 35 20 L 35 80 M 35 48 L 66 54 L 58 76 M 24 32 L 52 32',
+    she: 'M 35 20 L 35 80 M 35 25 Q 74 33 64 75',
+    nye: 'M 35 20 L 35 80 M 35 25 Q 72 25 72 50 Q 72 75 35 75 M 52 48 L 52 52',
+    ke: 'M 65 20 L 65 80 M 65 26 Q 32 26 32 41 Q 32 56 65 56',
+    ge: 'M 65 20 L 65 80 M 65 26 Q 32 26 32 41 Q 32 56 65 56 M 48 68 L 76 68',
+    nge: 'M 65 20 L 65 80 M 65 26 Q 32 26 32 41 Q 32 56 65 56 M 50 39 L 50 43',
+    he: 'M 65 20 L 65 80 M 65 26 Q 32 30 38 52',
+    re: 'M 26 60 Q 42 34 54 54 Q 64 70 74 46',
+    le: 'M 52 20 Q 34 40 52 52 Q 70 64 48 80',
+    lle: 'M 52 20 Q 34 40 52 52 Q 70 64 48 80 M 52 20 Q 66 22 68 34',
+    we: 'M 24 40 Q 37 68 50 44 Q 63 68 76 40',
+    je: 'M 62 24 Q 34 30 36 52 Q 38 74 64 76',
+    i: 'M 25 64 L 75 64 M 38 64 L 38 22',
+    y: 'M 25 64 L 75 64 M 38 64 L 38 32 Q 38 20 50 21',
+    e: 'M 25 64 L 75 64 M 38 64 L 38 44',
+    oe: 'M 25 64 L 75 64 M 38 64 L 38 46 Q 38 34 50 35',
+    a: 'M 25 64 L 75 64 M 40 64 Q 50 38 60 64',
+    o: 'M 25 64 L 75 64 M 62 64 L 62 46 Q 62 34 50 35',
+    u: 'M 25 64 L 75 64 M 62 64 L 62 32 Q 62 20 50 21',
+    schwa: 'M 25 64 L 75 64',
+    sky: 'M 32 11 L 68 11',
+    crack: 'M 44 76 L 56 86',
+    fall: 'M 28 34 Q 54 40 70 72',
+    hang: 'M 26 52 Q 40 42 50 52 Q 60 62 74 52',
+    rise: 'M 28 72 Q 54 66 70 34',
+    pause: 'M 50 64 L 50 68',
+    clitic: 'M 44 48 L 44 52 M 56 48 L 56 52',
+    dot: 'M 50 26 L 50 30',
+    voc: 'M 26 40 L 74 40'
+  };
+
+  function svgFor(keys) {
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('class', 'glyph-svg');
+    keys.forEach(function (k) {
+      if (!P[k]) return;
+      var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      p.setAttribute('d', P[k]);
+      svg.appendChild(p);
+    });
+    return svg;
+  }
+
+  function glyphRow(roman) {
+    var box = document.createElement('div');
+    box.className = 'r-glyphs';
+    if (!roman || !E || typeof E.toGlyphs !== 'function') return box;
+    var words = String(roman).split(/\s+/).filter(Boolean);
+    words.forEach(function (w, wi) {
+      var seq;
+      try { seq = E.toGlyphs(w); } catch (err) { seq = null; }
+      if (!seq || !Array.isArray(seq) || !seq.length) return;
+      var wb = document.createElement('div');
+      wb.className = 'wordbox';
+      seq.forEach(function (g) {
+        if (!g || !g.key || !P[g.key]) return;
+        var keys = [g.key].concat(Array.isArray(g.mods) ? g.mods : []);
+        wb.appendChild(svgFor(keys));
+      });
+      if (wb.childNodes.length) {
+        box.appendChild(wb);
+        if (wi < words.length - 1) {
+          var sp = document.createElement('div');
+          sp.className = 'wsp';
+          box.appendChild(sp);
+        }
+      }
+    });
+    return box;
+  }
+
+  /* ---------- 通用结果卡 ---------- */
+  var LEVEL_LABEL = ['级0 · 近时 nár「新绿」', '级1 · 远时 vèr「银褪」', '级2 · 祖时 vath「磨尽」'];
+  var EVID_LABEL = { va: '=va 亲历', dhi: '=dhi 推断', re: '=re 传闻', none: '无示证', '': '无示证' };
+  var MOOD_LABEL = { real: '断言 · 下跌调 .', irr: '非现实 · 悬停调 ~', q: '疑问 · 上挑调 ?' };
+
+  function el(tag, cls, text) {
+    var d = document.createElement(tag);
+    if (cls) d.className = cls;
+    if (text != null) d.textContent = text;
+    return d;
+  }
+
+  function renderResult(container, res, opts) {
+    opts = opts || {};
+    container.innerHTML = '';
+    if (!res) {
+      var c0 = el('div', 'result err');
+      c0.appendChild(el('div', 'warn', '引擎未返回结果。'));
+      container.appendChild(c0);
+      return;
+    }
+    var card = el('div', 'result' + (res.ok === false ? ' err' : ''));
+
+    if (res.roman) {
+      card.appendChild(glyphRow(res.roman));
+      card.appendChild(el('div', 'r-roman', res.roman));
+    }
+    if (res.ipa) card.appendChild(el('div', 'r-ipa', res.ipa));
+    if (res.gloss) card.appendChild(el('div', 'r-gloss', res.gloss));
+    if (res.trans) card.appendChild(el('div', 'r-trans', '「' + res.trans + '」'));
+    else if (opts.zh) card.appendChild(el('div', 'r-trans', '「' + opts.zh + '」'));
+
+    var badges = el('div', 'badges');
+    if (typeof res.level === 'number' && LEVEL_LABEL[res.level]) {
+      badges.appendChild(el('span', 'badge b' + res.level, LEVEL_LABEL[res.level]));
+    }
+    if (res.evid != null && EVID_LABEL[res.evid] != null) {
+      badges.appendChild(el('span', 'badge', EVID_LABEL[res.evid]));
+    }
+    if (res.mood && MOOD_LABEL[res.mood]) {
+      badges.appendChild(el('span', 'badge', MOOD_LABEL[res.mood]));
+    }
+    if (badges.childNodes.length) card.appendChild(badges);
+
+    if (res.unmatched && res.unmatched.length) {
+      card.appendChild(el('div', 'warn',
+        '词库外的词（303 词根覆盖不到）：' + res.unmatched.join('、') +
+        ' —— 可到「词典」找近义词根，或专名走「名字音译」。'));
+    }
+    if (res.ok === false && !(res.unmatched && res.unmatched.length)) {
+      card.appendChild(el('div', 'warn', res.error || '这句超出当前规则直译的句型范围——试试「构句器」逐件拼装。'));
+    }
+
+    if (res.trace && res.trace.length) {
+      var det = el('details', 'trace');
+      det.appendChild(el('summary', null, '翻译过程 · 十步管线'));
+      var ol = el('ul', 'trace-steps');
+      res.trace.forEach(function (t, i) {
+        var li = el('li');
+        li.appendChild(el('span', 'tn', String(i + 1)));
+        var body = el('span');
+        if (t && t.step) {
+          var b = el('b', null, t.step + ' ');
+          body.appendChild(b);
+          body.appendChild(document.createTextNode(t.detail || ''));
+        } else {
+          body.textContent = String(t);
+        }
+        li.appendChild(body);
+        ol.appendChild(li);
+      });
+      det.appendChild(ol);
+      card.appendChild(det);
+    }
+    if (res.steps && res.steps.length) {
+      var det2 = el('details', 'trace');
+      det2.setAttribute('open', '');
+      det2.appendChild(el('summary', null, '适配过程'));
+      var ol2 = el('ul', 'trace-steps');
+      res.steps.forEach(function (t, i) {
+        var li = el('li');
+        li.appendChild(el('span', 'tn', String(i + 1)));
+        li.appendChild(el('span', null, typeof t === 'string' ? t : (t.step ? t.step + '：' + (t.detail || '') : JSON.stringify(t))));
+        ol2.appendChild(li);
+      });
+      det2.appendChild(ol2);
+      card.appendChild(det2);
+    }
+    container.appendChild(card);
+  }
+
+  /* ---------- 页头字形：Sìlneth ---------- */
+  var hs = document.getElementById('hScript');
+  [['se'], ['i', 'crack'], ['le'], ['ne'], ['e'], ['the']].forEach(function (g) {
+    hs.appendChild(svgFor(g));
+  });
+
+  /* ---------- Tabs ---------- */
+  var tabs = document.getElementById('tabs');
+  Array.prototype.forEach.call(tabs.querySelectorAll('button'), function (b) {
+    b.addEventListener('click', function () {
+      Array.prototype.forEach.call(tabs.querySelectorAll('button'), function (x) {
+        x.setAttribute('aria-selected', x === b ? 'true' : 'false');
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('.panel'), function (p) {
+        p.classList.toggle('active', p.id === b.dataset.panel);
+      });
+    });
+  });
+
+  /* ---------- 中文直译 ---------- */
+  var zhInput = document.getElementById('zhInput');
+  var zhOut = document.getElementById('zhOut');
+  function doZh() {
+    var t = zhInput.value.trim();
+    if (!t) return;
+    var res;
+    try { res = E.translateZh(t); } catch (err) { res = { ok: false, error: '引擎异常：' + err.message }; }
+    renderResult(zhOut, res, { zh: t });
+  }
+  document.getElementById('zhGo').addEventListener('click', doZh);
+  zhInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); doZh(); }
+  });
+  var zhChips = document.getElementById('zhChips');
+  ['我们唱歌', '父亲以前在这里唱过歌', '相传群山在远古屹立', '你叫什么名字',
+   '我有一把刀', '明天我们唱歌吧', '别唱', '河比山古老'].forEach(function (s) {
+    var c = el('button', 'chip', s);
+    c.addEventListener('click', function () { zhInput.value = s; doZh(); });
+    zhChips.appendChild(c);
+  });
+
+  /* ---------- 构句器 ---------- */
+  function fillDatalist(id, filter) {
+    var dl = document.getElementById(id);
+    LEX.filter(filter).forEach(function (e2) {
+      var o = document.createElement('option');
+      var zh0 = (e2.zh && e2.zh[0]) || '';
+      o.value = zh0;
+      o.label = zh0 + ' — ' + e2.roman;
+      dl.appendChild(o);
+    });
+  }
+  fillDatalist('nounList', function (e2) { return e2.pos === 'n' || e2.pos === 'pron'; });
+  fillDatalist('verbList', function (e2) { return e2.pos === 'v'; });
+
+  function findEntry(input, posSet) {
+    input = (input || '').trim();
+    if (!input) return null;
+    var lower = input.toLowerCase();
+    var exact = LEX.filter(function (e2) {
+      return e2.roman === lower || (e2.zh && e2.zh.indexOf(input) !== -1);
+    });
+    var pool = exact.length ? exact : (function () {
+      try { return E.searchLexicon(input) || []; } catch (err) { return []; }
+    })();
+    var byPos = pool.filter(function (e2) { return !posSet || posSet.indexOf(e2.pos) !== -1; });
+    return byPos[0] || pool[0] || null;
+  }
+
+  function segVal(id) {
+    var b = document.querySelector('#' + id + ' button[aria-pressed="true"]');
+    return b ? b.dataset.v : null;
+  }
+  ['cLevel', 'cEvid', 'cMood'].forEach(function (id) {
+    var seg = document.getElementById(id);
+    Array.prototype.forEach.call(seg.querySelectorAll('button'), function (b) {
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(seg.querySelectorAll('button'), function (x) {
+          x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+        });
+      });
+    });
+  });
+
+  var PRONOUN_PERSON = { '我': [1, false], '我们': [1, true], '你': [2, false], '你们': [2, true],
+    '他': [3, false], '她': [3, false], '它': [3, false], '他们': [3, true], '她们': [3, true] };
+
+  document.getElementById('cGo').addEventListener('click', function () {
+    var cOut = document.getElementById('cOut');
+    var subjRaw = document.getElementById('cSubj').value.trim();
+    var verbRaw = document.getElementById('cVerb').value.trim();
+    var objRaw = document.getElementById('cObj').value.trim();
+    if (!verbRaw) {
+      renderResult(cOut, { ok: false, error: '动词是必填的——Sìlneth 的句子挂在动词的磨蚀级上。' });
+      return;
+    }
+    var verb = findEntry(verbRaw, ['v']);
+    if (!verb) {
+      renderResult(cOut, { ok: false, error: '词库里找不到这个动词：「' + verbRaw + '」。到「词典」搜搜近义词根。' });
+      return;
+    }
+    var person = null, subjPlural = document.getElementById('cSPl').checked, subj = null;
+    if (subjRaw) {
+      if (PRONOUN_PERSON[subjRaw]) {
+        person = PRONOUN_PERSON[subjRaw][0];
+        subjPlural = subjPlural || PRONOUN_PERSON[subjRaw][1];
+      }
+      subj = findEntry(subjRaw, ['pron', 'n']);
+      if (!subj) {
+        renderResult(cOut, { ok: false, error: '词库里找不到主语：「' + subjRaw + '」。专名可先走「名字音译」。' });
+        return;
+      }
+      if (person == null) person = 3;
+    }
+    var obj = null;
+    if (objRaw) {
+      obj = findEntry(objRaw, ['n', 'pron']);
+      if (!obj) {
+        renderResult(cOut, { ok: false, error: '词库里找不到宾语：「' + objRaw + '」。' });
+        return;
+      }
+    }
+    var opts = {
+      subj: subj ? { roman: subj.roman } : null,
+      obj: obj ? { roman: obj.roman } : null,
+      verb: { roman: verb.roman },
+      level: parseInt(segVal('cLevel'), 10) || 0,
+      evid: segVal('cEvid') === 'auto' ? undefined : segVal('cEvid'),
+      mood: segVal('cMood'),
+      neg: document.getElementById('cNeg').checked,
+      pfv: document.getElementById('cPfv').checked,
+      subjPlural: subjPlural,
+      objPlural: document.getElementById('cOPl').checked
+    };
+    if (person != null) opts.person = person;
+    var res;
+    try { res = E.composeSentence(opts); } catch (err) { res = { ok: false, error: '引擎异常：' + err.message }; }
+    renderResult(cOut, res);
+  });
+
+  /* ---------- 名字音译 ---------- */
+  var nameInput = document.getElementById('nameInput');
+  var nameOut = document.getElementById('nameOut');
+  function doName() {
+    var t = nameInput.value.trim();
+    if (!t) return;
+    var res;
+    try { res = E.transliterateName(t); } catch (err) { res = { ok: false, error: '引擎异常：' + err.message }; }
+    renderResult(nameOut, res, { zh: t });
+  }
+  document.getElementById('nameGo').addEventListener('click', doName);
+  nameInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') doName(); });
+  var nameChips = document.getElementById('nameChips');
+  ['Acrab', 'Claude', 'Beijing', 'Shanghai', 'Tokyo', 'Einstein'].forEach(function (s) {
+    var c = el('button', 'chip', s);
+    c.addEventListener('click', function () { nameInput.value = s; doName(); });
+    nameChips.appendChild(c);
+  });
+
+  /* ---------- 词典 ---------- */
+  var dictInput = document.getElementById('dictInput');
+  var dictOut = document.getElementById('dictOut');
+  function doDict() {
+    var q = dictInput.value.trim();
+    dictOut.innerHTML = '';
+    if (!q) return;
+    var hits;
+    try { hits = E.searchLexicon(q) || []; } catch (err) { hits = []; }
+    if (!hits.length) {
+      dictOut.appendChild(el('div', 'hint', '没有命中。303 词根有限——试试更基本的近义词（如「电脑」查不到,查「想」「器」）。'));
+      return;
+    }
+    hits.slice(0, 40).forEach(function (h) {
+      var item = el('div', 'dict-item');
+      var dr = el('div', 'dr', h.roman);
+      if (h.ipa) dr.appendChild(el('small', null, h.ipa));
+      item.appendChild(dr);
+      var dz = el('div', 'dz', (h.zh || []).join('；'));
+      if (h.field) dz.appendChild(el('small', null, ' · ' + h.field));
+      item.appendChild(dz);
+      item.appendChild(el('div', 'dc' + (h.cls === 'strong' ? ' strong' : ''),
+        (h.pos || '') + (h.cls === 'strong' ? ' · 强类不褪' : h.cls === 'weak' ? ' · 弱类可磨' : '')));
+      dictOut.appendChild(item);
+    });
+    if (hits.length > 40) dictOut.appendChild(el('div', 'hint', '……另有 ' + (hits.length - 40) + ' 条，请缩小检索。'));
+  }
+  dictInput.addEventListener('input', doDict);
+
+  /* ---------- 常用语 ---------- */
+  var phraseOut = document.getElementById('phraseOut');
+  var phraseDetail = document.getElementById('phraseDetail');
+  var book = (E && E.PHRASEBOOK) || [];
+  book.forEach(function (ph) {
+    var d = el('div', 'phrase');
+    d.appendChild(el('div', 'pr', ph.roman));
+    d.appendChild(el('div', 'pz', ph.zh + (ph.note ? ' · ' + ph.note : '')));
+    d.addEventListener('click', function () {
+      renderResult(phraseDetail, { ok: true, roman: ph.roman, trans: ph.zh, gloss: ph.gloss || '', trace: ph.note ? [{ step: '用法', detail: ph.note }] : [] });
+      phraseDetail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    phraseOut.appendChild(d);
+  });
+  if (!book.length) phraseOut.appendChild(el('div', 'hint', '短语集未加载。'));
+})();
+
+</script>

@@ -1,0 +1,832 @@
+<meta charset="utf-8">
+<title>Sìlneth · 会被时间磨蚀的语言</title>
+<style>
+  :root {
+    --ink0: #101318;
+    --ink1: #161a21;
+    --ink2: #1d232c;
+    --line: #2a313c;
+    --text: #c3ccd6;
+    --bright: #edf2f7;
+    --ash: #7f8894;
+    --faded: #545d69;
+    --val: #a3c9de;
+    --ember: #d99a60;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Songti SC', 'Source Han Serif SC', 'Noto Serif CJK SC', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+  html { background: var(--ink0); }
+  body {
+    font-family: var(--serif);
+    color: var(--text);
+    background:
+      radial-gradient(1200px 500px at 50% -100px, #1a2029 0%, transparent 70%),
+      var(--ink0);
+    line-height: 1.9;
+    font-size: 16.5px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  .wide { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  a { color: var(--val); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    letter-spacing: 0.22em;
+    color: var(--ash);
+    text-transform: uppercase;
+  }
+
+  /* ---------- 字形 ---------- */
+  .glyph-svg { display: block; }
+  .glyph-svg path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ---------- Hero ---------- */
+  header.hero { padding: 96px 0 40px; text-align: center; }
+  .hero-name-script {
+    display: flex; justify-content: center; align-items: center;
+    gap: clamp(2px, 1vw, 8px); color: var(--bright);
+    margin: 40px 0 8px;
+  }
+  .hero-name-script svg { width: clamp(40px, 9vw, 76px); height: auto; }
+  h1.hero-name {
+    font-size: clamp(44px, 8vw, 68px);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--bright);
+    margin: 8px 0 4px;
+    text-wrap: balance;
+  }
+  .hero-sub { color: var(--ash); font-size: 17px; margin-bottom: 28px; }
+  .hero-sub .ipa-t { font-family: var(--mono); font-size: 14.5px; }
+  .hero-lede {
+    max-width: 620px; margin: 0 auto; text-align: left;
+    color: var(--text); font-size: 17px;
+  }
+  .hero-lede strong { color: var(--bright); font-weight: 600; }
+
+  nav.toc {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 6px 22px; margin: 44px 0 0;
+    font-family: var(--sans); font-size: 13.5px;
+  }
+  nav.toc a { color: var(--ash); }
+  nav.toc a:hover { color: var(--val); text-decoration: none; }
+
+  /* ---------- 磨蚀演示 ---------- */
+  .demo {
+    background: var(--ink1);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 36px 28px 30px;
+    margin: 56px auto 0;
+    max-width: 640px;
+    text-align: center;
+  }
+  .demo .eyebrow { display: block; margin-bottom: 22px; }
+  .demo-word {
+    display: flex; justify-content: center; align-items: center;
+    gap: 2px; color: var(--bright); margin-bottom: 6px;
+  }
+  .demo-word svg { width: clamp(44px, 10vw, 72px); height: auto; }
+  .demo-word .mark { color: var(--faded); }
+  #peakGroup {
+    transform-origin: 38px 64px;
+    transition: transform 0.7s cubic-bezier(.4,0,.2,1), opacity 0.7s;
+  }
+  #crackPath { transition: opacity 0.5s; }
+  .demo-roman { font-size: 30px; font-style: italic; color: var(--bright); letter-spacing: 0.03em; }
+  .demo-roman .vch { transition: color 0.5s; }
+  .demo-ipa { font-family: var(--mono); font-size: 14px; color: var(--ash); margin: 2px 0 14px; }
+  .demo-trans { font-size: 17px; color: var(--text); min-height: 32px; }
+  .demo-note { font-family: var(--sans); font-size: 12.5px; color: var(--ash); min-height: 24px; margin-top: 4px; }
+  .demo-ctl { display: flex; justify-content: center; gap: 10px; margin-top: 26px; flex-wrap: wrap; }
+  .demo-ctl button {
+    font-family: var(--sans); font-size: 13px;
+    background: transparent; color: var(--ash);
+    border: 1px solid var(--line); border-radius: 2px;
+    padding: 9px 16px; cursor: pointer;
+    transition: color .2s, border-color .2s, background .2s;
+  }
+  .demo-ctl button:hover { color: var(--bright); border-color: var(--ash); }
+  .demo-ctl button[aria-pressed="true"] {
+    color: var(--ink0); background: var(--val); border-color: var(--val); font-weight: 600;
+  }
+  .demo-ctl button:focus-visible { outline: 2px solid var(--val); outline-offset: 2px; }
+  .demo-ctl b { display: block; font-size: 14px; font-weight: 600; }
+
+  /* ---------- 章节 ---------- */
+  section { padding: 72px 0 0; }
+  .divider { display: flex; justify-content: center; padding-top: 72px; color: var(--faded); }
+  .divider svg { width: 34px; height: 34px; }
+  h2.sec {
+    font-size: 27px; font-weight: 500; color: var(--bright);
+    margin: 10px 0 6px; text-wrap: balance;
+  }
+  .sec-sub { color: var(--ash); font-size: 15px; margin-bottom: 30px; }
+  h3.sub { font-size: 18px; color: var(--bright); font-weight: 600; margin: 40px 0 12px; }
+  p { margin: 0 0 16px; }
+  p.tight { margin-bottom: 8px; }
+  em.rm { font-style: italic; color: var(--bright); }
+  .muted { color: var(--ash); }
+  .small { font-size: 14px; }
+
+  /* 例句块 */
+  .ex {
+    border-left: 2px solid var(--line);
+    padding: 6px 0 6px 22px;
+    margin: 22px 0;
+  }
+  .ex .rom { font-size: 19.5px; font-style: italic; color: var(--bright); margin-bottom: 2px; }
+  .ex .ipa { font-family: var(--mono); font-size: 13px; color: var(--faded); margin-bottom: 6px; }
+  .ex .gl { font-family: var(--mono); font-size: 12.5px; color: var(--ash); margin-bottom: 6px; line-height: 1.75; }
+  .ex .tr { font-size: 16px; color: var(--text); margin-bottom: 4px; }
+  .ex .nt { font-family: var(--sans); font-size: 12.5px; color: var(--ash); }
+  .hl0 { color: var(--val); font-weight: 600; }
+  .hl2 { color: var(--ember); font-weight: 600; }
+
+  /* 元音收敛图 */
+  .vgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.35fr;
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line); border-radius: 3px;
+    overflow: hidden; margin: 26px 0 10px;
+  }
+  .vgrid > div { background: var(--ink1); padding: 10px 8px; text-align: center; }
+  .vgrid .vh { font-family: var(--sans); font-size: 12px; color: var(--ash); padding: 12px 8px; background: var(--ink2); }
+  .vgrid .vc { font-size: 19px; font-style: italic; color: var(--bright); }
+  .vgrid .vc small { display: block; font-family: var(--mono); font-style: normal; font-size: 11.5px; color: var(--faded); }
+  .vgrid .v1 .vc, .vgrid .v1 { color: var(--text); }
+  .vgrid .converge {
+    grid-row: 2 / span 7;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    gap: 10px; color: var(--ash); background: var(--ink1);
+  }
+  .vgrid .converge svg { width: 84px; height: 84px; color: var(--bright); }
+  .vgrid .converge .big { font-size: 30px; font-style: italic; color: var(--bright); }
+
+  .aside {
+    background: var(--ink1); border: 1px solid var(--line); border-radius: 3px;
+    padding: 18px 22px; margin: 24px 0; font-size: 15px;
+  }
+  .aside b { color: var(--bright); }
+
+  /* 字形网格 */
+  .ggroup { margin-top: 34px; }
+  .ggroup h4 {
+    font-family: var(--sans); font-size: 12.5px; font-weight: 600;
+    letter-spacing: 0.14em; color: var(--ash); margin: 0 0 14px;
+  }
+  .ggrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    gap: 10px;
+  }
+  .gcell {
+    background: var(--ink1); border: 1px solid var(--line); border-radius: 3px;
+    padding: 12px 6px 10px; text-align: center; color: var(--bright);
+    transition: border-color .2s, background .2s;
+  }
+  .gcell:hover { border-color: var(--ash); background: var(--ink2); }
+  .gcell svg { width: 52px; height: 52px; margin: 0 auto 6px; }
+  .gcell .gv { font-size: 15px; font-style: italic; }
+  .gcell .gv small { font-family: var(--mono); font-style: normal; font-size: 10.5px; color: var(--faded); }
+  .gcell .gn { font-family: var(--sans); font-size: 10.5px; color: var(--ash); margin-top: 2px; }
+
+  /* 例词拼写 */
+  .wordcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 26px; }
+  .wordcard {
+    background: var(--ink1); border: 1px solid var(--line); border-radius: 3px;
+    padding: 22px 18px 18px; text-align: center;
+  }
+  .wordcard .wglyphs { display: flex; justify-content: center; gap: 0; color: var(--bright); margin-bottom: 10px; }
+  .wordcard .wglyphs svg { width: 38px; height: 38px; }
+  .wordcard .wr { font-size: 19px; font-style: italic; color: var(--bright); }
+  .wordcard .wm { font-family: var(--sans); font-size: 12.5px; color: var(--ash); margin-top: 2px; }
+
+  /* 边界调 / 示证卡 */
+  .cards3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin: 24px 0; }
+  .card {
+    background: var(--ink1); border: 1px solid var(--line); border-radius: 3px;
+    padding: 18px 16px; text-align: center;
+  }
+  .card svg { width: 44px; height: 44px; margin: 0 auto 8px; color: var(--bright); }
+  .card .ct { font-size: 16px; color: var(--bright); font-weight: 600; }
+  .card .cd { font-family: var(--sans); font-size: 12.5px; color: var(--ash); margin-top: 4px; line-height: 1.7; }
+  .card .cv { font-size: 19px; font-style: italic; color: var(--val); }
+
+  .formula {
+    font-family: var(--mono); font-size: 15px; color: var(--bright);
+    background: var(--ink2); border: 1px solid var(--line); border-radius: 3px;
+    padding: 12px 18px; display: inline-block; margin: 6px 0 14px;
+  }
+
+  /* 恒守 / 倾颓 */
+  .duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 24px 0; }
+  .duo .pane { background: var(--ink1); border: 1px solid var(--line); border-radius: 3px; padding: 22px; }
+  .duo .pane h4 { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
+  .duo .firm h4 { color: var(--ember); }
+  .duo .ruin h4 { color: var(--faded); }
+  .duo .pane .rom { font-style: italic; font-size: 17px; color: var(--bright); }
+  .duo .pane .tr { font-size: 14.5px; color: var(--text); margin-top: 6px; }
+  .duo .pane .nt { font-family: var(--sans); font-size: 12.5px; color: var(--ash); margin-top: 8px; }
+
+  /* 诗 */
+  .poem { margin: 30px 0 8px; }
+  .couplet {
+    display: grid; grid-template-columns: 56px 1fr; gap: 18px;
+    padding: 18px 0; border-top: 1px solid var(--line);
+  }
+  .couplet:last-child { border-bottom: 1px solid var(--line); }
+  .couplet .lvl {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.1em;
+    color: var(--ash); padding-top: 6px; line-height: 1.9;
+  }
+  .couplet .pline { font-size: 19px; font-style: italic; margin-bottom: 2px; }
+  .couplet .ptr { font-size: 14.5px; color: var(--ash); margin-bottom: 10px; }
+  .couplet .ptr:last-child { margin-bottom: 0; }
+  .c0 .pline { color: var(--bright); }
+  .c1 .pline { color: #9aa5b1; }
+  .c2 .pline { color: var(--faded); }
+
+  /* 民族志 */
+  .envs { display: grid; gap: 12px; margin: 24px 0; }
+  .env {
+    display: grid; grid-template-columns: 190px 1fr; gap: 16px;
+    background: var(--ink1); border: 1px solid var(--line); border-radius: 3px; padding: 18px 20px;
+  }
+  .env b { color: var(--bright); font-size: 15px; }
+  .env span { font-size: 14.5px; color: var(--text); }
+  .name-erode { font-size: 21px; font-style: italic; color: var(--bright); letter-spacing: 0.02em; }
+  .name-erode .arrow { color: var(--faded); font-style: normal; font-size: 16px; padding: 0 8px; }
+  .name-erode .dead { color: var(--faded); }
+
+  /* colophon */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin: 28px 0; }
+  .stat { background: var(--ink1); border: 1px solid var(--line); border-radius: 3px; padding: 16px 12px; text-align: center; }
+  .stat .n { font-size: 26px; color: var(--bright); font-variant-numeric: tabular-nums; }
+  .stat .l { font-family: var(--sans); font-size: 12px; color: var(--ash); }
+
+  footer { padding: 80px 0 60px; text-align: center; }
+  footer .fin { display: flex; justify-content: center; color: var(--faded); margin-bottom: 14px; }
+  footer .fin svg { width: 30px; height: 30px; }
+  footer p { font-family: var(--sans); font-size: 12.5px; color: var(--ash); }
+  footer .rom { font-style: italic; font-family: var(--serif); font-size: 16px; color: var(--text); }
+
+  .scrollbox { overflow-x: auto; }
+
+  @media (max-width: 620px) {
+    .env { grid-template-columns: 1fr; gap: 6px; }
+    .couplet { grid-template-columns: 40px 1fr; gap: 12px; }
+    header.hero { padding-top: 64px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #peakGroup, #crackPath, .demo-roman .vch { transition: none !important; }
+  }
+</style>
+
+<header class="hero wrap">
+  <span class="eyebrow">一门新发明的语言 · 定本第二版</span>
+  <div class="hero-name-script" id="heroScript" aria-hidden="true"></div>
+  <h1 class="hero-name">Sìlneth</h1>
+  <div class="hero-sub"><span class="ipa-t">/ˈsɪl.neθ/</span> · 「承继而来的话语」</div>
+  <div class="hero-lede">
+    <p>这是一门<strong>会被时间磨蚀的语言</strong>。它不用词缀表示时态——所言之事离现在越远，动词词根的元音就被磨得越平：说今天的事，元音饱满如新凿的刻痕；说上一代的事，元音松弛黯淡，像雨打过的碑；说祖先与神话之时，元音彻底坍缩成一声气化的 <em class="rm">ë</em>，如磨平的石面。</p>
+    <p><strong>「古老」在这门语言里不是被标注的，而是被直接听见的。</strong></p>
+  </div>
+  <nav class="toc">
+    <a href="#engine">发动机</a>
+    <a href="#script">文字 Mírneth</a>
+    <a href="#grammar">语法</a>
+    <a href="#texts">例文</a>
+    <a href="#people">歌者之民</a>
+    <a href="#making">制作记</a>
+    <a href="./" style="color:var(--val)">翻译器 →</a>
+  </nav>
+
+  <div class="demo">
+    <span class="eyebrow">亲手磨蚀一个动词 — √SIL「言说 · 吟诵 · 唱」</span>
+    <div class="demo-word" id="demoWord"></div>
+    <div class="demo-roman" id="demoRoman"></div>
+    <div class="demo-ipa" id="demoIpa"></div>
+    <div class="demo-trans" id="demoTrans"></div>
+    <div class="demo-note" id="demoNote"></div>
+    <div class="demo-ctl" id="demoCtl" role="group" aria-label="选择时态级"></div>
+  </div>
+</header>
+
+<div class="divider" aria-hidden="true"><svg class="glyph-svg" viewBox="0 0 100 100"><path d="M 28 34 Q 54 40 70 72"/></svg></div>
+
+<section class="wrap" id="constitution">
+  <span class="eyebrow">宪法样句</span>
+  <h2 class="sec">同一个词根，两个时间</h2>
+  <p class="sec-sub">整门语言的设计浓缩在这一句里。</p>
+  <div class="ex">
+    <p class="rom">Lírin silnethon <span class="hl0">silar</span>, arnin vath silnethon <span class="hl2">sëlar</span>.</p>
+    <p class="ipa">/ˈliː.rin ˈsil.ne.θon ˈsi.lar | ˈar.niɱ vaθ ˈsil.ne.θon ˈsə.lar/</p>
+    <p class="gl">河-PL&nbsp; 歌-ACC&nbsp; 言说\NEAR-3PL&nbsp;&nbsp;‖&nbsp;&nbsp;山-PL&nbsp; 于远古&nbsp; 歌-ACC&nbsp; 言说\ANC-3PL&nbsp;&nbsp;（REAL）</p>
+    <p class="tr">「河流此刻唱着这支歌；群山，在远古，也曾唱过它。」</p>
+    <p class="nt">动词 √SIL 出现两次：<span class="hl0">sil-</span> 满元音＝此刻，<span class="hl2">sël-</span> 全 schwa＝远古。名词 silneth「歌」两现都保持满元音——它是句中不褪的参照物。时间的距离，直接磨在元音上。</p>
+  </div>
+  <p>连这门语言的自称都是这个特征的活样本：<em class="rm">silneth</em>（满级）＝「正被吟诵的一支歌」，<em class="rm">Sìlneth</em>（磨蚀一级）＝「世代承继下来的话语」——语言之名里刻着一道岁月的裂痕；诗语中还有 <em class="rm">sëlneth</em>（磨尽级）＝「太初之言，诸神的第一句话」。</p>
+</section>
+
+<div class="divider" aria-hidden="true"><svg class="glyph-svg" viewBox="0 0 100 100"><path d="M 28 34 Q 54 40 70 72"/></svg></div>
+
+<section class="wrap" id="engine">
+  <span class="eyebrow">音系 · 发动机</span>
+  <h2 class="sec">元音三级磨蚀</h2>
+  <p class="sec-sub">元音不是一张表，而是三张彼此映射的表。</p>
+  <p>七个满级元音各有其磨蚀一级形（松化、黯淡），而所有元音的磨蚀二级形<strong style="color:var(--bright)">殊途同归</strong>——全部坍缩为同一声 <em class="rm">ë</em> /ə/。它没有长短对立、不能重读、禁加一切附标：它是「磨尽」本身。</p>
+  <div class="vgrid" id="vowelGrid"></div>
+  <p class="small muted">磨蚀一级以顿音符标写（ì è à …），磨蚀二级统一写作 ë。</p>
+  <div class="aside">
+    <b>抗磨层：不褪的词。</b> 长元音（í á ó …）与双元音（ai au ei oi）历史上承过次重音，<b>永不坍缩为 ë</b>。词库系统性地把恒久的语义放进这一层——<em class="rm">arn</em>「山」、<em class="rm">grán</em>「石」、<em class="rm">saul</em>「日」、<em class="rm">mír</em>「铭记」、<em class="rm">lán</em>「屹立」；而易逝之物（雪、雨、烟、气息）全用可磨的短元音。高谷人日日目睹的两种时间——地质的与气象的——被整个编进了语音。
+  </div>
+  <p class="small muted">另有辅音 23 个（含 th /θ/、dh /ð/、ñ /ɲ/ 等），音节型 (C)(C)V(ː)(C)，词根首音节固定重音。全表见随附参考书第二章。</p>
+</section>
+
+<div class="divider" aria-hidden="true"><svg class="glyph-svg" viewBox="0 0 100 100"><path d="M 28 34 Q 54 40 70 72"/></svg></div>
+
+<section class="wide" id="script">
+  <div class="wrap" style="padding:0">
+    <span class="eyebrow">文字系统 · Mírneth「铭文」</span>
+    <h2 class="sec">语音会磨蚀，文字负责不褪</h2>
+    <p class="sec-sub">特征制字母文字 · 40 枚字符 · 六种笔势，如同一支平头凿刻出。</p>
+    <p>辅音以「干」为骨（阻碍之壁），以「弓」定部位——闭弓是塞音、开弓是擦音、折弓是齿音；「桥」表浊声，「点」表鼻腔共鸣；流音一族无干、纯是波形。元音则统一坐在一条<strong style="color:var(--bright)">地平线</strong>上，峰高即舌位：高元音长峰、低元音矮丘，卷首表圆唇。</p>
+    <p>于是磨蚀在纸面上直接可见：<strong style="color:var(--bright)">长元音的峰顶架着「天际线」，磨蚀一级在字底刻一道「裂痕」，磨蚀二级把整个字磨平——只剩地平线。</strong>正字操作与音变操作一一对应。</p>
+  </div>
+  <div id="glyphGroups"></div>
+  <div class="wrap" style="padding:0">
+    <h3 class="sub">三个例词，恰好走完三个磨蚀级</h3>
+    <div class="wordcards" id="wordCards"></div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><svg class="glyph-svg" viewBox="0 0 100 100"><path d="M 28 34 Q 54 40 70 72"/></svg></div>
+
+<section class="wrap" id="grammar">
+  <span class="eyebrow">语法速览</span>
+  <h2 class="sec">凡承载范畴的，必有实体</h2>
+  <p class="sec-sub">SOV · 黏着骨架 · 时态零词缀（全靠磨蚀级）。</p>
+
+  <h3 class="sub">语气不用词缀——用句末的音高曲线</h3>
+  <p class="tight">峡谷两岸隔水喊话，风声吃掉辅音细节，却吃不掉音高。于是语气全部押在零音段成本的句末边界调上，文字里的「标点」直接画出曲线本身：</p>
+  <div class="cards3" id="toneCards"></div>
+
+  <h3 class="sub">示证：每句话都要交代「你怎么知道的」</h3>
+  <p class="tight">说远时与祖时的事，必须在句末挂示证附着词；传闻词 <em class="rm">=re</em> 可以叠加——每叠一份，表示多经一人之手。而示证词自己的元音，也随全句时态一起磨蚀：</p>
+  <div class="cards3">
+    <div class="card"><div class="cv">=va</div><div class="ct">亲历</div><div class="cd">亲见亲闻<br>＜ vár「看见」（哨望者）</div></div>
+    <div class="card"><div class="cv">=dhi</div><div class="ct">推断</div><div class="cd">凭迹象与常理<br>＜ dhir「循迹」（猎人读雪）</div></div>
+    <div class="card"><div class="cv">=re =rè…</div><div class="ct">传闻 · 可迭代</div><div class="cd">n 份拷贝＝经手 n+1 人<br>＜ *ren「递、传」（信使）</div></div>
+  </div>
+  <p class="tight">第 i 份传闻拷贝的磨蚀级 ＝</p>
+  <div class="formula">min( 时态级 t + i , 2 )</div>
+  <div class="ex">
+    <p class="rom">Dhalin talis sëlar <span class="hl2">=rë =rë</span>.</p>
+    <p class="gl">祖先-PL&nbsp; 厅-LOC&nbsp; 言说\ANC-3PL=传闻=传闻&nbsp;（REAL）</p>
+    <p class="tr">「据世代相传（三手），先祖们曾在此厅中吟诵。」</p>
+    <p class="nt">年代之深与经手之多，磨进同一声 schwa。复述他人的话必须加一份拷贝，手数只增不减——抹掉一份，罪同伪证。</p>
+  </div>
+
+  <h3 class="sub">修辞：对磨蚀规则的庄严违反</h3>
+  <div class="duo">
+    <div class="pane firm">
+      <h4>恒守体 — 誓言</h4>
+      <p class="rom">Hol arnin vath silnethon <b>silar</b> =va.</p>
+      <p class="tr">「诸山在远古唱过此歌——此歌永不磨灭，吾亲证之。」</p>
+      <p class="nt">该磨的词根拒绝磨蚀，在祖时语境里保持满元音＝「此事虽古犹存，我担保其恒久」。用于誓言、铭文、颂诗。</p>
+    </div>
+    <div class="pane ruin">
+      <h4>倾颓体 — 挽歌</h4>
+      <p class="rom">Tor arnin <b>lënar</b> =rë.</p>
+      <p class="tr">「那些山，相传也曾『屹立』——如今已倾颓成尘。」</p>
+      <p class="nt">「不褪的」强根 √LÁN 被强行磨作 lën-：语音的亵渎写实体的崩塌。只有歌者在挽歌与亡国史诗中有权这样说。</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><svg class="glyph-svg" viewBox="0 0 100 100"><path d="M 28 34 Q 54 40 70 72"/></svg></div>
+
+<section class="wrap" id="texts">
+  <span class="eyebrow">例文</span>
+  <h2 class="sec">《Líre Silneth》河之歌</h2>
+  <p class="sec-sub">磨蚀阶梯体 · 六音节行，双行成联，三联成篇，自今溯古。</p>
+  <p>同一对动词（<em class="rm">wen</em>「走」、<em class="rm">sil</em>「唱」）逐联下降一个磨蚀级，人称同步远去（我 → 父亲 → 远祖），示证尾注同步变声（无 → =và → =rë）。每行恰含一枚不褪的重音节作「石音锚」；偶数行恒以 <em class="rm">lír</em>「河」起首——河是时间中的常量。</p>
+  <div class="poem">
+    <div class="couplet c0">
+      <div class="lvl">级0<br>近时</div>
+      <div>
+        <p class="pline">Ni Nárlathis wene.</p>
+        <p class="ptr">我走在新绿之野。</p>
+        <p class="pline">Lír nijir em sila.</p>
+        <p class="ptr">河也为我歌唱。</p>
+      </div>
+    </div>
+    <div class="couplet c1">
+      <div class="lvl">级1<br>远时</div>
+      <div>
+        <p class="pline">Pai tor ranis wèna =và.</p>
+        <p class="ptr">父亲曾走在那条路上（我亲见）。</p>
+        <p class="pline">Lír dhejir em sìla =và.</p>
+        <p class="ptr">河也曾为他歌唱（我亲见）。</p>
+      </div>
+    </div>
+    <div class="couplet c2">
+      <div class="lvl">级2<br>祖时</div>
+      <div>
+        <p class="pline">Tórdhal ranis wëna =rë.</p>
+        <p class="ptr">相传，远祖走过这条路。</p>
+        <p class="pline">Lír dhalir em sëla =rë.</p>
+        <p class="ptr">相传，河也曾为先祖歌唱。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub">谚语</h3>
+  <div class="ex">
+    <p class="rom">Seth thum, nas mirn grán.</p>
+    <p class="tr">「话语是烟，而铭痕是石。」——说出的会散，刻下的长存。</p>
+    <p class="nt">烟带「灰烬之音」θ，石属不褪的强层：音象与隐喻同构。</p>
+  </div>
+  <div class="ex">
+    <p class="rom">Grathon zaris ul skiro~</p>
+    <p class="tr">「勿把誓言刻在沙上。」——守不住的诺言别许。</p>
+  </div>
+  <div class="ex">
+    <p class="rom">Lomum gránon tarna.</p>
+    <p class="tr">「以缓，劈石。」——慢工出细活。</p>
+  </div>
+
+  <h3 class="sub">寓言《风与太阳》结尾</h3>
+  <p class="tight muted small">叙事框架用祖时＋传闻；直接引语里回到人物自己的「现在」，示证链原样保留：</p>
+  <div class="ex">
+    <p class="rom">Wein sëla =rë: «Vy nijol dren <span class="hl0">=va</span>.»</p>
+    <p class="tr">「相传风终于说：『你比我强——我亲证。』」</p>
+    <p class="nt">引语内 t=0，=va 满形：风方才亲眼所见，示证用得其所。</p>
+  </div>
+  <div class="ex">
+    <p class="rom">Weine garm <span class="hl2">lëna</span> =rë.</p>
+    <p class="tr">「相传，风的怒气——那曾『屹立』者——就此倾颓成灰。」</p>
+    <p class="nt">倾颓体：怒气的崩解，由一个被说塌的强根演出。</p>
+  </div>
+  <div class="ex">
+    <p class="rom">Saul vath noron <span style="color:var(--ember);font-weight:600">athtaja</span> =va.</p>
+    <p class="tr">「而太阳，自远古便这样温暖着大地——此事恒常不磨，吾亲证之。」</p>
+    <p class="nt">恒守体收束：讲述者以今日仍暖的太阳为万人之证。</p>
+  </div>
+
+  <h3 class="sub">日常</h3>
+  <div class="ex">
+    <p class="rom">Fairn hom? — Hom. Gweno~</p>
+    <p class="tr">「炉火满吗？」——「满的。进来吧。」（客至门礼）</p>
+  </div>
+  <div class="ex">
+    <p class="rom">Vy dheso? — Dhese.</p>
+    <p class="tr">「你活着（安好）？」——「我活着。」（雪谷的冬日问候；老掉牙的逗趣答法是 <em class="rm">Dhese =va</em>「我活着——我亲证」）</p>
+  </div>
+  <div class="ex">
+    <p class="rom">Láno~</p>
+    <p class="tr">「愿你屹立。」（送别，用不褪的 √LÁN）</p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><svg class="glyph-svg" viewBox="0 0 100 100"><path d="M 28 34 Q 54 40 70 72"/></svg></div>
+
+<section class="wrap" id="people">
+  <span class="eyebrow">语言与它的使用者</span>
+  <h2 class="sec">Silwedhem 歌者之民</h2>
+  <p class="sec-sub">高山峡谷 · 雪峰环峙 · 历史全靠世袭歌者在诵厅里逐代记诵。</p>
+  <p>他们的环境不是背景板——它解释了语法里每一处「为什么偏偏是这样」：</p>
+  <div class="envs">
+    <div class="env"><b>大雪封谷的口传之冬</b><span>知识是一条人链。谁亲见、谁推断、经了几手，是每晚讲史都要当众结算的账——于是这笔账被铸进句末，成为强制示证与手数守恒律。</span></div>
+    <div class="env"><b>峡谷两岸的喊话距离</b><span>风声与水声吃掉辅音，吃不掉音高曲线——语气便全部押在句末边界调上，一个上挑就够对岸听清是在发问。</span></div>
+    <div class="env"><b>地景的两种时间</b><span>山石恒在，雨雪转瞬。恒久的语义配不褪的长元音，易逝的语义配可磨的短元音——词库是一部编进语音的地质学。</span></div>
+  </div>
+
+  <h3 class="sub">名字也会磨蚀</h3>
+  <p>名的磨蚀级＝其主人与活人记忆的距离：在世者用满形；逝者尚有亲见者在世，转磨蚀一级；最后一个记得他的人也逝去后，归于 schwa——</p>
+  <p class="name-erode" style="margin:18px 0">Welwe <span class="arrow">→</span> Wèlwe <span class="arrow">→</span> <span class="dead">Wëlwe</span></p>
+  <p>而强根之名永不归尘：<em class="rm">Mírwe</em>「铭记者」的祖名止步于 <em class="rm">Mìrwe</em>。为孩子选强根，是父母与时间打的赌——「买一个不褪之名」；也有家风谦卑者故意选弱根，说凡人之名终当归尘。</p>
+  <div class="aside">
+    <b>最大禁忌：</b>对活人使用磨蚀名（对着活的 Velmil 喊 <em class="rm">Vëlmil</em>），等于在语法上把他提前送进「超出活人记忆」之域——是死咒，罪同伪誓。
+  </div>
+
+  <h3 class="sub">数他们的年</h3>
+  <p>Sìlneth 用十二进制——拇指点数同手四指的十二个指节，牧人清点羊群的手势。12 的数词 <em class="rm">lár</em> 带长元音，属不褪层：「满数」在语音上恒久。今年，用 Sìlneth 说，是——</p>
+  <p style="font-size:22px;font-style:italic;color:var(--bright);margin:12px 0 4px">órvan dy ýlan dhul</p>
+  <p class="small muted">1728 ＋ 2×144 ＋ 10 ＝ 2026。</p>
+</section>
+
+<div class="divider" aria-hidden="true"><svg class="glyph-svg" viewBox="0 0 100 100"><path d="M 28 34 Q 54 40 70 72"/></svg></div>
+
+<section class="wrap" id="making">
+  <span class="eyebrow">制作记</span>
+  <h2 class="sec">这门语言是怎么造出来的</h2>
+  <p class="sec-sub">一条多智能体流水线：竞标 → 评审 → 立宪 → 四路深化 → 三方审稿 → 总编定稿。</p>
+  <p>五位「语言发明家」从不同流派独立提案：哲学工程、自然主义艺术、非人类模态、极简涌现、汉藏新枝。三位评委（语言学严谨性 / 美学与可学性 / 原创性与惊喜感）打分选优——自然主义方案 Sìlneth 胜出，非人类模态的声调语言 <em class="rm">Hlavë</em>「带调之舌」居次。此后首席设计师立宪，词库、文字、例文、文化四路并行开发，三位审稿人逐句找茬，总编逐条修订成书。</p>
+  <div class="stats">
+    <div class="stat"><div class="n">17</div><div class="l">协作智能体</div></div>
+    <div class="stat"><div class="n">5</div><div class="l">竞标概念</div></div>
+    <div class="stat"><div class="n">303</div><div class="l">词根</div></div>
+    <div class="stat"><div class="n">40</div><div class="l">Mírneth 字符</div></div>
+    <div class="stat"><div class="n">44</div><div class="l">审稿问题 · 全部处理</div></div>
+    <div class="stat"><div class="n">8</div><div class="l">章参考书</div></div>
+  </div>
+  <p class="small muted">完整《语言参考书》（音系全表、语法全典、303 条词根、例文全帙、民族志与附录）已作为 Markdown 文档随附。本页所有 Mírneth 字形均按参考书第三章的 SVG 规格原样渲染。</p>
+</section>
+
+<footer>
+  <div class="fin" aria-hidden="true"><svg class="glyph-svg" viewBox="0 0 100 100"><path d="M 28 34 Q 54 40 70 72"/></svg></div>
+  <p class="rom">Silneth sathsa.</p>
+  <p>「此一讲述已尽。」——Silwedhem 讲史的收束语</p>
+</footer>
+
+<script>
+(function () {
+  var P = {
+    pe: 'M 35 20 L 35 80 M 35 26 Q 68 26 68 41 Q 68 56 35 56',
+    be: 'M 35 20 L 35 80 M 35 26 Q 68 26 68 41 Q 68 56 35 56 M 24 68 L 52 68',
+    me: 'M 35 20 L 35 80 M 35 26 Q 68 26 68 41 Q 68 56 35 56 M 50 39 L 50 43',
+    fe: 'M 35 20 L 35 80 M 35 26 Q 68 30 62 52',
+    ve: 'M 35 20 L 35 80 M 35 26 Q 68 30 62 52 M 24 68 L 52 68',
+    te: 'M 35 20 L 35 80 M 35 44 Q 68 44 68 59 Q 68 74 35 74',
+    de: 'M 35 20 L 35 80 M 35 44 Q 68 44 68 59 Q 68 74 35 74 M 24 32 L 52 32',
+    ne: 'M 35 20 L 35 80 M 35 44 Q 68 44 68 59 Q 68 74 35 74 M 50 57 L 50 61',
+    se: 'M 35 20 L 35 80 M 35 48 Q 68 52 62 74',
+    ze: 'M 35 20 L 35 80 M 35 48 Q 68 52 62 74 M 24 32 L 52 32',
+    the: 'M 35 20 L 35 80 M 35 48 L 66 54 L 58 76',
+    dhe: 'M 35 20 L 35 80 M 35 48 L 66 54 L 58 76 M 24 32 L 52 32',
+    she: 'M 35 20 L 35 80 M 35 25 Q 74 33 64 75',
+    nye: 'M 35 20 L 35 80 M 35 25 Q 72 25 72 50 Q 72 75 35 75 M 52 48 L 52 52',
+    ke: 'M 65 20 L 65 80 M 65 26 Q 32 26 32 41 Q 32 56 65 56',
+    ge: 'M 65 20 L 65 80 M 65 26 Q 32 26 32 41 Q 32 56 65 56 M 48 68 L 76 68',
+    nge: 'M 65 20 L 65 80 M 65 26 Q 32 26 32 41 Q 32 56 65 56 M 50 39 L 50 43',
+    he: 'M 65 20 L 65 80 M 65 26 Q 32 30 38 52',
+    re: 'M 26 60 Q 42 34 54 54 Q 64 70 74 46',
+    le: 'M 52 20 Q 34 40 52 52 Q 70 64 48 80',
+    lle: 'M 52 20 Q 34 40 52 52 Q 70 64 48 80 M 52 20 Q 66 22 68 34',
+    we: 'M 24 40 Q 37 68 50 44 Q 63 68 76 40',
+    je: 'M 62 24 Q 34 30 36 52 Q 38 74 64 76',
+    i: 'M 25 64 L 75 64 M 38 64 L 38 22',
+    y: 'M 25 64 L 75 64 M 38 64 L 38 32 Q 38 20 50 21',
+    e: 'M 25 64 L 75 64 M 38 64 L 38 44',
+    oe: 'M 25 64 L 75 64 M 38 64 L 38 46 Q 38 34 50 35',
+    a: 'M 25 64 L 75 64 M 40 64 Q 50 38 60 64',
+    o: 'M 25 64 L 75 64 M 62 64 L 62 46 Q 62 34 50 35',
+    u: 'M 25 64 L 75 64 M 62 64 L 62 32 Q 62 20 50 21',
+    schwa: 'M 25 64 L 75 64',
+    sky: 'M 32 11 L 68 11',
+    crack: 'M 44 76 L 56 86',
+    fall: 'M 28 34 Q 54 40 70 72',
+    hang: 'M 26 52 Q 40 42 50 52 Q 60 62 74 52',
+    rise: 'M 28 72 Q 54 66 70 34',
+    pause: 'M 50 64 L 50 68',
+    clitic: 'M 44 48 L 44 52 M 56 48 L 56 52',
+    dot: 'M 50 26 L 50 30',
+    voc: 'M 26 40 L 74 40'
+  };
+
+  function glyphSVG(keys, cls) {
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('class', 'glyph-svg' + (cls ? ' ' + cls : ''));
+    (Array.isArray(keys) ? keys : [keys]).forEach(function (k) {
+      var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      p.setAttribute('d', P[k]);
+      svg.appendChild(p);
+    });
+    return svg;
+  }
+
+  /* ---- hero: Sìlneth = se ì le ne e the ---- */
+  var heroScript = document.getElementById('heroScript');
+  [['se'], ['i', 'crack'], ['le'], ['ne'], ['e'], ['the']].forEach(function (g) {
+    heroScript.appendChild(glyphSVG(g));
+  });
+
+  /* ---- 磨蚀演示 ---- */
+  var demoWord = document.getElementById('demoWord');
+  var seq = [['se'], null, ['le'], ['a'], ['re']];
+  seq.forEach(function (g) {
+    if (g) { demoWord.appendChild(glyphSVG(g)); return; }
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('class', 'glyph-svg');
+    var hz = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    hz.setAttribute('d', P.schwa);
+    svg.appendChild(hz);
+    var g2 = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g2.setAttribute('id', 'peakGroup');
+    var pk = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pk.setAttribute('d', 'M 38 64 L 38 22');
+    g2.appendChild(pk);
+    svg.appendChild(g2);
+    var cr = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    cr.setAttribute('d', P.crack);
+    cr.setAttribute('id', 'crackPath');
+    cr.setAttribute('opacity', '0');
+    svg.appendChild(cr);
+    demoWord.appendChild(svg);
+  });
+  var endMark = glyphSVG('fall', '');
+  endMark.style.color = 'var(--faded)';
+  endMark.style.width = '34px';
+  demoWord.appendChild(endMark);
+
+  var STATES = [
+    { btn: 'nár', bl: '级0 · 近时「新绿」', pre: 's', v: 'i', post: 'lar', ipa: '/ˈsi.lar/',
+      trans: '「他们（此刻）唱。」', note: '满元音，新凿的刻痕。近时可不带示证——默认亲历。',
+      peak: 'scaleY(1)', crack: 0, vcol: 'var(--val)' },
+    { btn: 'vèr', bl: '级1 · 远时「银褪」', pre: 's', v: 'ì', post: 'lar', ipa: '/ˈsɪ.lar/',
+      trans: '「他们（往昔）唱过。」', note: '元音松化黯淡，字底刻上裂痕。须带示证：sìlar =và「我亲见」。',
+      peak: 'scaleY(1)', crack: 1, vcol: '#9aa5b1' },
+    { btn: 'vath', bl: '级2 · 祖时「磨尽」', pre: 's', v: 'ë', post: 'lar', ipa: '/ˈsə.lar/',
+      trans: '「他们（于远古）唱过。」', note: '峰被磨平，只剩地平线。须带示证：sëlar =rë「相传」。',
+      peak: 'scaleY(0)', crack: 0, vcol: 'var(--faded)' }
+  ];
+  var ctl = document.getElementById('demoCtl');
+  var roman = document.getElementById('demoRoman');
+  var ipaEl = document.getElementById('demoIpa');
+  var transEl = document.getElementById('demoTrans');
+  var noteEl = document.getElementById('demoNote');
+  var btns = [];
+
+  function setState(idx) {
+    var s = STATES[idx];
+    roman.innerHTML = s.pre + '<span class="vch" style="color:' + s.vcol + '">' + s.v + '</span>' + s.post;
+    ipaEl.textContent = s.ipa;
+    transEl.textContent = s.trans;
+    noteEl.textContent = s.note;
+    var pg = document.getElementById('peakGroup');
+    var cp = document.getElementById('crackPath');
+    pg.style.transform = s.peak;
+    cp.style.opacity = s.crack;
+    btns.forEach(function (b, i) { b.setAttribute('aria-pressed', i === idx ? 'true' : 'false'); });
+  }
+  STATES.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.innerHTML = '<b>' + s.btn + '</b>' + s.bl;
+    b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', function () { setState(i); });
+    ctl.appendChild(b);
+    btns.push(b);
+  });
+  setState(0);
+
+  /* ---- 元音收敛图 ---- */
+  var VOWELS = [
+    ['i', '/i/', 'ì', '/ɪ/'], ['y', '/y/', 'ỳ', '/ʏ/'], ['e', '/e/', 'è', '/ɛ/'],
+    ['ø', '/ø/', 'œ̀', '/œ/'], ['a', '/a/', 'à', '/ɐ/'], ['o', '/o/', 'ò', '/ɔ/'], ['u', '/u/', 'ù', '/ʊ/']
+  ];
+  var vg = document.getElementById('vowelGrid');
+  ['满级 · 级0', '磨蚀一级 · 级1', '磨蚀二级 · 级2'].forEach(function (h) {
+    var d = document.createElement('div');
+    d.className = 'vh';
+    d.textContent = h;
+    vg.appendChild(d);
+  });
+  var conv = document.createElement('div');
+  conv.className = 'converge';
+  conv.appendChild(glyphSVG('schwa'));
+  var big = document.createElement('div');
+  big.className = 'big';
+  big.textContent = 'ë';
+  conv.appendChild(big);
+  var cl = document.createElement('div');
+  cl.style.cssText = 'font-family:var(--sans);font-size:12px;line-height:1.7';
+  cl.textContent = '七峰尽夷，殊途同归 /ə/';
+  conv.appendChild(cl);
+  VOWELS.forEach(function (v, i) {
+    var c0 = document.createElement('div');
+    c0.innerHTML = '<span class="vc">' + v[0] + '<small>' + v[1] + '</small></span>';
+    vg.appendChild(c0);
+    var c1 = document.createElement('div');
+    c1.className = 'v1';
+    c1.innerHTML = '<span class="vc">' + v[2] + '<small>' + v[3] + '</small></span>';
+    vg.appendChild(c1);
+    if (i === 0) vg.appendChild(conv);
+  });
+
+  /* ---- 字形网格 ---- */
+  var GROUPS = [
+    ['辅音 · 23', [
+      ['pe', 'p /p/'], ['be', 'b /b/'], ['me', 'm /m/'], ['fe', 'f /f/'], ['ve', 'v /v/'],
+      ['te', 't /t/'], ['de', 'd /d/'], ['ne', 'n /n/'], ['se', 's /s/'], ['ze', 'z /z/'],
+      ['the', 'th /θ/'], ['dhe', 'dh /ð/'], ['she', 'sh /ʃ/'], ['nye', 'ñ /ɲ/'],
+      ['ke', 'k /k/'], ['ge', 'g /g/'], ['nge', 'ng /ŋ/'], ['he', 'h /x/'],
+      ['re', 'r /ɾ/'], ['le', 'l /l/'], ['lle', 'll /ʎ/'], ['we', 'w /w/'], ['je', 'j /j/']
+    ], {
+      pe: '唇闭弓', be: '唇闭弓加桥', me: '唇闭弓怀点', fe: '唇开弓', ve: '唇开弓加桥',
+      te: '龈闭弓', de: '龈闭弓加桥', ne: '龈闭弓怀点', se: '龈开弓', ze: '龈开弓加桥',
+      the: '齿折弓', dhe: '齿折弓加桥', she: '腭长弧', nye: '腭满弓怀点',
+      ke: '软腭 · 右干', ge: '软腭加桥', nge: '软腭怀点', he: '软腭开弓',
+      re: '横波', le: '竖波', lle: '竖波带腭钩', we: '双谷波', je: '深弯月'
+    }],
+    ['元音 · 7 满级 ＋ ë', [
+      ['i', 'i /i/'], ['y', 'y /y/'], ['e', 'e /e/'], ['oe', 'ø /ø/'],
+      ['a', 'a /a/'], ['o', 'o /o/'], ['u', 'u /u/'], ['schwa', 'ë /ə/']
+    ], {
+      i: '左长峰', y: '左长峰右卷', e: '左短峰', oe: '左短峰右卷',
+      a: '中央丘', o: '右短峰左卷', u: '右长峰左卷', schwa: '地平线 · 磨尽'
+    }],
+    ['附标 · 2', [
+      ['sky', '长音 /Vː/'], ['crack', '磨蚀级1']
+    ], { sky: '天际线 · 骑峰顶', crack: '裂痕 · 刻字底' }],
+    ['记号 · 7', [
+      ['fall', '. 断言'], ['hang', '~ 非现实'], ['rise', '? 疑问'], ['voc', '! 呼语'],
+      ['pause', '— 顿符'], ['clitic', '= 连附符'], ['dot', '· 析音点']
+    ], {
+      fall: '音峰落地', hang: '悬停不落', rise: '上挑', voc: '高平呼名',
+      pause: '话题停顿', clitic: '示证引导', dot: 'n·g 消歧'
+    }]
+  ];
+  var gg = document.getElementById('glyphGroups');
+  GROUPS.forEach(function (grp) {
+    var wrap = document.createElement('div');
+    wrap.className = 'ggroup';
+    var h = document.createElement('h4');
+    h.textContent = grp[0];
+    wrap.appendChild(h);
+    var grid = document.createElement('div');
+    grid.className = 'ggrid';
+    grp[1].forEach(function (cell) {
+      var d = document.createElement('div');
+      d.className = 'gcell';
+      d.appendChild(glyphSVG(cell[0]));
+      var parts = cell[1].split(' ');
+      var gv = document.createElement('div');
+      gv.className = 'gv';
+      gv.innerHTML = parts[0] + ' <small>' + parts.slice(1).join(' ') + '</small>';
+      d.appendChild(gv);
+      var gn = document.createElement('div');
+      gn.className = 'gn';
+      gn.textContent = grp[2][cell[0]] || '';
+      d.appendChild(gn);
+      grid.appendChild(d);
+    });
+    wrap.appendChild(grid);
+    gg.appendChild(wrap);
+  });
+
+  /* ---- 例词卡 ---- */
+  var WORDS = [
+    { g: [['le'], ['i', 'sky'], ['re']], r: 'lír /liːr/', m: '「河」— 满级长元音：峰顶架天际线，完好如初' },
+    { g: [['se'], ['i', 'crack'], ['le'], ['ne'], ['e'], ['the']], r: 'Sìlneth /ˈsɪl.neθ/', m: '「本语言之名」— 词典规定的裂痕：承继之物，必带岁月的刻痕' },
+    { g: [['se'], ['schwa'], ['le'], ['a'], ['re']], r: 'sëlar /ˈsə.lar/', m: '「(群山在远古)唱过」— 长峰磨平成地平线；后缀的丘安然无恙' }
+  ];
+  var wc = document.getElementById('wordCards');
+  WORDS.forEach(function (w) {
+    var d = document.createElement('div');
+    d.className = 'wordcard';
+    var gs = document.createElement('div');
+    gs.className = 'wglyphs';
+    w.g.forEach(function (g) { gs.appendChild(glyphSVG(g)); });
+    d.appendChild(gs);
+    var r = document.createElement('div');
+    r.className = 'wr';
+    r.textContent = w.r;
+    d.appendChild(r);
+    var m = document.createElement('div');
+    m.className = 'wm';
+    m.textContent = w.m;
+    d.appendChild(m);
+    wc.appendChild(d);
+  });
+
+  /* ---- 边界调卡 ---- */
+  var TONES = [
+    ['fall', '断言 .', '音峰落地 H*…L%<br>「事实如此」'],
+    ['hang', '非现实 ~', '悬停不落 H*…=%<br>将来、意愿、祈使——未然之事，调也不落'],
+    ['rise', '疑问 ?', '上挑 H*…H%<br>一个上挑，对岸就听清是在发问'],
+    ['voc', '呼语 !', '高平持续 H̄%<br>隔谷呼名之调']
+  ];
+  var tc = document.getElementById('toneCards');
+  TONES.forEach(function (t) {
+    var d = document.createElement('div');
+    d.className = 'card';
+    d.appendChild(glyphSVG(t[0]));
+    var ct = document.createElement('div');
+    ct.className = 'ct';
+    ct.textContent = t[1];
+    d.appendChild(ct);
+    var cd = document.createElement('div');
+    cd.className = 'cd';
+    cd.innerHTML = t[2];
+    d.appendChild(cd);
+    tc.appendChild(d);
+  });
+})();
+</script>
