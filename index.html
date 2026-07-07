@@ -218,31 +218,42 @@
 
 <div class="wrap">
   <div class="tabs" role="tablist" id="tabs">
-    <button role="tab" aria-selected="true" data-panel="p-zh">中文直译</button>
+    <button role="tab" aria-selected="true" data-panel="p-zh">直译 · Translate</button>
     <button role="tab" aria-selected="false" data-panel="p-compose">构句器</button>
     <button role="tab" aria-selected="false" data-panel="p-name">名字音译</button>
     <button role="tab" aria-selected="false" data-panel="p-dict">词典</button>
     <button role="tab" aria-selected="false" data-panel="p-phrase">常用语</button>
   </div>
 
-  <!-- 中文直译 -->
+  <!-- 直译（中文 / English） -->
   <div class="panel active" id="p-zh" role="tabpanel">
-    <label class="field-label" for="zhInput">中文原文</label>
+    <div class="seg" id="zhLang" style="margin-bottom:10px">
+      <button aria-pressed="true" data-v="zh">中文</button>
+      <button aria-pressed="false" data-v="en">English</button>
+    </div>
+    <label class="field-label" for="zhInput" id="zhLabel">中文原文</label>
     <textarea id="zhInput" placeholder="例：父亲以前在这里唱过歌"></textarea>
     <div class="row">
       <button class="btn" id="zhGo">翻译 → Sìlneth</button>
-      <span class="hint" style="margin:0">时距级与示证会按十步管线自动判定，过程可展开查看。</span>
+      <span class="hint" id="zhHint" style="margin:0">时距级与示证会按十步管线自动判定，过程可展开查看。</span>
     </div>
     <div class="chips" id="zhChips"></div>
     <div id="zhOut"></div>
     <details class="support">
-      <summary>当前支持的句型（规则直译是诚实的：不支持的会明说）</summary>
-      <ul>
+      <summary id="zhSupportSummary">当前支持的句型（规则直译是诚实的：不支持的会明说）</summary>
+      <ul id="zhSupportZh">
         <li>主谓（宾）句，含时间词定级：现在/昨天/以前/远古/明天…</li>
         <li>示证词：亲眼/据说/相传/看来…（级1、级2 陈述句会自动补示证）</li>
         <li>系词句「X是Y」· 处所句「X在Y」· 领有句「X有Y」</li>
         <li>疑问：什么/谁/哪里/何时/几 + 是非问 · 否定「不/没/别」</li>
         <li>祈使与意愿「…吧」 · 比较「X比Y…」 · 属格「X的Y」 · 复数/全称量化</li>
+      </ul>
+      <ul id="zhSupportEn" hidden>
+        <li>Subject–verb–(object) with time words setting the tense level: now / yesterday / before / in ancient times / tomorrow…</li>
+        <li>Evidentials firsthand / reportedly / apparently… (level-1 &amp; level-2 statements auto-add one)</li>
+        <li>Copula “X is Y” · locative “X is in Y” · possession “X has Y”</li>
+        <li>Questions what / who / where / when / how many + yes-no · negation not / never · imperative “sing!”</li>
+        <li>Comparison “X is …-er than Y” · possessive “your name” · plural / regular &amp; irregular inflection</li>
       </ul>
     </details>
   </div>
@@ -332,7 +343,6 @@
 </div>
 
 <footer>Sìlneth · Mírneth 字形按参考书第三章 SVG 规格原样渲染 · 引擎经 node 测试全绿后封装</footer>
-
 
 <script>
 window.SILNETH_LEXICON = [
@@ -3892,6 +3902,1162 @@ window.SILNETH_LEXICON = [
 </script>
 
 <script>
+window.SILNETH_EN_GLOSS = {
+ "dhan": [
+  "person",
+  "human",
+  "being",
+  "people"
+ ],
+ "jor": [
+  "man",
+  "male"
+ ],
+ "mena": [
+  "woman",
+  "female"
+ ],
+ "vem": [
+  "spouse",
+  "partner",
+  "mate"
+ ],
+ "pai": [
+  "father",
+  "dad"
+ ],
+ "mau": [
+  "mother",
+  "mom"
+ ],
+ "dhal": [
+  "ancestor",
+  "forebear",
+  "forefather"
+ ],
+ "ñin": [
+  "child",
+  "kid",
+  "infant"
+ ],
+ "ñal": [
+  "youth",
+  "adolescent"
+ ],
+ "ñol": [
+  "orphan"
+ ],
+ "bral": [
+  "brother"
+ ],
+ "sena": [
+  "sister"
+ ],
+ "hem": [
+  "home",
+  "household",
+  "family"
+ ],
+ "dhem": [
+  "tribe",
+  "people",
+  "clan"
+ ],
+ "rýn": [
+  "chief",
+  "king",
+  "lord"
+ ],
+ "fel": [
+  "friend",
+  "companion"
+ ],
+ "gath": [
+  "guest",
+  "traveler",
+  "traveller",
+  "visitor"
+ ],
+ "kal": [
+  "head",
+  "skull"
+ ],
+ "vil": [
+  "eye",
+  "eyes"
+ ],
+ "hul": [
+  "ear",
+  "ears"
+ ],
+ "nus": [
+  "nose"
+ ],
+ "mun": [
+  "mouth"
+ ],
+ "lam": [
+  "tongue"
+ ],
+ "tir": [
+  "tooth",
+  "teeth"
+ ],
+ "fas": [
+  "hair"
+ ],
+ "den": [
+  "hand",
+  "hands"
+ ],
+ "barm": [
+  "arm",
+  "arms"
+ ],
+ "pon": [
+  "foot",
+  "feet"
+ ],
+ "skel": [
+  "leg",
+  "legs"
+ ],
+ "rul": [
+  "back"
+ ],
+ "gom": [
+  "belly",
+  "stomach"
+ ],
+ "kern": [
+  "heart",
+  "core"
+ ],
+ "ruth": [
+  "blood"
+ ],
+ "ors": [
+  "bone",
+  "bones"
+ ],
+ "peln": [
+  "skin"
+ ],
+ "hes": [
+  "breath",
+  "breathing"
+ ],
+ "nir": [
+  "tear",
+  "tears"
+ ],
+ "kel": [
+  "sky",
+  "heaven"
+ ],
+ "saul": [
+  "sun"
+ ],
+ "ýl": [
+  "moon",
+  "month"
+ ],
+ "nai": [
+  "star",
+  "stars"
+ ],
+ "vér": [
+  "silver light",
+  "sheen",
+  "silver glow"
+ ],
+ "lúm": [
+  "light",
+  "radiance",
+  "brightness"
+ ],
+ "ath": [
+  "heat",
+  "warmth"
+ ],
+ "fai": [
+  "fire",
+  "flame"
+ ],
+ "íth": [
+  "ice"
+ ],
+ "fen": [
+  "snow"
+ ],
+ "nem": [
+  "rain"
+ ],
+ "hyl": [
+  "cloud",
+  "mist",
+  "fog"
+ ],
+ "wein": [
+  "wind"
+ ],
+ "thrau": [
+  "storm",
+  "tempest"
+ ],
+ "koil": [
+  "whirlpool",
+  "vortex",
+  "eddy"
+ ],
+ "thum": [
+  "smoke"
+ ],
+ "ther": [
+  "ash",
+  "ashes"
+ ],
+ "thos": [
+  "dust"
+ ],
+ "zar": [
+  "sand"
+ ],
+ "nor": [
+  "earth",
+  "land",
+  "ground"
+ ],
+ "grán": [
+  "stone",
+  "rock"
+ ],
+ "arn": [
+  "mountain"
+ ],
+ "doln": [
+  "valley"
+ ],
+ "hurn": [
+  "cave"
+ ],
+ "firn": [
+  "forest",
+  "woods"
+ ],
+ "lath": [
+  "plain",
+  "meadow",
+  "grassland"
+ ],
+ "ran": [
+  "road",
+  "path",
+  "journey"
+ ],
+ "lír": [
+  "river"
+ ],
+ "nelu": [
+  "water"
+ ],
+ "len": [
+  "lake"
+ ],
+ "maur": [
+  "sea",
+  "ocean"
+ ],
+ "noth": [
+  "night"
+ ],
+ "del": [
+  "day",
+  "daytime"
+ ],
+ "skon": [
+  "shadow"
+ ],
+ "murn": [
+  "darkness",
+  "gloom",
+  "dark"
+ ],
+ "hwan": [
+  "beast",
+  "animal"
+ ],
+ "vorn": [
+  "wolf"
+ ],
+ "bern": [
+  "bear"
+ ],
+ "velm": [
+  "deer"
+ ],
+ "ros": [
+  "horse"
+ ],
+ "bur": [
+  "cow",
+  "ox",
+  "cattle"
+ ],
+ "meñ": [
+  "sheep"
+ ],
+ "hun": [
+  "dog",
+  "hound"
+ ],
+ "swil": [
+  "bird"
+ ],
+ "karn": [
+  "eagle",
+  "raptor"
+ ],
+ "glis": [
+  "fish"
+ ],
+ "zir": [
+  "snake",
+  "serpent"
+ ],
+ "ñis": [
+  "insect",
+  "bug",
+  "worm"
+ ],
+ "ñum": [
+  "bee"
+ ],
+ "filn": [
+  "wing",
+  "wings"
+ ],
+ "korn": [
+  "horn"
+ ],
+ "gwe": [
+  "egg"
+ ],
+ "áln": [
+  "tree"
+ ],
+ "wurn": [
+  "root"
+ ],
+ "lil": [
+  "leaf",
+  "leaves"
+ ],
+ "fjal": [
+  "flower",
+  "blossom"
+ ],
+ "selm": [
+  "grass"
+ ],
+ "sem": [
+  "seed"
+ ],
+ "bau": [
+  "fruit"
+ ],
+ "mos": [
+  "meat",
+  "flesh"
+ ],
+ "brom": [
+  "bread",
+  "flatbread"
+ ],
+ "gorn": [
+  "grain",
+  "crop"
+ ],
+ "mim": [
+  "milk"
+ ],
+ "melu": [
+  "honey"
+ ],
+ "selu": [
+  "oil"
+ ],
+ "velu": [
+  "wine"
+ ],
+ "sarn": [
+  "salt"
+ ],
+ "surm": [
+  "soup",
+  "broth"
+ ],
+ "kurn": [
+  "meal"
+ ],
+ "pesha": [
+  "spice",
+  "herb"
+ ],
+ "teln": [
+  "house",
+  "dwelling"
+ ],
+ "tal": [
+  "hall"
+ ],
+ "tolm": [
+  "tower"
+ ],
+ "dorn": [
+  "door"
+ ],
+ "belm": [
+  "wall"
+ ],
+ "kelm": [
+  "roof"
+ ],
+ "fairn": [
+  "hearth",
+  "fireplace"
+ ],
+ "lein": [
+  "bed"
+ ],
+ "welm": [
+  "cloth",
+  "clothing",
+  "garment"
+ ],
+ "krum": [
+  "jar",
+  "pot"
+ ],
+ "nath": [
+  "net"
+ ],
+ "thren": [
+  "rope",
+  "cord"
+ ],
+ "skar": [
+  "knife",
+  "blade"
+ ],
+ "gar": [
+  "spear"
+ ],
+ "byn": [
+  "bow"
+ ],
+ "flin": [
+  "arrow"
+ ],
+ "skau": [
+  "boat",
+  "ship"
+ ],
+ "bryn": [
+  "bridge"
+ ],
+ "wen": [
+  "go",
+  "walk"
+ ],
+ "gwen": [
+  "come"
+ ],
+ "rin": [
+  "run"
+ ],
+ "lun": [
+  "flow"
+ ],
+ "dol": [
+  "fall",
+  "drop"
+ ],
+ "rai": [
+  "rise",
+  "ascend"
+ ],
+ "swai": [
+  "fly"
+ ],
+ "glun": [
+  "swim"
+ ],
+ "wor": [
+  "turn",
+  "spin"
+ ],
+ "oran": [
+  "wander",
+  "roam"
+ ],
+ "som": [
+  "sit"
+ ],
+ "lei": [
+  "lie",
+  "recline"
+ ],
+ "swon": [
+  "sleep"
+ ],
+ "lán": [
+  "stand",
+  "endure",
+  "tower"
+ ],
+ "thau": [
+  "die",
+  "perish"
+ ],
+ "dhes": [
+  "live",
+  "survive"
+ ],
+ "ñar": [
+  "be born",
+  "born"
+ ],
+ "al": [
+  "grow"
+ ],
+ "dar": [
+  "give"
+ ],
+ "kam": [
+  "take"
+ ],
+ "grem": [
+  "hold",
+  "grip",
+  "grasp"
+ ],
+ "bor": [
+  "carry",
+  "bear"
+ ],
+ "shan": [
+  "throw",
+  "cast",
+  "hurl"
+ ],
+ "ren": [
+  "pass",
+  "hand",
+  "deliver"
+ ],
+ "tan": [
+  "make",
+  "do"
+ ],
+ "dem": [
+  "build",
+  "construct"
+ ],
+ "tarn": [
+  "cut",
+  "chop",
+  "sever"
+ ],
+ "bres": [
+  "break",
+  "shatter"
+ ],
+ "skir": [
+  "carve",
+  "engrave"
+ ],
+ "wel": [
+  "weave"
+ ],
+ "ser": [
+  "sow",
+  "plant"
+ ],
+ "lym": [
+  "wash"
+ ],
+ "kur": [
+  "cook",
+  "boil"
+ ],
+ "jem": [
+  "eat"
+ ],
+ "sul": [
+  "drink"
+ ],
+ "gwar": [
+  "fight",
+  "battle"
+ ],
+ "skath": [
+  "hunt"
+ ],
+ "lys": [
+  "open"
+ ],
+ "klus": [
+  "close",
+  "shut"
+ ],
+ "brin": [
+  "burn"
+ ],
+ "thrin": [
+  "bind",
+  "tie"
+ ],
+ "dhil": [
+  "find",
+  "discover"
+ ],
+ "thol": [
+  "lose"
+ ],
+ "jes": [
+  "begin",
+  "start"
+ ],
+ "sath": [
+  "end",
+  "finish",
+  "exhaust"
+ ],
+ "rim": [
+  "count"
+ ],
+ "fus": [
+  "blow"
+ ],
+ "vár": [
+  "see",
+  "look"
+ ],
+ "hyr": [
+  "hear",
+  "listen"
+ ],
+ "fes": [
+  "smell"
+ ],
+ "vys": [
+  "know"
+ ],
+ "kyn": [
+  "learn",
+  "study"
+ ],
+ "møn": [
+  "think",
+  "ponder"
+ ],
+ "mír": [
+  "remember"
+ ],
+ "thel": [
+  "forget"
+ ],
+ "dhir": [
+  "track",
+  "trace"
+ ],
+ "søl": [
+  "love",
+  "cherish"
+ ],
+ "jur": [
+  "want",
+  "wish",
+  "desire"
+ ],
+ "throm": [
+  "fear",
+  "dread"
+ ],
+ "nur": [
+  "weep",
+  "cry"
+ ],
+ "hlas": [
+  "laugh"
+ ],
+ "søn": [
+  "dream"
+ ],
+ "syn": [
+  "soul",
+  "spirit",
+  "mind"
+ ],
+ "jal": [
+  "joy",
+  "happiness"
+ ],
+ "garm": [
+  "anger",
+  "wrath"
+ ],
+ "nurn": [
+  "sorrow",
+  "grief"
+ ],
+ "thyr": [
+  "pain",
+  "ache"
+ ],
+ "gor": [
+  "big",
+  "large"
+ ],
+ "ñil": [
+  "small",
+  "little"
+ ],
+ "lyn": [
+  "long"
+ ],
+ "stum": [
+  "short"
+ ],
+ "hau": [
+  "tall",
+  "high"
+ ],
+ "dyn": [
+  "deep"
+ ],
+ "brath": [
+  "wide",
+  "broad"
+ ],
+ "ñem": [
+  "narrow"
+ ],
+ "gwom": [
+  "heavy"
+ ],
+ "fim": [
+  "light"
+ ],
+ "swin": [
+  "fast",
+  "quick",
+  "swift"
+ ],
+ "lom": [
+  "slow"
+ ],
+ "dren": [
+  "strong"
+ ],
+ "thin": [
+  "weak"
+ ],
+ "hom": [
+  "full"
+ ],
+ "thøs": [
+  "empty"
+ ],
+ "nár": [
+  "new",
+  "fresh"
+ ],
+ "ñes": [
+  "young",
+  "tender"
+ ],
+ "tór": [
+  "old",
+  "ancient"
+ ],
+ "jen": [
+  "good",
+  "kind"
+ ],
+ "ulm": [
+  "bad",
+  "evil"
+ ],
+ "vai": [
+  "true",
+  "real"
+ ],
+ "shal": [
+  "false",
+  "fake"
+ ],
+ "skil": [
+  "sharp"
+ ],
+ "sor": [
+  "dry"
+ ],
+ "kryl": [
+  "cold"
+ ],
+ "ñela": [
+  "soft"
+ ],
+ "thys": [
+  "silent",
+  "quiet",
+  "still"
+ ],
+ "hál": [
+  "holy",
+  "sacred"
+ ],
+ "val": [
+  "silver",
+  "silvery"
+ ],
+ "los": [
+  "place",
+  "location"
+ ],
+ "vetha": [
+  "time"
+ ],
+ "jern": [
+  "year"
+ ],
+ "eln": [
+  "morning"
+ ],
+ "surn": [
+  "dusk",
+  "evening"
+ ],
+ "nu": [
+  "now"
+ ],
+ "vèr": [
+  "past",
+  "old times"
+ ],
+ "nes": [
+  "near",
+  "close"
+ ],
+ "tau": [
+  "far",
+  "distant"
+ ],
+ "medhan": [
+  "middle",
+  "center",
+  "centre"
+ ],
+ "skarn": [
+  "edge",
+  "brink"
+ ],
+ "ilm": [
+  "inside",
+  "within"
+ ],
+ "es": [
+  "outside"
+ ],
+ "hen": [
+  "before",
+  "in front"
+ ],
+ "dur": [
+  "after",
+  "behind"
+ ],
+ "thes": [
+  "above",
+  "on"
+ ],
+ "nol": [
+  "below",
+  "under"
+ ],
+ "hwel": [
+  "left"
+ ],
+ "drel": [
+  "right"
+ ],
+ "sil": [
+  "say",
+  "sing",
+  "speak",
+  "chant"
+ ],
+ "kai": [
+  "call",
+  "summon",
+  "name"
+ ],
+ "kes": [
+  "ask"
+ ],
+ "res": [
+  "answer",
+  "reply"
+ ],
+ "shel": [
+  "deceive",
+  "trick"
+ ],
+ "mang": [
+  "trade",
+  "barter"
+ ],
+ "seth": [
+  "word",
+  "speech"
+ ],
+ "neth": [
+  "thing",
+  "matter",
+  "deed"
+ ],
+ "nym": [
+  "name"
+ ],
+ "mirn": [
+  "mark",
+  "sign"
+ ],
+ "thang": [
+  "law",
+  "rule"
+ ],
+ "grath": [
+  "oath",
+  "vow"
+ ],
+ "dhaul": [
+  "god",
+  "deity"
+ ],
+ "holn": [
+  "peace",
+  "calm"
+ ],
+ "golm": [
+  "goods",
+  "wealth",
+  "riches"
+ ],
+ "el": [
+  "be",
+  "exist"
+ ],
+ "ul": [
+  "not",
+  "no"
+ ],
+ "vath": [
+  "in ancient times",
+  "of old"
+ ],
+ "hol": [
+  "all",
+  "every",
+  "whole"
+ ],
+ "mai": [
+  "many",
+  "much"
+ ],
+ "lith": [
+  "few",
+  "a little"
+ ],
+ "ves": [
+  "some"
+ ],
+ "em": [
+  "also",
+  "too"
+ ],
+ "nil": [
+  "only",
+  "just"
+ ],
+ "jo": [
+  "and",
+  "then"
+ ],
+ "nas": [
+  "but",
+  "however"
+ ],
+ "ai": [
+  "oh",
+  "ah"
+ ],
+ "=ve": [
+  "and",
+  "with"
+ ],
+ "=va": [
+  "(firsthand)"
+ ],
+ "=dhi": [
+  "(inferred)"
+ ],
+ "=re": [
+  "(reported)"
+ ],
+ "thøn": [
+  "zero",
+  "none"
+ ],
+ "en": [
+  "one"
+ ],
+ "dy": [
+  "two"
+ ],
+ "thil": [
+  "three"
+ ],
+ "vor": [
+  "four"
+ ],
+ "lim": [
+  "five"
+ ],
+ "zol": [
+  "six"
+ ],
+ "nau": [
+  "seven"
+ ],
+ "oth": [
+  "eight"
+ ],
+ "gen": [
+  "nine"
+ ],
+ "dhul": [
+  "ten"
+ ],
+ "mel": [
+  "eleven"
+ ],
+ "lár": [
+  "twelve"
+ ],
+ "ýlan": [
+  "one hundred forty-four"
+ ],
+ "órvan": [
+  "one thousand seven hundred twenty-eight"
+ ],
+ "ni": [
+  "I",
+  "me"
+ ],
+ "vy": [
+  "you"
+ ],
+ "dhe": [
+  "he",
+  "she",
+  "him",
+  "her"
+ ],
+ "tha": [
+  "it"
+ ],
+ "øs": [
+  "self",
+  "oneself"
+ ],
+ "sa": [
+  "this"
+ ],
+ "tor": [
+  "that"
+ ],
+ "tër": [
+  "that",
+  "yon"
+ ],
+ "ken": [
+  "who"
+ ],
+ "kath": [
+  "what"
+ ],
+ "kor": [
+  "which"
+ ],
+ "kis": [
+  "where"
+ ],
+ "kol": [
+  "why"
+ ],
+ "kum": [
+  "how"
+ ],
+ "kir": [
+  "when"
+ ],
+ "kem": [
+  "how many",
+  "how much"
+ ],
+ "-neth": [
+  "(nominalizer: action/result)"
+ ],
+ "-we": [
+  "(agent: -er)"
+ ],
+ "-os": [
+  "(place/instrument)"
+ ],
+ "-il": [
+  "(diminutive)"
+ ],
+ "-ur": [
+  "(augmentative)"
+ ],
+ "-a": [
+  "(adjectivizer)"
+ ],
+ "-yn": [
+  "(abstract noun)"
+ ],
+ "-ta-": [
+  "(verbalizer/causative)"
+ ],
+ "-im": [
+  "(ordinal)"
+ ],
+ "-um": [
+  "(adverb: manner/times)"
+ ],
+ "-ir": [
+  "(intensifier)"
+ ],
+ "-ol": [
+  "(diminisher)"
+ ]
+};
+</script>
+
+<script>
 /* ============================================================
  * Sìlneth 翻译引擎  (silneth-engine.js)
  * 依据 silneth-morphology.md（86 测试向量）与 silneth-loanwords.md。
@@ -3903,6 +5069,12 @@ window.SILNETH_LEXICON = [
   var LEX = (typeof window !== 'undefined' && window.SILNETH_LEXICON) ||
     (function () {
       try { return require('./silneth-lexicon.json'); } catch (e) { return []; }
+    })();
+
+  // 英文释义（roman -> [english...]），供英文输入直译与词典英文标注
+  var EN_GLOSS = (typeof window !== 'undefined' && window.SILNETH_EN_GLOSS) ||
+    (function () {
+      try { return require('./silneth-en-gloss.json'); } catch (e) { return {}; }
     })();
 
   /* ---------- 元音系统（§1.2） ----------
@@ -4541,6 +5713,29 @@ window.SILNETH_LEXICON = [
       }
     }
 
+    var F = {
+      level: level, level2FromTime: level2FromTime, future: future, evid: evid,
+      neg: neg, prohibit: prohibit, irr: irr, q: q, plural: plural,
+      cop: cop, have: have, cmp: cmp,
+      nominals: nominals, verb: verb, adj: adj, loc: loc, qwordRoman: qwordRoman,
+      glossOf: zhOf
+    };
+    return assembleSentence(F, trace, unmatched, text);
+  }
+
+  /* ---------- 特征 → 句子装配（中英共用） ----------
+   * F 由各语种分词器填好；glossOf 决定注释语（zhOf / enOf）。 */
+  function assembleSentence(F, trace, unmatched, text) {
+    var level = F.level, level2FromTime = F.level2FromTime, future = F.future, evid = F.evid;
+    var neg = F.neg, prohibit = F.prohibit, irr = F.irr, q = F.q, plural = F.plural;
+    var cop = F.cop, have = F.have, cmp = F.cmp;
+    var nominals = F.nominals, verb = F.verb, adj = F.adj, loc = F.loc, qwordRoman = F.qwordRoman;
+    var g = F.glossOf;
+    function vGloss(v, lvl, person, pl) {
+      var lvlTag = lvl === 0 ? 'NEAR' : lvl === 1 ? 'FAR' : 'ANC';
+      return g(v) + '\\' + lvlTag + '-' + person + (pl ? 'PL' : 'SG');
+    }
+
     // ② 时距定级
     if (future) { level = 0; irr = true; }
     trace.push({ step: '② 时距定级', detail: '级' + level + (future ? '（未来＝级0＋悬停调，未来无痕可磨）' : '') + '，依时间词/语篇判定' });
@@ -4567,7 +5762,7 @@ window.SILNETH_LEXICON = [
     // 疑问：X的Y (是) 什么 / 谁…（无动词、无领有）
     if (q && qwordRoman && !verb && !have && !cmp) {
       var np = nominals.map(function (e, k) { return (k < nominals.length - 1) ? decline(e.roman, { 'case': 'GEN' }) : e.roman; });
-      var gq = nominals.map(function (e, k) { return zhOf(e) + (k < nominals.length - 1 ? '-GEN' : '[NOM]'); });
+      var gq = nominals.map(function (e, k) { return g(e) + (k < nominals.length - 1 ? '-GEN' : '[NOM]'); });
       var outq = np.concat([qwordRoman]).join(' ') + '?';
       trace.push({ step: '⑥–⑧ 名词性疑问', detail: '属格链 + 疑问词 ' + qwordRoman + ' 落动前焦点位 + 上挑调' });
       return pack(outq, gq.concat([qwordRoman, 'Q']).join(' '), level, 'none', 'q', trace, unmatched, text);
@@ -4578,7 +5773,7 @@ window.SILNETH_LEXICON = [
       var holder = nominals[0], held = nominals[1];
       var elH = conjugate('el', { level: level, person: 3 });
       var outh = [decline(holder.roman, { 'case': 'DAT' }), held.roman, elH].join(' ');
-      var glh = [zhOf(holder) + '-DAT', zhOf(held) + '[NOM]', 'be\\L' + level + '-3SG'];
+      var glh = [g(holder) + '-DAT', g(held) + '[NOM]', 'be\\L' + level + '-3SG'];
       trace.push({ step: '⑥–⑧ 领有构式', detail: '无「有」动词：领有者-DAT + el（§3.5，「刀于我而在」）' });
       return finishPunct(outh, glh, level, mood, trace, unmatched, text, (mood === 'real' ? evid : null));
     }
@@ -4587,7 +5782,7 @@ window.SILNETH_LEXICON = [
     if (cmp && adj && nominals.length >= 2) {
       var xEnt = nominals[0], yEnt = nominals[1];
       var outc = [xEnt.roman, decline(yEnt.roman, { 'case': 'ABL' }), adj.roman].join(' ');
-      var glc = [zhOf(xEnt) + '[NOM]', zhOf(yEnt) + '-ABL', zhOf(adj)];
+      var glc = [g(xEnt) + '[NOM]', g(yEnt) + '-ABL', g(adj)];
       trace.push({ step: '⑥–⑧ 比较构式', detail: '基准-ABL + 形容词（§2.3，「比山更…」）' });
       return finishPunct(outc, glc, level, 'real', trace, unmatched, text, null);
     }
@@ -4602,7 +5797,7 @@ window.SILNETH_LEXICON = [
         if (neg) seq2.push('ul');
         seq2.push(predRoman);
         if (needEl) seq2.push(conjugate('el', { level: level, person: subjPerson, plural: subjPlural }));
-        var gl2 = [zhOf(subjEntry) + (subjPlural ? '-PL' : '') + '[NOM]'].concat(neg ? ['NEG'] : []).concat([zhOf(predEnt || adj)]).concat(needEl ? ['be\\L' + level] : []);
+        var gl2 = [g(subjEntry) + (subjPlural ? '-PL' : '') + '[NOM]'].concat(neg ? ['NEG'] : []).concat([g(predEnt || adj)]).concat(needEl ? ['be\\L' + level] : []);
         trace.push({ step: '⑥–⑧ 系词句', detail: needEl ? '非级0/非现实：插 el 承载磨蚀与边界调（§2.4.6）' : '级0 现实：零系词（Dhe silwe.）' });
         return finishPunct(seq2.join(' '), gl2, level, mood, trace, unmatched, text, needEl && mood === 'real' ? evid : null);
       }
@@ -4613,14 +5808,14 @@ window.SILNETH_LEXICON = [
       var needEl2 = !(level === 0 && mood === 'real');
       var seq3 = [subjRoman(subjEntry, subjPlural), decline(loc.roman, { 'case': 'LOC' })];
       if (needEl2) seq3.push(conjugate('el', { level: level, person: subjPerson, plural: subjPlural }));
-      var gl3 = [zhOf(subjEntry) + '[NOM]', zhOf(loc) + '-LOC'].concat(needEl2 ? ['be\\L' + level] : []);
+      var gl3 = [g(subjEntry) + '[NOM]', g(loc) + '-LOC'].concat(needEl2 ? ['be\\L' + level] : []);
       trace.push({ step: '⑥–⑧ 处所句', detail: 'Y-LOC' + (needEl2 ? ' + el' : '（级0 零系词）') });
       return finishPunct(seq3.join(' '), gl3, level, mood, trace, unmatched, text, needEl2 && mood === 'real' ? evid : null);
     }
 
     // 一般 SVO / SV / 祈使
     if (verb) {
-      var imperative = irr && (prohibit || nominals.length === 0 || (subjEntry && detectPerson(subjEntry.roman) && detectPerson(subjEntry.roman).person === 2));
+      var imperative = F.imperative || (irr && (prohibit || nominals.length === 0 || (subjEntry && detectPerson(subjEntry.roman) && detectPerson(subjEntry.roman).person === 2)));
       var subj1 = imperative ? null : subjEntry;
       var objE = null;
       if (imperative) { objE = nominals[0] || null; }
@@ -4634,16 +5829,16 @@ window.SILNETH_LEXICON = [
       var vform = conjugate(verb.roman, { level: level, person: vperson, plural: vplural });
 
       var seqV = [], gl = [];
-      if (subj1) { seqV.push(subjRoman(subj1, vplural)); gl.push(zhOf(subj1) + (vplural ? '-PL' : '') + '[NOM]'); }
+      if (subj1) { seqV.push(subjRoman(subj1, vplural)); gl.push(g(subj1) + (vplural ? '-PL' : '') + '[NOM]'); }
       if (level2FromTime && !loc) { seqV.push('vath'); gl.push('于远古'); }  // 化石副词消歧（§2.4.4 修补法a）
-      if (loc) { seqV.push(decline(loc.roman, { 'case': 'LOC' })); gl.push(zhOf(loc) + '-LOC'); }
+      if (loc) { seqV.push(decline(loc.roman, { 'case': 'LOC' })); gl.push(g(loc) + '-LOC'); }
       if (level2FromTime && loc) { seqV.splice(seqV.length - 1, 0, 'vath'); gl.splice(gl.length - 1, 0, '于远古'); }
-      if (objE) { seqV.push(decline(objE.roman, { 'case': 'ACC' })); gl.push(zhOf(objE) + '-ACC'); }
+      if (objE) { seqV.push(decline(objE.roman, { 'case': 'ACC' })); gl.push(g(objE) + '-ACC'); }
       if (neg) { seqV.push('ul'); gl.push('NEG'); }
       seqV.push(vform);
-      gl.push(verbGloss(verb, level, vperson, vplural));
+      gl.push(vGloss(verb, level, vperson, vplural));
 
-      trace.push({ step: '⑥ 词汇映射', detail: '动词 √' + verb.roman.toUpperCase() + '「' + zhOf(verb) + '」' + (objE ? '，宾语「' + zhOf(objE) + '」' : '') });
+      trace.push({ step: '⑥ 词汇映射', detail: '动词 √' + verb.roman.toUpperCase() + '「' + g(verb) + '」' + (objE ? '，宾语「' + g(objE) + '」' : '') });
       trace.push({ step: '⑦ 形态生成', detail: '磨蚀级' + level + ' 词根 → ' + vform + '（一致 ' + vperson + (vplural ? 'PL' : 'SG') + '，后缀不磨）' });
       trace.push({ step: '⑧ 语序编排', detail: imperative ? 'SOV 祈使：第二人称形 + 悬停调' : 'SOV：' + (subj1 ? '主-' : '') + (objE ? '宾-' : '') + '动' });
       return finishPunct(seqV.join(' '), gl, level, mood, trace, unmatched, text, (mood === 'real' ? evid : null));
@@ -4651,19 +5846,19 @@ window.SILNETH_LEXICON = [
 
     // 无动词无结构
     if (nominals.length) {
-      return { ok: false, roman: nominals.map(function (e) { return e.roman; }).join(' '), gloss: nominals.map(zhOf).join(' '), trans: text, level: level, evid: 'none', mood: mood, trace: trace, unmatched: unmatched, error: '未找到动词或可识别句型——试试「构句器」逐件拼装。' };
+      return { ok: false, roman: nominals.map(function (e) { return e.roman; }).join(' '), gloss: nominals.map(g).join(' '), trans: text, level: level, evid: 'none', mood: mood, trace: trace, unmatched: unmatched, error: '未找到动词或可识别句型——试试「构句器」逐件拼装。' };
     }
     return { ok: false, roman: '', gloss: '', trans: text, level: level, evid: 'none', mood: mood, trace: trace, unmatched: unmatched, error: '这句超出当前规则直译的句型范围。' };
 
     // ---- 收尾 ----
-    function pack(o, g, lv, ev, md, tr, um, txt) {
-      return { ok: um.length === 0, roman: cap(o), gloss: g, trans: txt, level: lv, evid: ev, mood: md, trace: tr, unmatched: um, ipa: '' };
+    function pack(o, gg, lv, ev, md, tr, um, txt) {
+      return { ok: um.length === 0, roman: cap(o), gloss: gg, trans: txt, level: lv, evid: ev, mood: md, trace: tr, unmatched: um, ipa: '' };
     }
-    function finishPunct(o, g, lv, md, tr, um, txt, evKind) {
+    function finishPunct(o, gg, lv, md, tr, um, txt, evKind) {
       var seq = o;
       if (evKind && md === 'real') seq += ' ' + evidential(evKind, lv, 0);
       seq += (md === 'q') ? '?' : (md === 'irr') ? '~' : '.';
-      var glStr = g.join(' ') + (evKind && md === 'real' ? ' =' + evKind.toUpperCase() : '') + ' ' + (md === 'q' ? 'Q' : md === 'irr' ? 'IRR' : 'REAL');
+      var glStr = gg.join(' ') + (evKind && md === 'real' ? ' =' + evKind.toUpperCase() : '') + ' ' + (md === 'q' ? 'Q' : md === 'irr' ? 'IRR' : 'REAL');
       return { ok: um.length === 0, roman: cap(seq), gloss: glStr, trans: txt, level: lv, evid: (evKind || 'none'), mood: md, trace: tr, unmatched: um, ipa: '' };
     }
   }
@@ -4673,9 +5868,239 @@ window.SILNETH_LEXICON = [
     return map[roman] || null;
   }
   function zhOf(e) { return (e && e.zh && e.zh[0]) || (e && e.roman) || '?'; }
+  function enOf(e) {
+    if (!e) return '?';
+    if (e.en && e.en[0]) return e.en[0];
+    var base = e.roman;
+    if (EN_GLOSS[base] && EN_GLOSS[base][0]) return EN_GLOSS[base][0];
+    return (e.zh && e.zh[0]) || base || '?';
+  }
   function verbGloss(v, level, person, plural) {
     var lvlTag = level === 0 ? 'NEAR' : level === 1 ? 'FAR' : 'ANC';
     return zhOf(v) + '\\' + lvlTag + '-' + person + (plural ? 'PL' : 'SG');
+  }
+
+  /* ============================================================
+   * 英文输入直译（translateEn）
+   * 与 translateZh 共用 assembleSentence；差异仅在分词与特征映射。
+   * ============================================================ */
+  // 代词 → 基式罗马字（复数由 plural 标志经 decline 生成，避免二次加缀）
+  var EN_PRON = {
+    i: { r: 'ni' }, me: { r: 'ni' }, we: { r: 'ni', pl: true }, us: { r: 'ni', pl: true },
+    you: { r: 'vy' }, he: { r: 'dhe' }, she: { r: 'dhe' }, him: { r: 'dhe' }, her: { r: 'dhe' },
+    it: { r: 'tha' }, they: { r: 'dhe', pl: true }, them: { r: 'dhe', pl: true },
+    this: { r: 'sa' }, that: { r: 'tor' }, these: { r: 'sa', pl: true }, those: { r: 'tor', pl: true },
+    self: { r: 'øs' }, oneself: { r: 'øs' }
+  };
+  // 物主限定词 → 领有者代词（进属格链）
+  var EN_POSS = { my: 'ni', your: 'vy', his: 'dhe', its: 'tha', our: 'ni', their: 'dhe' };
+  // 处所指示词 → loc 词条
+  var EN_LOCWORD = { here: { roman: 'sa', pos: 'pron', en: ['here'], zh: ['这里'] }, there: { roman: 'tor', pos: 'pron', en: ['there'], zh: ['那里'] } };
+  var EN_TIME = {
+    now: 0, today: 0, currently: 0, nowadays: 0,
+    yesterday: 1, before: 1, ago: 1, previously: 1, once: 1, formerly: 1, earlier: 1, recently: 1,
+    anciently: 2,
+    tomorrow: 'F', soon: 'F', later: 'F', someday: 'F'
+  };
+  var EN_EVID = {
+    firsthand: 'va',
+    reportedly: 're', supposedly: 're', allegedly: 're', purportedly: 're',
+    apparently: 'dhi', presumably: 'dhi', probably: 'dhi', seemingly: 'dhi', evidently: 'dhi'
+  };
+  var EN_QWORD = { what: 'kath', who: 'ken', whom: 'ken', where: 'kis', when: 'kir', why: 'kol', how: 'kum', which: 'kor' };
+  var EN_COP = ['is', 'am', 'are', 'was', 'were', 'be'];
+  var EN_HAVE = ['have', 'has', 'had'];
+  var EN_NEG = ['not', 'no', 'never'];
+  var EN_NUM = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
+  var EN_LOCPREP = ['in', 'on', 'at', 'inside', 'within'];
+  var EN_DROP = ['a', 'an', 'the', 'of', 'to', 'been', 'being', 'got', 'and', 'do', 'does'];
+  var EN_PASTHINT = ['was', 'were', 'had', 'did'];
+  // 多词短语（先于逐词分类）：词序数组 → {type,val}
+  var EN_PHRASES = [
+    { w: ['in', 'ancient', 'times'], type: 'time', val: 2 },
+    { w: ['in', 'the', 'old', 'days'], type: 'time', val: 2 },
+    { w: ['long', 'ago'], type: 'time', val: 2 },
+    { w: ['of', 'old'], type: 'time', val: 2 },
+    { w: ['used', 'to'], type: 'time', val: 1 },
+    { w: ['it', 'is', 'said'], type: 'evid', val: 're' },
+    { w: ['they', 'say'], type: 'evid', val: 're' },
+    { w: ['it', 'seems'], type: 'evid', val: 'dhi' },
+    { w: ['it', 'appears'], type: 'evid', val: 'dhi' },
+    { w: ['how', 'many'], type: 'qword', val: 'kem' },
+    { w: ['how', 'much'], type: 'qword', val: 'kem' },
+    { w: ['going', 'to'], type: 'future' }
+  ];
+  var EN_CONTRACT = {
+    "don't": ['do', 'not'], "doesn't": ['does', 'not'], "didn't": ['did', 'not'], "won't": ['will', 'not'],
+    "can't": ['can', 'not'], cannot: ['can', 'not'], "isn't": ['is', 'not'], "aren't": ['are', 'not'],
+    "wasn't": ['was', 'not'], "weren't": ['were', 'not'], "i'm": ['i', 'am'], "you're": ['you', 'are'],
+    "he's": ['he', 'is'], "she's": ['she', 'is'], "it's": ['it', 'is'], "that's": ['that', 'is'],
+    "we're": ['we', 'are'], "they're": ['they', 'are'], "i've": ['i', 'have'], "you've": ['you', 'have'],
+    "we've": ['we', 'have'], "they've": ['they', 'have']
+  };
+  // 不规则屈折 → 词库英文释义键；顺带标注过去式（见 EN_PASTHINT + 此表值域）
+  var EN_IRREG = {
+    sang: 'sing', sung: 'sing', stood: 'stand', went: 'go', gone: 'go', came: 'come', ran: 'run',
+    saw: 'see', seen: 'see', made: 'make', gave: 'give', took: 'take', held: 'hold', threw: 'throw',
+    thrown: 'throw', said: 'say', heard: 'hear', knew: 'know', known: 'know', thought: 'think',
+    forgot: 'forget', forgotten: 'forget', found: 'find', lost: 'lose', began: 'begin', begun: 'begin',
+    ate: 'eat', eaten: 'eat', sat: 'sit', lay: 'lie', slept: 'sleep', died: 'die', grew: 'grow',
+    grown: 'grow', fought: 'fight', bound: 'bind', wept: 'weep', broke: 'break', broken: 'break',
+    wove: 'weave', blew: 'blow', blown: 'blow', rose: 'rise', risen: 'rise', flew: 'fly', flown: 'fly',
+    swam: 'swim', swum: 'swim', fell: 'fall', fallen: 'fall', burnt: 'burn',
+    feet: 'foot', teeth: 'tooth', men: 'man', women: 'woman', children: 'child', mice: 'mouse'
+  };
+  var EN_IRREG_PAST = { sang: 1, sung: 1, stood: 1, went: 1, came: 1, ran: 1, saw: 1, made: 1, gave: 1, took: 1, held: 1, threw: 1, said: 1, heard: 1, knew: 1, thought: 1, forgot: 1, found: 1, lost: 1, began: 1, ate: 1, sat: 1, lay: 1, slept: 1, died: 1, grew: 1, fought: 1, bound: 1, wept: 1, broke: 1, wove: 1, blew: 1, rose: 1, flew: 1, swam: 1, fell: 1, burnt: 1 };
+  var EN_IRREG_PLURAL = { feet: 1, teeth: 1, men: 1, women: 1, children: 1, mice: 1 };
+  // 派生/补充词（镜像中文 SUPPLEMENT）
+  var EN_SUPPLEMENT = {
+    singer: { roman: 'silwe', pos: 'n', en: ['singer'], zh: ['歌者'] },
+    singers: { roman: 'silwe', pos: 'n', en: ['singer'], zh: ['歌者'], pl: true },
+    song: { roman: 'silneth', pos: 'n', en: ['song'], zh: ['歌'] },
+    songs: { roman: 'silneth', pos: 'n', en: ['song'], zh: ['歌'], pl: true },
+    tale: { roman: 'silneth', pos: 'n', en: ['tale'], zh: ['讲述'] },
+    story: { roman: 'silneth', pos: 'n', en: ['story'], zh: ['讲述'] },
+    place: { roman: 'silos', pos: 'n', en: ['hall'], zh: ['诵厅'] }
+  };
+
+  var EN_INDEX = null;
+  function buildEnIndex() {
+    if (EN_INDEX) return EN_INDEX;
+    EN_INDEX = {};
+    function put(word, e) { word = word.toLowerCase(); if (word && word.indexOf('(') === -1 && word.indexOf(' ') === -1 && !EN_INDEX[word]) EN_INDEX[word] = e; }
+    // 第一遍：首选义（index 0）
+    for (var i = 0; i < LEX.length; i++) { var e = LEX[i]; var g = EN_GLOSS[e.roman]; if (g && g[0]) put(g[0], e); }
+    // 第二遍：次选义
+    for (var j = 0; j < LEX.length; j++) { var e2 = LEX[j]; var g2 = EN_GLOSS[e2.roman] || []; for (var k = 1; k < g2.length; k++) put(g2[k], e2); }
+    // 补充词覆盖
+    Object.keys(EN_SUPPLEMENT).forEach(function (w) { EN_INDEX[w] = EN_SUPPLEMENT[w]; });
+    return EN_INDEX;
+  }
+
+  function enLemmas(w) {
+    var out = [w];
+    if (EN_IRREG[w]) out.push(EN_IRREG[w]);
+    if (/ves$/.test(w)) { out.push(w.replace(/ves$/, 'f')); out.push(w.replace(/ves$/, 'fe')); }
+    if (/ies$/.test(w)) out.push(w.replace(/ies$/, 'y'));
+    if (/(ches|shes|sses|xes|zes)$/.test(w)) out.push(w.replace(/es$/, ''));
+    if (/es$/.test(w)) out.push(w.replace(/es$/, ''));
+    if (/s$/.test(w)) out.push(w.replace(/s$/, ''));
+    if (/ing$/.test(w)) { out.push(w.replace(/ing$/, '')); out.push(w.replace(/ing$/, 'e')); }
+    if (/ed$/.test(w)) { out.push(w.replace(/ed$/, '')); out.push(w.replace(/ed$/, 'e')); }
+    if (/er$/.test(w)) { out.push(w.slice(0, -2)); out.push(w.slice(0, -1)); }
+    var dm = w.match(/^(.*?)([bcdfghjklmnpqrstvwz])\2(ing|ed|er)$/);
+    if (dm) out.push(dm[1] + dm[2]);
+    return out;
+  }
+  function enLookup(w) {
+    var idx = buildEnIndex(), lem = enLemmas(w);
+    for (var i = 0; i < lem.length; i++) if (idx[lem[i]]) return { entry: idx[lem[i]], via: lem[i] };
+    return null;
+  }
+
+  function translateEn(text) {
+    var trace = [], unmatched = [];
+    if (typeof text !== 'string' || !text.trim()) {
+      return { ok: false, roman: '', gloss: '', trans: '', level: 0, evid: 'none', mood: 'real', trace: [], unmatched: [], error: 'Please enter English.' };
+    }
+    var qmark = /\?/.test(text), exclaim = /!/.test(text);
+    // 小写、去标点（留 ' 与 -）、拆词、展开缩写、剥离所有格 's
+    var raw = text.toLowerCase().replace(/[^a-z0-9'\s-]/g, ' ').split(/\s+/).filter(Boolean);
+    var words = [];
+    raw.forEach(function (w) {
+      if (EN_CONTRACT[w]) { EN_CONTRACT[w].forEach(function (x) { words.push(x); }); return; }
+      var m = w.match(/^(.+)'s$/); if (m) { words.push(m[1]); return; }  // 所有格：留基词，顺序即属格
+      words.push(w);
+    });
+    // 多词短语预处理 → 生成 meta 记号；其余为普通词串
+    var toks = [];
+    for (var i = 0; i < words.length;) {
+      var hit = null;
+      for (var p = 0; p < EN_PHRASES.length; p++) {
+        var ph = EN_PHRASES[p], ok = true;
+        for (var q = 0; q < ph.w.length; q++) { if (words[i + q] !== ph.w[q]) { ok = false; break; } }
+        if (ok) { hit = ph; break; }
+      }
+      if (hit) { toks.push({ meta: hit }); i += hit.w.length; }
+      else { toks.push({ word: words[i] }); i += 1; }
+    }
+    trace.push({ step: '① 语义分解', detail: 'tokenize: ' + words.join(' / ') });
+
+    var level = 0, level2FromTime = false, future = false, evid = null, neg = false, prohibit = false, irr = false, q = qmark;
+    var plural = false, cop = false, have = false, cmp = false, pastHint = false, please = false;
+    var nominals = [], verb = null, adj = null, loc = null, qwordRoman = null, expectLoc = false;
+    var verbFirst = false, hadSubjectPronoun = false;
+
+    function pushNominal(entry, isPlural) {
+      if (nominals.length === 0 && isPlural) plural = true;  // 主语复数 → 句级 plural
+      nominals.push(entry);
+    }
+
+    for (var t = 0; t < toks.length; t++) {
+      var tk = toks[t];
+      if (tk.meta) {
+        var mt = tk.meta;
+        if (mt.type === 'time') { if (mt.val === 2) { level = Math.max(level, 2); level2FromTime = true; } else level = Math.max(level, mt.val); }
+        else if (mt.type === 'evid') { evid = mt.val; }
+        else if (mt.type === 'qword') { qwordRoman = mt.val; q = true; }
+        else if (mt.type === 'future') { future = true; }
+        continue;
+      }
+      var w = tk.word;
+      if (expectLoc) {
+        if (w === 'the' || w === 'a' || w === 'an') continue;  // 冠词不消耗 expectLoc
+        expectLoc = false;
+        var le = enLookup(w);
+        if (le && (le.entry.pos === 'n' || le.entry.pos === 'pron')) { loc = le.entry; continue; }
+      }
+      if (w === 'please') { please = true; irr = true; continue; }
+      if (w === 'will' || w === 'shall') { future = true; continue; }
+      if (w === 'than') { cmp = true; continue; }
+      if (EN_PASTHINT.indexOf(w) !== -1) { pastHint = true; /* was/were→cop; had→have */ if (w === 'was' || w === 'were') cop = true; if (w === 'had') have = true; continue; }
+      if (EN_TIME[w] !== undefined) { if (EN_TIME[w] === 'F') future = true; else { level = Math.max(level, EN_TIME[w]); if (EN_TIME[w] === 2) level2FromTime = true; } continue; }
+      if (EN_EVID[w]) { evid = EN_EVID[w]; continue; }
+      if (EN_QWORD[w]) { qwordRoman = EN_QWORD[w]; q = true; continue; }
+      if (EN_NEG.indexOf(w) !== -1) { neg = true; continue; }
+      if (EN_COP.indexOf(w) !== -1) { cop = true; continue; }
+      if (EN_HAVE.indexOf(w) !== -1) { have = true; continue; }
+      if (EN_LOCPREP.indexOf(w) !== -1) { expectLoc = true; continue; }
+      if (EN_LOCWORD[w]) { loc = EN_LOCWORD[w]; continue; }
+      if (EN_POSS[w]) { var pe = entryByRoman(EN_POSS[w]); if (pe) pushNominal(pe, false); continue; }
+      if (EN_PRON[w]) { var pr = EN_PRON[w], ent = entryByRoman(pr.r); if (ent) { if (nominals.length === 0) hadSubjectPronoun = true; pushNominal(ent, !!pr.pl); } continue; }
+      if (EN_NUM.indexOf(w) !== -1) { continue; }  // 数词：与中文路径一致，暂不落位
+      if (EN_DROP.indexOf(w) !== -1) { continue; }
+      // 内容词查表（含屈折还原）
+      var look = enLookup(w);
+      if (look) {
+        var e = look.entry, pos = e.pos;
+        if (EN_IRREG_PAST[w]) pastHint = true;
+        if (pos === 'v') { if (!verb) { verb = e; verbFirst = (nominals.length === 0); } else pushNominal(e, false); }
+        else if (pos === 'adj') { adj = e; }
+        else { // n / pron / num / func → 名词性
+          var isPl = (EN_IRREG_PLURAL[w] === 1) || (e.pl === true) || (/s$/.test(w) && look.via !== w && pos === 'n');
+          pushNominal(e, isPl);
+        }
+        continue;
+      }
+      unmatched.push(w);
+    }
+
+    // 过去式启示：无显式时间且非未来 → 提升到级1（触发示证）
+    if (!future && level === 0 && pastHint) level = 1;
+    // 无主语的否定动词 ≈ 否定祈使（don't sing）
+    if (neg && verb && nominals.length === 0) { prohibit = true; irr = true; }
+    // 英语祈使可靠信号：动词居句首且无代词主语（不影响"the river flows"这类名词主语陈述句）
+    var imperative = !!(verb && verbFirst && !hadSubjectPronoun && !cop && !have && !cmp && !q);
+    if (imperative || (exclaim || please) && verb) irr = true;
+
+    var F = {
+      level: level, level2FromTime: level2FromTime, future: future, evid: evid,
+      neg: neg, prohibit: prohibit, irr: irr, q: q, plural: plural,
+      cop: cop, have: have, cmp: cmp, imperative: imperative,
+      nominals: nominals, verb: verb, adj: adj, loc: loc, qwordRoman: qwordRoman,
+      glossOf: enOf
+    };
+    return assembleSentence(F, trace, unmatched, text);
   }
 
   /* ---------- 构句器（composeSentence） ---------- */
@@ -4762,6 +6187,7 @@ window.SILNETH_LEXICON = [
     decline: decline,
     evidential: evidential,
     translateZh: translateZh,
+    translateEn: translateEn,
     composeSentence: composeSentence,
     transliterateName: transliterateName,
     toGlyphs: toGlyphs,
@@ -4773,7 +6199,6 @@ window.SILNETH_LEXICON = [
   if (typeof window !== 'undefined') window.SilnethEngine = SilnethEngine;
   return SilnethEngine;
 })(typeof window !== 'undefined' ? window : this);
-
 </script>
 
 <script>
@@ -4977,27 +6402,68 @@ window.SILNETH_LEXICON = [
     });
   });
 
-  /* ---------- 中文直译 ---------- */
+  /* ---------- 直译（中文 / English） ---------- */
   var zhInput = document.getElementById('zhInput');
   var zhOut = document.getElementById('zhOut');
+  var zhChips = document.getElementById('zhChips');
+  var langMode = 'zh';  // 'zh' | 'en'
+  var UI_TEXT = {
+    zh: {
+      label: '中文原文', placeholder: '例：父亲以前在这里唱过歌', btn: '翻译 → Sìlneth',
+      hint: '时距级与示证会按十步管线自动判定，过程可展开查看。',
+      chips: ['我们唱歌', '父亲以前在这里唱过歌', '相传群山在远古屹立', '你叫什么名字',
+              '我有一把刀', '明天我们唱歌吧', '别唱', '河比山古老']
+    },
+    en: {
+      label: 'English source', placeholder: 'e.g. father sang a song here before', btn: 'Translate → Sìlneth',
+      hint: 'Tense level and evidentiality are inferred by the ten-step pipeline; expand any result to inspect it.',
+      chips: ['we sing a song', 'father sang a song', 'the mountains stood in ancient times',
+              'what is your name', 'i have a knife', 'the river is older than the mountain',
+              "don't sing", 'he is not a singer']
+    }
+  };
+  function renderChips() {
+    zhChips.innerHTML = '';
+    UI_TEXT[langMode].chips.forEach(function (s) {
+      var c = el('button', 'chip', s);
+      c.addEventListener('click', function () { zhInput.value = s; doZh(); });
+      zhChips.appendChild(c);
+    });
+  }
+  function applyLang() {
+    var T = UI_TEXT[langMode];
+    document.getElementById('zhLabel').textContent = T.label;
+    zhInput.setAttribute('placeholder', T.placeholder);
+    document.getElementById('zhGo').textContent = T.btn;
+    document.getElementById('zhHint').textContent = T.hint;
+    document.getElementById('zhSupportZh').hidden = (langMode !== 'zh');
+    document.getElementById('zhSupportEn').hidden = (langMode !== 'en');
+    zhOut.innerHTML = '';
+    renderChips();
+  }
   function doZh() {
     var t = zhInput.value.trim();
     if (!t) return;
     var res;
-    try { res = E.translateZh(t); } catch (err) { res = { ok: false, error: '引擎异常：' + err.message }; }
+    try { res = (langMode === 'en') ? E.translateEn(t) : E.translateZh(t); }
+    catch (err) { res = { ok: false, error: (langMode === 'en' ? 'Engine error: ' : '引擎异常：') + err.message }; }
     renderResult(zhOut, res, { zh: t });
   }
+  Array.prototype.forEach.call(document.querySelectorAll('#zhLang button'), function (b) {
+    b.addEventListener('click', function () {
+      if (langMode === b.dataset.v) return;
+      langMode = b.dataset.v;
+      Array.prototype.forEach.call(document.querySelectorAll('#zhLang button'), function (x) {
+        x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+      });
+      applyLang();
+    });
+  });
   document.getElementById('zhGo').addEventListener('click', doZh);
   zhInput.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); doZh(); }
   });
-  var zhChips = document.getElementById('zhChips');
-  ['我们唱歌', '父亲以前在这里唱过歌', '相传群山在远古屹立', '你叫什么名字',
-   '我有一把刀', '明天我们唱歌吧', '别唱', '河比山古老'].forEach(function (s) {
-    var c = el('button', 'chip', s);
-    c.addEventListener('click', function () { zhInput.value = s; doZh(); });
-    zhChips.appendChild(c);
-  });
+  renderChips();
 
   /* ---------- 构句器 ---------- */
   function fillDatalist(id, filter) {
@@ -5162,5 +6628,4 @@ window.SILNETH_LEXICON = [
   });
   if (!book.length) phraseOut.appendChild(el('div', 'hint', '短语集未加载。'));
 })();
-
 </script>
