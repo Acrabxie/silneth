@@ -540,7 +540,7 @@
   var PLURAL_MARK = ['们', '群', '众', '诸'];
   // 特殊功能字
   var STRUCT = { COP: ['是'], EXIST: ['在'], HAVE: ['有'], CMP: ['比'], GEN: ['的'], NEG: ['不', '没', '没有', '未', '别', '勿', '莫'], PROHIBIT: ['别', '勿', '莫', '不要'], IRR: ['吧', '愿', '请', '让'], Q: ['吗', '呢', '么'], PASSIVE: ['被'] };
-  var DROP = ['了', '着', '过', '地', '得', '把', '就', '都', '也', '还', '一', '所', '之', '给', '将', '会', '要', '能', '可以', '很', '太', '更', '最', '叫', '叫做', '名为'];
+  var DROP = ['了', '着', '过', '地', '得', '把', '就', '都', '也', '还', '一', '所', '之', '给', '将', '会', '要', '能', '可以', '很', '太', '更', '最', '叫', '叫做', '名为', '向', '朝', '往', '向着', '朝着', '朝向'];
   // 疑问词中文 → Sìlneth k- 词（§2.5.4）
   var QWORD = { '什么': 'kath', '谁': 'ken', '哪里': 'kis', '哪儿': 'kis', '何处': 'kis', '何时': 'kir', '什么时候': 'kir', '几': 'kem', '多少': 'kem', '哪个': 'kor', '为什么': 'kol', '怎么': 'kum', '如何': 'kum' };
   // 限定词（量词）：前置于名词，合成为量化名词短语（roman＝「量词 名词」，格/复数落末尾名词）
@@ -564,7 +564,7 @@
     '为了': { roman: 'hyra', gloss: '为了', role: 'sub' }, '以便': { roman: 'hyra', gloss: '为了', role: 'sub' },
     '所以': { roman: 'sona', gloss: '所以', role: 'main' }, '因此': { roman: 'sona', gloss: '所以', role: 'main' }, '于是': { roman: 'sona', gloss: '所以', role: 'main' }, '故': { roman: 'sona', gloss: '所以', role: 'main' },
     '那么': { roman: 'tho', gloss: '那么', role: 'main' }, '则': { roman: 'tho', gloss: '那么', role: 'main' },
-    '但是': { roman: 'nas', gloss: '但是', role: 'main' }, '然而': { roman: 'nas', gloss: '但是', role: 'main' }, '可是': { roman: 'nas', gloss: '但是', role: 'main' }, '不过': { roman: 'nas', gloss: '但是', role: 'main' },
+    '但是': { roman: 'nas', gloss: '但是', role: 'main' }, '但': { roman: 'nas', gloss: '但', role: 'main' }, '然而': { roman: 'nas', gloss: '但是', role: 'main' }, '可是': { roman: 'nas', gloss: '但是', role: 'main' }, '不过': { roman: 'nas', gloss: '但是', role: 'main' },
     '而且': { roman: 'jai', gloss: '而且', role: 'coord' }, '并且': { roman: 'jai', gloss: '而且', role: 'coord' },
     '而': { roman: 'jo', gloss: '而', role: 'coord' }, '然后': { roman: 'jo', gloss: '然后', role: 'coord' }, '接着': { roman: 'jo', gloss: '然后', role: 'coord' }
   };
@@ -1007,7 +1007,7 @@
   var EN_QUANT = { all: 'hol', every: 'pan', each: 'pan', any: 'anwe', many: 'mai', much: 'mai', some: 'ves', several: 'søm', few: 'lith', certain: 'tei' };
   var EN_CONJ = { and: '=ve', or: 'vo' };
   var EN_LOCPREP = ['in', 'on', 'at', 'inside', 'within'];
-  var EN_DROP = ['a', 'an', 'the', 'of', 'to', 'been', 'being', 'got', 'do', 'does'];
+  var EN_DROP = ['a', 'an', 'the', 'of', 'to', 'been', 'being', 'got', 'do', 'does', 'off', 'up', 'along', 'around', 'upon', 'onto'];
   var EN_PASTHINT = ['was', 'were', 'had', 'did'];
   // 多词短语（先于逐词分类）：词序数组 → {type,val}
   var EN_PHRASES = [

@@ -3046,7 +3046,8 @@
  ],
  "gethan": [
   "admit",
-  "acknowledge"
+  "acknowledge",
+  "confess"
  ],
  "ñaur": [
   "deny",
@@ -3656,5 +3657,55 @@
  "skøfra": [
   "coffee",
   "bitter dark brew"
+ ],
+ "brǿm": [
+  "warm"
+ ],
+ "thurs": [
+  "thirsty"
+ ],
+ "jǿtan": [
+  "giant"
+ ],
+ "stór": [
+  "staff",
+  "rod",
+  "cane"
+ ],
+ "prún": [
+  "peach"
+ ],
+ "løsa": [
+  "doff",
+  "take off",
+  "remove (clothes)"
+ ],
+ "hléva": [
+  "give up",
+  "abandon",
+  "relinquish"
+ ],
+ "glóra": [
+  "shine",
+  "radiate"
+ ],
+ "léma": [
+  "ray",
+  "beam of light"
+ ],
+ "skera": [
+  "divide"
+ ],
+ "nárth": [
+  "north"
+ ],
+ "súrth": [
+  "south"
+ ],
+ "airth": [
+  "east"
+ ],
+ "weirth": [
+  "west"
  ]
 }
