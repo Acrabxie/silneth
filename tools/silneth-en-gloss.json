@@ -1,0 +1,3660 @@
+{
+ "dhan": [
+  "person",
+  "human",
+  "being",
+  "people"
+ ],
+ "jor": [
+  "man",
+  "male"
+ ],
+ "mena": [
+  "woman",
+  "female"
+ ],
+ "vem": [
+  "spouse",
+  "partner",
+  "mate"
+ ],
+ "pai": [
+  "father",
+  "dad"
+ ],
+ "mau": [
+  "mother",
+  "mom"
+ ],
+ "dhal": [
+  "ancestor",
+  "forebear",
+  "forefather"
+ ],
+ "ñin": [
+  "child",
+  "kid",
+  "infant"
+ ],
+ "ñal": [
+  "youth",
+  "adolescent"
+ ],
+ "ñol": [
+  "orphan"
+ ],
+ "bral": [
+  "brother"
+ ],
+ "sena": [
+  "sister"
+ ],
+ "hem": [
+  "home",
+  "household",
+  "family"
+ ],
+ "dhem": [
+  "tribe",
+  "people",
+  "clan"
+ ],
+ "rýn": [
+  "chief",
+  "king",
+  "lord"
+ ],
+ "fel": [
+  "friend",
+  "companion"
+ ],
+ "gath": [
+  "guest",
+  "traveler",
+  "traveller",
+  "visitor"
+ ],
+ "kal": [
+  "head",
+  "skull"
+ ],
+ "vil": [
+  "eye",
+  "eyes"
+ ],
+ "hul": [
+  "ear",
+  "ears"
+ ],
+ "nus": [
+  "nose"
+ ],
+ "mun": [
+  "mouth"
+ ],
+ "lam": [
+  "tongue"
+ ],
+ "tir": [
+  "tooth",
+  "teeth"
+ ],
+ "fas": [
+  "hair"
+ ],
+ "den": [
+  "hand",
+  "hands"
+ ],
+ "barm": [
+  "arm",
+  "arms"
+ ],
+ "pon": [
+  "foot",
+  "feet"
+ ],
+ "skel": [
+  "leg",
+  "legs"
+ ],
+ "rul": [
+  "back"
+ ],
+ "gom": [
+  "belly",
+  "stomach"
+ ],
+ "kern": [
+  "heart",
+  "core"
+ ],
+ "ruth": [
+  "blood"
+ ],
+ "ors": [
+  "bone",
+  "bones"
+ ],
+ "peln": [
+  "skin"
+ ],
+ "hes": [
+  "breath",
+  "breathing"
+ ],
+ "nir": [
+  "tear",
+  "tears"
+ ],
+ "kel": [
+  "sky",
+  "heaven"
+ ],
+ "saul": [
+  "sun"
+ ],
+ "ýl": [
+  "moon",
+  "month"
+ ],
+ "nai": [
+  "star",
+  "stars"
+ ],
+ "vér": [
+  "silver light",
+  "sheen",
+  "silver glow"
+ ],
+ "lúm": [
+  "light",
+  "radiance",
+  "brightness"
+ ],
+ "ath": [
+  "heat",
+  "warmth"
+ ],
+ "fai": [
+  "fire",
+  "flame"
+ ],
+ "íth": [
+  "ice"
+ ],
+ "fen": [
+  "snow"
+ ],
+ "nem": [
+  "rain"
+ ],
+ "hyl": [
+  "cloud",
+  "mist",
+  "fog"
+ ],
+ "wein": [
+  "wind"
+ ],
+ "thrau": [
+  "storm",
+  "tempest"
+ ],
+ "koil": [
+  "whirlpool",
+  "vortex",
+  "eddy"
+ ],
+ "thum": [
+  "smoke"
+ ],
+ "ther": [
+  "ash",
+  "ashes"
+ ],
+ "thos": [
+  "dust"
+ ],
+ "zar": [
+  "sand"
+ ],
+ "nor": [
+  "earth",
+  "land",
+  "ground"
+ ],
+ "grán": [
+  "stone",
+  "rock"
+ ],
+ "arn": [
+  "mountain"
+ ],
+ "doln": [
+  "valley"
+ ],
+ "hurn": [
+  "cave"
+ ],
+ "firn": [
+  "forest",
+  "woods"
+ ],
+ "lath": [
+  "plain",
+  "meadow",
+  "grassland"
+ ],
+ "ran": [
+  "road",
+  "path",
+  "journey"
+ ],
+ "lír": [
+  "river"
+ ],
+ "nelu": [
+  "water"
+ ],
+ "len": [
+  "lake"
+ ],
+ "maur": [
+  "sea",
+  "ocean"
+ ],
+ "noth": [
+  "night"
+ ],
+ "del": [
+  "day",
+  "daytime"
+ ],
+ "skon": [
+  "shadow"
+ ],
+ "murn": [
+  "darkness",
+  "gloom",
+  "dark"
+ ],
+ "hwan": [
+  "beast",
+  "animal"
+ ],
+ "vorn": [
+  "wolf"
+ ],
+ "bern": [
+  "bear"
+ ],
+ "velm": [
+  "deer"
+ ],
+ "ros": [
+  "horse"
+ ],
+ "bur": [
+  "cow",
+  "ox",
+  "cattle"
+ ],
+ "meñ": [
+  "sheep"
+ ],
+ "hun": [
+  "dog",
+  "hound"
+ ],
+ "swil": [
+  "bird"
+ ],
+ "karn": [
+  "eagle",
+  "raptor"
+ ],
+ "glis": [
+  "fish"
+ ],
+ "zir": [
+  "snake",
+  "serpent"
+ ],
+ "ñis": [
+  "insect",
+  "bug",
+  "worm"
+ ],
+ "ñum": [
+  "bee"
+ ],
+ "filn": [
+  "wing",
+  "wings"
+ ],
+ "korn": [
+  "horn"
+ ],
+ "gwe": [
+  "egg"
+ ],
+ "áln": [
+  "tree"
+ ],
+ "wurn": [
+  "root"
+ ],
+ "lil": [
+  "leaf",
+  "leaves"
+ ],
+ "fjal": [
+  "flower",
+  "blossom"
+ ],
+ "selm": [
+  "grass"
+ ],
+ "sem": [
+  "seed"
+ ],
+ "bau": [
+  "fruit"
+ ],
+ "mos": [
+  "meat",
+  "flesh"
+ ],
+ "brom": [
+  "bread",
+  "flatbread"
+ ],
+ "gorn": [
+  "grain",
+  "crop"
+ ],
+ "mim": [
+  "milk"
+ ],
+ "melu": [
+  "honey"
+ ],
+ "selu": [
+  "oil"
+ ],
+ "velu": [
+  "wine"
+ ],
+ "sarn": [
+  "salt"
+ ],
+ "surm": [
+  "soup",
+  "broth"
+ ],
+ "kurn": [
+  "meal"
+ ],
+ "pesha": [
+  "spice",
+  "herb"
+ ],
+ "teln": [
+  "house",
+  "dwelling"
+ ],
+ "tal": [
+  "hall"
+ ],
+ "tolm": [
+  "tower"
+ ],
+ "dorn": [
+  "door"
+ ],
+ "belm": [
+  "wall"
+ ],
+ "kelm": [
+  "roof"
+ ],
+ "fairn": [
+  "hearth",
+  "fireplace"
+ ],
+ "lein": [
+  "bed"
+ ],
+ "welm": [
+  "cloth",
+  "clothing",
+  "garment"
+ ],
+ "krum": [
+  "jar",
+  "pot"
+ ],
+ "nath": [
+  "net"
+ ],
+ "thren": [
+  "rope",
+  "cord"
+ ],
+ "skar": [
+  "knife",
+  "blade"
+ ],
+ "gar": [
+  "spear"
+ ],
+ "byn": [
+  "bow"
+ ],
+ "flin": [
+  "arrow"
+ ],
+ "skau": [
+  "boat",
+  "ship"
+ ],
+ "bryn": [
+  "bridge"
+ ],
+ "wen": [
+  "go",
+  "walk"
+ ],
+ "gwen": [
+  "come"
+ ],
+ "rin": [
+  "run"
+ ],
+ "lun": [
+  "flow"
+ ],
+ "dol": [
+  "fall",
+  "drop"
+ ],
+ "rai": [
+  "rise",
+  "ascend"
+ ],
+ "swai": [
+  "fly"
+ ],
+ "glun": [
+  "swim"
+ ],
+ "wor": [
+  "turn",
+  "spin"
+ ],
+ "oran": [
+  "wander",
+  "roam"
+ ],
+ "som": [
+  "sit"
+ ],
+ "lei": [
+  "lie",
+  "recline"
+ ],
+ "swon": [
+  "sleep"
+ ],
+ "lán": [
+  "stand",
+  "endure",
+  "tower"
+ ],
+ "thau": [
+  "die",
+  "perish"
+ ],
+ "dhes": [
+  "live",
+  "survive"
+ ],
+ "ñar": [
+  "be born",
+  "born"
+ ],
+ "al": [
+  "grow"
+ ],
+ "dar": [
+  "give"
+ ],
+ "kam": [
+  "take"
+ ],
+ "grem": [
+  "hold",
+  "grip",
+  "grasp"
+ ],
+ "bor": [
+  "carry",
+  "bear"
+ ],
+ "shan": [
+  "throw",
+  "cast",
+  "hurl"
+ ],
+ "ren": [
+  "pass",
+  "hand",
+  "deliver"
+ ],
+ "tan": [
+  "make",
+  "do"
+ ],
+ "dem": [
+  "build",
+  "construct"
+ ],
+ "tarn": [
+  "cut",
+  "chop",
+  "sever"
+ ],
+ "bres": [
+  "break",
+  "shatter"
+ ],
+ "skir": [
+  "carve",
+  "engrave"
+ ],
+ "wel": [
+  "weave"
+ ],
+ "ser": [
+  "sow",
+  "plant"
+ ],
+ "lym": [
+  "wash"
+ ],
+ "kur": [
+  "cook",
+  "boil"
+ ],
+ "jem": [
+  "eat"
+ ],
+ "sul": [
+  "drink"
+ ],
+ "gwar": [
+  "fight",
+  "battle"
+ ],
+ "skath": [
+  "hunt"
+ ],
+ "lys": [
+  "open"
+ ],
+ "klus": [
+  "close",
+  "shut"
+ ],
+ "brin": [
+  "burn"
+ ],
+ "thrin": [
+  "bind",
+  "tie"
+ ],
+ "dhil": [
+  "find",
+  "discover"
+ ],
+ "thol": [
+  "lose"
+ ],
+ "jes": [
+  "begin",
+  "start"
+ ],
+ "sath": [
+  "end",
+  "finish",
+  "exhaust"
+ ],
+ "rim": [
+  "count"
+ ],
+ "fus": [
+  "blow"
+ ],
+ "vár": [
+  "see",
+  "look"
+ ],
+ "hyr": [
+  "hear",
+  "listen"
+ ],
+ "fes": [
+  "smell"
+ ],
+ "vys": [
+  "know"
+ ],
+ "kyn": [
+  "learn",
+  "study"
+ ],
+ "møn": [
+  "think",
+  "ponder"
+ ],
+ "mír": [
+  "remember"
+ ],
+ "thel": [
+  "forget"
+ ],
+ "dhir": [
+  "track",
+  "trace"
+ ],
+ "søl": [
+  "love",
+  "cherish"
+ ],
+ "jur": [
+  "want",
+  "wish",
+  "desire"
+ ],
+ "throm": [
+  "fear",
+  "dread"
+ ],
+ "nur": [
+  "weep",
+  "cry"
+ ],
+ "hlas": [
+  "laugh"
+ ],
+ "søn": [
+  "dream"
+ ],
+ "syn": [
+  "soul",
+  "spirit",
+  "mind"
+ ],
+ "jal": [
+  "joy",
+  "happiness"
+ ],
+ "garm": [
+  "anger",
+  "wrath"
+ ],
+ "nurn": [
+  "sorrow",
+  "grief"
+ ],
+ "thyr": [
+  "pain",
+  "ache"
+ ],
+ "gor": [
+  "big",
+  "large"
+ ],
+ "ñil": [
+  "small",
+  "little"
+ ],
+ "lyn": [
+  "long"
+ ],
+ "stum": [
+  "short"
+ ],
+ "hau": [
+  "tall",
+  "high"
+ ],
+ "dyn": [
+  "deep"
+ ],
+ "brath": [
+  "wide",
+  "broad"
+ ],
+ "ñem": [
+  "narrow"
+ ],
+ "gwom": [
+  "heavy"
+ ],
+ "fim": [
+  "light"
+ ],
+ "swin": [
+  "fast",
+  "quick",
+  "swift"
+ ],
+ "lom": [
+  "slow"
+ ],
+ "dren": [
+  "strong"
+ ],
+ "thin": [
+  "weak"
+ ],
+ "hom": [
+  "full"
+ ],
+ "thøs": [
+  "empty"
+ ],
+ "nár": [
+  "new",
+  "fresh"
+ ],
+ "ñes": [
+  "young",
+  "tender"
+ ],
+ "tór": [
+  "old",
+  "ancient"
+ ],
+ "jen": [
+  "good",
+  "kind"
+ ],
+ "ulm": [
+  "bad",
+  "evil"
+ ],
+ "vai": [
+  "true",
+  "real"
+ ],
+ "shal": [
+  "false",
+  "fake"
+ ],
+ "skil": [
+  "sharp"
+ ],
+ "sor": [
+  "dry"
+ ],
+ "kryl": [
+  "cold"
+ ],
+ "ñela": [
+  "soft"
+ ],
+ "thys": [
+  "silent",
+  "quiet",
+  "still"
+ ],
+ "hál": [
+  "holy",
+  "sacred"
+ ],
+ "val": [
+  "silver",
+  "silvery"
+ ],
+ "los": [
+  "place",
+  "location"
+ ],
+ "vetha": [
+  "time"
+ ],
+ "jern": [
+  "year"
+ ],
+ "eln": [
+  "morning"
+ ],
+ "surn": [
+  "dusk",
+  "evening"
+ ],
+ "nu": [
+  "now"
+ ],
+ "vèr": [
+  "past",
+  "old times"
+ ],
+ "nes": [
+  "near",
+  "close"
+ ],
+ "tau": [
+  "far",
+  "distant"
+ ],
+ "medhan": [
+  "middle",
+  "center",
+  "centre"
+ ],
+ "skarn": [
+  "edge",
+  "brink"
+ ],
+ "ilm": [
+  "inside",
+  "within"
+ ],
+ "es": [
+  "outside"
+ ],
+ "hen": [
+  "before",
+  "in front"
+ ],
+ "dur": [
+  "after",
+  "behind"
+ ],
+ "thes": [
+  "above",
+  "on"
+ ],
+ "nol": [
+  "below",
+  "under"
+ ],
+ "hwel": [
+  "left"
+ ],
+ "drel": [
+  "right"
+ ],
+ "sil": [
+  "say",
+  "sing",
+  "speak",
+  "chant"
+ ],
+ "kai": [
+  "call",
+  "summon",
+  "name"
+ ],
+ "kes": [
+  "ask"
+ ],
+ "res": [
+  "answer",
+  "reply"
+ ],
+ "shel": [
+  "deceive",
+  "trick"
+ ],
+ "mang": [
+  "trade",
+  "barter"
+ ],
+ "seth": [
+  "word",
+  "speech"
+ ],
+ "neth": [
+  "thing",
+  "matter",
+  "deed"
+ ],
+ "nym": [
+  "name"
+ ],
+ "mirn": [
+  "mark",
+  "sign"
+ ],
+ "thang": [
+  "law",
+  "rule"
+ ],
+ "grath": [
+  "oath",
+  "vow"
+ ],
+ "dhaul": [
+  "god",
+  "deity"
+ ],
+ "holn": [
+  "peace",
+  "calm"
+ ],
+ "golm": [
+  "goods",
+  "wealth",
+  "riches"
+ ],
+ "el": [
+  "be",
+  "exist"
+ ],
+ "ul": [
+  "not",
+  "no"
+ ],
+ "vath": [
+  "in ancient times",
+  "of old"
+ ],
+ "hol": [
+  "all",
+  "every",
+  "whole"
+ ],
+ "mai": [
+  "many",
+  "much"
+ ],
+ "lith": [
+  "few",
+  "a little"
+ ],
+ "ves": [
+  "some"
+ ],
+ "em": [
+  "also",
+  "too"
+ ],
+ "nil": [
+  "only",
+  "just"
+ ],
+ "jo": [
+  "and",
+  "then"
+ ],
+ "nas": [
+  "but",
+  "however"
+ ],
+ "ai": [
+  "oh",
+  "ah"
+ ],
+ "=ve": [
+  "and",
+  "with"
+ ],
+ "=va": [
+  "(firsthand)"
+ ],
+ "=dhi": [
+  "(inferred)"
+ ],
+ "=re": [
+  "(reported)"
+ ],
+ "thøn": [
+  "zero",
+  "none"
+ ],
+ "en": [
+  "one"
+ ],
+ "dy": [
+  "two"
+ ],
+ "thil": [
+  "three"
+ ],
+ "vor": [
+  "four"
+ ],
+ "lim": [
+  "five"
+ ],
+ "zol": [
+  "six"
+ ],
+ "nau": [
+  "seven"
+ ],
+ "oth": [
+  "eight"
+ ],
+ "gen": [
+  "nine"
+ ],
+ "dhul": [
+  "ten"
+ ],
+ "mel": [
+  "eleven"
+ ],
+ "lár": [
+  "twelve"
+ ],
+ "ýlan": [
+  "one hundred forty-four"
+ ],
+ "órvan": [
+  "one thousand seven hundred twenty-eight"
+ ],
+ "ni": [
+  "I",
+  "me"
+ ],
+ "vy": [
+  "you"
+ ],
+ "dhe": [
+  "he",
+  "she",
+  "him",
+  "her"
+ ],
+ "tha": [
+  "it"
+ ],
+ "øs": [
+  "self",
+  "oneself"
+ ],
+ "sa": [
+  "this"
+ ],
+ "tor": [
+  "that"
+ ],
+ "tër": [
+  "that",
+  "yon"
+ ],
+ "ken": [
+  "who"
+ ],
+ "kath": [
+  "what"
+ ],
+ "kor": [
+  "which"
+ ],
+ "kis": [
+  "where"
+ ],
+ "kol": [
+  "why"
+ ],
+ "kum": [
+  "how"
+ ],
+ "kir": [
+  "when"
+ ],
+ "kem": [
+  "how many",
+  "how much"
+ ],
+ "-neth": [
+  "(nominalizer: action/result)"
+ ],
+ "-we": [
+  "(agent: -er)"
+ ],
+ "-os": [
+  "(place/instrument)"
+ ],
+ "-il": [
+  "(diminutive)"
+ ],
+ "-ur": [
+  "(augmentative)"
+ ],
+ "-a": [
+  "(adjectivizer)"
+ ],
+ "-yn": [
+  "(abstract noun)"
+ ],
+ "-ta-": [
+  "(verbalizer/causative)"
+ ],
+ "-im": [
+  "(ordinal)"
+ ],
+ "-um": [
+  "(adverb: manner/times)"
+ ],
+ "-ir": [
+  "(intensifier)"
+ ],
+ "-ol": [
+  "(diminisher)"
+ ],
+ "aivon": [
+  "grandfather",
+  "grandsire"
+ ],
+ "órna": [
+  "grandmother"
+ ],
+ "maulir": [
+  "maternal grandparent"
+ ],
+ "neivon": [
+  "grandchild"
+ ],
+ "frøkel": [
+  "uncle"
+ ],
+ "thríma": [
+  "aunt"
+ ],
+ "veskal": [
+  "cousin"
+ ],
+ "gaunir": [
+  "parent-in-law"
+ ],
+ "swelra": [
+  "child-in-law"
+ ],
+ "dhaimel": [
+  "sibling-in-law"
+ ],
+ "pryska": [
+  "elder brother"
+ ],
+ "blina": [
+  "younger sibling"
+ ],
+ "kestra": [
+  "elder sister"
+ ],
+ "gwailn": [
+  "twin"
+ ],
+ "úren": [
+  "baby"
+ ],
+ "staun": [
+  "young adult"
+ ],
+ "firwyn": [
+  "elder",
+  "old person"
+ ],
+ "froisel": [
+  "stranger"
+ ],
+ "nabrin": [
+  "neighbor"
+ ],
+ "skoirn": [
+  "enemy",
+  "foe"
+ ],
+ "brailn": [
+  "ally"
+ ],
+ "plenor": [
+  "peer",
+  "age-mate"
+ ],
+ "dyrsa": [
+  "only child"
+ ],
+ "kren": [
+  "shoulder"
+ ],
+ "hlím": [
+  "elbow"
+ ],
+ "vloth": [
+  "wrist"
+ ],
+ "fjeln": [
+  "knee"
+ ],
+ "draul": [
+  "ankle"
+ ],
+ "kloth": [
+  "chin"
+ ],
+ "gwelm": [
+  "forehead",
+  "brow"
+ ],
+ "tjarn": [
+  "eyebrow"
+ ],
+ "kleth": [
+  "cheek"
+ ],
+ "sweln": [
+  "throat"
+ ],
+ "threng": [
+  "chest"
+ ],
+ "frilm": [
+  "rib"
+ ],
+ "plin": [
+  "nail",
+  "claw"
+ ],
+ "kraun": [
+  "spine",
+  "backbone"
+ ],
+ "gluth": [
+  "knuckle"
+ ],
+ "sparn": [
+  "palm"
+ ],
+ "hwoln": [
+  "heel"
+ ],
+ "drir": [
+  "liver"
+ ],
+ "bléth": [
+  "lung"
+ ],
+ "skoln": [
+  "kidney"
+ ],
+ "throls": [
+  "gut",
+  "intestine"
+ ],
+ "swelm": [
+  "sweat"
+ ],
+ "fjun": [
+  "pulse"
+ ],
+ "hlau": [
+  "saliva",
+  "spit"
+ ],
+ "skorn": [
+  "scar"
+ ],
+ "vlún": [
+  "bruise"
+ ],
+ "thrøn": [
+  "ache"
+ ],
+ "nyrn": [
+  "nape"
+ ],
+ "flín": [
+  "cliff",
+  "crag"
+ ],
+ "skairn": [
+  "ridge",
+  "crest"
+ ],
+ "nuln": [
+  "shore",
+  "bank"
+ ],
+ "vaurn": [
+  "peak",
+  "summit"
+ ],
+ "hlem": [
+  "slope",
+  "incline"
+ ],
+ "kleith": [
+  "gorge",
+  "ravine"
+ ],
+ "holm": [
+  "islet",
+  "isle"
+ ],
+ "styn": [
+  "spring",
+  "wellspring"
+ ],
+ "droln": [
+  "pool"
+ ],
+ "hwalm": [
+  "wave",
+  "billow"
+ ],
+ "tíl": [
+  "tide"
+ ],
+ "frøth": [
+  "foam",
+  "froth"
+ ],
+ "glúr": [
+  "current",
+  "flow of water"
+ ],
+ "krón": [
+  "waterfall",
+  "cascade"
+ ],
+ "rís": [
+  "frost"
+ ],
+ "hairn": [
+  "hail"
+ ],
+ "drøm": [
+  "thunder"
+ ],
+ "vlís": [
+  "lightning"
+ ],
+ "swein": [
+  "breeze",
+  "gentle wind"
+ ],
+ "shiln": [
+  "drizzle"
+ ],
+ "doir": [
+  "dew"
+ ],
+ "bríl": [
+  "rainbow"
+ ],
+ "kjaun": [
+  "dawn",
+  "daybreak"
+ ],
+ "steln": [
+  "constellation"
+ ],
+ "kluth": [
+  "clay"
+ ],
+ "greln": [
+  "gravel"
+ ],
+ "emlu": [
+  "ember",
+  "glowing coal"
+ ],
+ "felm": [
+  "fox"
+ ],
+ "laun": [
+  "hare"
+ ],
+ "greth": [
+  "boar"
+ ],
+ "solth": [
+  "seal"
+ ],
+ "hwáln": [
+  "whale"
+ ],
+ "muls": [
+  "mouse"
+ ],
+ "úlom": [
+  "owl"
+ ],
+ "kráth": [
+  "raven"
+ ],
+ "piln": [
+  "sparrow"
+ ],
+ "thrárn": [
+  "salmon"
+ ],
+ "droir": [
+  "trout"
+ ],
+ "els": [
+  "eel"
+ ],
+ "kraln": [
+  "crab"
+ ],
+ "shelm": [
+  "shellfish",
+  "mollusk"
+ ],
+ "mauth": [
+  "moth"
+ ],
+ "pirm": [
+  "ant"
+ ],
+ "kreln": [
+  "spider"
+ ],
+ "gorm": [
+  "beetle"
+ ],
+ "furth": [
+  "pine"
+ ],
+ "birth": [
+  "birch"
+ ],
+ "airn": [
+  "oak"
+ ],
+ "flerm": [
+  "fern"
+ ],
+ "raul": [
+  "reed"
+ ],
+ "thorm": [
+  "thorn"
+ ],
+ "blarn": [
+  "berry"
+ ],
+ "bruth": [
+  "bark"
+ ],
+ "glon": [
+  "bud"
+ ],
+ "viln": [
+  "vine"
+ ],
+ "lirs": [
+  "lichen"
+ ],
+ "hlaul": [
+  "moss"
+ ],
+ "kølm": [
+  "porridge",
+  "gruel"
+ ],
+ "thóran": [
+  "ale",
+  "beer"
+ ],
+ "brøn": [
+  "roast",
+  "meat-cut"
+ ],
+ "skýr": [
+  "cheese",
+  "curd"
+ ],
+ "hwíl": [
+  "butter"
+ ],
+ "melth": [
+  "yogurt",
+  "sour-milk"
+ ],
+ "krun": [
+  "nut",
+  "kernel"
+ ],
+ "gweln": [
+  "mushroom",
+  "fungus"
+ ],
+ "drøs": [
+  "tea",
+  "herbal-brew"
+ ],
+ "línu": [
+  "drinking-water"
+ ],
+ "shern": [
+  "stew",
+  "braise-dish"
+ ],
+ "thráki": [
+  "grill"
+ ],
+ "sølm": [
+  "simmer"
+ ],
+ "vaisu": [
+  "ferment"
+ ],
+ "grøm": [
+  "smoke-cure"
+ ],
+ "thysa": [
+  "pickle"
+ ],
+ "tréla": [
+  "knead"
+ ],
+ "plur": [
+  "grind",
+  "mill"
+ ],
+ "swárn": [
+  "sour",
+  "tart"
+ ],
+ "keth": [
+  "bitter"
+ ],
+ "óma": [
+  "savory",
+  "umami"
+ ],
+ "rilm": [
+  "cooked",
+  "done"
+ ],
+ "fylth": [
+  "spoiled",
+  "rancid"
+ ],
+ "grén": [
+  "sweet"
+ ],
+ "krath": [
+  "axe"
+ ],
+ "trøm": [
+  "hammer",
+  "mallet"
+ ],
+ "gralm": [
+  "chisel"
+ ],
+ "prin": [
+  "needle"
+ ],
+ "threl": [
+  "awl"
+ ],
+ "klath": [
+  "basket"
+ ],
+ "fjøs": [
+  "cauldron"
+ ],
+ "skøl": [
+  "bowl"
+ ],
+ "wolm": [
+  "rampart",
+  "defensive wall"
+ ],
+ "gwírn": [
+  "window"
+ ],
+ "plarn": [
+  "floor",
+  "floorboard"
+ ],
+ "morth": [
+  "beam",
+  "rafter"
+ ],
+ "kwiln": [
+  "threshold"
+ ],
+ "skøln": [
+  "eaves"
+ ],
+ "draum": [
+  "cloak"
+ ],
+ "stail": [
+  "boot"
+ ],
+ "grún": [
+  "belt",
+  "girdle"
+ ],
+ "flís": [
+  "yarn",
+  "thread"
+ ],
+ "blís": [
+  "wool",
+  "fleece"
+ ],
+ "frein": [
+  "cap",
+  "hat"
+ ],
+ "klúth": [
+  "robe",
+  "gown"
+ ],
+ "vaun": [
+  "torch"
+ ],
+ "klei": [
+  "flint"
+ ],
+ "vlau": [
+  "crawl",
+  "creep"
+ ],
+ "plong": [
+  "leap",
+  "jump"
+ ],
+ "flith": [
+  "flee",
+  "escape"
+ ],
+ "grail": [
+  "chase",
+  "pursue"
+ ],
+ "thraun": [
+  "gather",
+  "assemble"
+ ],
+ "praun": [
+  "transplant"
+ ],
+ "réth": [
+  "reap",
+  "harvest"
+ ],
+ "gwirn": [
+  "grind"
+ ],
+ "pralm": [
+  "press",
+  "squeeze"
+ ],
+ "gulth": [
+  "swallow",
+  "gulp"
+ ],
+ "jáng": [
+  "yawn"
+ ],
+ "hail": [
+  "heal"
+ ],
+ "wern": [
+  "tend"
+ ],
+ "varn": [
+  "guard",
+  "ward"
+ ],
+ "kraus": [
+  "crush",
+  "mash"
+ ],
+ "glaith": [
+  "glide",
+  "slide"
+ ],
+ "flørn": [
+  "peel"
+ ],
+ "hweth": [
+  "hope",
+  "expectancy"
+ ],
+ "nyrs": [
+  "envy",
+  "jealousy"
+ ],
+ "stárn": [
+  "gaze",
+  "stare"
+ ],
+ "hlýn": [
+  "hearken"
+ ],
+ "waun": [
+  "wonder",
+  "astonishment"
+ ],
+ "kres": [
+  "decide",
+  "resolve"
+ ],
+ "dholn": [
+  "patience",
+  "forbearance"
+ ],
+ "kaurn": [
+  "courage",
+  "valor"
+ ],
+ "thrail": [
+  "shudder",
+  "shiver"
+ ],
+ "grauth": [
+  "huge",
+  "enormous"
+ ],
+ "króln": [
+  "round",
+  "circular"
+ ],
+ "flath": [
+  "flat"
+ ],
+ "spein": [
+  "pointed",
+  "tapered"
+ ],
+ "hóln": [
+  "hollow"
+ ],
+ "tang": [
+  "hard",
+  "firm"
+ ],
+ "klúm": [
+  "sticky",
+  "viscous"
+ ],
+ "pálm": [
+  "pale",
+  "wan"
+ ],
+ "thurm": [
+  "dim",
+  "murky"
+ ],
+ "gwáln": [
+  "golden"
+ ],
+ "grin": [
+  "grey"
+ ],
+ "múth": [
+  "rotten",
+  "decayed"
+ ],
+ "kwis": [
+  "clean"
+ ],
+ "vein": [
+  "clear",
+  "transparent"
+ ],
+ "klovan": [
+  "nucleus"
+ ],
+ "hlirn": [
+  "corner",
+  "nook"
+ ],
+ "skeith": [
+  "crevice",
+  "gap"
+ ],
+ "duln": [
+  "depth"
+ ],
+ "gleith": [
+  "distance"
+ ],
+ "marth": [
+  "boundary",
+  "border"
+ ],
+ "tirn": [
+  "trail"
+ ],
+ "krein": [
+  "crossroads",
+  "junction"
+ ],
+ "blin": [
+  "moment",
+  "instant"
+ ],
+ "aunar": [
+  "era",
+  "age"
+ ],
+ "selvoth": [
+  "season"
+ ],
+ "praithen": [
+  "beginning",
+  "dawn of time"
+ ],
+ "delth": [
+  "period",
+  "span of time"
+ ],
+ "traun": [
+  "delay"
+ ],
+ "aivarn": [
+  "forever",
+  "eternally"
+ ],
+ "neivos": [
+  "never"
+ ],
+ "fyrm": [
+  "first",
+  "foremost"
+ ],
+ "myrdoth": [
+  "last",
+  "final"
+ ],
+ "vlon": [
+  "promise",
+  "pledge"
+ ],
+ "skoin": [
+  "tale",
+  "story"
+ ],
+ "mýrn": [
+  "council",
+  "assembly"
+ ],
+ "plen": [
+  "market",
+  "marketplace"
+ ],
+ "tráln": [
+  "war",
+  "warfare"
+ ],
+ "faurn": [
+  "debt",
+  "owing"
+ ],
+ "drun": [
+  "command",
+  "order"
+ ],
+ "kaith": [
+  "pact",
+  "alliance"
+ ],
+ "grøln": [
+  "quarrel",
+  "dispute"
+ ],
+ "vels": [
+  "rebuke",
+  "reproach"
+ ],
+ "broin": [
+  "truce",
+  "ceasefire"
+ ],
+ "háln": [
+  "chieftain",
+  "clan-lord"
+ ],
+ "tuls": [
+  "servant",
+  "attendant"
+ ],
+ "speln": [
+  "title",
+  "rank"
+ ],
+ "dhóm": [
+  "kindred"
+ ],
+ "voirn": [
+  "petition",
+  "plea"
+ ],
+ "húrn": [
+  "shout"
+ ],
+ "sketh": [
+  "falsehood"
+ ],
+ "nairn": [
+  "fate",
+  "destiny"
+ ],
+ "frøl": [
+  "freedom",
+  "liberty"
+ ],
+ "methel": [
+  "memory",
+  "recollection"
+ ],
+ "hwýs": [
+  "silence",
+  "stillness"
+ ],
+ "leith": [
+  "echo",
+  "reverberation"
+ ],
+ "grym": [
+  "secret",
+  "confidence"
+ ],
+ "threin": [
+  "riddle",
+  "enigma"
+ ],
+ "vøs": [
+  "omen",
+  "portent"
+ ],
+ "parn": [
+  "part",
+  "portion"
+ ],
+ "haith": [
+  "half"
+ ],
+ "gwolm": [
+  "group",
+  "flock"
+ ],
+ "glína": [
+  "likeness",
+  "similarity"
+ ],
+ "dhirs": [
+  "difference",
+  "distinction"
+ ],
+ "stólm": [
+  "arrangement"
+ ],
+ "skalm": [
+  "chaos",
+  "disorder"
+ ],
+ "wérth": [
+  "value",
+  "worth"
+ ],
+ "flún": [
+  "scarcity",
+  "lack"
+ ],
+ "rauth": [
+  "abundance",
+  "plenty"
+ ],
+ "praith": [
+  "solution"
+ ],
+ "vairoth": [
+  "comet"
+ ],
+ "swéla": [
+  "swan"
+ ],
+ "skei": [
+  "gull",
+  "seagull"
+ ],
+ "plir": [
+  "twig"
+ ],
+ "frírn": [
+  "flour"
+ ],
+ "hlus": [
+  "raw",
+  "uncooked"
+ ],
+ "skairs": [
+  "saw"
+ ],
+ "hwoirn": [
+  "hook"
+ ],
+ "braun": [
+  "pail",
+  "bucket"
+ ],
+ "spern": [
+  "sack",
+  "bag"
+ ],
+ "sweilm": [
+  "glove",
+  "mitten"
+ ],
+ "vlóth": [
+  "hide",
+  "pelt"
+ ],
+ "fjuln": [
+  "spindle",
+  "spool"
+ ],
+ "hlaur": [
+  "ladle",
+  "dipper"
+ ],
+ "krail": [
+  "climb",
+  "clamber"
+ ],
+ "drífel": [
+  "drift",
+  "float"
+ ],
+ "selvir": [
+  "sink",
+  "submerge"
+ ],
+ "grúthil": [
+  "forge"
+ ],
+ "delgir": [
+  "dig",
+  "delve"
+ ],
+ "klórn": [
+  "pour",
+  "spill"
+ ],
+ "maisel": [
+  "mix",
+  "blend"
+ ],
+ "flekir": [
+  "fold",
+  "crease"
+ ],
+ "trelm": [
+  "rip"
+ ],
+ "steirn": [
+  "stretch",
+  "extend"
+ ],
+ "shivern": [
+  "tremble"
+ ],
+ "lóran": [
+  "lean"
+ ],
+ "krunel": [
+  "kneel"
+ ],
+ "bróth": [
+  "stoop",
+  "bend over"
+ ],
+ "fostel": [
+  "feed",
+  "nourish"
+ ],
+ "skulm": [
+  "shelter",
+  "harbor"
+ ],
+ "brenel": [
+  "scorch",
+  "char"
+ ],
+ "kraith": [
+  "snatch",
+  "seize"
+ ],
+ "prisel": [
+  "sprinkle",
+  "scatter"
+ ],
+ "shúrn": [
+  "shame",
+  "disgrace",
+  "abashment"
+ ],
+ "prain": [
+  "pride",
+  "self-esteem"
+ ],
+ "líron": [
+  "longing",
+  "yearning"
+ ],
+ "thaumel": [
+  "gratitude",
+  "thankfulness"
+ ],
+ "ogrein": [
+  "awe",
+  "reverence"
+ ],
+ "liseln": [
+  "serenity"
+ ],
+ "glimeth": [
+  "glance",
+  "glimpse"
+ ],
+ "saveth": [
+  "taste",
+  "savor"
+ ],
+ "grithel": [
+  "touch",
+  "feel"
+ ],
+ "vairos": [
+  "perceive",
+  "sense",
+  "notice"
+ ],
+ "kwisel": [
+  "doubt",
+  "distrust"
+ ],
+ "traul": [
+  "believe",
+  "trust"
+ ],
+ "laumeth": [
+  "have a dream"
+ ],
+ "fainel": [
+  "imagine",
+  "envision"
+ ],
+ "viskel": [
+  "wisdom",
+  "sagacity"
+ ],
+ "meluth": [
+  "gentleness",
+  "tenderness"
+ ],
+ "øgrel": [
+  "admire",
+  "look up to"
+ ],
+ "skairnel": [
+  "scrutinize",
+  "examine"
+ ],
+ "dulm": [
+  "blunt",
+  "dull"
+ ],
+ "staur": [
+  "steep"
+ ],
+ "glim": [
+  "smooth",
+  "sleek"
+ ],
+ "krauth": [
+  "rough",
+  "coarse"
+ ],
+ "wyth": [
+  "wet",
+  "damp"
+ ],
+ "brith": [
+  "brittle"
+ ],
+ "glén": [
+  "bright",
+  "luminous"
+ ],
+ "dus": [
+  "gloomy"
+ ],
+ "stoirn": [
+  "crimson",
+  "scarlet"
+ ],
+ "vlaun": [
+  "azure",
+  "sky-blue"
+ ],
+ "flurn": [
+  "dirty",
+  "filthy"
+ ],
+ "stórn": [
+  "stiff",
+  "rigid"
+ ],
+ "haun": [
+  "height",
+  "altitude"
+ ],
+ "preth": [
+  "plead",
+  "beseech",
+  "entreat"
+ ],
+ "glaus": [
+  "feast",
+  "banquet"
+ ],
+ "theirn": [
+  "custom",
+  "tradition"
+ ],
+ "graith": [
+  "gift",
+  "present"
+ ],
+ "thraul": [
+  "warning",
+  "caution"
+ ],
+ "hweln": [
+  "greeting",
+  "salutation"
+ ],
+ "skaith": [
+  "vengeance",
+  "revenge"
+ ],
+ "weirn": [
+  "greybeard"
+ ],
+ "draith": [
+  "outcast",
+  "exile"
+ ],
+ "mauls": [
+  "master"
+ ],
+ "skels": [
+  "gossip",
+  "rumor"
+ ],
+ "hwoiln": [
+  "luck",
+  "fortune"
+ ],
+ "skýrn": [
+  "shade"
+ ],
+ "klaith": [
+  "totality"
+ ],
+ "sweirn": [
+  "pair",
+  "couple"
+ ],
+ "kreth": [
+  "cost",
+  "price"
+ ],
+ "vo": [
+  "or"
+ ],
+ "jai": [
+  "moreover",
+  "and also",
+  "furthermore"
+ ],
+ "fyr": [
+  "because",
+  "since"
+ ],
+ "sona": [
+  "so",
+  "therefore",
+  "thus"
+ ],
+ "hwei": [
+  "if"
+ ],
+ "tho": [
+  "then"
+ ],
+ "glau": [
+  "although",
+  "though"
+ ],
+ "hlei": [
+  "unless"
+ ],
+ "hyra": [
+  "in order to",
+  "so as to",
+  "for the sake of"
+ ],
+ "pan": [
+  "each",
+  "every"
+ ],
+ "tei": [
+  "certain",
+  "a certain",
+  "some"
+ ],
+ "anwe": [
+  "any",
+  "whichever"
+ ],
+ "noim": [
+  "no",
+  "none",
+  "not any"
+ ],
+ "søm": [
+  "several",
+  "a few"
+ ],
+ "kelth": [
+  "concept"
+ ],
+ "thravan": [
+  "theory",
+  "doctrine"
+ ],
+ "soith": [
+  "meaning"
+ ],
+ "dhaun": [
+  "cause",
+  "origin"
+ ],
+ "fraun": [
+  "result",
+  "outcome",
+  "consequence"
+ ],
+ "skorth": [
+  "method",
+  "way"
+ ],
+ "teivan": [
+  "purpose",
+  "aim",
+  "intent"
+ ],
+ "dhurna": [
+  "problem",
+  "question"
+ ],
+ "ólath": [
+  "truth"
+ ],
+ "nauth": [
+  "knowledge",
+  "lore"
+ ],
+ "thíral": [
+  "belief",
+  "conviction"
+ ],
+ "pryñ": [
+  "idea",
+  "notion"
+ ],
+ "korm": [
+  "reason",
+  "grounds"
+ ],
+ "meirs": [
+  "evidence",
+  "proof"
+ ],
+ "selmar": [
+  "example",
+  "instance"
+ ],
+ "vlein": [
+  "regularity",
+  "pattern"
+ ],
+ "theldan": [
+  "system"
+ ],
+ "klarn": [
+  "structure"
+ ],
+ "zurel": [
+  "process",
+  "course"
+ ],
+ "vøth": [
+  "state",
+  "condition"
+ ],
+ "wethas": [
+  "property",
+  "nature",
+  "quality"
+ ],
+ "fjórn": [
+  "form",
+  "shape"
+ ],
+ "ísken": [
+  "essence",
+  "substance"
+ ],
+ "glønis": [
+  "phenomenon",
+  "appearance"
+ ],
+ "skenra": [
+  "logic",
+  "coherence"
+ ],
+ "dreith": [
+  "inference",
+  "reasoning"
+ ],
+ "naldir": [
+  "judgment",
+  "assessment"
+ ],
+ "hlorn": [
+  "hypothesis",
+  "assumption"
+ ],
+ "ondel": [
+  "understanding",
+  "comprehension"
+ ],
+ "gwelth": [
+  "definition"
+ ],
+ "morvan": [
+  "viewpoint",
+  "opinion"
+ ],
+ "veslan": [
+  "conclusion",
+  "verdict"
+ ],
+ "lúth": [
+  "principle"
+ ],
+ "stálm": [
+  "fact"
+ ],
+ "orleth": [
+  "explanation",
+  "account"
+ ],
+ "hwerm": [
+  "error",
+  "mistake"
+ ],
+ "hlaith": [
+  "consciousness",
+  "awareness"
+ ],
+ "drósin": [
+  "institution",
+  "establishment"
+ ],
+ "vlenu": [
+  "organization",
+  "body",
+  "association"
+ ],
+ "thráng": [
+  "power",
+  "might",
+  "force"
+ ],
+ "vyrth": [
+  "entitlement"
+ ],
+ "dhylm": [
+  "obligation",
+  "duty"
+ ],
+ "bǿrna": [
+  "responsibility",
+  "liability"
+ ],
+ "rǿthan": [
+  "justice",
+  "righteousness",
+  "fairness"
+ ],
+ "gwarn": [
+  "government",
+  "authorities"
+ ],
+ "veithen": [
+  "contract",
+  "agreement"
+ ],
+ "stígel": [
+  "class",
+  "estate"
+ ],
+ "kyrn": [
+  "status",
+  "standing"
+ ],
+ "tjørn": [
+  "role",
+  "capacity"
+ ],
+ "hlóra": [
+  "reputation",
+  "renown",
+  "repute"
+ ],
+ "hlédan": [
+  "honor",
+  "glory"
+ ],
+ "dýran": [
+  "dignity"
+ ],
+ "váldon": [
+  "authority"
+ ],
+ "kwelra": [
+  "autonomy",
+  "self-rule"
+ ],
+ "beiln": [
+  "league",
+  "confederation"
+ ],
+ "frødan": [
+  "citizen",
+  "national",
+  "subject"
+ ],
+ "frelda": [
+  "community",
+  "collective"
+ ],
+ "rýkel": [
+  "realm",
+  "domain",
+  "kingdom"
+ ],
+ "tyrs": [
+  "tax",
+  "levy"
+ ],
+ "lofan": [
+  "permission",
+  "consent",
+  "leave"
+ ],
+ "vítan": [
+  "punishment",
+  "penalty"
+ ],
+ "glauna": [
+  "reward",
+  "recompense"
+ ],
+ "dréth": [
+  "ruling"
+ ],
+ "thoin": [
+  "gathering",
+  "meeting"
+ ],
+ "reithil": [
+  "envoy",
+  "messenger",
+  "emissary"
+ ],
+ "trǿna": [
+  "loyalty",
+  "allegiance",
+  "fidelity"
+ ],
+ "sweika": [
+  "betrayal",
+  "treason",
+  "treachery"
+ ],
+ "sérlan": [
+  "privilege",
+  "prerogative"
+ ],
+ "dhelna": [
+  "rite",
+  "ceremony",
+  "ritual"
+ ],
+ "hain": [
+  "possible"
+ ],
+ "øni": [
+  "perhaps",
+  "maybe"
+ ],
+ "frém": [
+  "permit",
+  "allow"
+ ],
+ "throln": [
+  "forbid",
+  "prohibit"
+ ],
+ "durm": [
+  "need/require"
+ ],
+ "nyl": [
+  "can",
+  "be able"
+ ],
+ "vaith": [
+  "deserve",
+  "merit"
+ ],
+ "kjes": [
+  "choice",
+  "option"
+ ],
+ "díra": [
+  "precious",
+  "valuable"
+ ],
+ "hlór": [
+  "goodness",
+  "virtue"
+ ],
+ "gorth": [
+  "wickedness"
+ ],
+ "ñuth": [
+  "sin/wrongdoing"
+ ],
+ "hlein": [
+  "innocent",
+  "blameless"
+ ],
+ "droith": [
+  "just/fair"
+ ],
+ "tjel": [
+  "appropriate",
+  "fitting"
+ ],
+ "íval": [
+  "ideal"
+ ],
+ "leira": [
+  "beautiful",
+  "lovely"
+ ],
+ "bruls": [
+  "ugly",
+  "hideous"
+ ],
+ "ryth": [
+  "correct"
+ ],
+ "thrám": [
+  "important",
+  "weighty"
+ ],
+ "nølth": [
+  "secondary/minor"
+ ],
+ "skaur": [
+  "dangerous",
+  "perilous"
+ ],
+ "seiln": [
+  "safe",
+  "secure"
+ ],
+ "keln": [
+  "requirement",
+  "requisite"
+ ],
+ "vorth": [
+  "premise",
+  "precondition"
+ ],
+ "dilm": [
+  "factor",
+  "element"
+ ],
+ "swéth": [
+  "influence",
+  "impact"
+ ],
+ "kwaith": [
+  "change",
+  "variation"
+ ],
+ "broln": [
+  "development",
+  "unfolding"
+ ],
+ "throin": [
+  "evolution",
+  "gradual change"
+ ],
+ "úthan": [
+  "source"
+ ],
+ "thúrn": [
+  "termination",
+  "cessation"
+ ],
+ "trys": [
+  "stage",
+  "phase"
+ ],
+ "kloin": [
+  "trend",
+  "tendency"
+ ],
+ "kjól": [
+  "cycle",
+  "recurrence"
+ ],
+ "kwein": [
+  "opportunity",
+  "chance"
+ ],
+ "skøs": [
+  "risk",
+  "hazard"
+ ],
+ "stelm": [
+  "balance",
+  "equilibrium"
+ ],
+ "málth": [
+  "limit",
+  "extreme"
+ ],
+ "hwérn": [
+  "turning point",
+  "pivot"
+ ],
+ "vauth": [
+  "aftermath"
+ ],
+ "dirna": [
+  "effect",
+  "efficacy"
+ ],
+ "zilth": [
+  "trigger",
+  "catalyst"
+ ],
+ "narm": [
+  "stability",
+  "steadiness"
+ ],
+ "bloir": [
+  "growth",
+  "increase"
+ ],
+ "swulm": [
+  "decline",
+  "decay"
+ ],
+ "grels": [
+  "reaction",
+  "response"
+ ],
+ "eidhel": [
+  "potential",
+  "latent capacity"
+ ],
+ "harn": [
+  "obstacle",
+  "hindrance"
+ ],
+ "fjaun": [
+  "collapse",
+  "breakdown"
+ ],
+ "soim": [
+  "symbol",
+  "token"
+ ],
+ "glaunis": [
+  "message",
+  "news",
+  "tidings"
+ ],
+ "flein": [
+  "signal",
+  "cue"
+ ],
+ "girn": [
+  "emblem",
+  "insignia",
+  "badge"
+ ],
+ "steil": [
+  "symbolize",
+  "represent",
+  "betoken"
+ ],
+ "thraim": [
+  "analogy",
+  "simile",
+  "figure"
+ ],
+ "gleiva": [
+  "describe",
+  "depict",
+  "portray"
+ ],
+ "gwaith": [
+  "prove",
+  "demonstrate",
+  "argue"
+ ],
+ "mirs": [
+  "contradiction",
+  "inconsistency"
+ ],
+ "tulm": [
+  "consistent",
+  "concordant",
+  "congruent"
+ ],
+ "thelgar": [
+  "divergence",
+  "disagreement",
+  "rift"
+ ],
+ "sweith": [
+  "hint",
+  "imply",
+  "insinuate"
+ ],
+ "gwoir": [
+  "assert",
+  "claim",
+  "contend"
+ ],
+ "dolmir": [
+  "stance",
+  "standpoint",
+  "position"
+ ],
+ "moiln": [
+  "consensus",
+  "accord"
+ ],
+ "froiven": [
+  "misunderstand",
+  "misread",
+  "misconstrue"
+ ],
+ "vaithel": [
+  "language"
+ ],
+ "vedhil": [
+  "script",
+  "writing",
+  "characters"
+ ],
+ "silaith": [
+  "dialogue",
+  "conversation",
+  "talk"
+ ],
+ "vloir": [
+  "translate",
+  "render",
+  "interpret"
+ ],
+ "meiral": [
+  "gesture",
+  "hand-signal"
+ ],
+ "throil": [
+  "proverb",
+  "saying",
+  "adage"
+ ],
+ "íswen": [
+  "motif",
+  "design"
+ ],
+ "thairn": [
+  "relation",
+  "relationship"
+ ],
+ "hláren": [
+  "level",
+  "layer"
+ ],
+ "klema": [
+  "category"
+ ],
+ "vauril": [
+  "domain"
+ ],
+ "pryna": [
+  "attribute",
+  "trait"
+ ],
+ "gréloth": [
+  "degree",
+  "extent"
+ ],
+ "mírsa": [
+  "ratio",
+  "proportion"
+ ],
+ "vaimel": [
+  "symmetry",
+  "evenness"
+ ],
+ "vlønar": [
+  "opposition",
+  "antithesis"
+ ],
+ "hlaimen": [
+  "unity",
+  "oneness"
+ ],
+ "sethran": [
+  "sequence",
+  "succession"
+ ],
+ "spaulen": [
+  "interval"
+ ],
+ "hwelmar": [
+  "network",
+  "web"
+ ],
+ "dríska": [
+  "model"
+ ],
+ "vøthen": [
+  "content"
+ ],
+ "pilva": [
+  "component"
+ ],
+ "dháren": [
+  "basis",
+  "foundation"
+ ],
+ "talvir": [
+  "compare",
+  "contrast"
+ ],
+ "traus": [
+  "infer",
+  "deduce"
+ ],
+ "zyth": [
+  "challenge",
+  "call into question"
+ ],
+ "prau": [
+  "expect",
+  "anticipate"
+ ],
+ "skaun": [
+  "plan",
+  "scheme"
+ ],
+ "stín": [
+  "focus",
+  "concentrate",
+  "attend"
+ ],
+ "hwes": [
+  "ignore",
+  "disregard"
+ ],
+ "gethan": [
+  "admit",
+  "acknowledge"
+ ],
+ "ñaur": [
+  "deny",
+  "negate"
+ ],
+ "myrva": [
+  "confuse",
+  "mix up"
+ ],
+ "valm": [
+  "estimate",
+  "gauge"
+ ],
+ "tyver": [
+  "hesitate",
+  "waver"
+ ],
+ "eithra": [
+  "reflect",
+  "introspect"
+ ],
+ "leimu": [
+  "recall",
+  "reminisce"
+ ],
+ "kwem": [
+  "intend",
+  "mean to"
+ ],
+ "shoi": [
+  "guess",
+  "conjecture"
+ ],
+ "tjein": [
+  "recognize",
+  "identify"
+ ],
+ "ñurm": [
+  "worry",
+  "fret"
+ ],
+ "djaum": [
+  "pretend",
+  "feign"
+ ],
+ "weilm": [
+  "weigh",
+  "deliberate"
+ ],
+ "stath": [
+  "confirm",
+  "verify"
+ ],
+ "ñaila": [
+  "miss",
+  "yearn for"
+ ],
+ "néstha": [
+  "promise"
+ ],
+ "brelis": [
+  "suggest",
+  "propose"
+ ],
+ "gaulm": [
+  "announce",
+  "proclaim"
+ ],
+ "hwesta": [
+  "discuss"
+ ],
+ "djorn": [
+  "argue"
+ ],
+ "welna": [
+  "agree",
+  "assent"
+ ],
+ "kurth": [
+  "refuse",
+  "reject"
+ ],
+ "hlyren": [
+  "request",
+  "ask for"
+ ],
+ "thausa": [
+  "thank"
+ ],
+ "ømsa": [
+  "apologize"
+ ],
+ "drøtha": [
+  "accuse",
+  "blame"
+ ],
+ "sýla": [
+  "praise",
+  "extol"
+ ],
+ "murthen": [
+  "complain",
+  "grumble"
+ ],
+ "níwa": [
+  "whisper"
+ ],
+ "dhumla": [
+  "mutter",
+  "mumble"
+ ],
+ "dhaurn": [
+  "swear an oath"
+ ],
+ "lúthra": [
+  "convene",
+  "call together"
+ ],
+ "stelvon": [
+  "report"
+ ],
+ "sagla": [
+  "narrate",
+  "recount"
+ ],
+ "trilka": [
+  "interrupt",
+  "interject"
+ ],
+ "tenva": [
+  "mention"
+ ],
+ "stauda": [
+  "assert"
+ ],
+ "swenda": [
+  "persuade",
+  "convince"
+ ],
+ "skeñ": [
+  "mock",
+  "jeer"
+ ],
+ "samra": [
+  "converse",
+  "chat"
+ ],
+ "dedra": [
+  "stammer",
+  "stutter"
+ ],
+ "veisha": [
+  "inform",
+  "notify"
+ ],
+ "boidha": [
+  "invite"
+ ],
+ "stodhi": [
+  "help",
+  "assist",
+  "aid"
+ ],
+ "hlýdha": [
+  "obey",
+  "heed",
+  "comply"
+ ],
+ "stírn": [
+  "lead",
+  "direct"
+ ],
+ "fylgi": [
+  "follow",
+  "go after"
+ ],
+ "samru": [
+  "cooperate",
+  "collaborate",
+  "work together"
+ ],
+ "metja": [
+  "compete",
+  "vie"
+ ],
+ "rausel": [
+  "negotiate",
+  "confer"
+ ],
+ "soika": [
+  "visit",
+  "call on"
+ ],
+ "heilsa": [
+  "welcome",
+  "greet",
+  "receive"
+ ],
+ "fardhu": [
+  "bid farewell",
+  "take leave"
+ ],
+ "sinva": [
+  "accompany",
+  "keep company"
+ ],
+ "míla": [
+  "forgive",
+  "pardon"
+ ],
+ "ervi": [
+  "inherit",
+  "succeed to"
+ ],
+ "ríkja": [
+  "govern",
+  "reign"
+ ],
+ "tjón": [
+  "serve",
+  "wait on"
+ ],
+ "eidra": [
+  "form an alliance"
+ ],
+ "deila": [
+  "share",
+  "apportion"
+ ],
+ "kwaina": [
+  "marry",
+  "wed"
+ ],
+ "frǿda": [
+  "teach",
+  "instruct",
+  "impart"
+ ],
+ "falma": [
+  "embrace",
+  "hug"
+ ],
+ "séva": [
+  "console",
+  "comfort",
+  "soothe"
+ ],
+ "hóta": [
+  "threaten",
+  "menace",
+  "intimidate"
+ ],
+ "ródha": [
+  "laud"
+ ],
+ "skensa": [
+  "ridicule"
+ ],
+ "wyr": [
+  "alter",
+  "modify"
+ ],
+ "verth": [
+  "become",
+  "turn into"
+ ],
+ "auka": [
+  "add to",
+  "augment"
+ ],
+ "syl": [
+  "decrease",
+  "reduce",
+  "lessen"
+ ],
+ "pren": [
+  "undertake",
+  "set about"
+ ],
+ "lútha": [
+  "continue",
+  "carry on"
+ ],
+ "staln": [
+  "stop",
+  "halt",
+  "cease"
+ ],
+ "fjolth": [
+  "accomplish",
+  "achieve",
+  "fulfill"
+ ],
+ "itha": [
+  "repeat",
+  "redo"
+ ],
+ "hwyrn": [
+  "restore",
+  "recover"
+ ],
+ "aulma": [
+  "expand",
+  "enlarge"
+ ],
+ "hlys": [
+  "shrink"
+ ],
+ "styrma": [
+  "strengthen",
+  "reinforce"
+ ],
+ "møsa": [
+  "weaken",
+  "enfeeble"
+ ],
+ "kwelth": [
+  "invert",
+  "flip",
+  "overturn"
+ ],
+ "skifa": [
+  "replace",
+  "swap",
+  "exchange"
+ ],
+ "einla": [
+  "merge",
+  "fuse",
+  "combine"
+ ],
+ "kloifa": [
+  "separate",
+  "split"
+ ],
+ "ñaus": [
+  "provoke"
+ ],
+ "haldra": [
+  "maintain",
+  "keep",
+  "preserve"
+ ],
+ "tøva": [
+  "postpone",
+  "put off"
+ ],
+ "bøta": [
+  "mend",
+  "repair"
+ ],
+ "brasta": [
+  "destroy",
+  "ruin"
+ ],
+ "béla": [
+  "improve",
+  "better"
+ ],
+ "vørga": [
+  "worsen",
+  "deteriorate"
+ ],
+ "meila": [
+  "melt",
+  "thaw"
+ ],
+ "kjøln": [
+  "freeze",
+  "congeal"
+ ],
+ "kweika": [
+  "ignite",
+  "kindle"
+ ],
+ "løska": [
+  "extinguish",
+  "quench",
+  "put out"
+ ],
+ "vekja": [
+  "awaken",
+  "rouse",
+  "wake"
+ ],
+ "nyth": [
+  "use",
+  "employ",
+  "utilize"
+ ],
+ "tjórm": [
+  "craft",
+  "fashion",
+  "work into shape"
+ ],
+ "reln": [
+  "patch up"
+ ],
+ "mairn": [
+  "measure"
+ ],
+ "toln": [
+  "tally",
+  "take stock"
+ ],
+ "kweth": [
+  "switch"
+ ],
+ "leska": [
+  "collect",
+  "gather up"
+ ],
+ "veiln": [
+  "distribute",
+  "share out",
+  "allot"
+ ],
+ "baurm": [
+  "haul",
+  "transport"
+ ],
+ "kolth": [
+  "stack",
+  "pile up",
+  "heap"
+ ],
+ "vylm": [
+  "wrap",
+  "bundle",
+  "swathe"
+ ],
+ "vaing": [
+  "hang",
+  "suspend",
+  "hang up"
+ ],
+ "muldra": [
+  "bury",
+  "inter",
+  "cover with earth"
+ ],
+ "hwis": [
+  "wipe",
+  "brush off"
+ ],
+ "folm": [
+  "fill",
+  "stuff",
+  "fill up"
+ ],
+ "ǿsa": [
+  "drain"
+ ],
+ "sturn": [
+  "lock",
+  "bolt",
+  "latch"
+ ],
+ "skarth": [
+  "notch",
+  "score"
+ ],
+ "kjels": [
+  "sift",
+  "sort",
+  "pick over"
+ ],
+ "spóln": [
+  "store",
+  "stow",
+  "lay up"
+ ],
+ "sýrla": [
+  "sew",
+  "stitch"
+ ],
+ "dryn": [
+  "bore",
+  "drill",
+  "pierce through"
+ ],
+ "kwirm": [
+  "twist",
+  "wring"
+ ],
+ "pletha": [
+  "spread",
+  "lay out",
+  "unfold"
+ ],
+ "ólm": [
+  "lift",
+  "raise",
+  "hoist"
+ ],
+ "thrus": [
+  "push",
+  "shove"
+ ],
+ "zirn": [
+  "pull",
+  "drag",
+  "tug"
+ ],
+ "domra": [
+  "knock",
+  "rap",
+  "pound"
+ ],
+ "skith": [
+  "scrape",
+  "rasp",
+  "scrape off"
+ ],
+ "djór": [
+  "crave",
+  "long for"
+ ],
+ "prøs": [
+  "try",
+  "attempt"
+ ],
+ "vón": [
+  "succeed"
+ ],
+ "mols": [
+  "fail",
+  "fall short"
+ ],
+ "kelva": [
+  "contain",
+  "include"
+ ],
+ "ñorn": [
+  "belong",
+  "pertain"
+ ],
+ "thurna": [
+  "be used to",
+  "be accustomed to"
+ ],
+ "vlei": [
+  "avoid",
+  "evade"
+ ],
+ "kjar": [
+  "dare",
+  "venture"
+ ],
+ "thulm": [
+  "tolerate"
+ ],
+ "glais": [
+  "let slip"
+ ],
+ "leth": [
+  "remain",
+  "be left over"
+ ],
+ "søth": [
+  "should",
+  "ought to"
+ ],
+ "dhurn": [
+  "keep"
+ ],
+ "loith": [
+  "seem",
+  "appear"
+ ],
+ "aiga": [
+  "own",
+  "possess"
+ ],
+ "skeiln": [
+  "understand",
+  "comprehend"
+ ],
+ "dǿl": [
+  "judge",
+  "assess"
+ ],
+ "prena": [
+  "assume",
+  "suppose",
+  "presume"
+ ],
+ "tjøln": [
+  "explain",
+  "clarify"
+ ],
+ "kwerth": [
+  "punish",
+  "chastise",
+  "penalize"
+ ],
+ "méldu": [
+  "requite"
+ ],
+ "swika": [
+  "betray"
+ ],
+ "varth": [
+  "warn",
+  "admonish"
+ ],
+ "skøfra": [
+  "coffee",
+  "bitter dark brew"
+ ]
+}

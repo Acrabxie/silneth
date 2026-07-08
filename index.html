@@ -176,6 +176,20 @@
     font-family: var(--sans); font-size: 14px; color: var(--bad);
     margin-top: 14px; line-height: 1.7;
   }
+  /* 补齐（唤起本机 Claude 造缺词） */
+  .coin-wrap { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .coin-hint { flex-basis: 100%; font-family: var(--sans); font-size: 12.5px; color: var(--ash); margin-bottom: 2px; }
+  .coin-btn {
+    font-family: var(--sans); font-size: 13px; font-weight: 500;
+    background: #e8f6f1; color: var(--val);
+    border: 1px solid #bfe6da; border-radius: var(--r-pill);
+    padding: 7px 15px; cursor: pointer;
+    transition: background .15s, opacity .15s;
+  }
+  .coin-btn:hover { background: #dcf0e9; }
+  .coin-btn.busy { opacity: .7; cursor: progress; }
+  .coin-btn.done { background: var(--black); color: #fff; border-color: var(--black); cursor: default; }
+  .coin-btn:focus-visible { outline: 2px solid var(--val); outline-offset: 2px; }
   details.trace { margin-top: 20px; border-top: 1px solid var(--line-soft); padding-top: 14px; }
   details.trace summary {
     font-family: var(--sans); font-size: 13px; color: var(--text2);
@@ -11318,6 +11332,17 @@ window.SILNETH_LEXICON = [
   ],
   "cls": "weak",
   "field": "言语动词"
+ },
+ {
+  "roman": "skøfra",
+  "ipa": "ˈskø.fra",
+  "pos": "n",
+  "zh": [
+   "咖啡",
+   "苦黑热饮"
+  ],
+  "cls": "weak",
+  "field": "补齐"
  }
 ];
 </script>
@@ -14977,6 +15002,10 @@ window.SILNETH_EN_GLOSS = {
  "varth": [
   "warn",
   "admonish"
+ ],
+ "skøfra": [
+  "coffee",
+  "bitter dark brew"
  ]
 };
 </script>
@@ -16341,6 +16370,18 @@ window.SILNETH_EN_GLOSS = {
     { zh: '此一讲述已尽。', roman: 'Silneth sathsa.', gloss: '讲述[NOM] 完结\\NEAR-PFV-3SG REAL', note: '讲史收束语（完整体 -s-）' }
   ];
 
+  // 热添加词条：追加到词库并清空索引缓存，使补齐的词无需重载即可命中
+  function addEntry(entry, enGloss) {
+    if (!entry || !entry.roman) return false;
+    for (var i = 0; i < LEX.length; i++) if (LEX[i].roman.toLowerCase() === entry.roman.toLowerCase()) return false;
+    LEX.push(entry);
+    if (Array.isArray(enGloss) && enGloss.length) EN_GLOSS[entry.roman] = enGloss;
+    refresh();
+    return true;
+  }
+  // 清空所有惰性索引缓存，下次检索按当前 LEX/EN_GLOSS 重建
+  function refresh() { ZH_INDEX = null; ZH_INDEX_V = null; EN_INDEX = null; EN_INDEX_V = null; return LEX.length; }
+
   /* ---------- 导出 ---------- */
   var SilnethEngine = {
     searchLexicon: searchLexicon,
@@ -16355,6 +16396,8 @@ window.SILNETH_EN_GLOSS = {
     composeSentence: composeSentence,
     transliterateName: transliterateName,
     toGlyphs: toGlyphs,
+    addEntry: addEntry,
+    refresh: refresh,
     PHRASEBOOK: PHRASEBOOK,
     LEXICON: LEX
   };
@@ -16370,6 +16413,33 @@ window.SILNETH_EN_GLOSS = {
   'use strict';
   var E = window.SilnethEngine;
   var LEX = window.SILNETH_LEXICON || [];
+
+  /* ---------- 补齐：唤起本机 Claude 造缺词（仅当本机补齐服务在线时启用） ---------- */
+  var Coin = (function () {
+    var available = false, BASE = '__silneth_coin';
+    function check() {
+      try {
+        fetch(BASE + '/health').then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (j) { available = !!(j && j.ok); })
+          .catch(function () { available = false; });
+      } catch (e) { available = false; }
+    }
+    function fill(word, lang, pos, cb) {
+      fetch(BASE + '/coin', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ word: word, lang: lang || 'zh', pos: pos || null })
+      }).then(function (r) { return r.json(); }).then(function (j) {
+        if (j && j.ok && j.entry) {
+          if (E.addEntry) E.addEntry(j.entry, j.en || []);
+          else { window.SILNETH_LEXICON.push(j.entry); if (j.en) window.SILNETH_EN_GLOSS[j.entry.roman] = j.en; if (E.refresh) E.refresh(); }
+          cb(null, j);
+        } else cb((j && j.reason) || '补齐失败', null);
+      }).catch(function () { cb('无法连接本机补齐服务', null); });
+    }
+    return { check: check, fill: fill, isAvailable: function () { return available; } };
+  })();
+  // 只在本机访问时探测补齐服务；公开部署（acrab.dev / Pages）不发请求，零控制台噪音
+  if (/^(127\.0\.0\.1|localhost|\[?::1\]?|0\.0\.0\.0)$/.test(location.hostname)) Coin.check();
 
   /* ---------- Mírneth 字形 ---------- */
   var P = {
@@ -16502,8 +16572,28 @@ window.SILNETH_EN_GLOSS = {
 
     if (res.unmatched && res.unmatched.length) {
       card.appendChild(el('div', 'warn',
-        '词库外的词（303 词根覆盖不到）：' + res.unmatched.join('、') +
+        '词库外的词：' + res.unmatched.join('、') +
         ' —— 可到「词典」找近义词根，或专名走「名字音译」。'));
+      if (opts.coin && Coin.isAvailable()) {
+        var cw = el('div', 'coin-wrap');
+        cw.appendChild(el('div', 'coin-hint', '本机 Claude 补齐服务在线 —— 可现造合法词根并即时并入词库：'));
+        res.unmatched.forEach(function (w) {
+          var b = el('button', 'coin-btn');
+          b.textContent = '✦ 补齐「' + w + '」';
+          b.addEventListener('click', function () {
+            if (b.disabled) return;
+            b.disabled = true; b.classList.add('busy'); b.textContent = '造词中「' + w + '」…';
+            Coin.fill(w, opts.lang, null, function (err, j) {
+              if (err) { b.disabled = false; b.classList.remove('busy'); b.textContent = '✗ ' + err + '，点此重试'; return; }
+              b.classList.remove('busy'); b.classList.add('done');
+              b.textContent = '✓ ' + (j.entry.roman) + '（' + (j.entry.zh || []).join('/') + '）已入库';
+              if (opts.retranslate) setTimeout(opts.retranslate, 350);
+            });
+          });
+          cw.appendChild(b);
+        });
+        card.appendChild(cw);
+      }
     }
     if (res.ok === false && !(res.unmatched && res.unmatched.length)) {
       card.appendChild(el('div', 'warn', res.error || '这句超出当前规则直译的句型范围——试试「构句器」逐件拼装。'));
@@ -16611,7 +16701,7 @@ window.SILNETH_EN_GLOSS = {
     var res;
     try { res = (langMode === 'en') ? E.translateEn(t) : E.translateZh(t); }
     catch (err) { res = { ok: false, error: (langMode === 'en' ? 'Engine error: ' : '引擎异常：') + err.message }; }
-    renderResult(zhOut, res, { zh: t });
+    renderResult(zhOut, res, { zh: t, coin: true, lang: langMode, retranslate: doZh });
   }
   Array.prototype.forEach.call(document.querySelectorAll('#zhLang button'), function (b) {
     b.addEventListener('click', function () {

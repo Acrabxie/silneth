@@ -1,2 +1,5 @@
 .claude/
 .DS_Store
+
+# 补齐工具构建产物（由 build-translator.js 生成）
+tools/silneth-translator.html

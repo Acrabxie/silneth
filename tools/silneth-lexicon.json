@@ -1,0 +1,10955 @@
+[
+ {
+  "roman": "dhan",
+  "ipa": "ðan",
+  "pos": "n",
+  "zh": [
+   "人",
+   "有生者"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "jor",
+  "ipa": "jor",
+  "pos": "n",
+  "zh": [
+   "男人",
+   "成年男子",
+   "男子"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "mena",
+  "ipa": "ˈme.na",
+  "pos": "n",
+  "zh": [
+   "女人",
+   "女子"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "vem",
+  "ipa": "vem",
+  "pos": "n",
+  "zh": [
+   "配偶",
+   "伴侣"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "pai",
+  "ipa": "pai̯",
+  "pos": "n",
+  "zh": [
+   "父亲",
+   "爸爸",
+   "父"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "mau",
+  "ipa": "mau̯",
+  "pos": "n",
+  "zh": [
+   "母亲",
+   "妈妈",
+   "母"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "dhal",
+  "ipa": "ðal",
+  "pos": "n",
+  "zh": [
+   "祖先",
+   "先人",
+   "先祖"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "ñin",
+  "ipa": "ɲin",
+  "pos": "n",
+  "zh": [
+   "孩子",
+   "幼儿",
+   "小孩"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "ñal",
+  "ipa": "ɲal",
+  "pos": "n",
+  "zh": [
+   "少年",
+   "雏儿"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "ñol",
+  "ipa": "ɲol",
+  "pos": "n",
+  "zh": [
+   "孤儿"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "bral",
+  "ipa": "bral",
+  "pos": "n",
+  "zh": [
+   "兄弟"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "sena",
+  "ipa": "ˈse.na",
+  "pos": "n",
+  "zh": [
+   "姐妹"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "hem",
+  "ipa": "xem",
+  "pos": "n",
+  "zh": [
+   "家",
+   "家族",
+   "家园"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "dhem",
+  "ipa": "ðem",
+  "pos": "n",
+  "zh": [
+   "部族",
+   "人民",
+   "族人"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "rýn",
+  "ipa": "ryːn",
+  "pos": "n",
+  "zh": [
+   "首领",
+   "王",
+   "君王"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "fel",
+  "ipa": "fel",
+  "pos": "n",
+  "zh": [
+   "朋友",
+   "伙伴",
+   "友"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "gath",
+  "ipa": "gaθ",
+  "pos": "n",
+  "zh": [
+   "客人",
+   "行旅者",
+   "旅人",
+   "旅客"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "kal",
+  "ipa": "kal",
+  "pos": "n",
+  "zh": [
+   "头",
+   "头颅"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "vil",
+  "ipa": "vil",
+  "pos": "n",
+  "zh": [
+   "眼睛",
+   "眼",
+   "目"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "hul",
+  "ipa": "xul",
+  "pos": "n",
+  "zh": [
+   "耳",
+   "耳朵"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "nus",
+  "ipa": "nus",
+  "pos": "n",
+  "zh": [
+   "鼻",
+   "鼻子"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "mun",
+  "ipa": "mun",
+  "pos": "n",
+  "zh": [
+   "嘴",
+   "口",
+   "开口"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "lam",
+  "ipa": "lam",
+  "pos": "n",
+  "zh": [
+   "舌",
+   "舌头"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "tir",
+  "ipa": "tir",
+  "pos": "n",
+  "zh": [
+   "牙",
+   "牙齿"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "fas",
+  "ipa": "fas",
+  "pos": "n",
+  "zh": [
+   "头发",
+   "毛",
+   "毛发"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "den",
+  "ipa": "den",
+  "pos": "n",
+  "zh": [
+   "手"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "barm",
+  "ipa": "barm",
+  "pos": "n",
+  "zh": [
+   "臂",
+   "手臂"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "pon",
+  "ipa": "pon",
+  "pos": "n",
+  "zh": [
+   "足",
+   "脚"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "skel",
+  "ipa": "skel",
+  "pos": "n",
+  "zh": [
+   "腿"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "rul",
+  "ipa": "rul",
+  "pos": "n",
+  "zh": [
+   "背",
+   "后背"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "gom",
+  "ipa": "gom",
+  "pos": "n",
+  "zh": [
+   "腹",
+   "肚子",
+   "肚"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "kern",
+  "ipa": "kern",
+  "pos": "n",
+  "zh": [
+   "心脏",
+   "核心",
+   "心"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "ruth",
+  "ipa": "ruθ",
+  "pos": "n",
+  "zh": [
+   "血",
+   "血液"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "ors",
+  "ipa": "ors",
+  "pos": "n",
+  "zh": [
+   "骨",
+   "骨头"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "peln",
+  "ipa": "peln",
+  "pos": "n",
+  "zh": [
+   "皮肤",
+   "皮"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "hes",
+  "ipa": "xes",
+  "pos": "n",
+  "zh": [
+   "气息",
+   "呼吸"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "nir",
+  "ipa": "nir",
+  "pos": "n",
+  "zh": [
+   "泪水",
+   "眼泪",
+   "泪"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "kel",
+  "ipa": "kel",
+  "pos": "n",
+  "zh": [
+   "天空",
+   "天"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "saul",
+  "ipa": "sau̯l",
+  "pos": "n",
+  "zh": [
+   "太阳",
+   "日"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "ýl",
+  "ipa": "yːl",
+  "pos": "n",
+  "zh": [
+   "月亮",
+   "月份",
+   "月"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "nai",
+  "ipa": "nai̯",
+  "pos": "n",
+  "zh": [
+   "星",
+   "星星",
+   "星辰"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "vér",
+  "ipa": "veːr",
+  "pos": "n",
+  "zh": [
+   "银辉",
+   "银白之光",
+   "银光"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "lúm",
+  "ipa": "luːm",
+  "pos": "n",
+  "zh": [
+   "光",
+   "光亮",
+   "光明"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "ath",
+  "ipa": "aθ",
+  "pos": "n",
+  "zh": [
+   "热",
+   "热量"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "fai",
+  "ipa": "fai̯",
+  "pos": "n",
+  "zh": [
+   "火",
+   "火焰"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "íth",
+  "ipa": "iːθ",
+  "pos": "n",
+  "zh": [
+   "冰"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "fen",
+  "ipa": "fen",
+  "pos": "n",
+  "zh": [
+   "雪"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "nem",
+  "ipa": "nem",
+  "pos": "n",
+  "zh": [
+   "雨"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "hyl",
+  "ipa": "xyl",
+  "pos": "n",
+  "zh": [
+   "云",
+   "雾霭",
+   "雾"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "wein",
+  "ipa": "wei̯n",
+  "pos": "n",
+  "zh": [
+   "风"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "thrau",
+  "ipa": "θrau̯",
+  "pos": "n",
+  "zh": [
+   "风暴",
+   "暴风"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "koil",
+  "ipa": "koi̯l",
+  "pos": "n",
+  "zh": [
+   "漩涡",
+   "涡流",
+   "旋涡"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "thum",
+  "ipa": "θum",
+  "pos": "n",
+  "zh": [
+   "烟"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "ther",
+  "ipa": "θer",
+  "pos": "n",
+  "zh": [
+   "灰烬",
+   "灰"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "thos",
+  "ipa": "θos",
+  "pos": "n",
+  "zh": [
+   "尘",
+   "尘土",
+   "灰尘"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "zar",
+  "ipa": "zar",
+  "pos": "n",
+  "zh": [
+   "沙",
+   "沙子"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "nor",
+  "ipa": "nor",
+  "pos": "n",
+  "zh": [
+   "大地",
+   "土地",
+   "地"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "grán",
+  "ipa": "graːn",
+  "pos": "n",
+  "zh": [
+   "石",
+   "石头",
+   "岩石"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "arn",
+  "ipa": "arn",
+  "pos": "n",
+  "zh": [
+   "山"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "doln",
+  "ipa": "doln",
+  "pos": "n",
+  "zh": [
+   "山谷",
+   "谷"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "hurn",
+  "ipa": "xurn",
+  "pos": "n",
+  "zh": [
+   "洞穴",
+   "洞"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "firn",
+  "ipa": "firn",
+  "pos": "n",
+  "zh": [
+   "森林",
+   "树林",
+   "林"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "lath",
+  "ipa": "laθ",
+  "pos": "n",
+  "zh": [
+   "平野",
+   "草原",
+   "原野"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "ran",
+  "ipa": "ran",
+  "pos": "n",
+  "zh": [
+   "路",
+   "旅程",
+   "道路"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "lír",
+  "ipa": "liːr",
+  "pos": "n",
+  "zh": [
+   "河",
+   "河流"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "nelu",
+  "ipa": "ˈne.lu",
+  "pos": "n",
+  "zh": [
+   "水"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "len",
+  "ipa": "len",
+  "pos": "n",
+  "zh": [
+   "湖",
+   "湖泊"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "maur",
+  "ipa": "mau̯r",
+  "pos": "n",
+  "zh": [
+   "海",
+   "海洋"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "noth",
+  "ipa": "noθ",
+  "pos": "n",
+  "zh": [
+   "夜",
+   "夜晚"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "del",
+  "ipa": "del",
+  "pos": "n",
+  "zh": [
+   "白日",
+   "白昼",
+   "白天"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "skon",
+  "ipa": "skon",
+  "pos": "n",
+  "zh": [
+   "影",
+   "阴影",
+   "影子"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "murn",
+  "ipa": "murn",
+  "pos": "n",
+  "zh": [
+   "黑暗",
+   "幽冥",
+   "暗"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "hwan",
+  "ipa": "xwan",
+  "pos": "n",
+  "zh": [
+   "兽",
+   "动物"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "vorn",
+  "ipa": "vorn",
+  "pos": "n",
+  "zh": [
+   "狼"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "bern",
+  "ipa": "bern",
+  "pos": "n",
+  "zh": [
+   "熊"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "velm",
+  "ipa": "velm",
+  "pos": "n",
+  "zh": [
+   "鹿"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "ros",
+  "ipa": "ros",
+  "pos": "n",
+  "zh": [
+   "马"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "bur",
+  "ipa": "bur",
+  "pos": "n",
+  "zh": [
+   "牛"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "meñ",
+  "ipa": "meɲ",
+  "pos": "n",
+  "zh": [
+   "羊"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "hun",
+  "ipa": "xun",
+  "pos": "n",
+  "zh": [
+   "狗",
+   "犬"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "swil",
+  "ipa": "swil",
+  "pos": "n",
+  "zh": [
+   "鸟"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "karn",
+  "ipa": "karn",
+  "pos": "n",
+  "zh": [
+   "鹰",
+   "猛禽"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "glis",
+  "ipa": "glis",
+  "pos": "n",
+  "zh": [
+   "鱼"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "zir",
+  "ipa": "zir",
+  "pos": "n",
+  "zh": [
+   "蛇"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "ñis",
+  "ipa": "ɲis",
+  "pos": "n",
+  "zh": [
+   "虫",
+   "虫子",
+   "昆虫"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "ñum",
+  "ipa": "ɲum",
+  "pos": "n",
+  "zh": [
+   "蜂",
+   "蜜蜂"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "filn",
+  "ipa": "filn",
+  "pos": "n",
+  "zh": [
+   "翼",
+   "翅膀"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "korn",
+  "ipa": "korn",
+  "pos": "n",
+  "zh": [
+   "角"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "gwe",
+  "ipa": "gwe",
+  "pos": "n",
+  "zh": [
+   "蛋"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "áln",
+  "ipa": "aːln",
+  "pos": "n",
+  "zh": [
+   "树",
+   "树木"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "wurn",
+  "ipa": "wurn",
+  "pos": "n",
+  "zh": [
+   "根",
+   "词根"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "lil",
+  "ipa": "lil",
+  "pos": "n",
+  "zh": [
+   "叶",
+   "叶子",
+   "树叶"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "fjal",
+  "ipa": "fjal",
+  "pos": "n",
+  "zh": [
+   "花"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "selm",
+  "ipa": "selm",
+  "pos": "n",
+  "zh": [
+   "草"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "sem",
+  "ipa": "sem",
+  "pos": "n",
+  "zh": [
+   "种子",
+   "籽"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "bau",
+  "ipa": "bau̯",
+  "pos": "n",
+  "zh": [
+   "果实",
+   "果子",
+   "水果"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "mos",
+  "ipa": "mos",
+  "pos": "n",
+  "zh": [
+   "肉",
+   "肉食"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "brom",
+  "ipa": "brom",
+  "pos": "n",
+  "zh": [
+   "面饼",
+   "面食",
+   "饼"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "gorn",
+  "ipa": "gorn",
+  "pos": "n",
+  "zh": [
+   "谷物",
+   "粮食",
+   "谷"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "mim",
+  "ipa": "mim",
+  "pos": "n",
+  "zh": [
+   "乳",
+   "奶",
+   "牛奶"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "melu",
+  "ipa": "ˈme.lu",
+  "pos": "n",
+  "zh": [
+   "蜜",
+   "蜂蜜"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "selu",
+  "ipa": "ˈse.lu",
+  "pos": "n",
+  "zh": [
+   "油",
+   "膏"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "velu",
+  "ipa": "ˈve.lu",
+  "pos": "n",
+  "zh": [
+   "酒"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "sarn",
+  "ipa": "sarn",
+  "pos": "n",
+  "zh": [
+   "盐"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "surm",
+  "ipa": "surm",
+  "pos": "n",
+  "zh": [
+   "汤",
+   "羹"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "kurn",
+  "ipa": "kurn",
+  "pos": "n",
+  "zh": [
+   "一餐",
+   "饭食",
+   "饭"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "pesha",
+  "ipa": "ˈpe.ʃa",
+  "pos": "n",
+  "zh": [
+   "香料",
+   "香草"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "teln",
+  "ipa": "teln",
+  "pos": "n",
+  "zh": [
+   "屋",
+   "宅",
+   "房屋",
+   "房子"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "tal",
+  "ipa": "tal",
+  "pos": "n",
+  "zh": [
+   "厅",
+   "大厅"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "tolm",
+  "ipa": "tolm",
+  "pos": "n",
+  "zh": [
+   "塔",
+   "高台"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "dorn",
+  "ipa": "dorn",
+  "pos": "n",
+  "zh": [
+   "门"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "belm",
+  "ipa": "belm",
+  "pos": "n",
+  "zh": [
+   "墙",
+   "墙壁"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "kelm",
+  "ipa": "kelm",
+  "pos": "n",
+  "zh": [
+   "屋顶",
+   "房顶"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "fairn",
+  "ipa": "fai̯rn",
+  "pos": "n",
+  "zh": [
+   "炉灶",
+   "火塘",
+   "炉火",
+   "炉"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "lein",
+  "ipa": "lei̯n",
+  "pos": "n",
+  "zh": [
+   "床",
+   "卧榻"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "welm",
+  "ipa": "welm",
+  "pos": "n",
+  "zh": [
+   "布",
+   "衣",
+   "衣服"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "krum",
+  "ipa": "krum",
+  "pos": "n",
+  "zh": [
+   "罐",
+   "壶"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "nath",
+  "ipa": "naθ",
+  "pos": "n",
+  "zh": [
+   "网"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "thren",
+  "ipa": "θren",
+  "pos": "n",
+  "zh": [
+   "绳",
+   "索",
+   "绳索",
+   "绳子"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "skar",
+  "ipa": "skar",
+  "pos": "n",
+  "zh": [
+   "刀",
+   "刃",
+   "刀刃"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "gar",
+  "ipa": "gar",
+  "pos": "n",
+  "zh": [
+   "矛",
+   "长矛"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "byn",
+  "ipa": "byn",
+  "pos": "n",
+  "zh": [
+   "弓"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "flin",
+  "ipa": "flin",
+  "pos": "n",
+  "zh": [
+   "箭"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "skau",
+  "ipa": "skau̯",
+  "pos": "n",
+  "zh": [
+   "舟",
+   "船"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "bryn",
+  "ipa": "bryn",
+  "pos": "n",
+  "zh": [
+   "桥"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "wen",
+  "ipa": "wen",
+  "pos": "v",
+  "zh": [
+   "走",
+   "去"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "gwen",
+  "ipa": "gwen",
+  "pos": "v",
+  "zh": [
+   "来"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "rin",
+  "ipa": "rin",
+  "pos": "v",
+  "zh": [
+   "跑",
+   "奔跑"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lun",
+  "ipa": "lun",
+  "pos": "v",
+  "zh": [
+   "流",
+   "淌",
+   "流淌"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "dol",
+  "ipa": "dol",
+  "pos": "v",
+  "zh": [
+   "落",
+   "坠",
+   "坠落",
+   "掉落"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "rai",
+  "ipa": "rai̯",
+  "pos": "v",
+  "zh": [
+   "升",
+   "起",
+   "升起"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "swai",
+  "ipa": "swai̯",
+  "pos": "v",
+  "zh": [
+   "飞",
+   "飞翔"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "glun",
+  "ipa": "glun",
+  "pos": "v",
+  "zh": [
+   "游泳",
+   "游"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "wor",
+  "ipa": "wor",
+  "pos": "v",
+  "zh": [
+   "转",
+   "回转",
+   "旋转"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "oran",
+  "ipa": "ˈo.ran",
+  "pos": "v",
+  "zh": [
+   "流浪",
+   "漫游",
+   "游荡"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "som",
+  "ipa": "som",
+  "pos": "v",
+  "zh": [
+   "坐"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lei",
+  "ipa": "lei̯",
+  "pos": "v",
+  "zh": [
+   "躺",
+   "卧"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "swon",
+  "ipa": "swon",
+  "pos": "v",
+  "zh": [
+   "睡",
+   "睡觉"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lán",
+  "ipa": "laːn",
+  "pos": "v",
+  "zh": [
+   "屹立",
+   "长存",
+   "矗立"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "thau",
+  "ipa": "θau̯",
+  "pos": "v",
+  "zh": [
+   "死",
+   "逝去",
+   "死亡"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "dhes",
+  "ipa": "ðes",
+  "pos": "v",
+  "zh": [
+   "活",
+   "生存",
+   "活着"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "ñar",
+  "ipa": "ɲar",
+  "pos": "v",
+  "zh": [
+   "出生",
+   "诞生"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "al",
+  "ipa": "al",
+  "pos": "v",
+  "zh": [
+   "生长",
+   "长"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "dar",
+  "ipa": "dar",
+  "pos": "v",
+  "zh": [
+   "给",
+   "给予"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "kam",
+  "ipa": "kam",
+  "pos": "v",
+  "zh": [
+   "取",
+   "拿",
+   "拿取"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "grem",
+  "ipa": "grem",
+  "pos": "v",
+  "zh": [
+   "握",
+   "持",
+   "握住"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "bor",
+  "ipa": "bor",
+  "pos": "v",
+  "zh": [
+   "背负",
+   "携带",
+   "背",
+   "带"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "shan",
+  "ipa": "ʃan",
+  "pos": "v",
+  "zh": [
+   "掷",
+   "抛",
+   "扔"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "ren",
+  "ipa": "ren",
+  "pos": "v",
+  "zh": [
+   "递",
+   "传",
+   "传递"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "tan",
+  "ipa": "tan",
+  "pos": "v",
+  "zh": [
+   "做",
+   "制作"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "dem",
+  "ipa": "dem",
+  "pos": "v",
+  "zh": [
+   "建造",
+   "建",
+   "盖"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "tarn",
+  "ipa": "tarn",
+  "pos": "v",
+  "zh": [
+   "劈",
+   "砍",
+   "断",
+   "砍断"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "bres",
+  "ipa": "bres",
+  "pos": "v",
+  "zh": [
+   "折断",
+   "碎",
+   "破碎"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "skir",
+  "ipa": "skir",
+  "pos": "v",
+  "zh": [
+   "刻",
+   "凿",
+   "雕刻"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "wel",
+  "ipa": "wel",
+  "pos": "v",
+  "zh": [
+   "编织",
+   "织"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "ser",
+  "ipa": "ser",
+  "pos": "v",
+  "zh": [
+   "播种",
+   "种"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lym",
+  "ipa": "lym",
+  "pos": "v",
+  "zh": [
+   "洗",
+   "清洗"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "kur",
+  "ipa": "kur",
+  "pos": "v",
+  "zh": [
+   "煮",
+   "烹",
+   "烹煮"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "jem",
+  "ipa": "jem",
+  "pos": "v",
+  "zh": [
+   "吃",
+   "进食"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "sul",
+  "ipa": "sul",
+  "pos": "v",
+  "zh": [
+   "喝",
+   "饮"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "gwar",
+  "ipa": "gwar",
+  "pos": "v",
+  "zh": [
+   "战斗",
+   "打仗",
+   "打斗"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "skath",
+  "ipa": "skaθ",
+  "pos": "v",
+  "zh": [
+   "狩猎",
+   "打猎",
+   "猎"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lys",
+  "ipa": "lys",
+  "pos": "v",
+  "zh": [
+   "打开",
+   "开"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "klus",
+  "ipa": "klus",
+  "pos": "v",
+  "zh": [
+   "关闭",
+   "关"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "brin",
+  "ipa": "brin",
+  "pos": "v",
+  "zh": [
+   "燃烧",
+   "烧"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "thrin",
+  "ipa": "θrin",
+  "pos": "v",
+  "zh": [
+   "绑",
+   "系",
+   "捆绑"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "dhil",
+  "ipa": "ðil",
+  "pos": "v",
+  "zh": [
+   "寻得",
+   "发现",
+   "找到"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "thol",
+  "ipa": "θol",
+  "pos": "v",
+  "zh": [
+   "失去",
+   "丢失"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "jes",
+  "ipa": "jes",
+  "pos": "v",
+  "zh": [
+   "开始"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "sath",
+  "ipa": "saθ",
+  "pos": "v",
+  "zh": [
+   "完结",
+   "耗尽",
+   "结束",
+   "完成"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "rim",
+  "ipa": "rim",
+  "pos": "v",
+  "zh": [
+   "数",
+   "计数",
+   "点数"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "fus",
+  "ipa": "fus",
+  "pos": "v",
+  "zh": [
+   "吹",
+   "鼓风"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "vár",
+  "ipa": "vaːr",
+  "pos": "v",
+  "zh": [
+   "看见",
+   "看",
+   "见"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "hyr",
+  "ipa": "xyr",
+  "pos": "v",
+  "zh": [
+   "听见",
+   "听"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "fes",
+  "ipa": "fes",
+  "pos": "v",
+  "zh": [
+   "嗅",
+   "闻"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "vys",
+  "ipa": "vys",
+  "pos": "v",
+  "zh": [
+   "知道",
+   "晓得"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "kyn",
+  "ipa": "kyn",
+  "pos": "v",
+  "zh": [
+   "学习",
+   "学"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "møn",
+  "ipa": "møn",
+  "pos": "v",
+  "zh": [
+   "思考",
+   "想",
+   "思索"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "mír",
+  "ipa": "miːr",
+  "pos": "v",
+  "zh": [
+   "铭记",
+   "记得",
+   "记住"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "thel",
+  "ipa": "θel",
+  "pos": "v",
+  "zh": [
+   "忘记",
+   "忘",
+   "遗忘"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "dhir",
+  "ipa": "ðir",
+  "pos": "v",
+  "zh": [
+   "循迹",
+   "追索",
+   "追踪"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "søl",
+  "ipa": "søl",
+  "pos": "v",
+  "zh": [
+   "爱",
+   "珍视",
+   "爱惜"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "jur",
+  "ipa": "jur",
+  "pos": "v",
+  "zh": [
+   "想要",
+   "愿",
+   "要",
+   "希望"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "throm",
+  "ipa": "θrom",
+  "pos": "v",
+  "zh": [
+   "恐惧",
+   "害怕",
+   "惧怕"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "nur",
+  "ipa": "nur",
+  "pos": "v",
+  "zh": [
+   "哭泣",
+   "哭"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "hlas",
+  "ipa": "xlas",
+  "pos": "v",
+  "zh": [
+   "笑",
+   "大笑"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "søn",
+  "ipa": "søn",
+  "pos": "n",
+  "zh": [
+   "梦",
+   "梦境"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "syn",
+  "ipa": "syn",
+  "pos": "n",
+  "zh": [
+   "魂",
+   "心灵",
+   "内质",
+   "灵魂"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "jal",
+  "ipa": "jal",
+  "pos": "n",
+  "zh": [
+   "喜悦",
+   "欢喜",
+   "快乐"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "garm",
+  "ipa": "garm",
+  "pos": "n",
+  "zh": [
+   "怒",
+   "愤怒",
+   "怒气"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "nurn",
+  "ipa": "nurn",
+  "pos": "n",
+  "zh": [
+   "悲伤",
+   "哀伤",
+   "悲痛"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "thyr",
+  "ipa": "θyr",
+  "pos": "n",
+  "zh": [
+   "痛",
+   "疼痛"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "gor",
+  "ipa": "gor",
+  "pos": "adj",
+  "zh": [
+   "大的",
+   "大"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "ñil",
+  "ipa": "ɲil",
+  "pos": "adj",
+  "zh": [
+   "小的",
+   "小"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "lyn",
+  "ipa": "lyn",
+  "pos": "adj",
+  "zh": [
+   "长的",
+   "长"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "stum",
+  "ipa": "stum",
+  "pos": "adj",
+  "zh": [
+   "短的",
+   "短"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "hau",
+  "ipa": "xau̯",
+  "pos": "adj",
+  "zh": [
+   "高的",
+   "高"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "dyn",
+  "ipa": "dyn",
+  "pos": "adj",
+  "zh": [
+   "深的",
+   "深"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "brath",
+  "ipa": "braθ",
+  "pos": "adj",
+  "zh": [
+   "宽的",
+   "宽",
+   "宽阔的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "ñem",
+  "ipa": "ɲem",
+  "pos": "adj",
+  "zh": [
+   "窄的",
+   "窄",
+   "狭窄的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "gwom",
+  "ipa": "gwom",
+  "pos": "adj",
+  "zh": [
+   "重的",
+   "重"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "fim",
+  "ipa": "fim",
+  "pos": "adj",
+  "zh": [
+   "轻的",
+   "轻"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "swin",
+  "ipa": "swin",
+  "pos": "adj",
+  "zh": [
+   "快的",
+   "快",
+   "迅速的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "lom",
+  "ipa": "lom",
+  "pos": "adj",
+  "zh": [
+   "慢的",
+   "缓的",
+   "慢"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "dren",
+  "ipa": "dren",
+  "pos": "adj",
+  "zh": [
+   "强的",
+   "强壮的",
+   "强"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "thin",
+  "ipa": "θin",
+  "pos": "adj",
+  "zh": [
+   "弱的",
+   "弱"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "hom",
+  "ipa": "xom",
+  "pos": "adj",
+  "zh": [
+   "满的",
+   "满"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "thøs",
+  "ipa": "θøs",
+  "pos": "adj",
+  "zh": [
+   "空的",
+   "空"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "nár",
+  "ipa": "naːr",
+  "pos": "adj",
+  "zh": [
+   "新的",
+   "新绿的",
+   "新"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "ñes",
+  "ipa": "ɲes",
+  "pos": "adj",
+  "zh": [
+   "年幼的",
+   "新嫩的",
+   "幼小的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "tór",
+  "ipa": "toːr",
+  "pos": "adj",
+  "zh": [
+   "古老的",
+   "古老",
+   "古"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "jen",
+  "ipa": "jen",
+  "pos": "adj",
+  "zh": [
+   "好的",
+   "善的",
+   "好",
+   "善良的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "ulm",
+  "ipa": "ulm",
+  "pos": "adj",
+  "zh": [
+   "坏的",
+   "恶的",
+   "坏",
+   "邪恶的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "vai",
+  "ipa": "vai̯",
+  "pos": "adj",
+  "zh": [
+   "真的",
+   "真",
+   "是",
+   "诚然"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "shal",
+  "ipa": "ʃal",
+  "pos": "adj",
+  "zh": [
+   "假的",
+   "伪的",
+   "假",
+   "虚假的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "skil",
+  "ipa": "skil",
+  "pos": "adj",
+  "zh": [
+   "锋利的",
+   "锋利",
+   "锐利的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "sor",
+  "ipa": "sor",
+  "pos": "adj",
+  "zh": [
+   "干的",
+   "干燥的",
+   "干"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "kryl",
+  "ipa": "kryl",
+  "pos": "adj",
+  "zh": [
+   "冷的",
+   "寒冷的",
+   "冷"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "ñela",
+  "ipa": "ˈɲe.la",
+  "pos": "adj",
+  "zh": [
+   "柔软的",
+   "柔软",
+   "软"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "thys",
+  "ipa": "θys",
+  "pos": "adj",
+  "zh": [
+   "寂静的",
+   "无声的",
+   "寂静",
+   "安静的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "hál",
+  "ipa": "xaːl",
+  "pos": "adj",
+  "zh": [
+   "神圣的",
+   "神圣"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "val",
+  "ipa": "val",
+  "pos": "adj",
+  "zh": [
+   "银的",
+   "银白的",
+   "银白"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "los",
+  "ipa": "los",
+  "pos": "n",
+  "zh": [
+   "地方",
+   "场所",
+   "处所"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "vetha",
+  "ipa": "ˈve.θa",
+  "pos": "n",
+  "zh": [
+   "时间",
+   "时距"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "jern",
+  "ipa": "jern",
+  "pos": "n",
+  "zh": [
+   "年",
+   "年份"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "eln",
+  "ipa": "eln",
+  "pos": "n",
+  "zh": [
+   "清晨",
+   "早晨",
+   "晨"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "surn",
+  "ipa": "surn",
+  "pos": "n",
+  "zh": [
+   "黄昏",
+   "傍晚"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "nu",
+  "ipa": "nu",
+  "pos": "adv",
+  "zh": [
+   "现在",
+   "如今",
+   "当下"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "vèr",
+  "ipa": "vɛr",
+  "pos": "n",
+  "zh": [
+   "往昔",
+   "远时",
+   "昔日"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "nes",
+  "ipa": "nes",
+  "pos": "adj",
+  "zh": [
+   "近的",
+   "近"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "tau",
+  "ipa": "tau̯",
+  "pos": "adj",
+  "zh": [
+   "远的",
+   "远"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "medhan",
+  "ipa": "ˈme.ðan",
+  "pos": "n",
+  "zh": [
+   "中间",
+   "当中",
+   "中央"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "skarn",
+  "ipa": "skarn",
+  "pos": "n",
+  "zh": [
+   "边缘",
+   "崖缘",
+   "边"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "ilm",
+  "ipa": "ilm",
+  "pos": "func",
+  "zh": [
+   "之内",
+   "里面",
+   "内"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "es",
+  "ipa": "es",
+  "pos": "func",
+  "zh": [
+   "之外",
+   "外面",
+   "外"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "hen",
+  "ipa": "xen",
+  "pos": "func",
+  "zh": [
+   "之前",
+   "前"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "dur",
+  "ipa": "dur",
+  "pos": "func",
+  "zh": [
+   "之后",
+   "后"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "thes",
+  "ipa": "θes",
+  "pos": "func",
+  "zh": [
+   "之上",
+   "上面",
+   "上"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "nol",
+  "ipa": "nol",
+  "pos": "func",
+  "zh": [
+   "之下",
+   "下面",
+   "下"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "hwel",
+  "ipa": "xwel",
+  "pos": "n",
+  "zh": [
+   "左",
+   "左边"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "drel",
+  "ipa": "drel",
+  "pos": "n",
+  "zh": [
+   "右",
+   "右边"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "sil",
+  "ipa": "sil",
+  "pos": "v",
+  "zh": [
+   "言说",
+   "吟诵",
+   "唱",
+   "说",
+   "歌唱"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "kai",
+  "ipa": "kai̯",
+  "pos": "v",
+  "zh": [
+   "呼唤",
+   "召唤",
+   "命名",
+   "呼喊"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "kes",
+  "ipa": "kes",
+  "pos": "v",
+  "zh": [
+   "问",
+   "询问",
+   "提问"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "res",
+  "ipa": "res",
+  "pos": "v",
+  "zh": [
+   "回答",
+   "答"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "shel",
+  "ipa": "ʃel",
+  "pos": "v",
+  "zh": [
+   "欺骗",
+   "骗"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "mang",
+  "ipa": "maŋ",
+  "pos": "v",
+  "zh": [
+   "交易",
+   "买卖"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "seth",
+  "ipa": "seθ",
+  "pos": "n",
+  "zh": [
+   "词",
+   "话语",
+   "言辞"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "neth",
+  "ipa": "neθ",
+  "pos": "n",
+  "zh": [
+   "事",
+   "事物",
+   "事迹",
+   "事情"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "nym",
+  "ipa": "nym",
+  "pos": "n",
+  "zh": [
+   "名字",
+   "名"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "mirn",
+  "ipa": "mirn",
+  "pos": "n",
+  "zh": [
+   "记号",
+   "铭痕",
+   "标记"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "thang",
+  "ipa": "θaŋ",
+  "pos": "n",
+  "zh": [
+   "法",
+   "规约",
+   "法度",
+   "规则"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "grath",
+  "ipa": "graθ",
+  "pos": "n",
+  "zh": [
+   "誓言",
+   "誓约",
+   "誓"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "dhaul",
+  "ipa": "ðau̯l",
+  "pos": "n",
+  "zh": [
+   "神",
+   "神灵"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "holn",
+  "ipa": "xoln",
+  "pos": "n",
+  "zh": [
+   "和平",
+   "安宁",
+   "平安"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "golm",
+  "ipa": "golm",
+  "pos": "n",
+  "zh": [
+   "财货",
+   "财物",
+   "财富"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "el",
+  "ipa": "el",
+  "pos": "v",
+  "zh": [
+   "在",
+   "是",
+   "存在"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "ul",
+  "ipa": "ul",
+  "pos": "adv",
+  "zh": [
+   "不",
+   "否",
+   "非"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "vath",
+  "ipa": "vaθ",
+  "pos": "adv",
+  "zh": [
+   "于远古",
+   "磨尽",
+   "太古"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "hol",
+  "ipa": "xol",
+  "pos": "func",
+  "zh": [
+   "所有",
+   "全部",
+   "一切"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "mai",
+  "ipa": "mai̯",
+  "pos": "func",
+  "zh": [
+   "许多",
+   "很多",
+   "多"
+  ],
+  "cls": "strong",
+  "field": "功能词"
+ },
+ {
+  "roman": "lith",
+  "ipa": "liθ",
+  "pos": "func",
+  "zh": [
+   "少许",
+   "少量",
+   "一点"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "ves",
+  "ipa": "ves",
+  "pos": "func",
+  "zh": [
+   "一些",
+   "些许"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "em",
+  "ipa": "em",
+  "pos": "adv",
+  "zh": [
+   "也",
+   "亦"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "nil",
+  "ipa": "nil",
+  "pos": "adv",
+  "zh": [
+   "只",
+   "仅",
+   "仅仅"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "jo",
+  "ipa": "jo",
+  "pos": "func",
+  "zh": [
+   "而",
+   "然后",
+   "接着"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "nas",
+  "ipa": "nas",
+  "pos": "func",
+  "zh": [
+   "但是",
+   "然而",
+   "可是"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "ai",
+  "ipa": "ai̯",
+  "pos": "func",
+  "zh": [
+   "啊",
+   "哦"
+  ],
+  "cls": "strong",
+  "field": "功能词"
+ },
+ {
+  "roman": "=ve",
+  "ipa": "ve",
+  "pos": "func",
+  "zh": [
+   "与",
+   "和"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "=va",
+  "ipa": "va",
+  "pos": "func",
+  "zh": [
+   "亲历示证"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "=dhi",
+  "ipa": "ði",
+  "pos": "func",
+  "zh": [
+   "推断示证"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "=re",
+  "ipa": "re",
+  "pos": "func",
+  "zh": [
+   "传闻示证"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "thøn",
+  "ipa": "θøn",
+  "pos": "num",
+  "zh": [
+   "零",
+   "无"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "en",
+  "ipa": "en",
+  "pos": "num",
+  "zh": [
+   "一"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "dy",
+  "ipa": "dy",
+  "pos": "num",
+  "zh": [
+   "二"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "thil",
+  "ipa": "θil",
+  "pos": "num",
+  "zh": [
+   "三"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "vor",
+  "ipa": "vor",
+  "pos": "num",
+  "zh": [
+   "四"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "lim",
+  "ipa": "lim",
+  "pos": "num",
+  "zh": [
+   "五"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "zol",
+  "ipa": "zol",
+  "pos": "num",
+  "zh": [
+   "六"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "nau",
+  "ipa": "nau̯",
+  "pos": "num",
+  "zh": [
+   "七"
+  ],
+  "cls": "strong",
+  "field": "数词"
+ },
+ {
+  "roman": "oth",
+  "ipa": "oθ",
+  "pos": "num",
+  "zh": [
+   "八"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "gen",
+  "ipa": "gen",
+  "pos": "num",
+  "zh": [
+   "九"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "dhul",
+  "ipa": "ðul",
+  "pos": "num",
+  "zh": [
+   "十"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "mel",
+  "ipa": "mel",
+  "pos": "num",
+  "zh": [
+   "十一"
+  ],
+  "cls": "weak",
+  "field": "数词"
+ },
+ {
+  "roman": "lár",
+  "ipa": "laːr",
+  "pos": "num",
+  "zh": [
+   "十二",
+   "满数"
+  ],
+  "cls": "strong",
+  "field": "数词"
+ },
+ {
+  "roman": "ýlan",
+  "ipa": "ˈyː.lan",
+  "pos": "num",
+  "zh": [
+   "一百四十四"
+  ],
+  "cls": "strong",
+  "field": "数词"
+ },
+ {
+  "roman": "órvan",
+  "ipa": "ˈoːr.van",
+  "pos": "num",
+  "zh": [
+   "一千七百二十八"
+  ],
+  "cls": "strong",
+  "field": "数词"
+ },
+ {
+  "roman": "ni",
+  "ipa": "ni",
+  "pos": "pron",
+  "zh": [
+   "我"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "vy",
+  "ipa": "vy",
+  "pos": "pron",
+  "zh": [
+   "你"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "dhe",
+  "ipa": "ðe",
+  "pos": "pron",
+  "zh": [
+   "他",
+   "她"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "tha",
+  "ipa": "θa",
+  "pos": "pron",
+  "zh": [
+   "它"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "øs",
+  "ipa": "øs",
+  "pos": "pron",
+  "zh": [
+   "自身",
+   "自己"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "sa",
+  "ipa": "sa",
+  "pos": "pron",
+  "zh": [
+   "这"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "tor",
+  "ipa": "tor",
+  "pos": "pron",
+  "zh": [
+   "那"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "tër",
+  "ipa": "tər",
+  "pos": "pron",
+  "zh": [
+   "那",
+   "远古之那"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "ken",
+  "ipa": "ken",
+  "pos": "pron",
+  "zh": [
+   "谁"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kath",
+  "ipa": "kaθ",
+  "pos": "pron",
+  "zh": [
+   "什么"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kor",
+  "ipa": "kor",
+  "pos": "pron",
+  "zh": [
+   "哪个",
+   "或"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kis",
+  "ipa": "kis",
+  "pos": "pron",
+  "zh": [
+   "何处",
+   "哪里"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kol",
+  "ipa": "kol",
+  "pos": "pron",
+  "zh": [
+   "由何",
+   "为何",
+   "为什么"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kum",
+  "ipa": "kum",
+  "pos": "pron",
+  "zh": [
+   "如何",
+   "怎么"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kir",
+  "ipa": "kir",
+  "pos": "pron",
+  "zh": [
+   "何时",
+   "什么时候"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "kem",
+  "ipa": "kem",
+  "pos": "pron",
+  "zh": [
+   "几",
+   "多少"
+  ],
+  "cls": "weak",
+  "field": "代词"
+ },
+ {
+  "roman": "-neth",
+  "ipa": "neθ",
+  "pos": "suffix",
+  "zh": [
+   "动作/结果名词化"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-we",
+  "ipa": "we",
+  "pos": "suffix",
+  "zh": [
+   "施事名词化",
+   "…者"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-os",
+  "ipa": "os",
+  "pos": "suffix",
+  "zh": [
+   "处所名词化",
+   "器物名词化"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-il",
+  "ipa": "il",
+  "pos": "suffix",
+  "zh": [
+   "指小",
+   "小称"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-ur",
+  "ipa": "ur",
+  "pos": "suffix",
+  "zh": [
+   "增大",
+   "大称"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-a",
+  "ipa": "a",
+  "pos": "suffix",
+  "zh": [
+   "属性形容词化",
+   "有X的",
+   "如X的"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-yn",
+  "ipa": "yn",
+  "pos": "suffix",
+  "zh": [
+   "抽象性质名词化"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-ta-",
+  "ipa": "ta",
+  "pos": "suffix",
+  "zh": [
+   "动词化",
+   "使动"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-im",
+  "ipa": "im",
+  "pos": "suffix",
+  "zh": [
+   "序数"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-um",
+  "ipa": "um",
+  "pos": "suffix",
+  "zh": [
+   "次数副词化",
+   "方式副词化"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-ir",
+  "ipa": "ir",
+  "pos": "suffix",
+  "zh": [
+   "正向程度副词化",
+   "变得更X"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "-ol",
+  "ipa": "ol",
+  "pos": "suffix",
+  "zh": [
+   "反向程度副词化",
+   "变得离X"
+  ],
+  "cls": "weak",
+  "field": "派生后缀"
+ },
+ {
+  "roman": "aivon",
+  "ipa": "ˈai̯.von",
+  "pos": "n",
+  "zh": [
+   "祖父",
+   "外祖父",
+   "祖辈男性长者"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "órna",
+  "ipa": "ˈoːr.na",
+  "pos": "n",
+  "zh": [
+   "祖母",
+   "外祖母"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "maulir",
+  "ipa": "ˈmau̯.lir",
+  "pos": "n",
+  "zh": [
+   "外祖父母",
+   "母系祖辈"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "neivon",
+  "ipa": "ˈnei̯.von",
+  "pos": "n",
+  "zh": [
+   "孙辈",
+   "孙子",
+   "孙女"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "frøkel",
+  "ipa": "ˈfrø.kel",
+  "pos": "n",
+  "zh": [
+   "叔",
+   "伯",
+   "舅"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "thríma",
+  "ipa": "ˈθriː.ma",
+  "pos": "n",
+  "zh": [
+   "姑",
+   "姨",
+   "婶"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "veskal",
+  "ipa": "ˈve.skal",
+  "pos": "n",
+  "zh": [
+   "堂亲",
+   "表亲",
+   "堂表兄弟姊妹"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "gaunir",
+  "ipa": "ˈgau̯.nir",
+  "pos": "n",
+  "zh": [
+   "姻亲尊长",
+   "岳父母",
+   "公婆"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "swelra",
+  "ipa": "ˈswel.ra",
+  "pos": "n",
+  "zh": [
+   "子辈姻亲",
+   "儿媳",
+   "女婿"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "dhaimel",
+  "ipa": "ˈðai̯.mel",
+  "pos": "n",
+  "zh": [
+   "姻亲同辈",
+   "连襟",
+   "妯娌"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "pryska",
+  "ipa": "ˈpry.ska",
+  "pos": "n",
+  "zh": [
+   "兄",
+   "长兄"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "blina",
+  "ipa": "ˈbli.na",
+  "pos": "n",
+  "zh": [
+   "幼弟",
+   "幼妹",
+   "弟妹"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "kestra",
+  "ipa": "ˈkes.tra",
+  "pos": "n",
+  "zh": [
+   "姐",
+   "长姐"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "gwailn",
+  "ipa": "gwai̯ln",
+  "pos": "n",
+  "zh": [
+   "双胞胎",
+   "孪生子",
+   "孪生"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "úren",
+  "ipa": "ˈuː.ren",
+  "pos": "n",
+  "zh": [
+   "婴儿",
+   "乳儿",
+   "襁褓儿"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "staun",
+  "ipa": "stau̯n",
+  "pos": "n",
+  "zh": [
+   "青年",
+   "壮龄者",
+   "成年新人"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "firwyn",
+  "ipa": "ˈfir.wyn",
+  "pos": "n",
+  "zh": [
+   "老者",
+   "长者",
+   "年迈者"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "froisel",
+  "ipa": "ˈfroi̯.sel",
+  "pos": "n",
+  "zh": [
+   "陌生人",
+   "外人",
+   "不相识者"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "nabrin",
+  "ipa": "ˈna.brin",
+  "pos": "n",
+  "zh": [
+   "邻人",
+   "邻居",
+   "街坊"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "skoirn",
+  "ipa": "skoi̯rn",
+  "pos": "n",
+  "zh": [
+   "仇敌",
+   "敌人",
+   "仇雠"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "brailn",
+  "ipa": "brai̯ln",
+  "pos": "n",
+  "zh": [
+   "盟友",
+   "战友"
+  ],
+  "cls": "strong",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "plenor",
+  "ipa": "ˈple.nor",
+  "pos": "n",
+  "zh": [
+   "同辈",
+   "同龄人",
+   "平辈"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "dyrsa",
+  "ipa": "ˈdyr.sa",
+  "pos": "n",
+  "zh": [
+   "独子",
+   "独女",
+   "单生子女"
+  ],
+  "cls": "weak",
+  "field": "人与亲属"
+ },
+ {
+  "roman": "kren",
+  "ipa": "kren",
+  "pos": "n",
+  "zh": [
+   "肩",
+   "肩膀"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "hlím",
+  "ipa": "xliːm",
+  "pos": "n",
+  "zh": [
+   "肘",
+   "手肘"
+  ],
+  "cls": "strong",
+  "field": "身体"
+ },
+ {
+  "roman": "vloth",
+  "ipa": "vloθ",
+  "pos": "n",
+  "zh": [
+   "腕",
+   "手腕"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "fjeln",
+  "ipa": "fjeln",
+  "pos": "n",
+  "zh": [
+   "膝",
+   "膝盖"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "draul",
+  "ipa": "drau̯l",
+  "pos": "n",
+  "zh": [
+   "踝",
+   "脚踝"
+  ],
+  "cls": "strong",
+  "field": "身体"
+ },
+ {
+  "roman": "kloth",
+  "ipa": "kloθ",
+  "pos": "n",
+  "zh": [
+   "下巴",
+   "颏"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "gwelm",
+  "ipa": "gwelm",
+  "pos": "n",
+  "zh": [
+   "额",
+   "额头"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "tjarn",
+  "ipa": "tjarn",
+  "pos": "n",
+  "zh": [
+   "眉毛",
+   "眉"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "kleth",
+  "ipa": "kleθ",
+  "pos": "n",
+  "zh": [
+   "脸颊",
+   "面颊"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "sweln",
+  "ipa": "sweln",
+  "pos": "n",
+  "zh": [
+   "喉咙",
+   "咽喉"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "threng",
+  "ipa": "θreŋ",
+  "pos": "n",
+  "zh": [
+   "胸",
+   "胸膛"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "frilm",
+  "ipa": "frilm",
+  "pos": "n",
+  "zh": [
+   "肋骨",
+   "肋"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "plin",
+  "ipa": "plin",
+  "pos": "n",
+  "zh": [
+   "指甲",
+   "爪"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "kraun",
+  "ipa": "krau̯n",
+  "pos": "n",
+  "zh": [
+   "脊柱",
+   "脊"
+  ],
+  "cls": "strong",
+  "field": "身体"
+ },
+ {
+  "roman": "gluth",
+  "ipa": "gluθ",
+  "pos": "n",
+  "zh": [
+   "指节",
+   "指关节"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "sparn",
+  "ipa": "sparn",
+  "pos": "n",
+  "zh": [
+   "手掌",
+   "掌心"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "hwoln",
+  "ipa": "xwoln",
+  "pos": "n",
+  "zh": [
+   "脚跟",
+   "后跟"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "drir",
+  "ipa": "drir",
+  "pos": "n",
+  "zh": [
+   "肝",
+   "肝脏"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "bléth",
+  "ipa": "bleːθ",
+  "pos": "n",
+  "zh": [
+   "肺",
+   "肺脏"
+  ],
+  "cls": "strong",
+  "field": "身体"
+ },
+ {
+  "roman": "skoln",
+  "ipa": "skoln",
+  "pos": "n",
+  "zh": [
+   "肾",
+   "肾脏"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "throls",
+  "ipa": "θrols",
+  "pos": "n",
+  "zh": [
+   "肠",
+   "肠子"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "swelm",
+  "ipa": "swelm",
+  "pos": "n",
+  "zh": [
+   "汗",
+   "汗水"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "fjun",
+  "ipa": "fjun",
+  "pos": "n",
+  "zh": [
+   "脉搏",
+   "脉"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "hlau",
+  "ipa": "xlau̯",
+  "pos": "n",
+  "zh": [
+   "唾液",
+   "口水"
+  ],
+  "cls": "strong",
+  "field": "身体"
+ },
+ {
+  "roman": "skorn",
+  "ipa": "skorn",
+  "pos": "n",
+  "zh": [
+   "疤痕",
+   "疤"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "vlún",
+  "ipa": "vluːn",
+  "pos": "n",
+  "zh": [
+   "瘀青",
+   "瘀"
+  ],
+  "cls": "strong",
+  "field": "身体"
+ },
+ {
+  "roman": "thrøn",
+  "ipa": "θrøn",
+  "pos": "n",
+  "zh": [
+   "疼痛",
+   "痛处"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "nyrn",
+  "ipa": "nyrn",
+  "pos": "n",
+  "zh": [
+   "颈背",
+   "颈侧"
+  ],
+  "cls": "weak",
+  "field": "身体"
+ },
+ {
+  "roman": "flín",
+  "ipa": "fliːn",
+  "pos": "n",
+  "zh": [
+   "崖",
+   "悬崖",
+   "峭壁"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "skairn",
+  "ipa": "skai̯rn",
+  "pos": "n",
+  "zh": [
+   "山脊",
+   "岭脊"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "nuln",
+  "ipa": "nuln",
+  "pos": "n",
+  "zh": [
+   "岸",
+   "河岸"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "vaurn",
+  "ipa": "vau̯rn",
+  "pos": "n",
+  "zh": [
+   "峰",
+   "山巅"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "hlem",
+  "ipa": "xlem",
+  "pos": "n",
+  "zh": [
+   "坡",
+   "斜坡"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "kleith",
+  "ipa": "klei̯θ",
+  "pos": "n",
+  "zh": [
+   "峡谷",
+   "深谷"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "holm",
+  "ipa": "xolm",
+  "pos": "n",
+  "zh": [
+   "岛",
+   "小岛"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "styn",
+  "ipa": "styn",
+  "pos": "n",
+  "zh": [
+   "泉",
+   "涌泉"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "droln",
+  "ipa": "droln",
+  "pos": "n",
+  "zh": [
+   "池",
+   "水塘"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "hwalm",
+  "ipa": "xwalm",
+  "pos": "n",
+  "zh": [
+   "浪",
+   "波浪"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "tíl",
+  "ipa": "tiːl",
+  "pos": "n",
+  "zh": [
+   "潮",
+   "潮汐"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "frøth",
+  "ipa": "frøθ",
+  "pos": "n",
+  "zh": [
+   "泡沫",
+   "浪沫"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "glúr",
+  "ipa": "gluːr",
+  "pos": "n",
+  "zh": [
+   "水流",
+   "流水",
+   "湍流"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "krón",
+  "ipa": "kroːn",
+  "pos": "n",
+  "zh": [
+   "瀑布"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "rís",
+  "ipa": "riːs",
+  "pos": "n",
+  "zh": [
+   "霜"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "hairn",
+  "ipa": "xai̯rn",
+  "pos": "n",
+  "zh": [
+   "雹",
+   "冰雹"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "drøm",
+  "ipa": "drøm",
+  "pos": "n",
+  "zh": [
+   "雷",
+   "雷鸣"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "vlís",
+  "ipa": "vliːs",
+  "pos": "n",
+  "zh": [
+   "闪电"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "swein",
+  "ipa": "swei̯n",
+  "pos": "n",
+  "zh": [
+   "微风",
+   "轻风"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "shiln",
+  "ipa": "ʃiln",
+  "pos": "n",
+  "zh": [
+   "细雨",
+   "毛毛雨"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "doir",
+  "ipa": "doi̯r",
+  "pos": "n",
+  "zh": [
+   "露",
+   "露水"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "bríl",
+  "ipa": "briːl",
+  "pos": "n",
+  "zh": [
+   "彩虹"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "kjaun",
+  "ipa": "kjau̯n",
+  "pos": "n",
+  "zh": [
+   "拂晓",
+   "破晓"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "steln",
+  "ipa": "steln",
+  "pos": "n",
+  "zh": [
+   "星座"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "kluth",
+  "ipa": "kluθ",
+  "pos": "n",
+  "zh": [
+   "黏土",
+   "陶土"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "greln",
+  "ipa": "greln",
+  "pos": "n",
+  "zh": [
+   "砾石",
+   "碎石"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "emlu",
+  "ipa": "ˈem.lu",
+  "pos": "n",
+  "zh": [
+   "余烬",
+   "炭烬"
+  ],
+  "cls": "weak",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "felm",
+  "ipa": "felm",
+  "pos": "n",
+  "zh": [
+   "狐",
+   "狐狸"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "laun",
+  "ipa": "lau̯n",
+  "pos": "n",
+  "zh": [
+   "野兔",
+   "兔"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "greth",
+  "ipa": "greθ",
+  "pos": "n",
+  "zh": [
+   "野猪"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "solth",
+  "ipa": "solθ",
+  "pos": "n",
+  "zh": [
+   "海豹"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "hwáln",
+  "ipa": "xwaːln",
+  "pos": "n",
+  "zh": [
+   "鲸",
+   "鲸鱼"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "muls",
+  "ipa": "muls",
+  "pos": "n",
+  "zh": [
+   "鼠",
+   "老鼠"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "úlom",
+  "ipa": "ˈuː.lom",
+  "pos": "n",
+  "zh": [
+   "枭",
+   "猫头鹰"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "kráth",
+  "ipa": "kraːθ",
+  "pos": "n",
+  "zh": [
+   "渡鸦",
+   "乌鸦"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "piln",
+  "ipa": "piln",
+  "pos": "n",
+  "zh": [
+   "麻雀",
+   "雀"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "thrárn",
+  "ipa": "θraːrn",
+  "pos": "n",
+  "zh": [
+   "鲑",
+   "三文鱼"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "droir",
+  "ipa": "droi̯r",
+  "pos": "n",
+  "zh": [
+   "鳟",
+   "鳟鱼"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "els",
+  "ipa": "els",
+  "pos": "n",
+  "zh": [
+   "鳗",
+   "鳗鱼"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "kraln",
+  "ipa": "kraln",
+  "pos": "n",
+  "zh": [
+   "蟹",
+   "螃蟹"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "shelm",
+  "ipa": "ʃelm",
+  "pos": "n",
+  "zh": [
+   "贝",
+   "贝类"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "mauth",
+  "ipa": "mau̯θ",
+  "pos": "n",
+  "zh": [
+   "蛾",
+   "飞蛾"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "pirm",
+  "ipa": "pirm",
+  "pos": "n",
+  "zh": [
+   "蚁",
+   "蚂蚁"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "kreln",
+  "ipa": "kreln",
+  "pos": "n",
+  "zh": [
+   "蜘蛛"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "gorm",
+  "ipa": "gorm",
+  "pos": "n",
+  "zh": [
+   "甲虫"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "furth",
+  "ipa": "furθ",
+  "pos": "n",
+  "zh": [
+   "松",
+   "松树"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "birth",
+  "ipa": "birθ",
+  "pos": "n",
+  "zh": [
+   "桦",
+   "桦树"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "airn",
+  "ipa": "ai̯rn",
+  "pos": "n",
+  "zh": [
+   "橡",
+   "橡树"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "flerm",
+  "ipa": "flerm",
+  "pos": "n",
+  "zh": [
+   "蕨",
+   "蕨类"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "raul",
+  "ipa": "rau̯l",
+  "pos": "n",
+  "zh": [
+   "芦苇",
+   "苇"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "thorm",
+  "ipa": "θorm",
+  "pos": "n",
+  "zh": [
+   "刺",
+   "棘刺"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "blarn",
+  "ipa": "blarn",
+  "pos": "n",
+  "zh": [
+   "浆果",
+   "莓"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "bruth",
+  "ipa": "bruθ",
+  "pos": "n",
+  "zh": [
+   "树皮"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "glon",
+  "ipa": "glon",
+  "pos": "n",
+  "zh": [
+   "花苞",
+   "蓓蕾"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "viln",
+  "ipa": "viln",
+  "pos": "n",
+  "zh": [
+   "藤",
+   "藤蔓"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "lirs",
+  "ipa": "lirs",
+  "pos": "n",
+  "zh": [
+   "地衣"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "hlaul",
+  "ipa": "xlau̯l",
+  "pos": "n",
+  "zh": [
+   "苔",
+   "苔藓"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "kølm",
+  "ipa": "kølm",
+  "pos": "n",
+  "zh": [
+   "粥",
+   "麦糊"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "thóran",
+  "ipa": "ˈθoː.ran",
+  "pos": "n",
+  "zh": [
+   "麦酒",
+   "淡啤"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "brøn",
+  "ipa": "brøn",
+  "pos": "n",
+  "zh": [
+   "肉排",
+   "整块炙肉"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "skýr",
+  "ipa": "skyːr",
+  "pos": "n",
+  "zh": [
+   "奶酪",
+   "凝乳干酪"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "hwíl",
+  "ipa": "xwiːl",
+  "pos": "n",
+  "zh": [
+   "黄油",
+   "乳脂"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "melth",
+  "ipa": "melθ",
+  "pos": "n",
+  "zh": [
+   "酸奶",
+   "凝乳"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "krun",
+  "ipa": "krun",
+  "pos": "n",
+  "zh": [
+   "坚果",
+   "核仁"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "gweln",
+  "ipa": "gweln",
+  "pos": "n",
+  "zh": [
+   "蘑菇",
+   "菌"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "drøs",
+  "ipa": "drøs",
+  "pos": "n",
+  "zh": [
+   "茶",
+   "草茶"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "línu",
+  "ipa": "ˈliː.nu",
+  "pos": "n",
+  "zh": [
+   "饮水",
+   "净水"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "shern",
+  "ipa": "ʃern",
+  "pos": "n",
+  "zh": [
+   "炖菜",
+   "焖菜"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "thráki",
+  "ipa": "ˈθraː.ki",
+  "pos": "v",
+  "zh": [
+   "烤",
+   "炙"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "sølm",
+  "ipa": "sølm",
+  "pos": "v",
+  "zh": [
+   "炖",
+   "文火煮"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "vaisu",
+  "ipa": "ˈvai̯.su",
+  "pos": "v",
+  "zh": [
+   "发酵",
+   "使起泡"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "grøm",
+  "ipa": "grøm",
+  "pos": "v",
+  "zh": [
+   "熏",
+   "烟熏"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "thysa",
+  "ipa": "ˈθy.sa",
+  "pos": "v",
+  "zh": [
+   "腌",
+   "盐渍"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "tréla",
+  "ipa": "ˈtreː.la",
+  "pos": "v",
+  "zh": [
+   "揉",
+   "和面"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "plur",
+  "ipa": "plur",
+  "pos": "v",
+  "zh": [
+   "磨",
+   "碾碎"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "swárn",
+  "ipa": "swaːrn",
+  "pos": "adj",
+  "zh": [
+   "酸的",
+   "发酸的"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "keth",
+  "ipa": "keθ",
+  "pos": "adj",
+  "zh": [
+   "苦的"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "óma",
+  "ipa": "ˈoː.ma",
+  "pos": "adj",
+  "zh": [
+   "鲜味的",
+   "醇厚的"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "rilm",
+  "ipa": "rilm",
+  "pos": "adj",
+  "zh": [
+   "熟的",
+   "煮熟的"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "fylth",
+  "ipa": "fylθ",
+  "pos": "adj",
+  "zh": [
+   "馊的",
+   "腐坏的"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "grén",
+  "ipa": "greːn",
+  "pos": "adj",
+  "zh": [
+   "甜的"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "krath",
+  "ipa": "kraθ",
+  "pos": "n",
+  "zh": [
+   "斧"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "trøm",
+  "ipa": "trøm",
+  "pos": "n",
+  "zh": [
+   "锤",
+   "槌"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "gralm",
+  "ipa": "gralm",
+  "pos": "n",
+  "zh": [
+   "凿"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "prin",
+  "ipa": "prin",
+  "pos": "n",
+  "zh": [
+   "针"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "threl",
+  "ipa": "θrel",
+  "pos": "n",
+  "zh": [
+   "锥"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "klath",
+  "ipa": "klaθ",
+  "pos": "n",
+  "zh": [
+   "篮",
+   "筐"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "fjøs",
+  "ipa": "fjøs",
+  "pos": "n",
+  "zh": [
+   "锅",
+   "釜"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "skøl",
+  "ipa": "skøl",
+  "pos": "n",
+  "zh": [
+   "碗"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "wolm",
+  "ipa": "wolm",
+  "pos": "n",
+  "zh": [
+   "城垣",
+   "壁垒",
+   "堡墙"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "gwírn",
+  "ipa": "gwiːrn",
+  "pos": "n",
+  "zh": [
+   "窗"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "plarn",
+  "ipa": "plarn",
+  "pos": "n",
+  "zh": [
+   "地板"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "morth",
+  "ipa": "morθ",
+  "pos": "n",
+  "zh": [
+   "梁",
+   "椽"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "kwiln",
+  "ipa": "kwiln",
+  "pos": "n",
+  "zh": [
+   "门槛"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "skøln",
+  "ipa": "skøln",
+  "pos": "n",
+  "zh": [
+   "屋檐",
+   "檐"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "draum",
+  "ipa": "drau̯m",
+  "pos": "n",
+  "zh": [
+   "斗篷"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "stail",
+  "ipa": "stai̯l",
+  "pos": "n",
+  "zh": [
+   "靴"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "grún",
+  "ipa": "gruːn",
+  "pos": "n",
+  "zh": [
+   "腰带"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "flís",
+  "ipa": "fliːs",
+  "pos": "n",
+  "zh": [
+   "纺线",
+   "纱"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "blís",
+  "ipa": "bliːs",
+  "pos": "n",
+  "zh": [
+   "羊毛"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "frein",
+  "ipa": "frei̯n",
+  "pos": "n",
+  "zh": [
+   "帽"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "klúth",
+  "ipa": "kluːθ",
+  "pos": "n",
+  "zh": [
+   "长袍"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "vaun",
+  "ipa": "vau̯n",
+  "pos": "n",
+  "zh": [
+   "火把"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "klei",
+  "ipa": "klei̯",
+  "pos": "n",
+  "zh": [
+   "燧石"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "vlau",
+  "ipa": "vlau̯",
+  "pos": "v",
+  "zh": [
+   "匍匐",
+   "爬行"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "plong",
+  "ipa": "ploŋ",
+  "pos": "v",
+  "zh": [
+   "跳跃",
+   "跃"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "flith",
+  "ipa": "fliθ",
+  "pos": "v",
+  "zh": [
+   "逃离",
+   "逃"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "grail",
+  "ipa": "grai̯l",
+  "pos": "v",
+  "zh": [
+   "追逐",
+   "追"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "thraun",
+  "ipa": "θrau̯n",
+  "pos": "v",
+  "zh": [
+   "聚集",
+   "集结"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "praun",
+  "ipa": "prau̯n",
+  "pos": "v",
+  "zh": [
+   "移栽",
+   "栽苗"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "réth",
+  "ipa": "reːθ",
+  "pos": "v",
+  "zh": [
+   "收割",
+   "刈"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "gwirn",
+  "ipa": "gwirn",
+  "pos": "v",
+  "zh": [
+   "研磨",
+   "磨"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "pralm",
+  "ipa": "pralm",
+  "pos": "v",
+  "zh": [
+   "按压",
+   "压"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "gulth",
+  "ipa": "gulθ",
+  "pos": "v",
+  "zh": [
+   "吞咽",
+   "咽"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "jáng",
+  "ipa": "jaːŋ",
+  "pos": "v",
+  "zh": [
+   "打呵欠"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "hail",
+  "ipa": "xai̯l",
+  "pos": "v",
+  "zh": [
+   "治愈",
+   "医治"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "wern",
+  "ipa": "wern",
+  "pos": "v",
+  "zh": [
+   "照看",
+   "看护"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "varn",
+  "ipa": "varn",
+  "pos": "v",
+  "zh": [
+   "守卫",
+   "护卫"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "kraus",
+  "ipa": "krau̯s",
+  "pos": "v",
+  "zh": [
+   "碾碎",
+   "压碎"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "glaith",
+  "ipa": "glai̯θ",
+  "pos": "v",
+  "zh": [
+   "滑行",
+   "滑动"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "flørn",
+  "ipa": "flørn",
+  "pos": "v",
+  "zh": [
+   "剥皮",
+   "去皮"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "hweth",
+  "ipa": "xweθ",
+  "pos": "n",
+  "zh": [
+   "希望",
+   "盼望",
+   "期许"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "nyrs",
+  "ipa": "nyrs",
+  "pos": "n",
+  "zh": [
+   "嫉妒",
+   "妒忌",
+   "艳羡"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "stárn",
+  "ipa": "staːrn",
+  "pos": "v",
+  "zh": [
+   "凝视",
+   "注视",
+   "盯视"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "hlýn",
+  "ipa": "xlyːn",
+  "pos": "v",
+  "zh": [
+   "聆听",
+   "倾听",
+   "谛听"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "waun",
+  "ipa": "wau̯n",
+  "pos": "n",
+  "zh": [
+   "惊奇",
+   "诧异",
+   "惊叹"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "kres",
+  "ipa": "kres",
+  "pos": "v",
+  "zh": [
+   "决定",
+   "决意",
+   "裁定"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "dholn",
+  "ipa": "ðoln",
+  "pos": "n",
+  "zh": [
+   "耐心",
+   "忍耐",
+   "坚忍"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "kaurn",
+  "ipa": "kau̯rn",
+  "pos": "n",
+  "zh": [
+   "勇气",
+   "胆识",
+   "勇毅"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "thrail",
+  "ipa": "θrai̯l",
+  "pos": "n",
+  "zh": [
+   "战栗",
+   "颤栗",
+   "悚然"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "grauth",
+  "ipa": "grau̯θ",
+  "pos": "adj",
+  "zh": [
+   "巨大的",
+   "庞大的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "króln",
+  "ipa": "kroːln",
+  "pos": "adj",
+  "zh": [
+   "圆的",
+   "浑圆的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "flath",
+  "ipa": "flaθ",
+  "pos": "adj",
+  "zh": [
+   "扁的",
+   "扁平的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "spein",
+  "ipa": "spei̯n",
+  "pos": "adj",
+  "zh": [
+   "尖的",
+   "尖锐的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "hóln",
+  "ipa": "xoːln",
+  "pos": "adj",
+  "zh": [
+   "空心的",
+   "中空的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "tang",
+  "ipa": "taŋ",
+  "pos": "adj",
+  "zh": [
+   "硬的",
+   "坚硬的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "klúm",
+  "ipa": "kluːm",
+  "pos": "adj",
+  "zh": [
+   "黏的",
+   "黏稠的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "pálm",
+  "ipa": "paːlm",
+  "pos": "adj",
+  "zh": [
+   "苍白的",
+   "惨白的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "thurm",
+  "ipa": "θurm",
+  "pos": "adj",
+  "zh": [
+   "暗的",
+   "黯淡的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "gwáln",
+  "ipa": "gwaːln",
+  "pos": "adj",
+  "zh": [
+   "金色的",
+   "金黄的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "grin",
+  "ipa": "grin",
+  "pos": "adj",
+  "zh": [
+   "灰色的",
+   "灰白的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "múth",
+  "ipa": "muːθ",
+  "pos": "adj",
+  "zh": [
+   "腐烂的",
+   "朽坏的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "kwis",
+  "ipa": "kwis",
+  "pos": "adj",
+  "zh": [
+   "洁净的",
+   "干净的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "vein",
+  "ipa": "vei̯n",
+  "pos": "adj",
+  "zh": [
+   "清澈的",
+   "透明的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "klovan",
+  "ipa": "ˈklo.van",
+  "pos": "n",
+  "zh": [
+   "核心",
+   "中心"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "hlirn",
+  "ipa": "xlirn",
+  "pos": "n",
+  "zh": [
+   "角落",
+   "隅"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "skeith",
+  "ipa": "skei̯θ",
+  "pos": "n",
+  "zh": [
+   "缝隙",
+   "裂缝"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "duln",
+  "ipa": "duln",
+  "pos": "n",
+  "zh": [
+   "深度",
+   "深处"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "gleith",
+  "ipa": "glei̯θ",
+  "pos": "n",
+  "zh": [
+   "距离",
+   "间距"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "marth",
+  "ipa": "marθ",
+  "pos": "n",
+  "zh": [
+   "边界",
+   "疆界"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "tirn",
+  "ipa": "tirn",
+  "pos": "n",
+  "zh": [
+   "小径",
+   "小路"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "krein",
+  "ipa": "krei̯n",
+  "pos": "n",
+  "zh": [
+   "交叉口",
+   "岔路"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "blin",
+  "ipa": "blin",
+  "pos": "n",
+  "zh": [
+   "片刻",
+   "瞬间"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "aunar",
+  "ipa": "ˈau̯.nar",
+  "pos": "n",
+  "zh": [
+   "时代",
+   "纪元"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "selvoth",
+  "ipa": "ˈsel.voθ",
+  "pos": "n",
+  "zh": [
+   "季节",
+   "时令"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "praithen",
+  "ipa": "ˈprai̯.θen",
+  "pos": "n",
+  "zh": [
+   "太初",
+   "起初"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "delth",
+  "ipa": "delθ",
+  "pos": "n",
+  "zh": [
+   "时期",
+   "时段"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "traun",
+  "ipa": "trau̯n",
+  "pos": "n",
+  "zh": [
+   "延迟",
+   "耽搁"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "aivarn",
+  "ipa": "ˈai̯.varn",
+  "pos": "adv",
+  "zh": [
+   "永远",
+   "永恒"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "neivos",
+  "ipa": "ˈnei̯.vos",
+  "pos": "adv",
+  "zh": [
+   "从不",
+   "绝不"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "fyrm",
+  "ipa": "fyrm",
+  "pos": "adj",
+  "zh": [
+   "最先",
+   "首个"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "myrdoth",
+  "ipa": "ˈmyr.doθ",
+  "pos": "adj",
+  "zh": [
+   "最后",
+   "末尾"
+  ],
+  "cls": "weak",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "vlon",
+  "ipa": "vlon",
+  "pos": "n",
+  "zh": [
+   "承诺",
+   "誓约"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "skoin",
+  "ipa": "skoi̯n",
+  "pos": "n",
+  "zh": [
+   "故事",
+   "传说"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "mýrn",
+  "ipa": "myːrn",
+  "pos": "n",
+  "zh": [
+   "议事会",
+   "会议"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "plen",
+  "ipa": "plen",
+  "pos": "n",
+  "zh": [
+   "集市",
+   "市场"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "tráln",
+  "ipa": "traːln",
+  "pos": "n",
+  "zh": [
+   "战争",
+   "战事"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "faurn",
+  "ipa": "fau̯rn",
+  "pos": "n",
+  "zh": [
+   "债",
+   "欠负"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "drun",
+  "ipa": "drun",
+  "pos": "n",
+  "zh": [
+   "命令",
+   "号令"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "kaith",
+  "ipa": "kai̯θ",
+  "pos": "n",
+  "zh": [
+   "盟约",
+   "结盟"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "grøln",
+  "ipa": "grøln",
+  "pos": "n",
+  "zh": [
+   "争吵",
+   "口角"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "vels",
+  "ipa": "vels",
+  "pos": "v",
+  "zh": [
+   "责备",
+   "斥责"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "broin",
+  "ipa": "broi̯n",
+  "pos": "n",
+  "zh": [
+   "休战",
+   "停战"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "háln",
+  "ipa": "xaːln",
+  "pos": "n",
+  "zh": [
+   "酋长",
+   "族长"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "tuls",
+  "ipa": "tuls",
+  "pos": "n",
+  "zh": [
+   "仆",
+   "侍从"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "speln",
+  "ipa": "speln",
+  "pos": "n",
+  "zh": [
+   "头衔",
+   "名号"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "dhóm",
+  "ipa": "ðoːm",
+  "pos": "n",
+  "zh": [
+   "氏族",
+   "宗族"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "voirn",
+  "ipa": "voi̯rn",
+  "pos": "n",
+  "zh": [
+   "请愿",
+   "陈情"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "húrn",
+  "ipa": "xuːrn",
+  "pos": "n",
+  "zh": [
+   "呼喊",
+   "呐喊"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "sketh",
+  "ipa": "skeθ",
+  "pos": "n",
+  "zh": [
+   "谎言",
+   "虚言"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "nairn",
+  "ipa": "nai̯rn",
+  "pos": "n",
+  "zh": [
+   "命运",
+   "天命"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "frøl",
+  "ipa": "frøl",
+  "pos": "n",
+  "zh": [
+   "自由"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "methel",
+  "ipa": "ˈme.θel",
+  "pos": "n",
+  "zh": [
+   "记忆",
+   "记性"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "hwýs",
+  "ipa": "xwyːs",
+  "pos": "n",
+  "zh": [
+   "寂静",
+   "静谧"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "leith",
+  "ipa": "lei̯θ",
+  "pos": "n",
+  "zh": [
+   "回声",
+   "回响"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "grym",
+  "ipa": "grym",
+  "pos": "n",
+  "zh": [
+   "秘密",
+   "隐私"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "threin",
+  "ipa": "θrei̯n",
+  "pos": "n",
+  "zh": [
+   "谜",
+   "谜团"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "vøs",
+  "ipa": "vøs",
+  "pos": "n",
+  "zh": [
+   "预兆",
+   "征兆"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "parn",
+  "ipa": "parn",
+  "pos": "n",
+  "zh": [
+   "部分",
+   "局部"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "haith",
+  "ipa": "xai̯θ",
+  "pos": "n",
+  "zh": [
+   "一半",
+   "半份"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "gwolm",
+  "ipa": "gwolm",
+  "pos": "n",
+  "zh": [
+   "一群",
+   "群体"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "glína",
+  "ipa": "ˈgliː.na",
+  "pos": "n",
+  "zh": [
+   "相似",
+   "近似"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "dhirs",
+  "ipa": "ðirs",
+  "pos": "n",
+  "zh": [
+   "差异",
+   "不同"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "stólm",
+  "ipa": "stoːlm",
+  "pos": "n",
+  "zh": [
+   "秩序",
+   "次序"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "skalm",
+  "ipa": "skalm",
+  "pos": "n",
+  "zh": [
+   "混沌",
+   "无序"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "wérth",
+  "ipa": "weːrθ",
+  "pos": "n",
+  "zh": [
+   "价值",
+   "价"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "flún",
+  "ipa": "fluːn",
+  "pos": "n",
+  "zh": [
+   "匮乏",
+   "短缺"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "rauth",
+  "ipa": "rau̯θ",
+  "pos": "n",
+  "zh": [
+   "丰足",
+   "充裕"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "praith",
+  "ipa": "prai̯θ",
+  "pos": "n",
+  "zh": [
+   "答案",
+   "谜底"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "vairoth",
+  "ipa": "ˈvai̯.roθ",
+  "pos": "n",
+  "zh": [
+   "彗星"
+  ],
+  "cls": "strong",
+  "field": "自然与天象"
+ },
+ {
+  "roman": "swéla",
+  "ipa": "ˈsweː.la",
+  "pos": "n",
+  "zh": [
+   "天鹅"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "skei",
+  "ipa": "skei̯",
+  "pos": "n",
+  "zh": [
+   "海鸥",
+   "鸥"
+  ],
+  "cls": "strong",
+  "field": "动植物"
+ },
+ {
+  "roman": "plir",
+  "ipa": "plir",
+  "pos": "n",
+  "zh": [
+   "小枝",
+   "嫩枝"
+  ],
+  "cls": "weak",
+  "field": "动植物"
+ },
+ {
+  "roman": "frírn",
+  "ipa": "friːrn",
+  "pos": "n",
+  "zh": [
+   "面粉",
+   "磨碎的谷物"
+  ],
+  "cls": "strong",
+  "field": "食物"
+ },
+ {
+  "roman": "hlus",
+  "ipa": "xlus",
+  "pos": "adj",
+  "zh": [
+   "生的",
+   "未熟的"
+  ],
+  "cls": "weak",
+  "field": "食物"
+ },
+ {
+  "roman": "skairs",
+  "ipa": "skai̯rs",
+  "pos": "n",
+  "zh": [
+   "锯"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "hwoirn",
+  "ipa": "xwoi̯rn",
+  "pos": "n",
+  "zh": [
+   "钩"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "braun",
+  "ipa": "brau̯n",
+  "pos": "n",
+  "zh": [
+   "桶",
+   "提桶"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "spern",
+  "ipa": "spern",
+  "pos": "n",
+  "zh": [
+   "袋",
+   "囊"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "sweilm",
+  "ipa": "swei̯lm",
+  "pos": "n",
+  "zh": [
+   "手套",
+   "连指手套"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "vlóth",
+  "ipa": "vloːθ",
+  "pos": "n",
+  "zh": [
+   "兽皮",
+   "毛皮"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "fjuln",
+  "ipa": "fjuln",
+  "pos": "n",
+  "zh": [
+   "纺锤",
+   "线轴"
+  ],
+  "cls": "weak",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "hlaur",
+  "ipa": "xlau̯r",
+  "pos": "n",
+  "zh": [
+   "勺",
+   "长柄勺"
+  ],
+  "cls": "strong",
+  "field": "工具与居所"
+ },
+ {
+  "roman": "krail",
+  "ipa": "krai̯l",
+  "pos": "v",
+  "zh": [
+   "攀爬",
+   "爬"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "drífel",
+  "ipa": "ˈdriː.fel",
+  "pos": "v",
+  "zh": [
+   "漂浮",
+   "漂"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "selvir",
+  "ipa": "ˈsel.vir",
+  "pos": "v",
+  "zh": [
+   "下沉",
+   "沉"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "grúthil",
+  "ipa": "ˈgruː.θil",
+  "pos": "v",
+  "zh": [
+   "锻造",
+   "锻"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "delgir",
+  "ipa": "ˈdel.gir",
+  "pos": "v",
+  "zh": [
+   "挖掘",
+   "掘"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "klórn",
+  "ipa": "kloːrn",
+  "pos": "v",
+  "zh": [
+   "倾倒",
+   "倒"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "maisel",
+  "ipa": "ˈmai̯.sel",
+  "pos": "v",
+  "zh": [
+   "搅拌",
+   "混"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "flekir",
+  "ipa": "ˈfle.kir",
+  "pos": "v",
+  "zh": [
+   "折叠",
+   "折"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "trelm",
+  "ipa": "trelm",
+  "pos": "v",
+  "zh": [
+   "撕",
+   "撕裂"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "steirn",
+  "ipa": "stei̯rn",
+  "pos": "v",
+  "zh": [
+   "伸展",
+   "拉伸"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "shivern",
+  "ipa": "ˈʃi.vern",
+  "pos": "v",
+  "zh": [
+   "颤抖",
+   "战栗"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "lóran",
+  "ipa": "ˈloː.ran",
+  "pos": "v",
+  "zh": [
+   "倚靠",
+   "倚"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "krunel",
+  "ipa": "ˈkru.nel",
+  "pos": "v",
+  "zh": [
+   "下跪",
+   "跪"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "bróth",
+  "ipa": "broːθ",
+  "pos": "v",
+  "zh": [
+   "弯腰",
+   "躬身"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "fostel",
+  "ipa": "ˈfo.stel",
+  "pos": "v",
+  "zh": [
+   "哺育",
+   "喂"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "skulm",
+  "ipa": "skulm",
+  "pos": "v",
+  "zh": [
+   "庇护",
+   "遮蔽"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "brenel",
+  "ipa": "ˈbre.nel",
+  "pos": "v",
+  "zh": [
+   "烧焦",
+   "炙烤"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "kraith",
+  "ipa": "krai̯θ",
+  "pos": "v",
+  "zh": [
+   "攫取",
+   "夺取"
+  ],
+  "cls": "strong",
+  "field": "动作"
+ },
+ {
+  "roman": "prisel",
+  "ipa": "ˈpri.sel",
+  "pos": "v",
+  "zh": [
+   "喷洒",
+   "洒"
+  ],
+  "cls": "weak",
+  "field": "动作"
+ },
+ {
+  "roman": "shúrn",
+  "ipa": "ʃuːrn",
+  "pos": "n",
+  "zh": [
+   "羞耻",
+   "羞愧",
+   "惭愧"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "prain",
+  "ipa": "prai̯n",
+  "pos": "n",
+  "zh": [
+   "骄傲",
+   "自豪",
+   "矜傲"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "líron",
+  "ipa": "ˈliː.ron",
+  "pos": "n",
+  "zh": [
+   "渴望",
+   "热望",
+   "企盼"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "thaumel",
+  "ipa": "ˈθau̯.mel",
+  "pos": "n",
+  "zh": [
+   "感激",
+   "感恩",
+   "谢忱"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "ogrein",
+  "ipa": "ˈo.grei̯n",
+  "pos": "n",
+  "zh": [
+   "敬畏",
+   "畏敬",
+   "惊畏"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "liseln",
+  "ipa": "ˈli.seln",
+  "pos": "n",
+  "zh": [
+   "平静",
+   "宁静",
+   "安详"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "glimeth",
+  "ipa": "ˈgli.meθ",
+  "pos": "v",
+  "zh": [
+   "瞥",
+   "一瞥",
+   "扫视"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "saveth",
+  "ipa": "ˈsa.veθ",
+  "pos": "v",
+  "zh": [
+   "尝",
+   "品尝",
+   "味尝"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "grithel",
+  "ipa": "ˈgri.θel",
+  "pos": "v",
+  "zh": [
+   "触",
+   "触碰",
+   "抚触"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "vairos",
+  "ipa": "ˈvai̯.ros",
+  "pos": "v",
+  "zh": [
+   "察觉",
+   "觉知",
+   "觉察"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "kwisel",
+  "ipa": "ˈkwi.sel",
+  "pos": "v",
+  "zh": [
+   "怀疑",
+   "疑惑",
+   "起疑"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "traul",
+  "ipa": "trau̯l",
+  "pos": "v",
+  "zh": [
+   "相信",
+   "信任",
+   "笃信"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "laumeth",
+  "ipa": "ˈlau̯.meθ",
+  "pos": "v",
+  "zh": [
+   "做梦",
+   "梦见",
+   "入梦"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "fainel",
+  "ipa": "ˈfai̯.nel",
+  "pos": "v",
+  "zh": [
+   "想象",
+   "设想",
+   "遐想"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "viskel",
+  "ipa": "ˈvi.skel",
+  "pos": "n",
+  "zh": [
+   "智慧",
+   "睿智",
+   "明智"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "meluth",
+  "ipa": "ˈme.luθ",
+  "pos": "n",
+  "zh": [
+   "温柔",
+   "柔和",
+   "温存"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "øgrel",
+  "ipa": "ˈø.grel",
+  "pos": "v",
+  "zh": [
+   "钦佩",
+   "仰慕",
+   "钦敬"
+  ],
+  "cls": "weak",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "skairnel",
+  "ipa": "ˈskai̯r.nel",
+  "pos": "v",
+  "zh": [
+   "端详",
+   "审视",
+   "细看"
+  ],
+  "cls": "strong",
+  "field": "感官与心理"
+ },
+ {
+  "roman": "dulm",
+  "ipa": "dulm",
+  "pos": "adj",
+  "zh": [
+   "钝的",
+   "不锋利的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "staur",
+  "ipa": "stau̯r",
+  "pos": "adj",
+  "zh": [
+   "陡的",
+   "陡峭的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "glim",
+  "ipa": "glim",
+  "pos": "adj",
+  "zh": [
+   "光滑的",
+   "滑的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "krauth",
+  "ipa": "krau̯θ",
+  "pos": "adj",
+  "zh": [
+   "粗糙的",
+   "粗粝的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "wyth",
+  "ipa": "wyθ",
+  "pos": "adj",
+  "zh": [
+   "湿的",
+   "潮湿的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "brith",
+  "ipa": "briθ",
+  "pos": "adj",
+  "zh": [
+   "脆的",
+   "易碎的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "glén",
+  "ipa": "gleːn",
+  "pos": "adj",
+  "zh": [
+   "明亮的",
+   "光亮的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "dus",
+  "ipa": "dus",
+  "pos": "adj",
+  "zh": [
+   "幽暗的",
+   "阴沉的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "stoirn",
+  "ipa": "stoi̯rn",
+  "pos": "adj",
+  "zh": [
+   "绯红的",
+   "赤红的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "vlaun",
+  "ipa": "vlau̯n",
+  "pos": "adj",
+  "zh": [
+   "蔚蓝的",
+   "湛蓝的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "flurn",
+  "ipa": "flurn",
+  "pos": "adj",
+  "zh": [
+   "肮脏的",
+   "污秽的"
+  ],
+  "cls": "weak",
+  "field": "性状"
+ },
+ {
+  "roman": "stórn",
+  "ipa": "stoːrn",
+  "pos": "adj",
+  "zh": [
+   "僵硬的",
+   "挺直的"
+  ],
+  "cls": "strong",
+  "field": "性状"
+ },
+ {
+  "roman": "haun",
+  "ipa": "xau̯n",
+  "pos": "n",
+  "zh": [
+   "高度",
+   "高处"
+  ],
+  "cls": "strong",
+  "field": "空间与时间"
+ },
+ {
+  "roman": "preth",
+  "ipa": "preθ",
+  "pos": "v",
+  "zh": [
+   "恳求",
+   "央求",
+   "祈请"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "glaus",
+  "ipa": "glau̯s",
+  "pos": "n",
+  "zh": [
+   "宴会",
+   "盛宴"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "theirn",
+  "ipa": "θei̯rn",
+  "pos": "n",
+  "zh": [
+   "习俗",
+   "惯例"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "graith",
+  "ipa": "grai̯θ",
+  "pos": "n",
+  "zh": [
+   "礼物",
+   "馈赠"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "thraul",
+  "ipa": "θrau̯l",
+  "pos": "n",
+  "zh": [
+   "警告",
+   "告诫"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "hweln",
+  "ipa": "xweln",
+  "pos": "n",
+  "zh": [
+   "问候",
+   "致意"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "skaith",
+  "ipa": "skai̯θ",
+  "pos": "n",
+  "zh": [
+   "复仇",
+   "报复"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "weirn",
+  "ipa": "wei̯rn",
+  "pos": "n",
+  "zh": [
+   "长老",
+   "耆宿"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "draith",
+  "ipa": "drai̯θ",
+  "pos": "n",
+  "zh": [
+   "被逐者",
+   "流放者"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "mauls",
+  "ipa": "mau̯ls",
+  "pos": "n",
+  "zh": [
+   "主人",
+   "东家"
+  ],
+  "cls": "strong",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "skels",
+  "ipa": "skels",
+  "pos": "n",
+  "zh": [
+   "流言",
+   "闲话"
+  ],
+  "cls": "weak",
+  "field": "社会与言语"
+ },
+ {
+  "roman": "hwoiln",
+  "ipa": "xwoi̯ln",
+  "pos": "n",
+  "zh": [
+   "运气",
+   "机运"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "skýrn",
+  "ipa": "skyːrn",
+  "pos": "n",
+  "zh": [
+   "阴影",
+   "暗影"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "klaith",
+  "ipa": "klai̯θ",
+  "pos": "n",
+  "zh": [
+   "整体",
+   "全体"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "sweirn",
+  "ipa": "swei̯rn",
+  "pos": "n",
+  "zh": [
+   "一对",
+   "一双"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "kreth",
+  "ipa": "kreθ",
+  "pos": "n",
+  "zh": [
+   "代价",
+   "花费"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "vo",
+  "ipa": "vo",
+  "pos": "func",
+  "zh": [
+   "或",
+   "或者"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "jai",
+  "ipa": "jai̯",
+  "pos": "func",
+  "zh": [
+   "而且",
+   "并且",
+   "并"
+  ],
+  "cls": "strong",
+  "field": "功能词"
+ },
+ {
+  "roman": "fyr",
+  "ipa": "fyr",
+  "pos": "func",
+  "zh": [
+   "因为",
+   "由于"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "sona",
+  "ipa": "ˈso.na",
+  "pos": "func",
+  "zh": [
+   "所以",
+   "因此",
+   "于是"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "hwei",
+  "ipa": "xwei̯",
+  "pos": "func",
+  "zh": [
+   "如果",
+   "若",
+   "倘若"
+  ],
+  "cls": "strong",
+  "field": "功能词"
+ },
+ {
+  "roman": "tho",
+  "ipa": "θo",
+  "pos": "func",
+  "zh": [
+   "那么",
+   "则",
+   "便"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "glau",
+  "ipa": "glau̯",
+  "pos": "func",
+  "zh": [
+   "虽然",
+   "尽管"
+  ],
+  "cls": "strong",
+  "field": "功能词"
+ },
+ {
+  "roman": "hlei",
+  "ipa": "xlei̯",
+  "pos": "func",
+  "zh": [
+   "除非"
+  ],
+  "cls": "strong",
+  "field": "功能词"
+ },
+ {
+  "roman": "hyra",
+  "ipa": "ˈxy.ra",
+  "pos": "func",
+  "zh": [
+   "为了",
+   "以便"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "pan",
+  "ipa": "pan",
+  "pos": "func",
+  "zh": [
+   "每",
+   "每个",
+   "各"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "tei",
+  "ipa": "tei̯",
+  "pos": "func",
+  "zh": [
+   "某",
+   "某个"
+  ],
+  "cls": "strong",
+  "field": "功能词"
+ },
+ {
+  "roman": "anwe",
+  "ipa": "ˈan.we",
+  "pos": "func",
+  "zh": [
+   "任何",
+   "任一"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "noim",
+  "ipa": "noi̯m",
+  "pos": "func",
+  "zh": [
+   "没有",
+   "无",
+   "毫无"
+  ],
+  "cls": "strong",
+  "field": "功能词"
+ },
+ {
+  "roman": "søm",
+  "ipa": "søm",
+  "pos": "func",
+  "zh": [
+   "几个",
+   "若干",
+   "数个"
+  ],
+  "cls": "weak",
+  "field": "功能词"
+ },
+ {
+  "roman": "kelth",
+  "ipa": "kelθ",
+  "pos": "n",
+  "zh": [
+   "概念"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "thravan",
+  "ipa": "ˈθra.van",
+  "pos": "n",
+  "zh": [
+   "理论",
+   "学说"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "soith",
+  "ipa": "soi̯θ",
+  "pos": "n",
+  "zh": [
+   "意义",
+   "含义"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "dhaun",
+  "ipa": "ðau̯n",
+  "pos": "n",
+  "zh": [
+   "原因",
+   "起因"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "fraun",
+  "ipa": "frau̯n",
+  "pos": "n",
+  "zh": [
+   "结果",
+   "后果"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "skorth",
+  "ipa": "skorθ",
+  "pos": "n",
+  "zh": [
+   "方法",
+   "办法"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "teivan",
+  "ipa": "ˈtei̯.van",
+  "pos": "n",
+  "zh": [
+   "目的",
+   "意图"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "dhurna",
+  "ipa": "ˈður.na",
+  "pos": "n",
+  "zh": [
+   "问题",
+   "疑问",
+   "难题"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "ólath",
+  "ipa": "ˈoː.laθ",
+  "pos": "n",
+  "zh": [
+   "真理",
+   "真相"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "nauth",
+  "ipa": "nau̯θ",
+  "pos": "n",
+  "zh": [
+   "知识",
+   "学识"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "thíral",
+  "ipa": "ˈθiː.ral",
+  "pos": "n",
+  "zh": [
+   "信念",
+   "信条"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "pryñ",
+  "ipa": "pryɲ",
+  "pos": "n",
+  "zh": [
+   "观念",
+   "念头",
+   "想法"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "korm",
+  "ipa": "korm",
+  "pos": "n",
+  "zh": [
+   "理由",
+   "依据"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "meirs",
+  "ipa": "mei̯rs",
+  "pos": "n",
+  "zh": [
+   "证据",
+   "凭据"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "selmar",
+  "ipa": "ˈsel.mar",
+  "pos": "n",
+  "zh": [
+   "例子",
+   "实例"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "vlein",
+  "ipa": "vlei̯n",
+  "pos": "n",
+  "zh": [
+   "规律",
+   "法则"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "theldan",
+  "ipa": "ˈθel.dan",
+  "pos": "n",
+  "zh": [
+   "系统",
+   "体系"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "klarn",
+  "ipa": "klarn",
+  "pos": "n",
+  "zh": [
+   "结构",
+   "构造"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "zurel",
+  "ipa": "ˈzu.rel",
+  "pos": "n",
+  "zh": [
+   "过程",
+   "进程"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "vøth",
+  "ipa": "vøθ",
+  "pos": "n",
+  "zh": [
+   "状态",
+   "状况"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "wethas",
+  "ipa": "ˈwe.θas",
+  "pos": "n",
+  "zh": [
+   "性质",
+   "属性",
+   "本性"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "fjórn",
+  "ipa": "fjoːrn",
+  "pos": "n",
+  "zh": [
+   "形式",
+   "形态"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "ísken",
+  "ipa": "ˈiː.sken",
+  "pos": "n",
+  "zh": [
+   "本质",
+   "实质"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "glønis",
+  "ipa": "ˈglø.nis",
+  "pos": "n",
+  "zh": [
+   "现象",
+   "表象"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "skenra",
+  "ipa": "ˈsken.ra",
+  "pos": "n",
+  "zh": [
+   "逻辑",
+   "条理"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "dreith",
+  "ipa": "drei̯θ",
+  "pos": "n",
+  "zh": [
+   "推理",
+   "推论"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "naldir",
+  "ipa": "ˈnal.dir",
+  "pos": "n",
+  "zh": [
+   "判断",
+   "评断"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "hlorn",
+  "ipa": "xlorn",
+  "pos": "n",
+  "zh": [
+   "假设",
+   "假说"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "ondel",
+  "ipa": "ˈon.del",
+  "pos": "n",
+  "zh": [
+   "理解",
+   "领会"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "gwelth",
+  "ipa": "gwelθ",
+  "pos": "n",
+  "zh": [
+   "定义",
+   "界定"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "morvan",
+  "ipa": "ˈmor.van",
+  "pos": "n",
+  "zh": [
+   "观点",
+   "看法"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "veslan",
+  "ipa": "ˈves.lan",
+  "pos": "n",
+  "zh": [
+   "结论",
+   "定论"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "lúth",
+  "ipa": "luːθ",
+  "pos": "n",
+  "zh": [
+   "原理",
+   "原则"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "stálm",
+  "ipa": "staːlm",
+  "pos": "n",
+  "zh": [
+   "事实"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "orleth",
+  "ipa": "ˈor.leθ",
+  "pos": "n",
+  "zh": [
+   "解释",
+   "说明"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "hwerm",
+  "ipa": "xwerm",
+  "pos": "n",
+  "zh": [
+   "错误",
+   "谬误"
+  ],
+  "cls": "weak",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "hlaith",
+  "ipa": "xlai̯θ",
+  "pos": "n",
+  "zh": [
+   "意识"
+  ],
+  "cls": "strong",
+  "field": "心智与知识"
+ },
+ {
+  "roman": "drósin",
+  "ipa": "ˈdroː.sin",
+  "pos": "n",
+  "zh": [
+   "制度",
+   "体制",
+   "建制"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "vlenu",
+  "ipa": "ˈvle.nu",
+  "pos": "n",
+  "zh": [
+   "组织",
+   "机构",
+   "团体"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "thráng",
+  "ipa": "θraːŋ",
+  "pos": "n",
+  "zh": [
+   "权力",
+   "势力",
+   "权势"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "vyrth",
+  "ipa": "vyrθ",
+  "pos": "n",
+  "zh": [
+   "权利",
+   "权益"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "dhylm",
+  "ipa": "ðylm",
+  "pos": "n",
+  "zh": [
+   "义务",
+   "本分"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "bǿrna",
+  "ipa": "ˈbøːr.na",
+  "pos": "n",
+  "zh": [
+   "责任",
+   "担当"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "rǿthan",
+  "ipa": "ˈrøː.θan",
+  "pos": "n",
+  "zh": [
+   "正义",
+   "公正",
+   "公道"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "gwarn",
+  "ipa": "gwarn",
+  "pos": "n",
+  "zh": [
+   "政府",
+   "当局"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "veithen",
+  "ipa": "ˈvei̯.θen",
+  "pos": "n",
+  "zh": [
+   "契约",
+   "合约",
+   "协议"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "stígel",
+  "ipa": "ˈstiː.gel",
+  "pos": "n",
+  "zh": [
+   "阶级",
+   "阶层",
+   "等级"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "kyrn",
+  "ipa": "kyrn",
+  "pos": "n",
+  "zh": [
+   "地位",
+   "身份",
+   "名分"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "tjørn",
+  "ipa": "tjørn",
+  "pos": "n",
+  "zh": [
+   "角色",
+   "职分"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "hlóra",
+  "ipa": "ˈxloː.ra",
+  "pos": "n",
+  "zh": [
+   "声誉",
+   "名望",
+   "名声"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "hlédan",
+  "ipa": "ˈxleː.dan",
+  "pos": "n",
+  "zh": [
+   "荣誉",
+   "荣光"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "dýran",
+  "ipa": "ˈdyː.ran",
+  "pos": "n",
+  "zh": [
+   "尊严",
+   "体面"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "váldon",
+  "ipa": "ˈvaːl.don",
+  "pos": "n",
+  "zh": [
+   "权威",
+   "威信"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "kwelra",
+  "ipa": "ˈkwel.ra",
+  "pos": "n",
+  "zh": [
+   "自治",
+   "自主"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "beiln",
+  "ipa": "bei̯ln",
+  "pos": "n",
+  "zh": [
+   "联盟",
+   "同盟",
+   "邦联"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "frødan",
+  "ipa": "ˈfrø.dan",
+  "pos": "n",
+  "zh": [
+   "公民",
+   "国民",
+   "臣民"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "frelda",
+  "ipa": "ˈfrel.da",
+  "pos": "n",
+  "zh": [
+   "共同体",
+   "社群"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "rýkel",
+  "ipa": "ˈryː.kel",
+  "pos": "n",
+  "zh": [
+   "国度",
+   "疆域",
+   "王国"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "tyrs",
+  "ipa": "tyrs",
+  "pos": "n",
+  "zh": [
+   "税",
+   "赋税"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "lofan",
+  "ipa": "ˈlo.fan",
+  "pos": "n",
+  "zh": [
+   "许可",
+   "准许",
+   "批准"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "vítan",
+  "ipa": "ˈviː.tan",
+  "pos": "n",
+  "zh": [
+   "惩罚",
+   "刑罚",
+   "责罚"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "glauna",
+  "ipa": "ˈglau̯.na",
+  "pos": "n",
+  "zh": [
+   "奖赏",
+   "报偿",
+   "酬报"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "dréth",
+  "ipa": "dreːθ",
+  "pos": "n",
+  "zh": [
+   "审判",
+   "裁决",
+   "判决"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "thoin",
+  "ipa": "θoi̯n",
+  "pos": "n",
+  "zh": [
+   "聚会",
+   "集会"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "reithil",
+  "ipa": "ˈrei̯.θil",
+  "pos": "n",
+  "zh": [
+   "使者",
+   "信使",
+   "使节"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "trǿna",
+  "ipa": "ˈtrøː.na",
+  "pos": "n",
+  "zh": [
+   "忠诚",
+   "效忠",
+   "忠信"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "sweika",
+  "ipa": "ˈswei̯.ka",
+  "pos": "n",
+  "zh": [
+   "背叛",
+   "叛变",
+   "背信"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "sérlan",
+  "ipa": "ˈseːr.lan",
+  "pos": "n",
+  "zh": [
+   "特权"
+  ],
+  "cls": "strong",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "dhelna",
+  "ipa": "ˈðel.na",
+  "pos": "n",
+  "zh": [
+   "仪式",
+   "典礼",
+   "礼仪"
+  ],
+  "cls": "weak",
+  "field": "社会与制度"
+ },
+ {
+  "roman": "hain",
+  "ipa": "xai̯n",
+  "pos": "adj",
+  "zh": [
+   "可能的",
+   "有可能的"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "øni",
+  "ipa": "ˈø.ni",
+  "pos": "adv",
+  "zh": [
+   "也许",
+   "或许"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "frém",
+  "ipa": "freːm",
+  "pos": "v",
+  "zh": [
+   "允许",
+   "准许"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "throln",
+  "ipa": "θroln",
+  "pos": "v",
+  "zh": [
+   "禁止",
+   "不许"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "durm",
+  "ipa": "durm",
+  "pos": "v",
+  "zh": [
+   "需要",
+   "须要"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "nyl",
+  "ipa": "nyl",
+  "pos": "v",
+  "zh": [
+   "能够",
+   "会"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "vaith",
+  "ipa": "vai̯θ",
+  "pos": "v",
+  "zh": [
+   "值得",
+   "应得"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "kjes",
+  "ipa": "kjes",
+  "pos": "n",
+  "zh": [
+   "选择",
+   "抉择"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "díra",
+  "ipa": "ˈdiː.ra",
+  "pos": "adj",
+  "zh": [
+   "珍贵的",
+   "宝贵的"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "hlór",
+  "ipa": "xloːr",
+  "pos": "n",
+  "zh": [
+   "善",
+   "德行"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "gorth",
+  "ipa": "gorθ",
+  "pos": "n",
+  "zh": [
+   "恶",
+   "邪恶"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "ñuth",
+  "ipa": "ɲuθ",
+  "pos": "n",
+  "zh": [
+   "罪",
+   "罪过"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "hlein",
+  "ipa": "xlei̯n",
+  "pos": "adj",
+  "zh": [
+   "无辜的",
+   "清白的"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "droith",
+  "ipa": "droi̯θ",
+  "pos": "adj",
+  "zh": [
+   "公正的",
+   "公平的"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "tjel",
+  "ipa": "tjel",
+  "pos": "adj",
+  "zh": [
+   "恰当的",
+   "合宜的"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "íval",
+  "ipa": "ˈiː.val",
+  "pos": "n",
+  "zh": [
+   "理想"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "leira",
+  "ipa": "ˈlei̯.ra",
+  "pos": "adj",
+  "zh": [
+   "美丽的",
+   "美好的"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "bruls",
+  "ipa": "bruls",
+  "pos": "adj",
+  "zh": [
+   "丑陋的",
+   "难看的"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "ryth",
+  "ipa": "ryθ",
+  "pos": "adj",
+  "zh": [
+   "对的",
+   "正确的"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "thrám",
+  "ipa": "θraːm",
+  "pos": "adj",
+  "zh": [
+   "重要的",
+   "要紧的"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "nølth",
+  "ipa": "nølθ",
+  "pos": "adj",
+  "zh": [
+   "次要的"
+  ],
+  "cls": "weak",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "skaur",
+  "ipa": "skau̯r",
+  "pos": "adj",
+  "zh": [
+   "危险的",
+   "凶险的"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "seiln",
+  "ipa": "sei̯ln",
+  "pos": "adj",
+  "zh": [
+   "安全的",
+   "平安的"
+  ],
+  "cls": "strong",
+  "field": "情态与价值"
+ },
+ {
+  "roman": "keln",
+  "ipa": "keln",
+  "pos": "n",
+  "zh": [
+   "条件",
+   "要件"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "vorth",
+  "ipa": "vorθ",
+  "pos": "n",
+  "zh": [
+   "前提",
+   "先决条件"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "dilm",
+  "ipa": "dilm",
+  "pos": "n",
+  "zh": [
+   "因素",
+   "要素"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "swéth",
+  "ipa": "sweːθ",
+  "pos": "n",
+  "zh": [
+   "影响",
+   "作用"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "kwaith",
+  "ipa": "kwai̯θ",
+  "pos": "n",
+  "zh": [
+   "变化",
+   "改变"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "broln",
+  "ipa": "broln",
+  "pos": "n",
+  "zh": [
+   "发展",
+   "展开"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "throin",
+  "ipa": "θroi̯n",
+  "pos": "n",
+  "zh": [
+   "演变",
+   "演化"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "úthan",
+  "ipa": "ˈuː.θan",
+  "pos": "n",
+  "zh": [
+   "起源",
+   "源头",
+   "本源"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "thúrn",
+  "ipa": "θuːrn",
+  "pos": "n",
+  "zh": [
+   "终结",
+   "终止",
+   "完结"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "trys",
+  "ipa": "trys",
+  "pos": "n",
+  "zh": [
+   "阶段"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "kloin",
+  "ipa": "kloi̯n",
+  "pos": "n",
+  "zh": [
+   "趋势",
+   "走向"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "kjól",
+  "ipa": "kjoːl",
+  "pos": "n",
+  "zh": [
+   "循环",
+   "周期"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "kwein",
+  "ipa": "kwei̯n",
+  "pos": "n",
+  "zh": [
+   "机遇",
+   "时机",
+   "机会"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "skøs",
+  "ipa": "skøs",
+  "pos": "n",
+  "zh": [
+   "风险",
+   "危险"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "stelm",
+  "ipa": "stelm",
+  "pos": "n",
+  "zh": [
+   "平衡",
+   "均衡"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "málth",
+  "ipa": "maːlθ",
+  "pos": "n",
+  "zh": [
+   "极限",
+   "极点"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "hwérn",
+  "ipa": "xweːrn",
+  "pos": "n",
+  "zh": [
+   "转折",
+   "转折点",
+   "转机"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "vauth",
+  "ipa": "vau̯θ",
+  "pos": "n",
+  "zh": [
+   "后果",
+   "余波"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "dirna",
+  "ipa": "ˈdir.na",
+  "pos": "n",
+  "zh": [
+   "效果",
+   "成效",
+   "功效"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "zilth",
+  "ipa": "zilθ",
+  "pos": "n",
+  "zh": [
+   "触发点",
+   "诱因"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "narm",
+  "ipa": "narm",
+  "pos": "n",
+  "zh": [
+   "稳定",
+   "稳固"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "bloir",
+  "ipa": "bloi̯r",
+  "pos": "n",
+  "zh": [
+   "增长",
+   "增进"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "swulm",
+  "ipa": "swulm",
+  "pos": "n",
+  "zh": [
+   "衰退",
+   "衰落",
+   "衰减"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "grels",
+  "ipa": "grels",
+  "pos": "n",
+  "zh": [
+   "反应",
+   "回应"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "eidhel",
+  "ipa": "ˈei̯.ðel",
+  "pos": "n",
+  "zh": [
+   "潜力",
+   "潜能"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "harn",
+  "ipa": "xarn",
+  "pos": "n",
+  "zh": [
+   "障碍",
+   "阻碍"
+  ],
+  "cls": "weak",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "fjaun",
+  "ipa": "fjau̯n",
+  "pos": "n",
+  "zh": [
+   "崩溃",
+   "崩塌",
+   "瓦解"
+  ],
+  "cls": "strong",
+  "field": "因果与变化"
+ },
+ {
+  "roman": "soim",
+  "ipa": "soi̯m",
+  "pos": "n",
+  "zh": [
+   "符号",
+   "象征物",
+   "信物"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "glaunis",
+  "ipa": "ˈglau̯.nis",
+  "pos": "n",
+  "zh": [
+   "消息",
+   "音信",
+   "音讯"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "flein",
+  "ipa": "flei̯n",
+  "pos": "n",
+  "zh": [
+   "信号",
+   "讯号"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "girn",
+  "ipa": "girn",
+  "pos": "n",
+  "zh": [
+   "徽记",
+   "徽章",
+   "纹章"
+  ],
+  "cls": "weak",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "steil",
+  "ipa": "stei̯l",
+  "pos": "v",
+  "zh": [
+   "象征",
+   "代表",
+   "预示"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "thraim",
+  "ipa": "θrai̯m",
+  "pos": "n",
+  "zh": [
+   "类比",
+   "比喻",
+   "譬喻"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "gleiva",
+  "ipa": "ˈglei̯.va",
+  "pos": "v",
+  "zh": [
+   "描述",
+   "描绘",
+   "刻画"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "gwaith",
+  "ipa": "gwai̯θ",
+  "pos": "v",
+  "zh": [
+   "证明",
+   "论证",
+   "申辩"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "mirs",
+  "ipa": "mirs",
+  "pos": "n",
+  "zh": [
+   "矛盾",
+   "抵触"
+  ],
+  "cls": "weak",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "tulm",
+  "ipa": "tulm",
+  "pos": "adj",
+  "zh": [
+   "一致",
+   "契合",
+   "吻合"
+  ],
+  "cls": "weak",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "thelgar",
+  "ipa": "ˈθel.gar",
+  "pos": "n",
+  "zh": [
+   "分歧",
+   "歧见",
+   "不合"
+  ],
+  "cls": "weak",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "sweith",
+  "ipa": "swei̯θ",
+  "pos": "v",
+  "zh": [
+   "暗示",
+   "示意",
+   "暗指"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "gwoir",
+  "ipa": "gwoi̯r",
+  "pos": "v",
+  "zh": [
+   "主张",
+   "断言",
+   "声言"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "dolmir",
+  "ipa": "ˈdol.mir",
+  "pos": "n",
+  "zh": [
+   "立场",
+   "立足点"
+  ],
+  "cls": "weak",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "moiln",
+  "ipa": "moi̯ln",
+  "pos": "n",
+  "zh": [
+   "共识",
+   "一致意见"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "froiven",
+  "ipa": "ˈfroi̯.ven",
+  "pos": "v",
+  "zh": [
+   "误解",
+   "误会",
+   "曲解"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "vaithel",
+  "ipa": "ˈvai̯.θel",
+  "pos": "n",
+  "zh": [
+   "语言"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "vedhil",
+  "ipa": "ˈve.ðil",
+  "pos": "n",
+  "zh": [
+   "文字",
+   "字符",
+   "书写"
+  ],
+  "cls": "weak",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "silaith",
+  "ipa": "ˈsi.lai̯θ",
+  "pos": "n",
+  "zh": [
+   "对话",
+   "交谈",
+   "对谈"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "vloir",
+  "ipa": "vloi̯r",
+  "pos": "v",
+  "zh": [
+   "翻译",
+   "转译",
+   "传译"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "meiral",
+  "ipa": "ˈmei̯.ral",
+  "pos": "n",
+  "zh": [
+   "手势",
+   "示意动作"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "throil",
+  "ipa": "θroi̯l",
+  "pos": "n",
+  "zh": [
+   "谚语",
+   "俗谚",
+   "格言"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "íswen",
+  "ipa": "ˈiː.swen",
+  "pos": "n",
+  "zh": [
+   "图案",
+   "纹样",
+   "花纹"
+  ],
+  "cls": "strong",
+  "field": "交流与符号"
+ },
+ {
+  "roman": "thairn",
+  "ipa": "θai̯rn",
+  "pos": "n",
+  "zh": [
+   "关系",
+   "关联"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "hláren",
+  "ipa": "ˈxlaː.ren",
+  "pos": "n",
+  "zh": [
+   "层次",
+   "层级"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "klema",
+  "ipa": "ˈkle.ma",
+  "pos": "n",
+  "zh": [
+   "类别",
+   "种类"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "vauril",
+  "ipa": "ˈvau̯.ril",
+  "pos": "n",
+  "zh": [
+   "领域"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "pryna",
+  "ipa": "ˈpry.na",
+  "pos": "n",
+  "zh": [
+   "属性",
+   "特质"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "gréloth",
+  "ipa": "ˈgreː.loθ",
+  "pos": "n",
+  "zh": [
+   "程度",
+   "幅度"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "mírsa",
+  "ipa": "ˈmiːr.sa",
+  "pos": "n",
+  "zh": [
+   "比例",
+   "比率"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "vaimel",
+  "ipa": "ˈvai̯.mel",
+  "pos": "n",
+  "zh": [
+   "对称",
+   "匀称"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "vlønar",
+  "ipa": "ˈvlø.nar",
+  "pos": "n",
+  "zh": [
+   "对立",
+   "对立面"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "hlaimen",
+  "ipa": "ˈxlai̯.men",
+  "pos": "n",
+  "zh": [
+   "统一",
+   "合一"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "sethran",
+  "ipa": "ˈse.θran",
+  "pos": "n",
+  "zh": [
+   "顺序",
+   "序列"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "spaulen",
+  "ipa": "ˈspau̯.len",
+  "pos": "n",
+  "zh": [
+   "间隔",
+   "间歇"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "hwelmar",
+  "ipa": "ˈxwel.mar",
+  "pos": "n",
+  "zh": [
+   "网络",
+   "网"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "dríska",
+  "ipa": "ˈdriː.ska",
+  "pos": "n",
+  "zh": [
+   "模式",
+   "样式"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "vøthen",
+  "ipa": "ˈvø.θen",
+  "pos": "n",
+  "zh": [
+   "内容",
+   "实质"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "pilva",
+  "ipa": "ˈpil.va",
+  "pos": "n",
+  "zh": [
+   "元素",
+   "要素"
+  ],
+  "cls": "weak",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "dháren",
+  "ipa": "ˈðaː.ren",
+  "pos": "n",
+  "zh": [
+   "基础",
+   "根基"
+  ],
+  "cls": "strong",
+  "field": "抽象与关系"
+ },
+ {
+  "roman": "talvir",
+  "ipa": "ˈtal.vir",
+  "pos": "v",
+  "zh": [
+   "比较",
+   "对照"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "traus",
+  "ipa": "trau̯s",
+  "pos": "v",
+  "zh": [
+   "推断",
+   "推理",
+   "推知"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "zyth",
+  "ipa": "zyθ",
+  "pos": "v",
+  "zh": [
+   "质疑",
+   "诘问"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "prau",
+  "ipa": "prau̯",
+  "pos": "v",
+  "zh": [
+   "料想",
+   "预期",
+   "预料"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "skaun",
+  "ipa": "skau̯n",
+  "pos": "v",
+  "zh": [
+   "计划",
+   "谋划",
+   "筹划"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "stín",
+  "ipa": "stiːn",
+  "pos": "v",
+  "zh": [
+   "专注",
+   "凝神",
+   "留意"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "hwes",
+  "ipa": "xwes",
+  "pos": "v",
+  "zh": [
+   "忽视",
+   "无视",
+   "不理会"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "gethan",
+  "ipa": "ˈge.θan",
+  "pos": "v",
+  "zh": [
+   "承认",
+   "认可"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "ñaur",
+  "ipa": "ɲau̯r",
+  "pos": "v",
+  "zh": [
+   "否认",
+   "否定"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "myrva",
+  "ipa": "ˈmyr.va",
+  "pos": "v",
+  "zh": [
+   "混淆",
+   "弄错",
+   "搞混"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "valm",
+  "ipa": "valm",
+  "pos": "v",
+  "zh": [
+   "估量",
+   "估算",
+   "掂量"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "tyver",
+  "ipa": "ˈty.ver",
+  "pos": "v",
+  "zh": [
+   "犹豫",
+   "迟疑"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "eithra",
+  "ipa": "ˈei̯.θra",
+  "pos": "v",
+  "zh": [
+   "反思",
+   "反省"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "leimu",
+  "ipa": "ˈlei̯.mu",
+  "pos": "v",
+  "zh": [
+   "回想",
+   "追忆"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "kwem",
+  "ipa": "kwem",
+  "pos": "v",
+  "zh": [
+   "打算",
+   "意图",
+   "有意"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "shoi",
+  "ipa": "ʃoi̯",
+  "pos": "v",
+  "zh": [
+   "猜测",
+   "猜想",
+   "揣测"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "tjein",
+  "ipa": "tjei̯n",
+  "pos": "v",
+  "zh": [
+   "辨认",
+   "认出",
+   "识别"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "ñurm",
+  "ipa": "ɲurm",
+  "pos": "v",
+  "zh": [
+   "担忧",
+   "忧虑",
+   "挂心"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "djaum",
+  "ipa": "djau̯m",
+  "pos": "v",
+  "zh": [
+   "假装",
+   "佯装",
+   "装作"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "weilm",
+  "ipa": "wei̯lm",
+  "pos": "v",
+  "zh": [
+   "权衡",
+   "斟酌"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "stath",
+  "ipa": "staθ",
+  "pos": "v",
+  "zh": [
+   "确认",
+   "核实",
+   "查证"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "ñaila",
+  "ipa": "ˈɲai̯.la",
+  "pos": "v",
+  "zh": [
+   "想念",
+   "思念",
+   "挂念"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "néstha",
+  "ipa": "ˈneːs.θa",
+  "pos": "v",
+  "zh": [
+   "许诺",
+   "允诺"
+  ],
+  "cls": "strong",
+  "field": "言语动词"
+ },
+ {
+  "roman": "brelis",
+  "ipa": "ˈbre.lis",
+  "pos": "v",
+  "zh": [
+   "建议",
+   "提议"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "gaulm",
+  "ipa": "gau̯lm",
+  "pos": "v",
+  "zh": [
+   "宣布",
+   "宣告"
+  ],
+  "cls": "strong",
+  "field": "言语动词"
+ },
+ {
+  "roman": "hwesta",
+  "ipa": "ˈxwe.sta",
+  "pos": "v",
+  "zh": [
+   "讨论",
+   "商议"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "djorn",
+  "ipa": "djorn",
+  "pos": "v",
+  "zh": [
+   "争论",
+   "争辩"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "welna",
+  "ipa": "ˈwel.na",
+  "pos": "v",
+  "zh": [
+   "同意",
+   "赞同"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "kurth",
+  "ipa": "kurθ",
+  "pos": "v",
+  "zh": [
+   "拒绝",
+   "回绝"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "hlyren",
+  "ipa": "ˈxly.ren",
+  "pos": "v",
+  "zh": [
+   "请求"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "thausa",
+  "ipa": "ˈθau̯.sa",
+  "pos": "v",
+  "zh": [
+   "感谢",
+   "道谢"
+  ],
+  "cls": "strong",
+  "field": "言语动词"
+ },
+ {
+  "roman": "ømsa",
+  "ipa": "ˈøm.sa",
+  "pos": "v",
+  "zh": [
+   "道歉",
+   "赔罪"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "drøtha",
+  "ipa": "ˈdrø.θa",
+  "pos": "v",
+  "zh": [
+   "指控",
+   "归咎"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "sýla",
+  "ipa": "ˈsyː.la",
+  "pos": "v",
+  "zh": [
+   "赞美",
+   "称赞"
+  ],
+  "cls": "strong",
+  "field": "言语动词"
+ },
+ {
+  "roman": "murthen",
+  "ipa": "ˈmur.θen",
+  "pos": "v",
+  "zh": [
+   "抱怨",
+   "发牢骚"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "níwa",
+  "ipa": "ˈniː.wa",
+  "pos": "v",
+  "zh": [
+   "低语",
+   "耳语"
+  ],
+  "cls": "strong",
+  "field": "言语动词"
+ },
+ {
+  "roman": "dhumla",
+  "ipa": "ˈðum.la",
+  "pos": "v",
+  "zh": [
+   "嘟囔",
+   "咕哝"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "dhaurn",
+  "ipa": "ðau̯rn",
+  "pos": "v",
+  "zh": [
+   "宣誓",
+   "发誓"
+  ],
+  "cls": "strong",
+  "field": "言语动词"
+ },
+ {
+  "roman": "lúthra",
+  "ipa": "ˈluː.θra",
+  "pos": "v",
+  "zh": [
+   "召集",
+   "召开"
+  ],
+  "cls": "strong",
+  "field": "言语动词"
+ },
+ {
+  "roman": "stelvon",
+  "ipa": "ˈstel.von",
+  "pos": "v",
+  "zh": [
+   "报告",
+   "禀报"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "sagla",
+  "ipa": "ˈsa.gla",
+  "pos": "v",
+  "zh": [
+   "讲述",
+   "叙述"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "trilka",
+  "ipa": "ˈtril.ka",
+  "pos": "v",
+  "zh": [
+   "打断",
+   "插话"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "tenva",
+  "ipa": "ˈten.va",
+  "pos": "v",
+  "zh": [
+   "提及",
+   "提到"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "stauda",
+  "ipa": "ˈstau̯.da",
+  "pos": "v",
+  "zh": [
+   "断言",
+   "坚称"
+  ],
+  "cls": "strong",
+  "field": "言语动词"
+ },
+ {
+  "roman": "swenda",
+  "ipa": "ˈswen.da",
+  "pos": "v",
+  "zh": [
+   "劝说",
+   "说服"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "skeñ",
+  "ipa": "skeɲ",
+  "pos": "v",
+  "zh": [
+   "嘲弄",
+   "讥讽"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "samra",
+  "ipa": "ˈsam.ra",
+  "pos": "v",
+  "zh": [
+   "交谈",
+   "闲聊"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "dedra",
+  "ipa": "ˈde.dra",
+  "pos": "v",
+  "zh": [
+   "结巴",
+   "口吃地说"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "veisha",
+  "ipa": "ˈvei̯.ʃa",
+  "pos": "v",
+  "zh": [
+   "告知",
+   "通知"
+  ],
+  "cls": "strong",
+  "field": "言语动词"
+ },
+ {
+  "roman": "boidha",
+  "ipa": "ˈboi̯.ða",
+  "pos": "v",
+  "zh": [
+   "邀请",
+   "相邀"
+  ],
+  "cls": "strong",
+  "field": "言语动词"
+ },
+ {
+  "roman": "stodhi",
+  "ipa": "ˈsto.ði",
+  "pos": "v",
+  "zh": [
+   "帮助",
+   "协助",
+   "援助"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "hlýdha",
+  "ipa": "ˈxlyː.ða",
+  "pos": "v",
+  "zh": [
+   "服从",
+   "听从",
+   "顺从"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "stírn",
+  "ipa": "stiːrn",
+  "pos": "v",
+  "zh": [
+   "领导",
+   "率领",
+   "统率"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "fylgi",
+  "ipa": "ˈfyl.gi",
+  "pos": "v",
+  "zh": [
+   "跟随",
+   "追随"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "samru",
+  "ipa": "ˈsam.ru",
+  "pos": "v",
+  "zh": [
+   "合作",
+   "协力",
+   "共事"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "metja",
+  "ipa": "ˈme.tja",
+  "pos": "v",
+  "zh": [
+   "竞争",
+   "较量",
+   "比试"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "rausel",
+  "ipa": "ˈrau̯.sel",
+  "pos": "v",
+  "zh": [
+   "协商",
+   "商议",
+   "磋商"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "soika",
+  "ipa": "ˈsoi̯.ka",
+  "pos": "v",
+  "zh": [
+   "拜访",
+   "造访",
+   "探访"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "heilsa",
+  "ipa": "ˈxei̯l.sa",
+  "pos": "v",
+  "zh": [
+   "迎接",
+   "接待"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "fardhu",
+  "ipa": "ˈfar.ðu",
+  "pos": "v",
+  "zh": [
+   "告别",
+   "辞行",
+   "辞别"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "sinva",
+  "ipa": "ˈsin.va",
+  "pos": "v",
+  "zh": [
+   "陪伴",
+   "相伴"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "míla",
+  "ipa": "ˈmiː.la",
+  "pos": "v",
+  "zh": [
+   "原谅",
+   "宽恕",
+   "饶恕"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "ervi",
+  "ipa": "ˈer.vi",
+  "pos": "v",
+  "zh": [
+   "继承",
+   "承袭"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "ríkja",
+  "ipa": "ˈriː.kja",
+  "pos": "v",
+  "zh": [
+   "统治",
+   "治理",
+   "执政"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "tjón",
+  "ipa": "tjoːn",
+  "pos": "v",
+  "zh": [
+   "服侍",
+   "侍奉",
+   "伺候"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "eidra",
+  "ipa": "ˈei̯.dra",
+  "pos": "v",
+  "zh": [
+   "结盟",
+   "缔盟"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "deila",
+  "ipa": "ˈdei̯.la",
+  "pos": "v",
+  "zh": [
+   "分享",
+   "分予",
+   "均分"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "kwaina",
+  "ipa": "ˈkwai̯.na",
+  "pos": "v",
+  "zh": [
+   "结婚",
+   "成婚",
+   "嫁娶"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "frǿda",
+  "ipa": "ˈfrøː.da",
+  "pos": "v",
+  "zh": [
+   "教导",
+   "传授",
+   "教诲"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "falma",
+  "ipa": "ˈfal.ma",
+  "pos": "v",
+  "zh": [
+   "拥抱",
+   "搂抱"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "séva",
+  "ipa": "ˈseː.va",
+  "pos": "v",
+  "zh": [
+   "安慰",
+   "慰藉",
+   "抚慰"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "hóta",
+  "ipa": "ˈxoː.ta",
+  "pos": "v",
+  "zh": [
+   "威胁",
+   "恐吓",
+   "威吓"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "ródha",
+  "ipa": "ˈroː.ða",
+  "pos": "v",
+  "zh": [
+   "称赞",
+   "赞美",
+   "颂扬"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "skensa",
+  "ipa": "ˈsken.sa",
+  "pos": "v",
+  "zh": [
+   "嘲笑",
+   "讥讽",
+   "嘲弄"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "wyr",
+  "ipa": "wyr",
+  "pos": "v",
+  "zh": [
+   "改变",
+   "更改",
+   "变动"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "verth",
+  "ipa": "verθ",
+  "pos": "v",
+  "zh": [
+   "变成",
+   "化为"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "auka",
+  "ipa": "ˈau̯.ka",
+  "pos": "v",
+  "zh": [
+   "增加",
+   "增长",
+   "增多"
+  ],
+  "cls": "strong",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "syl",
+  "ipa": "syl",
+  "pos": "v",
+  "zh": [
+   "减少",
+   "削减",
+   "变少"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "pren",
+  "ipa": "pren",
+  "pos": "v",
+  "zh": [
+   "着手",
+   "动手做"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "lútha",
+  "ipa": "ˈluː.θa",
+  "pos": "v",
+  "zh": [
+   "继续",
+   "延续",
+   "持续"
+  ],
+  "cls": "strong",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "staln",
+  "ipa": "staln",
+  "pos": "v",
+  "zh": [
+   "停止",
+   "中止",
+   "停下"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "fjolth",
+  "ipa": "fjolθ",
+  "pos": "v",
+  "zh": [
+   "达成",
+   "成就",
+   "实现"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "itha",
+  "ipa": "ˈi.θa",
+  "pos": "v",
+  "zh": [
+   "重复",
+   "再做"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "hwyrn",
+  "ipa": "xwyrn",
+  "pos": "v",
+  "zh": [
+   "恢复",
+   "复原"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "aulma",
+  "ipa": "ˈau̯l.ma",
+  "pos": "v",
+  "zh": [
+   "扩展",
+   "扩大"
+  ],
+  "cls": "strong",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "hlys",
+  "ipa": "xlys",
+  "pos": "v",
+  "zh": [
+   "收缩",
+   "缩小",
+   "缩减"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "styrma",
+  "ipa": "ˈstyr.ma",
+  "pos": "v",
+  "zh": [
+   "加强",
+   "增强"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "møsa",
+  "ipa": "ˈmø.sa",
+  "pos": "v",
+  "zh": [
+   "削弱",
+   "减弱"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "kwelth",
+  "ipa": "kwelθ",
+  "pos": "v",
+  "zh": [
+   "翻转",
+   "颠倒"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "skifa",
+  "ipa": "ˈski.fa",
+  "pos": "v",
+  "zh": [
+   "替换",
+   "更换",
+   "调换"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "einla",
+  "ipa": "ˈei̯n.la",
+  "pos": "v",
+  "zh": [
+   "融合",
+   "合并"
+  ],
+  "cls": "strong",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "kloifa",
+  "ipa": "ˈkloi̯.fa",
+  "pos": "v",
+  "zh": [
+   "分离",
+   "拆分",
+   "分开"
+  ],
+  "cls": "strong",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "ñaus",
+  "ipa": "ɲau̯s",
+  "pos": "v",
+  "zh": [
+   "引发",
+   "引起",
+   "激起"
+  ],
+  "cls": "strong",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "haldra",
+  "ipa": "ˈxal.dra",
+  "pos": "v",
+  "zh": [
+   "维持",
+   "保持"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "tøva",
+  "ipa": "ˈtø.va",
+  "pos": "v",
+  "zh": [
+   "推迟",
+   "拖延"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "bøta",
+  "ipa": "ˈbø.ta",
+  "pos": "v",
+  "zh": [
+   "修补",
+   "修理"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "brasta",
+  "ipa": "ˈbra.sta",
+  "pos": "v",
+  "zh": [
+   "毁坏",
+   "摧毁"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "béla",
+  "ipa": "ˈbeː.la",
+  "pos": "v",
+  "zh": [
+   "改善",
+   "改进"
+  ],
+  "cls": "strong",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "vørga",
+  "ipa": "ˈvør.ga",
+  "pos": "v",
+  "zh": [
+   "恶化",
+   "变坏"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "meila",
+  "ipa": "ˈmei̯.la",
+  "pos": "v",
+  "zh": [
+   "融化",
+   "消融"
+  ],
+  "cls": "strong",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "kjøln",
+  "ipa": "kjøln",
+  "pos": "v",
+  "zh": [
+   "冻结",
+   "凝固"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "kweika",
+  "ipa": "ˈkwei̯.ka",
+  "pos": "v",
+  "zh": [
+   "点燃",
+   "引燃"
+  ],
+  "cls": "strong",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "løska",
+  "ipa": "ˈlø.ska",
+  "pos": "v",
+  "zh": [
+   "熄灭",
+   "扑灭"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "vekja",
+  "ipa": "ˈve.kja",
+  "pos": "v",
+  "zh": [
+   "唤醒",
+   "叫醒"
+  ],
+  "cls": "weak",
+  "field": "使役与变化动词"
+ },
+ {
+  "roman": "nyth",
+  "ipa": "nyθ",
+  "pos": "v",
+  "zh": [
+   "使用",
+   "运用",
+   "动用"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "tjórm",
+  "ipa": "tjoːrm",
+  "pos": "v",
+  "zh": [
+   "打造",
+   "精工制作",
+   "制成"
+  ],
+  "cls": "strong",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "reln",
+  "ipa": "reln",
+  "pos": "v",
+  "zh": [
+   "修理",
+   "修补",
+   "修缮"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "mairn",
+  "ipa": "mai̯rn",
+  "pos": "v",
+  "zh": [
+   "测量",
+   "丈量"
+  ],
+  "cls": "strong",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "toln",
+  "ipa": "toln",
+  "pos": "v",
+  "zh": [
+   "清点",
+   "盘点"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "kweth",
+  "ipa": "kweθ",
+  "pos": "v",
+  "zh": [
+   "交换",
+   "互换",
+   "调换"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "leska",
+  "ipa": "ˈle.ska",
+  "pos": "v",
+  "zh": [
+   "收集",
+   "搜集",
+   "采集"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "veiln",
+  "ipa": "vei̯ln",
+  "pos": "v",
+  "zh": [
+   "分配",
+   "分发",
+   "分派"
+  ],
+  "cls": "strong",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "baurm",
+  "ipa": "bau̯rm",
+  "pos": "v",
+  "zh": [
+   "搬运",
+   "运送",
+   "拖运"
+  ],
+  "cls": "strong",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "kolth",
+  "ipa": "kolθ",
+  "pos": "v",
+  "zh": [
+   "堆叠",
+   "堆放",
+   "码放"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "vylm",
+  "ipa": "vylm",
+  "pos": "v",
+  "zh": [
+   "包裹",
+   "包扎",
+   "裹缠"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "vaing",
+  "ipa": "vai̯ŋ",
+  "pos": "v",
+  "zh": [
+   "悬挂",
+   "挂起",
+   "吊挂"
+  ],
+  "cls": "strong",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "muldra",
+  "ipa": "ˈmul.dra",
+  "pos": "v",
+  "zh": [
+   "埋藏",
+   "掩埋",
+   "埋葬"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "hwis",
+  "ipa": "xwis",
+  "pos": "v",
+  "zh": [
+   "擦拭",
+   "拂拭",
+   "掸去"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "folm",
+  "ipa": "folm",
+  "pos": "v",
+  "zh": [
+   "装满",
+   "填充",
+   "填满"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "ǿsa",
+  "ipa": "ˈøː.sa",
+  "pos": "v",
+  "zh": [
+   "清空",
+   "倒空",
+   "排空"
+  ],
+  "cls": "strong",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "sturn",
+  "ipa": "sturn",
+  "pos": "v",
+  "zh": [
+   "锁闭",
+   "闩上",
+   "上锁"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "skarth",
+  "ipa": "skarθ",
+  "pos": "v",
+  "zh": [
+   "标记",
+   "做记号",
+   "刻记"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "kjels",
+  "ipa": "kjels",
+  "pos": "v",
+  "zh": [
+   "筛选",
+   "挑拣",
+   "拣选"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "spóln",
+  "ipa": "spoːln",
+  "pos": "v",
+  "zh": [
+   "储存",
+   "贮藏",
+   "存放"
+  ],
+  "cls": "strong",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "sýrla",
+  "ipa": "ˈsyːr.la",
+  "pos": "v",
+  "zh": [
+   "缝纫",
+   "缝补",
+   "缝制"
+  ],
+  "cls": "strong",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "dryn",
+  "ipa": "dryn",
+  "pos": "v",
+  "zh": [
+   "钻孔",
+   "钻凿",
+   "凿穿"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "kwirm",
+  "ipa": "kwirm",
+  "pos": "v",
+  "zh": [
+   "拧",
+   "绞",
+   "扭转"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "pletha",
+  "ipa": "ˈple.θa",
+  "pos": "v",
+  "zh": [
+   "铺开",
+   "摊开",
+   "铺设"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "ólm",
+  "ipa": "oːlm",
+  "pos": "v",
+  "zh": [
+   "举起",
+   "抬起",
+   "吊起"
+  ],
+  "cls": "strong",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "thrus",
+  "ipa": "θrus",
+  "pos": "v",
+  "zh": [
+   "推",
+   "推动",
+   "推挤"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "zirn",
+  "ipa": "zirn",
+  "pos": "v",
+  "zh": [
+   "拉",
+   "拖曳",
+   "牵引"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "domra",
+  "ipa": "ˈdom.ra",
+  "pos": "v",
+  "zh": [
+   "敲打",
+   "敲击",
+   "捶打"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "skith",
+  "ipa": "skiθ",
+  "pos": "v",
+  "zh": [
+   "刮",
+   "刮擦",
+   "刮除"
+  ],
+  "cls": "weak",
+  "field": "操作与制作动词"
+ },
+ {
+  "roman": "djór",
+  "ipa": "djoːr",
+  "pos": "v",
+  "zh": [
+   "渴求",
+   "切望"
+  ],
+  "cls": "strong",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "prøs",
+  "ipa": "prøs",
+  "pos": "v",
+  "zh": [
+   "尝试",
+   "试图"
+  ],
+  "cls": "weak",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "vón",
+  "ipa": "voːn",
+  "pos": "v",
+  "zh": [
+   "成功",
+   "达成"
+  ],
+  "cls": "strong",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "mols",
+  "ipa": "mols",
+  "pos": "v",
+  "zh": [
+   "失败",
+   "落空"
+  ],
+  "cls": "weak",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "kelva",
+  "ipa": "ˈkel.va",
+  "pos": "v",
+  "zh": [
+   "包含",
+   "含有"
+  ],
+  "cls": "weak",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "ñorn",
+  "ipa": "ɲorn",
+  "pos": "v",
+  "zh": [
+   "属于",
+   "归属"
+  ],
+  "cls": "weak",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "thurna",
+  "ipa": "ˈθur.na",
+  "pos": "v",
+  "zh": [
+   "习惯于",
+   "惯于"
+  ],
+  "cls": "weak",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "vlei",
+  "ipa": "vlei̯",
+  "pos": "v",
+  "zh": [
+   "避免",
+   "规避"
+  ],
+  "cls": "strong",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "kjar",
+  "ipa": "kjar",
+  "pos": "v",
+  "zh": [
+   "敢于",
+   "胆敢"
+  ],
+  "cls": "weak",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "thulm",
+  "ipa": "θulm",
+  "pos": "v",
+  "zh": [
+   "忍受",
+   "承受"
+  ],
+  "cls": "weak",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "glais",
+  "ipa": "glai̯s",
+  "pos": "v",
+  "zh": [
+   "错过",
+   "错失"
+  ],
+  "cls": "strong",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "leth",
+  "ipa": "leθ",
+  "pos": "v",
+  "zh": [
+   "剩余",
+   "余下"
+  ],
+  "cls": "weak",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "søth",
+  "ipa": "søθ",
+  "pos": "v",
+  "zh": [
+   "应当",
+   "应该"
+  ],
+  "cls": "weak",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "dhurn",
+  "ipa": "ðurn",
+  "pos": "v",
+  "zh": [
+   "保持",
+   "维持"
+  ],
+  "cls": "weak",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "loith",
+  "ipa": "loi̯θ",
+  "pos": "v",
+  "zh": [
+   "似乎",
+   "看似"
+  ],
+  "cls": "strong",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "aiga",
+  "ipa": "ˈai̯.ga",
+  "pos": "v",
+  "zh": [
+   "拥有",
+   "持有"
+  ],
+  "cls": "strong",
+  "field": "状态与情态动词"
+ },
+ {
+  "roman": "skeiln",
+  "ipa": "skei̯ln",
+  "pos": "v",
+  "zh": [
+   "理解",
+   "领会",
+   "懂得"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "dǿl",
+  "ipa": "døːl",
+  "pos": "v",
+  "zh": [
+   "判断",
+   "评断",
+   "评判"
+  ],
+  "cls": "strong",
+  "field": "心智动词"
+ },
+ {
+  "roman": "prena",
+  "ipa": "ˈpre.na",
+  "pos": "v",
+  "zh": [
+   "假设",
+   "假定",
+   "姑且认为"
+  ],
+  "cls": "weak",
+  "field": "心智动词"
+ },
+ {
+  "roman": "tjøln",
+  "ipa": "tjøln",
+  "pos": "v",
+  "zh": [
+   "解释",
+   "说明"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "kwerth",
+  "ipa": "kwerθ",
+  "pos": "v",
+  "zh": [
+   "惩罚",
+   "责罚",
+   "处罚"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "méldu",
+  "ipa": "ˈmeːl.du",
+  "pos": "v",
+  "zh": [
+   "奖赏",
+   "酬报",
+   "犒赏"
+  ],
+  "cls": "strong",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "swika",
+  "ipa": "ˈswi.ka",
+  "pos": "v",
+  "zh": [
+   "背叛",
+   "出卖"
+  ],
+  "cls": "weak",
+  "field": "社会与互动动词"
+ },
+ {
+  "roman": "varth",
+  "ipa": "varθ",
+  "pos": "v",
+  "zh": [
+   "警告",
+   "告诫"
+  ],
+  "cls": "weak",
+  "field": "言语动词"
+ },
+ {
+  "roman": "skøfra",
+  "ipa": "ˈskø.fra",
+  "pos": "n",
+  "zh": [
+   "咖啡",
+   "苦黑热饮"
+  ],
+  "cls": "weak",
+  "field": "补齐"
+ }
+]

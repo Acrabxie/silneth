@@ -1,0 +1,389 @@
+<title>Sìlneth 翻译器</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f7f7f8;
+    --surface2: #ececf1;
+    --line: #e5e5e5;
+    --line-soft: #efeff2;
+    --text: #0d0d0d;
+    --text2: #565869;
+    --ash: #8e8ea0;
+    --faded: #acacbe;
+    --val: #10a37f;         /* 克制的 ChatGPT 绿，仅用于链接/近时徽标 */
+    --ember: #b8742a;
+    --bad: #c9382b;
+    --black: #0d0d0d;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Songti SC', 'Source Han Serif SC', 'Noto Serif CJK SC', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    --r-input: 24px;
+    --r-card: 22px;
+    --r-item: 16px;
+    --r-pill: 999px;
+    --sh-sm: 0 1px 2px rgba(13, 13, 13, .05);
+    --sh-input: 0 1px 2px rgba(13, 13, 13, .05), 0 8px 24px rgba(13, 13, 13, .04);
+    --sh-card: 0 1px 3px rgba(13, 13, 13, .06), 0 10px 30px rgba(13, 13, 13, .04);
+  }
+  html { background: var(--bg); }
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+  a { color: var(--val); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  .glyph-svg { display: block; }
+  .glyph-svg path {
+    fill: none; stroke: currentColor; stroke-width: 8;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  header { text-align: center; padding: 56px 0 4px; }
+  .h-script { display: flex; justify-content: center; gap: 2px; color: var(--text); margin-bottom: 14px; }
+  .h-script svg { width: 32px; height: 32px; }
+  h1 { font-family: var(--sans); font-size: 32px; font-weight: 600; color: var(--text); margin: 0 0 4px; letter-spacing: -0.01em; }
+  .h-sub { font-family: var(--sans); font-size: 14px; color: var(--ash); }
+  .h-sub a { color: var(--text2); border-bottom: 1px solid var(--line); }
+  .h-sub a:hover { color: var(--val); text-decoration: none; border-color: var(--val); }
+
+  /* tabs — ChatGPT 式药丸导航 */
+  .tabs {
+    display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+    margin: 34px 0 26px;
+  }
+  .tabs button {
+    font-family: var(--sans); font-size: 14px;
+    background: transparent; color: var(--text2);
+    border: 1px solid transparent; border-radius: var(--r-pill);
+    padding: 8px 18px; cursor: pointer;
+    transition: color .15s, background .15s;
+  }
+  .tabs button:hover { color: var(--text); background: var(--surface); }
+  .tabs button[aria-selected="true"] {
+    color: #fff; background: var(--black); border-color: var(--black); font-weight: 500;
+  }
+  .tabs button:focus-visible { outline: 2px solid var(--black); outline-offset: 2px; }
+
+  .panel { display: none; padding-bottom: 40px; }
+  .panel.active { display: block; }
+
+  .field-label {
+    display: block; font-family: var(--sans); font-size: 13px;
+    font-weight: 500; letter-spacing: 0; color: var(--text2); margin: 0 0 8px;
+  }
+  textarea, input[type="text"], select {
+    width: 100%; box-sizing: border-box;
+    background: var(--bg); color: var(--text);
+    border: 1px solid var(--line); border-radius: var(--r-input);
+    font-family: var(--sans); font-size: 16px;
+    padding: 15px 20px; outline: none;
+    box-shadow: var(--sh-input);
+    transition: border-color .15s, box-shadow .15s;
+  }
+  textarea:focus, input[type="text"]:focus, select:focus {
+    border-color: #c4c4cc;
+    box-shadow: 0 0 0 3px rgba(13, 13, 13, .06), var(--sh-input);
+  }
+  textarea { resize: vertical; min-height: 92px; line-height: 1.65; }
+  select {
+    font-family: var(--sans); font-size: 15px; color: var(--text);
+    border-radius: var(--r-pill); padding: 11px 18px; box-shadow: var(--sh-sm);
+    -webkit-appearance: none; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='none' stroke='%238e8ea0' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M2.5 4.5L6 8l3.5-3.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center; padding-right: 38px;
+  }
+
+  .btn {
+    font-family: var(--sans); font-size: 15px; font-weight: 500;
+    background: var(--black); color: #fff;
+    border: 1px solid var(--black); border-radius: var(--r-pill);
+    padding: 12px 26px; cursor: pointer;
+    transition: opacity .15s, transform .05s;
+  }
+  .btn:hover { opacity: .88; }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible { outline: 2px solid var(--black); outline-offset: 2px; }
+  .btn.ghost { background: var(--bg); color: var(--text); border-color: var(--line); font-weight: 400; box-shadow: var(--sh-sm); }
+  .btn.ghost:hover { background: var(--surface); opacity: 1; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+  .chip {
+    font-family: var(--sans); font-size: 13px;
+    background: var(--surface); color: var(--text2);
+    border: 1px solid transparent; border-radius: var(--r-pill);
+    padding: 7px 15px; cursor: pointer;
+    transition: color .15s, background .15s;
+  }
+  .chip:hover { color: var(--text); background: var(--surface2); }
+
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+  .row > .grow { flex: 1 1 200px; align-self: flex-end; }
+
+  /* segmented control — 灰底药丸，选中段升为白片 */
+  .seg {
+    display: inline-flex; gap: 3px; background: var(--surface);
+    border: 1px solid var(--line-soft); border-radius: var(--r-pill);
+    padding: 3px;
+  }
+  .seg button {
+    font-family: var(--sans); font-size: 13px; color: var(--text2);
+    background: transparent; border: none; border-radius: var(--r-pill);
+    padding: 7px 15px; cursor: pointer; transition: background .15s, color .15s;
+  }
+  .seg button:hover { color: var(--text); }
+  .seg button[aria-pressed="true"] { background: var(--bg); color: var(--text); font-weight: 500; box-shadow: var(--sh-sm); }
+  .seg button:focus-visible { outline: 2px solid var(--black); outline-offset: 1px; }
+
+  .toggles { display: flex; flex-wrap: wrap; gap: 8px 16px; font-family: var(--sans); font-size: 14px; color: var(--text2); }
+  .toggles label { display: flex; align-items: center; gap: 7px; cursor: pointer; }
+  .toggles input { accent-color: var(--black); width: 16px; height: 16px; }
+
+  /* result card */
+  .result {
+    background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-card);
+    padding: 28px 28px 22px; margin-top: 22px; box-shadow: var(--sh-card);
+  }
+  .result.err { border-color: #f0d0cb; background: #fdf6f5; }
+  .r-glyphs {
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: 2px; row-gap: 10px; color: var(--text); margin-bottom: 16px;
+  }
+  .r-glyphs .wordbox { display: flex; gap: 0; }
+  .r-glyphs svg { width: 40px; height: 40px; }
+  .r-glyphs .wsp { width: 16px; }
+  .r-roman { font-family: var(--serif); font-size: 27px; font-style: italic; color: var(--text); line-height: 1.45; }
+  .r-ipa { font-family: var(--mono); font-size: 13px; color: var(--faded); margin-top: 4px; }
+  .r-gloss { font-family: var(--mono); font-size: 12.5px; color: var(--text2); margin-top: 12px; line-height: 1.8; }
+  .r-trans { font-size: 16px; color: var(--text2); margin-top: 10px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .badge {
+    font-family: var(--sans); font-size: 12px; letter-spacing: 0;
+    background: var(--surface); border: 1px solid transparent; border-radius: var(--r-pill);
+    padding: 4px 12px; color: var(--text2);
+  }
+  .badge.b0 { color: var(--val); background: #e8f6f1; }
+  .badge.b1 { color: var(--text2); background: var(--surface2); }
+  .badge.b2 { color: var(--ember); background: #f6ecdd; }
+  .warn {
+    font-family: var(--sans); font-size: 14px; color: var(--bad);
+    margin-top: 14px; line-height: 1.7;
+  }
+  /* 补齐（唤起本机 Claude 造缺词） */
+  .coin-wrap { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .coin-hint { flex-basis: 100%; font-family: var(--sans); font-size: 12.5px; color: var(--ash); margin-bottom: 2px; }
+  .coin-btn {
+    font-family: var(--sans); font-size: 13px; font-weight: 500;
+    background: #e8f6f1; color: var(--val);
+    border: 1px solid #bfe6da; border-radius: var(--r-pill);
+    padding: 7px 15px; cursor: pointer;
+    transition: background .15s, opacity .15s;
+  }
+  .coin-btn:hover { background: #dcf0e9; }
+  .coin-btn.busy { opacity: .7; cursor: progress; }
+  .coin-btn.done { background: var(--black); color: #fff; border-color: var(--black); cursor: default; }
+  .coin-btn:focus-visible { outline: 2px solid var(--val); outline-offset: 2px; }
+  details.trace { margin-top: 20px; border-top: 1px solid var(--line-soft); padding-top: 14px; }
+  details.trace summary {
+    font-family: var(--sans); font-size: 13px; color: var(--text2);
+    cursor: pointer; letter-spacing: 0;
+  }
+  details.trace summary:hover { color: var(--val); }
+  .trace-steps { margin: 14px 0 0; padding: 0; list-style: none; }
+  .trace-steps li {
+    display: grid; grid-template-columns: 22px 1fr; gap: 12px;
+    font-family: var(--sans); font-size: 13.5px; color: var(--text2);
+    padding: 7px 0; border-bottom: 1px solid var(--line-soft);
+  }
+  .trace-steps li:last-child { border-bottom: none; }
+  .trace-steps .tn { color: var(--faded); font-variant-numeric: tabular-nums; text-align: right; }
+  .trace-steps b { color: var(--text); font-weight: 600; }
+
+  .hint { font-family: var(--sans); font-size: 13.5px; color: var(--ash); margin-top: 0; line-height: 1.7; }
+  details.support { margin-top: 20px; background: var(--surface); border-radius: var(--r-item); padding: 14px 18px; }
+  details.support summary { font-family: var(--sans); font-size: 13px; color: var(--text2); cursor: pointer; }
+  details.support summary:hover { color: var(--val); }
+  details.support ul { font-family: var(--sans); font-size: 13.5px; color: var(--text2); line-height: 1.95; margin: 10px 0 0; padding-left: 18px; }
+
+  /* dictionary */
+  .dict-list { margin-top: 18px; display: grid; gap: 8px; }
+  .dict-item {
+    display: grid; grid-template-columns: 150px 1fr auto; gap: 14px; align-items: baseline;
+    background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-item);
+    padding: 14px 18px; box-shadow: var(--sh-sm);
+  }
+  .dict-item .dr { font-family: var(--serif); font-size: 19px; font-style: italic; color: var(--text); }
+  .dict-item .dr small { font-family: var(--mono); font-style: normal; font-size: 11px; color: var(--faded); display: block; }
+  .dict-item .dz { font-size: 15px; color: var(--text); }
+  .dict-item .dz small { color: var(--faded); font-family: var(--sans); font-size: 12px; }
+  .dict-item .dc { font-family: var(--sans); font-size: 11.5px; color: var(--ash); white-space: nowrap; }
+  .dict-item .dc.strong { color: var(--ember); }
+
+  /* phrasebook */
+  .phrase-list { margin-top: 20px; display: grid; gap: 10px; }
+  .phrase {
+    background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-item);
+    padding: 16px 20px; cursor: pointer; box-shadow: var(--sh-sm);
+    transition: border-color .15s, box-shadow .15s, transform .05s;
+  }
+  .phrase:hover { border-color: #d4d4dc; box-shadow: var(--sh-input); }
+  .phrase:active { transform: translateY(1px); }
+  .phrase .pr { font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--text); }
+  .phrase .pz { font-family: var(--sans); font-size: 13.5px; color: var(--ash); margin-top: 3px; }
+
+  footer { text-align: center; padding: 32px 0 56px; font-family: var(--sans); font-size: 12.5px; color: var(--faded); }
+
+  @media (max-width: 560px) {
+    .dict-item { grid-template-columns: 1fr; gap: 4px; }
+    h1 { font-size: 27px; }
+    .wrap { padding: 0 16px; }
+  }
+</style>
+
+<header class="wrap">
+  <div class="h-script" id="hScript" aria-hidden="true"></div>
+  <h1>Sìlneth 翻译器</h1>
+  <div class="h-sub">把主流语言折算进一门会被时间磨蚀的语言 · <a href="./language.html">语言介绍页 →</a></div>
+</header>
+
+<div class="wrap">
+  <div class="tabs" role="tablist" id="tabs">
+    <button role="tab" aria-selected="true" data-panel="p-zh">直译 · Translate</button>
+    <button role="tab" aria-selected="false" data-panel="p-compose">构句器</button>
+    <button role="tab" aria-selected="false" data-panel="p-name">名字音译</button>
+    <button role="tab" aria-selected="false" data-panel="p-dict">词典</button>
+    <button role="tab" aria-selected="false" data-panel="p-phrase">常用语</button>
+  </div>
+
+  <!-- 直译（中文 / English） -->
+  <div class="panel active" id="p-zh" role="tabpanel">
+    <div class="seg" id="zhLang" style="margin-bottom:10px">
+      <button aria-pressed="true" data-v="zh">中文</button>
+      <button aria-pressed="false" data-v="en">English</button>
+    </div>
+    <label class="field-label" for="zhInput" id="zhLabel">中文原文</label>
+    <textarea id="zhInput" placeholder="例：父亲以前在这里唱过歌"></textarea>
+    <div class="row">
+      <button class="btn" id="zhGo">翻译 → Sìlneth</button>
+      <span class="hint" id="zhHint" style="margin:0">时距级与示证会按十步管线自动判定，过程可展开查看。</span>
+    </div>
+    <div class="chips" id="zhChips"></div>
+    <div id="zhOut"></div>
+    <details class="support">
+      <summary id="zhSupportSummary">当前支持的句型（规则直译是诚实的：不支持的会明说）</summary>
+      <ul id="zhSupportZh">
+        <li>主谓（宾）句，含时间词定级：现在/昨天/以前/远古/明天…</li>
+        <li>示证词：亲眼/据说/相传/看来…（级1、级2 陈述句会自动补示证）</li>
+        <li>系词句「X是Y」· 处所句「X在Y」· 领有句「X有Y」</li>
+        <li>疑问：什么/谁/哪里/何时/几 + 是非问 · 否定「不/没/别」</li>
+        <li>祈使与意愿「…吧」 · 比较「X比Y…」 · 属格「X的Y」 · 复数/全称量化</li>
+        <li>被动「X被(Y)…」：受事升主格，施事取工具格 -um，动词加中受动 -u-</li>
+        <li>名词并列「A和B / A或B」 · 限定词「所有/每/某/任何/许多/一些/几个＋名词」</li>
+        <li>复句：如果…那么 / 因为…所以 / 虽然…但是 / 而且 / 除非 / 为了（连词或逗号切分，各从句独立定级）</li>
+        <li>动词补语「想要唱 / 需要走」：补语动词取副动词 -um，矩阵动词变位</li>
+      </ul>
+      <ul id="zhSupportEn" hidden>
+        <li>Subject–verb–(object) with time words setting the tense level: now / yesterday / before / in ancient times / tomorrow…</li>
+        <li>Evidentials firsthand / reportedly / apparently… (level-1 &amp; level-2 statements auto-add one)</li>
+        <li>Copula “X is Y” · locative “X is in Y” · possession “X has Y”</li>
+        <li>Questions what / who / where / when / how many + yes-no · negation not / never · imperative “sing!”</li>
+        <li>Comparison “X is …-er than Y” · possessive “your name” · plural / regular &amp; irregular inflection</li>
+        <li>Passive “X was broken (by Y)”: patient→NOM, agent→instrumental -um, verb takes middle -u-</li>
+        <li>Coordination “A and/or B” · determiners all / each / every / any / many / some / several / a certain</li>
+        <li>Clause linking if…then / because / so / although / but / unless / moreover — connective or comma splits, each clause tensed independently</li>
+        <li>Verb complements “want to sing / need to go”: complement verb takes converb -um, matrix verb conjugates</li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- 构句器 -->
+  <div class="panel" id="p-compose" role="tabpanel">
+    <div class="row">
+      <div class="grow">
+        <label class="field-label" for="cSubj">主语（中文或罗马字，可空）</label>
+        <input type="text" id="cSubj" list="nounList" placeholder="我 / 父亲 / 群山…">
+      </div>
+      <div class="grow">
+        <label class="field-label" for="cVerb">动词（必填）</label>
+        <input type="text" id="cVerb" list="verbList" placeholder="唱 / 走 / 屹立…">
+      </div>
+      <div class="grow">
+        <label class="field-label" for="cObj">宾语（可空）</label>
+        <input type="text" id="cObj" list="nounList" placeholder="歌 / 水…">
+      </div>
+    </div>
+    <datalist id="nounList"></datalist>
+    <datalist id="verbList"></datalist>
+    <div class="row">
+      <div>
+        <label class="field-label">时距级</label>
+        <div class="seg" id="cLevel">
+          <button aria-pressed="true" data-v="0">级0 近时</button>
+          <button aria-pressed="false" data-v="1">级1 远时</button>
+          <button aria-pressed="false" data-v="2">级2 祖时</button>
+        </div>
+      </div>
+      <div>
+        <label class="field-label">示证</label>
+        <div class="seg" id="cEvid">
+          <button aria-pressed="true" data-v="auto">自动</button>
+          <button aria-pressed="false" data-v="va">=va 亲历</button>
+          <button aria-pressed="false" data-v="dhi">=dhi 推断</button>
+          <button aria-pressed="false" data-v="re">=re 传闻</button>
+        </div>
+      </div>
+      <div>
+        <label class="field-label">语气</label>
+        <div class="seg" id="cMood">
+          <button aria-pressed="true" data-v="real">断言 .</button>
+          <button aria-pressed="false" data-v="irr">非现实 ~</button>
+          <button aria-pressed="false" data-v="q">疑问 ?</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="toggles">
+        <label><input type="checkbox" id="cNeg"> 否定 ul</label>
+        <label><input type="checkbox" id="cPfv"> 完整体 -s-</label>
+        <label><input type="checkbox" id="cSPl"> 主语复数</label>
+        <label><input type="checkbox" id="cOPl"> 宾语复数</label>
+      </div>
+    </div>
+    <div class="row"><button class="btn" id="cGo">生成句子</button></div>
+    <div id="cOut"></div>
+  </div>
+
+  <!-- 名字音译 -->
+  <div class="panel" id="p-name" role="tabpanel">
+    <label class="field-label" for="nameInput">名字（拉丁字母或汉语拼音）</label>
+    <input type="text" id="nameInput" placeholder="例：Acrab / Beijing / Claude">
+    <div class="row">
+      <button class="btn" id="nameGo">音译 → Sìlneth</button>
+      <span class="hint" style="margin:0">外来之名以满元音收录——新来的词，尚未被时间磨蚀。</span>
+    </div>
+    <div class="chips" id="nameChips"></div>
+    <div id="nameOut"></div>
+  </div>
+
+  <!-- 词典 -->
+  <div class="panel" id="p-dict" role="tabpanel">
+    <label class="field-label" for="dictInput">检索词库（中文或罗马字）</label>
+    <input type="text" id="dictInput" placeholder="例：山 / 唱 / lír / 火…">
+    <div class="dict-list" id="dictOut"></div>
+  </div>
+
+  <!-- 常用语 -->
+  <div class="panel" id="p-phrase" role="tabpanel">
+    <p class="hint" style="margin-top:0">出自例文集的现成句子。点一条可看字形与说明。</p>
+    <div class="phrase-list" id="phraseOut"></div>
+    <div id="phraseDetail"></div>
+  </div>
+</div>
+
+<footer>Sìlneth · Mírneth 字形按参考书第三章 SVG 规格原样渲染 · 引擎经 node 测试全绿后封装</footer>
