@@ -10,7 +10,15 @@ const D = __dirname;
 const { validateRoot, romanToIpa } = require(path.join(D, 'validate-roots.js'));
 
 // 本机 claude 二进制（官方登录）；显式标准上下文模型，清掉会触发 1M-context 计费的 env
-const CLAUDE_BIN = path.join(os.homedir(), '.local/bin/claude');
+// 跨平台解析 claude：环境变量 SILNETH_CLAUDE_BIN 优先 → Windows 走 PATH 上的 claude(.cmd) →
+// 类 Unix 优先 ~/.local/bin/claude，否则回落 PATH。
+function resolveClaude() {
+  if (process.env.SILNETH_CLAUDE_BIN) return { cmd: process.env.SILNETH_CLAUDE_BIN, shell: false };
+  if (process.platform === 'win32') return { cmd: 'claude', shell: true };  // PATH 上的 claude.cmd 需 shell
+  const local = path.join(os.homedir(), '.local/bin/claude');
+  try { fs.accessSync(local); return { cmd: local, shell: false }; } catch (e) {}
+  return { cmd: 'claude', shell: false };
+}
 const COIN_MODEL = process.env.SILNETH_COIN_MODEL || 'claude-sonnet-4-6';
 function claudeEnv() {
   const e = Object.assign({}, process.env);
@@ -45,7 +53,8 @@ function existingRomans() {
 function callClaude(prompt, timeoutMs) {
   return new Promise((resolve) => {
     // --strict-mcp-config：不加载项目 MCP，避开 blender 等连接拖慢启动（120s→~10s）
-    const child = spawn(CLAUDE_BIN, ['-p', '--model', COIN_MODEL, '--strict-mcp-config'], { stdio: ['pipe', 'pipe', 'ignore'], env: claudeEnv() });
+    const c = resolveClaude();
+    const child = spawn(c.cmd, ['-p', '--model', COIN_MODEL, '--strict-mcp-config'], { stdio: ['pipe', 'pipe', 'ignore'], env: claudeEnv(), shell: c.shell });
     let out = '', done = false;
     const finish = (v) => { if (!done) { done = true; try { child.kill('SIGKILL'); } catch (e) {} resolve(v); } };
     const timer = setTimeout(() => finish({ ok: false, reason: 'claude 超时' }), timeoutMs || 120000);

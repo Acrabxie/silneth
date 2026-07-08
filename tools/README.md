@@ -32,3 +32,15 @@
 node tools/build-translator.js && cp tools/silneth-translator.html index.html
 git add index.html tools/silneth-lexicon.json tools/silneth-en-gloss.json && git commit && git push
 ```
+
+## 在别的机器 / Windows 上用
+
+**翻译器本体**是纯离线单文件，无需安装：
+- 直接开 https://acrab.dev/silneth/ ，或
+- 把仓库根目录的 `index.html` 拷到任意 Windows/Mac/Linux，双击用浏览器打开即可（完全离线，含全部词库、引擎、字形）。
+
+**补齐服务（可选，要造新词才需要）** 跨平台，需 Node.js + Claude Code CLI：
+- Windows：装好 Node 与 Claude Code（命令行能跑 `claude`），双击 `tools\start-coin.bat`，开 http://127.0.0.1:8791/
+- Mac/Linux：`./tools/start-coin.sh`
+- `claude` 不在 PATH 时，用环境变量指定：`SILNETH_CLAUDE_BIN`（claude 可执行文件全路径）。
+- 造词模型默认 `claude-sonnet-4-6`，可用 `SILNETH_COIN_MODEL` 覆盖。
