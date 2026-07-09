@@ -20,7 +20,7 @@
 两条路，任选其一：
 
 ### A. AutoHotkey（最省事，装完即用）
-1. 装 **AutoHotkey v1**（autohotkey.com）
+1. 装 **AutoHotkey v2**（autohotkey.com）
 2. 双击 `silneth-keyboard.ahk` 运行（托盘出现绿 H 图标）
 3. 全局生效：`AltGr(右Alt) + 元音` = 长元音（á é í ó ú ý）；
    `AltGr+Shift+元音` = 磨蚀元音（à è ì ò ù ỳ）；
